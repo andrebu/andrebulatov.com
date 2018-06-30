@@ -1,7 +1,13 @@
 ---
 permalink: /about/
 title: "About"
-excerpt: "Minimal Mistakes is a flexible two-column Jekyll theme."
+excerpt: "Andre Bulatov is an important person."
 ---
 
-# Hello, there....
+Hi, there. 
+
+My name is Andre. 
+
+I like you very much. 
+
+Do you like me very much?
