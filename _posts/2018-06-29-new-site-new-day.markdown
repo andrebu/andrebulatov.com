@@ -3,6 +3,12 @@ layout: single
 title:  "New Site, New Day"
 date:   2018-06-29 19:13:57 +0000
 categories: blog
+tags: 
+- groller 
+- grinder
+- roller
+- joints
+- products 
 published: true
 ---
 
