@@ -1,0 +1,69 @@
+==================================================================
+https://keybase.io/andrebu
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://andrebulatov.com
+  * I am andrebu (https://keybase.io/andrebu) on keybase.
+  * I have a public key with fingerprint 4CB3 63B7 9691 32DF 3863  6472 D9B4 842F 89AD 67F9
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101bae9c78bf2dedfa61108e4ef370e927178ea6350ec566cc858611be021f34c5e0a",
+      "fingerprint": "4cb363b7969132df38636472d9b4842f89ad67f9",
+      "host": "keybase.io",
+      "key_id": "d9b4842f89ad67f9",
+      "kid": "0101bae9c78bf2dedfa61108e4ef370e927178ea6350ec566cc858611be021f34c5e0a",
+      "uid": "fe0410c1d98d0b56b1f8b8f9b2c3b619",
+      "username": "andrebu"
+    },
+    "service": {
+      "hostname": "andrebulatov.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1521049199,
+  "expire_in": 157680000,
+  "prev": "21d03412b8acae0880a754eb05553d7762d97c276bbfaba173925b0b90ad3d27",
+  "seqno": 7,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.76
+Comment: https://keybase.io/crypto
+
+yMIrAnicrVJbiE1RGD7HjDljQpNcxpRLu5FLY6y1b2vtIykZhSKUkOa01l5rj23O
+7H3ss8/hpNE8SOQ8jHHLtUx5MIVGSDJuMW6RI+a4hcjkWjpIxLD2xIPyaL2s1v9/
+3/d//7/+S4OKQmXhB8fXT9l0uP5r+MaF3anQskN17lqJuiwjRddKDbzv4nHGk36s
+wWZSVAIQQEq4YSJMLZlxZhEdQoC5yi0FAW7ICCLMia5ogJuarpsm1rCAUA5kaCmq
+qXFApGrJsp167iU82/GFrGpSRVcoMnQDKjKzFKwruopkZlAVq7KFDcJ0ZBmCuMJN
+BgxhjpIkr7FdEROPWJ+9f+D/s+9Un5zFgQqBCZmBGaCaTqGFKbYMKpsK1WFQN5Xk
+nkMauUATh3mcpqSmakkE07bJg7kGjfwNiBPfTdeYbqOgJzzXd003LrIrfD+RjAZs
+P5MI4Ks5jf0WilHbYWKUgpHmXtJ2HSkKBdL07UAZajIEqgENo1riaxK2x2N2gNCQ
+joE4QR2eFpIyZEBRoUwxMQkHGAOCNJVToGmawhDSxVcgU0Y6pRahBCLFkDUKqAEI
+U5iMpKC1VY4rRZGwSeqFZNKud4if8rjUdPH88uJQuCxU0r9fsGKhsgHlfxav4mfk
+55LpcyZN18ord2bdro7c7ebGttKebL79/bwRtZ25p8cmPlm2eMKntoVzrtzNHuwt
+l6/GB9agutX+yYOn/efDZz0qv/9t7HP+qu329SFDe5q/DDtbt21z5bu7l0f1n7Gx
+e/vMaee2nmCh7kJrwni7f1/h7Jnml+uyI3trS0/P/7Dtx6mqwRvnZ7pfD4h0eneq
+umasmuqNaSma0vFx/KtMp79mR2Xh8ZF8tvBEu3VjTA7faUJbWkq25DfcrHnzdO6D
+ocXn1q0c/IbcXNpv8r0qvDfSuuh77Z7jdUXtLXl7dnFb75IDuZ5daPHu5MPSdIUT
+eTFz9MpHrQ3GtXezwgsqusYlRj1rPTrh8y9Doked
+=hjnx
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/andrebu
+
+==================================================================
+
