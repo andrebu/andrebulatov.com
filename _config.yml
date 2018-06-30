@@ -21,7 +21,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Andre Bulatov"
+title                    : "Bulatov Cocktail"
 title_separator          : "-"
 name                     : "Andre Bulatov"
 description              : "An amazing website."
@@ -252,7 +252,12 @@ tag_archive:
 #     category: /categories/:name/
 #     tag: /tags/:name/
 
-
+# Collections - Andre
+# collections:
+#   portfolio:
+#     output: true
+#     permalink: /:collection/:path/
+    
 # HTML Compression
 # - http://jch.penibelst.de/
 compress_html:
