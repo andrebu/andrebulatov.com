@@ -1,6 +1,5 @@
 # _plugins/hyperlink_first_word_occurance.rb
 require "jekyll"
-# require 'liquid'
 require 'uri'
 
 
@@ -16,12 +15,9 @@ module Jekyll
 			# first occurance of each word that also has a post
 			# of the same title, into a hyperlink.
 			#
-			# content - the document or page to be processes.
+			# content - the document or page to be processed.
 			def process(content)
-				@site_url = content.site.config["url"]
 				@posts = content.site.posts
-				
-# 				return unless content.output.include?(post.title)
 				
 				content.output = if content.output.include? BODY_START_TAG
 									process_html(content)
@@ -33,7 +29,7 @@ module Jekyll
 	
 			# Public: Determines if the content should be processed.
 			#
-			# doc - the document being processes.
+			# doc - the document being processed.
 			def processable?(doc)
 				(doc.is_a?(Jekyll::Page) || doc.write?) &&
 					doc.output_ext == ".html" || (doc.permalink&.end_with?("/"))
@@ -44,7 +40,7 @@ module Jekyll
 			
 			# Private: Processes html content which has a body opening tag.
 			#
-			# content - html to be processes.
+			# content - html to be processed.
 			def process_html(content)
 				head, opener, tail = content.output.partition(OPENING_BODY_TAG_REGEX)
 				body_content, *rest = tail.partition("</body>")
@@ -58,69 +54,26 @@ module Jekyll
 			# the first occurance of each word that also has a post
 			# of the same title, into a hyperlink.
 			#
-			# html = the html which includes all the content.
+			# html - the html which includes all the content.
 			def process_words(html)
+				page_content = html
 # 				page_content = Nokogiri::HTML::DocumentFragment.parse(html)
-# 				page_copy = page_content.css("page__content")
-				page_copy = Nokogiri::HTML(html)
-# 				page_copy = html
-# 				page_copy = page_copy[/aside>(.*?)section>/, 1]
-# 				site = context.registers[:site]
-# 				site.posts.each do |post|
-# 				posts = context.registers[:posts]
-# 				posts = @posts
+# 				page_content = page_content.css("page__content")
 				@posts.docs.each do |post|
-
-
-# 					post_title = post.data['title'] || post.name
-# 					if page_copy.search("[text()*='#{post_title}']").first
-# 					puts "found --> '"+page_copy.search("[text()*='#{post_title}']").first+"'"
-# 					puts "so replacing it with --> '"+"<a href=\"#{ post.data['url'] }\">#{ post_title }</a>"+"'"
-# 					page_copy = page_copy.search("[text()*='#{post_title}']").first.replace("<a href=\"#{ post.data['url'] }\">#{ post_title }</a>")
-# 					end
-
-
-
-# 					page_copy.search('//text()').each do |text|
-# # 						puts "'"+post_title+"'"
-# # 						puts text.to_html
-# 						text_to_html = text.to_html
-# 						if text_to_html.include?(post_title)
-# # 							text.replace(text.content.strip)
-# 							puts text.to_html
-# 							puts text
-# 							text.sub(post_title, "<a href=\"#{ post.data['url'] }\">#{ post_title }</a>")
-# 						end
-# 					end
-					
-# 					if page_copy.include? post_title
-# 						page_copy = page_copy.sub(post_title, "<a href=\"#{ post.data['url'] }\">#{ post_title }</a>")
-# 					end
+					post_title = post.data['title'] || post.name
+					if page_content.include? post_title
+						page_content = page_content.sub(post_title, "<a href=\"#{ post.data['url'] }\">#{ post_title }</a>")
+					end
 				end
 # 				page_content.to_html
-				page_copy.to_html
-# 				page_copy
+				page_content
 			end
-
-		# 		def generate(site)
-		# 		  site.categories.each do |category|
-		# 		    build_subpages(site, "category", category)
-		# 		  end
-		# 		
-		# 		  site.tags.each do |tag|
-		# 		    build_subpages(site, "tag", tag)
-		# 		  end
-		# 		end
-		# 	
-		# 		return words.split(' ').map(&:capitalize).join(' ')
 		end
 	end
 end
 
 
-# Liquid::Template.register_filter(HyperlinkFirstWordOccurance)
-# Jekyll::Hooks.register :posts, :post_render do |post|
-Jekyll::Hooks.register %i[posts], :post_render do |doc|
+Jekyll::Hooks.register %i[posts pages], :post_render do |doc|
   # code to call after Jekyll renders a post
   Jekyll::HyperlinkFirstWordOccurance.process(doc) if Jekyll::HyperlinkFirstWordOccurance.processable?(doc)
 end
