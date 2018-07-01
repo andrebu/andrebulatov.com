@@ -33,6 +33,42 @@ layout: default
         </header>
       {% endunless %}
 
+
+{% assign page_content_words_array = page.content | split: " " %}
+{% for post in site.posts %}
+	{% if page.content contains post.title %}
+		{{ post_title_hyperlink }}
+		{% assign page.content = page.content | replace_first: post.title, post_title_hyperlink %}
+		
+		<ul>
+		{% for word in page_content_words_array %}
+			{% assign lowercase_post_title = post.title | downcase %}
+			{% assign lowercase_word = word | downcase %}
+		<li>{{ lowercase_word }}</li>
+			{% if lowercase_word == lowercase_post_title %}
+				{% capture post_title_hyperlink %}<a href="{{ post.url }}">{{ word }}</a>{% endcapture %}
+				
+				Replacing this word --> {{ page_content_words_array[forloop.index0] }} ...  
+				
+				{% assign page_content_words_array[forloop.index0] = post_title_hyperlink %}
+				
+				...for this link --> {{ page_content_words_array[forloop.index0] }} 
+				
+			{% endif %}
+		<li>{{ word }}</li>
+		{% endfor %}
+		</ul>
+		
+		This page has a <a href="{{ post.url }}">{{ post.title }}</a> reference!
+		
+
+	{% endif %}
+{% endfor %}
+{% assign page_content_words_array = page_content_words_array | join: " " %}
+{% assign content = page_content_words_array %}
+
+{{ page_content_words_array }}
+
       <section class="page__content" itemprop="text">
         {% if page.toc %}
           <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
