@@ -1,0 +1,13 @@
+---
+layout: single
+title:  "America"
+date:   2018-07-04 15:33:57 +0000
+categories: 
+- My Thoughts On
+last_modified_at: 2018-07-04 15:33:57 +0000
+toc: true
+header:
+  image: /assets/images/american-flag-banner-1500x500.jpeg
+published: false
+---
+
