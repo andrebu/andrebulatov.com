@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 # Andre 
 gem "minimal-mistakes-jekyll"
+gem 'jekyll-target-blank'
 
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
