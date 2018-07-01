@@ -60,21 +60,45 @@ module Jekyll
 			#
 			# html = the html which includes all the content.
 			def process_words(html)
-				page_content = Nokogiri::HTML::DocumentFragment.parse(html)
-				page_copy = page_content.css("page__content").content
+# 				page_content = Nokogiri::HTML::DocumentFragment.parse(html)
+# 				page_copy = page_content.css("page__content")
+				page_copy = Nokogiri::HTML(html)
 # 				page_copy = html
+# 				page_copy = page_copy[/aside>(.*?)section>/, 1]
 # 				site = context.registers[:site]
 # 				site.posts.each do |post|
 # 				posts = context.registers[:posts]
-				posts = @posts
-				posts.docs.each do |post|
-					post_title = post.data['title'] || post.name
-					if page_copy.include? post_title
-						page_copy = page_copy.sub(post_title, "<a href=\"#{ post.data['url'] }\">#{ post_title }</a>")
-					end
+# 				posts = @posts
+				@posts.docs.each do |post|
+
+
+# 					post_title = post.data['title'] || post.name
+# 					if page_copy.search("[text()*='#{post_title}']").first
+# 					puts "found --> '"+page_copy.search("[text()*='#{post_title}']").first+"'"
+# 					puts "so replacing it with --> '"+"<a href=\"#{ post.data['url'] }\">#{ post_title }</a>"+"'"
+# 					page_copy = page_copy.search("[text()*='#{post_title}']").first.replace("<a href=\"#{ post.data['url'] }\">#{ post_title }</a>")
+# 					end
+
+
+
+# 					page_copy.search('//text()').each do |text|
+# # 						puts "'"+post_title+"'"
+# # 						puts text.to_html
+# 						text_to_html = text.to_html
+# 						if text_to_html.include?(post_title)
+# # 							text.replace(text.content.strip)
+# 							puts text.to_html
+# 							puts text
+# 							text.sub(post_title, "<a href=\"#{ post.data['url'] }\">#{ post_title }</a>")
+# 						end
+# 					end
+					
+# 					if page_copy.include? post_title
+# 						page_copy = page_copy.sub(post_title, "<a href=\"#{ post.data['url'] }\">#{ post_title }</a>")
+# 					end
 				end
-				page_content.to_html
-# 				page_copy.to_html
+# 				page_content.to_html
+				page_copy.to_html
 # 				page_copy
 			end
 
@@ -96,7 +120,7 @@ end
 
 # Liquid::Template.register_filter(HyperlinkFirstWordOccurance)
 # Jekyll::Hooks.register :posts, :post_render do |post|
-Jekyll::Hooks.register %i[posts pages documents], :post_render do |doc|
+Jekyll::Hooks.register %i[posts], :post_render do |doc|
   # code to call after Jekyll renders a post
   Jekyll::HyperlinkFirstWordOccurance.process(doc) if Jekyll::HyperlinkFirstWordOccurance.processable?(doc)
 end
