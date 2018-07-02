@@ -1,20 +1,34 @@
 ---
 layout: single
 title:  "Groller"
-excerpt: "Is it a grinder? Is it a roller? No, it's a groller."
+excerpt: "Is it a bird?  Is it a plane?  No, it's a groller."
 date:   2018-07-01 03:37:57 +0000
 categories: 
 - blog
 tags: 
 - groller 
-- products 
-- grinder 
-- roller 
-- joints 
 - joint roller
+- herb grinder 
+- roller 
+- grinder 
+- products 
+- joints 
 last_modified_at: 2018-07-01 03:37:57 +0000
 toc: true
 published: true
 ---
 
-What is a groller, anyway?
+## 1. Is it a grinder?
+
+Yes.  No.  Both.
+
+## 2. Is it a roller?
+
+Yes.  No.  Both.
+
+## 3. What is a groller, anyway?
+
+Is it a grinder?  Is it a roller?  No, it's a groller.
+
+
+
