@@ -73,19 +73,25 @@ module Jekyll
 				@posts.docs.each do |post|
 					post_title = post.data['title'] || post.name
 					post_title_lowercase = post_title.downcase
-# 					if post_title != @title
-						if page_content.include?(" " + post_title_lowercase + " ")
+					if post_title != @title
+						if page_content.include?(" " + post_title_lowercase + " ") ||
+							page_content.include?(post_title_lowercase + " ") ||
+							page_content.include?(post_title_lowercase + ",") ||
+							page_content.include?(post_title_lowercase + ".")
 # 							if post_title_lowercase == "groller"
 # 							puts "YES, " + post_title_lowercase + " will be replaced"
 # 							end
 							page_content = page_content.sub(post_title_lowercase, "<a href=\"#{ post.url }\">#{ post_title.downcase }</a>")
-						elsif page_content.include?(" " + post_title + " ")
+						elsif page_content.include?(" " + post_title + " ") ||
+							page_content.include?(post_title + " ") ||
+							page_content.include?(post_title + ",") ||
+							page_content.include?(post_title + ".")
 # 							if post_title == "Groller"
 # 							puts "YES, " + post_title + " will be replaced"
 # 							end
 							page_content = page_content.sub(post_title, "<a href=\"#{ post.data['url'] }\">#{ post_title }</a>")
 						end
-# 					end
+					end
 				end
 # 				page_content.to_html
 				page_content
