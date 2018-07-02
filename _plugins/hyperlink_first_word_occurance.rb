@@ -7,8 +7,11 @@ module Jekyll
 
 	# Replace the first occurance of each post title in the content with the post's title hyperlink
 	module HyperlinkFirstWordOccurance
+		POST_CONTENT_CLASS = "page__content"
 		BODY_START_TAG = "<body"
+		ASIDE_START_TAG = "<aside"
 		OPENING_BODY_TAG_REGEX = %r!<body(.*)>\s*!
+		CLOSING_ASIDE_TAG_REGEX = %r!</aside(.*)>\s*!
 
 		class << self
 			# Public: Processes the content and updates the 
@@ -17,6 +20,8 @@ module Jekyll
 			#
 			# content - the document or page to be processed.
 			def process(content)
+				@title = content.data['title']
+				puts "we're working on -->>> " + @title
 				@posts = content.site.posts
 				
 				content.output = if content.output.include? BODY_START_TAG
@@ -42,7 +47,13 @@ module Jekyll
 			#
 			# content - html to be processed.
 			def process_html(content)
-				head, opener, tail = content.output.partition(OPENING_BODY_TAG_REGEX)
+				content.output = if content.output.include? ASIDE_START_TAG
+					head, opener, tail = content.output.partition(CLOSING_ASIDE_TAG_REGEX)
+								puts "we're here tho"
+								else
+								puts "we're here"
+					head, opener, tail = content.output.partition(POST_CONTENT_CLASS)
+								end
 				body_content, *rest = tail.partition("</body>")
 				
 				processed_markup = process_words(body_content)
@@ -61,9 +72,20 @@ module Jekyll
 # 				page_content = page_content.css("page__content")
 				@posts.docs.each do |post|
 					post_title = post.data['title'] || post.name
-					if page_content.include? post_title
-						page_content = page_content.sub(post_title, "<a href=\"#{ post.data['url'] }\">#{ post_title }</a>")
-					end
+					post_title_lowercase = post_title.downcase
+# 					if post_title != @title
+						if page_content.include?(" " + post_title_lowercase + " ")
+# 							if post_title_lowercase == "groller"
+# 							puts "YES, " + post_title_lowercase + " will be replaced"
+# 							end
+							page_content = page_content.sub(post_title_lowercase, "<a href=\"#{ post.url }\">#{ post_title.downcase }</a>")
+						elsif page_content.include?(" " + post_title + " ")
+# 							if post_title == "Groller"
+# 							puts "YES, " + post_title + " will be replaced"
+# 							end
+							page_content = page_content.sub(post_title, "<a href=\"#{ post.data['url'] }\">#{ post_title }</a>")
+						end
+# 					end
 				end
 # 				page_content.to_html
 				page_content
@@ -73,7 +95,7 @@ module Jekyll
 end
 
 
-Jekyll::Hooks.register %i[posts pages], :post_render do |doc|
+Jekyll::Hooks.register %i[posts], :post_render do |doc|
   # code to call after Jekyll renders a post
   Jekyll::HyperlinkFirstWordOccurance.process(doc) if Jekyll::HyperlinkFirstWordOccurance.processable?(doc)
 end
