@@ -1,4 +1,4 @@
-# _plugins/hyperlink_first_word_occurance.rb
+# _plugins/jekyll-hyperlink-post-titles.rb
 require "jekyll"
 require 'uri'
 
@@ -10,7 +10,6 @@ module Jekyll
 		POST_CONTENT_CLASS = "page__content"
 		BODY_START_TAG = "<body"
 		ASIDE_START_TAG = "<aside"
-		OPENING_BODY_TAG_REGEX = %r!<body(.*)>\s*!
 		CLOSING_ASIDE_TAG_REGEX = %r!</aside(.*)>\s*!
 
 		class << self
@@ -21,7 +20,6 @@ module Jekyll
 			# content - the document or page to be processed.
 			def process(content)
 				@title = content.data['title']
-				puts "we're working on -->>> " + @title
 				@posts = content.site.posts
 				
 				content.output = if content.output.include? BODY_START_TAG
@@ -49,9 +47,7 @@ module Jekyll
 			def process_html(content)
 				content.output = if content.output.include? ASIDE_START_TAG
 					head, opener, tail = content.output.partition(CLOSING_ASIDE_TAG_REGEX)
-								puts "we're here tho"
 								else
-								puts "we're here"
 					head, opener, tail = content.output.partition(POST_CONTENT_CLASS)
 								end
 				body_content, *rest = tail.partition("</body>")
@@ -73,7 +69,8 @@ module Jekyll
 				@posts.docs.each do |post|
 					post_title = post.data['title'] || post.name
 					post_title_lowercase = post_title.downcase
-					if post_title != @title
+# 					if post_title != @title
+
 						if page_content.include?(" " + post_title_lowercase + " ") ||
 							page_content.include?(post_title_lowercase + " ") ||
 							page_content.include?(post_title_lowercase + ",") ||
@@ -81,7 +78,7 @@ module Jekyll
 # 							if post_title_lowercase == "groller"
 # 							puts "YES, " + post_title_lowercase + " will be replaced"
 # 							end
-							page_content = page_content.sub(post_title_lowercase, "<a href=\"#{ post.url }\">#{ post_title.downcase }</a>")
+							page_content = page_content.sub(post_title_lowercase, "<a href=\"#{post.url}\">#{post_title.downcase}</a>")
 						elsif page_content.include?(" " + post_title + " ") ||
 							page_content.include?(post_title + " ") ||
 							page_content.include?(post_title + ",") ||
@@ -89,9 +86,9 @@ module Jekyll
 # 							if post_title == "Groller"
 # 							puts "YES, " + post_title + " will be replaced"
 # 							end
-							page_content = page_content.sub(post_title, "<a href=\"#{ post.data['url'] }\">#{ post_title }</a>")
+							page_content = page_content.sub(post_title, "<a href=\"#{post.url}\">#{post_title}</a>")
 						end
-					end
+# 					end
 				end
 # 				page_content.to_html
 				page_content
