@@ -4,6 +4,8 @@ main:
     url: /year-archive/
   - title: "About"
     url: /about/
+  - title: "Comment Policy"
+    url: /comment-policy/
   - title: "Terms & Privacy Policy"
     url: /terms/
   - title: "Sitemap"
