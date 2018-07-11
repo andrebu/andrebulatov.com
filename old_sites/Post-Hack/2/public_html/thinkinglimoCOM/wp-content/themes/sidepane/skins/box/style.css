@@ -1,0 +1,75 @@
+/*  
+Skin Name: Box
+Version: 1.0
+Description: Skin for Sidepane theme.
+*/
+
+body a {
+	color: #000;
+}
+body a:hover {
+	color: #66F;
+}
+
+input[type=reset], input[type=submit] {
+	background: #333;
+	color: #fff;
+}
+input[type=reset]:hover, input[type=submit]:hover {
+	background: #000;
+}
+
+/* main nav wrap */
+#main-nav-wrap {
+	border-color: #555;
+}
+
+/* sidebar */
+#sidebar-wrap {
+	background: #333;
+	top: 20px;
+	left: 20px;
+	width: 315px;
+	height: auto;
+	float: left;
+	border: solid 1px #000;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .4);
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, .4);
+}
+#sidebar {
+	padding: 20px 20px 15px 20px;
+	color: #999;
+	-moz-box-shadow: 0 -1px 0 rgba(255,255,255, .4);	
+	margin-top: 1px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+#sidebar input[type=text], #sidebar input[type=password], #sidebar textarea {
+	background: #666;
+	color: #fff;
+}
+#sidebar a {
+	color: #ccc;
+}
+#sidebar a:hover {
+	color: #fff;
+}
+#sidebar ul, #sidebar li {
+	border-color: #555;
+}
+.widget_search #s {
+	background: #ccc;
+}
+
+/* site logo */
+#site-logo a {
+	color: #fff;
+}
+
+/* footer-text */
+#footer-text {
+	left: 20px;
+	position: static;
+}

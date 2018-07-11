@@ -1,0 +1,325 @@
+<!--	</div>  container div end -->
+
+
+
+	<!-- START FOOTER SECTION -->	
+	<footer id="footer">	
+		<div class="footerrows">
+			<div class="row-fluid">
+				<div class="col-md-4" id="left-footer-column">
+					<img src="http://thinkinglimo.com/wp-content/uploads/T-logo-winged-100x100-blue-T.png" alt="Thinking Limo Footer Logo" id="bottom_logo"/>
+				</div> <!-- END #left-footer-column --> 
+				<div class="col-md-4" id="middle-footer-column">
+					<p>
+						&copy; 2014 Thinking Limo.  All rights reserved.	  
+					</p>
+					<ul class="social_menu light">
+						<li class="facebook">
+							<a href="https://www.facebook.com/pages/Thinking-Limo/309065962553405" target="_blank">
+								<span class="inner">
+									facebook
+								</span>
+							</a>
+						</li>
+						<li class="twitter">
+							<a href="https://twitter.com/ThinkingLimo" target="_blank">
+								<span class="inner">
+									twitter	  
+								</span>	 
+						    </a>
+						</li>   
+						<li class="google">
+							<a href="https://plus.google.com/b/109868886958336816804/+Thinkinglimo" rel="publisher" target="_blank">
+								<span class="inner">
+									google
+								</span>
+							</a>
+						</li>        
+						<li class="linkedin">
+							<a href="http://www.linkedin.com/company/onecall-limousine" target="_blank">
+								<span class="inner">
+									linkedin
+								</span>
+							</a>
+						</li>
+					</ul>
+					<a href="http://andrebulatov.com" target="_blank">
+						<p class = "andre">
+							Built and powered by Andre
+						</p>
+					</a>
+				</div> <!-- END #middle-footer-column --> 
+				<div class="col-md-4" id="right-footer-column">
+					<div id="paymentmethods" class="">
+					    <h4>Payment Methods</h4>
+					
+					    <div id="credit-card-method">
+					        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/cc-amex.png" alt="We accept Amex">
+					        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/cc-discover.png" alt="We accept Discover">
+					        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/cc-visa.png" alt="We accept Visa">
+					        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/cc-mastercard.png" alt="We accept Mastercard">        
+					        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/cc-bitcoin.png" alt="You can check out using Bitcoin">
+					    </div>
+					    <h4>We accept Crypto!</h4>
+					    <div id="crypto-method">
+					        <a href="http://thinkinglimo.com/proudly-accepting-bitcoin-and-other-cryptocurrencies">﻿<img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/bitcoin.png" width="60" alt="Bitcoin"></a>
+					        <a href="http://thinkinglimo.com/proudly-accepting-bitcoin-and-other-cryptocurrencies">﻿<img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/litecoin.png" width="60" alt="Litecoin"></a>
+					        <a href="http://thinkinglimo.com/proudly-accepting-bitcoin-and-other-cryptocurrencies">﻿<img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/potcoin.png" width="60" alt="Potcoin"></a>
+					        <a href="http://thinkinglimo.com/proudly-accepting-bitcoin-and-other-cryptocurrencies">﻿<img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/dopecoin.png" width="60" alt="Dopecoin"></a>
+					    </div>
+					    <!-- (c) 2005, 2014. Authorize.Net is a registered trademark of CyberSource Corporation --> 
+					<!--
+					    <div class="AuthorizeNetSeal"> 
+					        <script type="text/javascript" language="javascript">var ANS_customer_id="38d5017f-4c8a-417f-aef4-4697380a9640";</script> 
+					        <script type="text/javascript" language="javascript" src="//verify.authorize.net/anetseal/seal.js" ></script> 
+					    </div>    
+					-->
+					    <div class="VeriSign-Seal">
+					        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/verisign-secured.png" width="108" height="60" alt="VeriSign Secured" />
+					    </div>
+					</div>  <!-- END #payment-methods --> 
+				</div>  <!-- END #right-footer-column --> 
+			</div> <!-- END .row --> 
+	
+			<div class="row-fluid" id="sub-footer-row">
+					<ul class="social_menu light">
+						<li class="facebook">
+					  		<a href="https://www.facebook.com/pages/Thinking-Limo/309065962553405" target="_blank">
+					  			<span class="inner">
+					  				facebook
+					  			</span>
+						  	</a>
+						</li>
+						<li class="twitter">
+							<a href="https://twitter.com/ThinkingLimo" target="_blank">
+								<span class="inner">
+									twitter	  
+								</span>	 
+						    </a>
+						</li>   
+						<li class="google">
+							<a href="https://plus.google.com/b/109868886958336816804/+Thinkinglimo" rel="publisher" target="_blank">
+								<span class="inner">
+									google
+								</span>
+							</a>
+						</li>        
+						<li class="linkedin">
+							<a href="http://www.linkedin.com/company/onecall-limousine" target="_blank">
+								<span class="inner">
+									linkedin
+								</span>
+							</a>
+						</li>
+					</ul>
+					<a href="http://andrebulatov.com" target="_blank">
+							<p class = "andre">
+								Built and powered by Andre
+							</p>
+					</a> 
+					<p>&copy; 2014 Thinking Limo.  All rights reserved.</p>
+			</div> <!-- END #sub-footer-row --> 
+		</div> <!-- END .footerrows --> 
+	</footer>
+	<!-- END FOOTER SECTION -->
+
+
+
+
+	<!-- START FOOTER SECTION -->
+<!--
+    <footer>
+    	<div class="wrapper">
+            <div class="row-fluid">
+                <div class="span6 footernav">
+                	<a href="http://thinkinglimo.com/">
+                    	<img src="http://www.thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/logo-white.png" alt="Thinking Limo" title="Thinking Limo" />
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="index.html#theapp">The app</a>
+                        </li>
+                        <li>
+                            <a href="http://thinkinglimo.com/limo-service-rates/">Rates</a>
+                        </li>
+                        <li>
+                            <a href="driversignup.html">Drive for us</a>
+                        </li>
+
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+                    </ul>
+                    <p>Getting you around wherever you are</p>
+                    <div class="headings">
+                        <h4>
+                            50
+                            <span>Countries</span>
+                        </h4>
+                        <h4>
+                            5,000+
+                            <span>Cities around the world</span>
+                        </h4>
+                        <h4>
+                            300,000+
+                            <span>Cars available around the globe</span>
+                        </h4>
+                    </div>
+                </div>
+                <div class="span6 map">
+                    <div class="span6">
+                        <div class="top">&nbsp;</div>
+                        <div class="map">
+                            <h2>Launching soon in a city near you.</h2>
+                        </div>
+                    </div>
+                    <div class="span6">
+                        <div class="topdark">
+                        	<ul>
+                            	<li>Connect with us</li>
+                                <li class="social twitter">
+                                	<a href="https://twitter.com/ThinkingLimo"></a>
+                                </li>
+                                <li class="social facebook">
+                                	<a href="https://www.facebook.com/pages/Thinking-Limo/309065962553405"></a>
+                                </li>
+                                <li class="social googleplus">
+                                	<a href="https://plus.google.com/b/109868886958336816804/+Thinkinglimo" rel="publisher"></a>
+                                </li>
+                                <li class="social linkedin">
+                                	<a href="http://www.linkedin.com/company/onecall-limousine"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <p>
+                        	THINKING LIMO<br />
+                            Metropark Plaza<br>
+                            13 Professional Ave.<br>
+                            Edison, NJ  08837<br>
+                            United States<br>
+	                        <a href="mailto:contact@thinkinglimo.com">contact@thinkinglimo.com</a>
+                        </p>
+					</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+-->
+
+<!--
+		<div class="prima pad20">
+			<img src="http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/bottom_logo.png" alt="" id="bottom_logo"/>
+			<p>&copy; 2014 Thinking Limo Wordlwide.  All rights reserved.</p>
+			<ul class="social_menu light">
+				<li class="facebook">
+			  		<a href="https://www.facebook.com/pages/Thinking-Limo/309065962553405" target="_blank">
+			  			<span class="inner">
+			  				facebook
+			  			</span>
+				  	</a>
+				</li>
+				<li class="twitter">
+					<a href="https://twitter.com/ThinkingLimo" target="_blank">
+						<span class="inner">
+							twitter	  
+						</span>	 
+				    </a>
+				</li>   
+				<li class="google">
+					<a href="https://plus.google.com/b/109868886958336816804/+Thinkinglimo" rel="publisher" target="_blank">
+						<span class="inner">
+							google
+						</span>
+					</a>
+				</li>        
+				<li class="linkedin">
+					<a href="http://www.linkedin.com/company/onecall-limousine" target="_blank">
+						<span class="inner">
+							linkedin
+						</span>
+					</a>
+				</li>
+			</ul>
+
+			<div id="paymentmethods" class="">
+			    <h4>Payment Methods</h4>
+			
+			    <div id="payment-methods">
+			        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/cc-amex.png" alt="We accept Amex">
+			        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/cc-discover.png" alt="We accept Discover">
+			        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/cc-visa.png" alt="We accept Visa">
+			        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/cc-mastercard.png" alt="We accept Mastercard">        
+			        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/cc-bitcoin.png" alt="You can check out using Bitcoin">
+			    </div>
+			    <h4>We accept Crypto!</h4>
+			    <div id="crypto-payment">
+			        <a href="http://thinkinglimo.com/proudly-accepting-bitcoin-and-other-cryptocurrencies">﻿<img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/bitcoin.png" width="60" alt="Bitcoin"></a>
+			        <a href="http://thinkinglimo.com/proudly-accepting-bitcoin-and-other-cryptocurrencies">﻿<img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/litecoin.png" width="60" alt="Litecoin"></a>
+			        <a href="http://thinkinglimo.com/proudly-accepting-bitcoin-and-other-cryptocurrencies">﻿<img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/potcoin.png" width="60" alt="Potcoin"></a>
+			        <a href="http://thinkinglimo.com/proudly-accepting-bitcoin-and-other-cryptocurrencies">﻿<img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/dopecoin.png" width="60" alt="Dopecoin"></a>
+			    </div>
+			    <div class="VeriSign-Seal">
+			        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/verisign-secured.png" width="108" height="60" alt="VeriSign Secured" />
+			    </div>
+			</div>
+
+			<a href="http://andrebulatov.com" target="_blank">
+					<p class = "andre">
+						Built and powered by Andre
+					</p>
+			</a>
+
+		</div>
+-->
+
+	<!-- END FOOTER SECTION -->
+
+
+
+
+	    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+	    <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+	    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	    <script src="/wp-content/themes/LimoStrap/assets/js/plugin.min.js"></script>
+	    <script src="/wp-content/themes/LimoStrap/assets/js/core.min.js"></script>
+	    <script src="http://thinkinglimo.com/wp-content/uploads/js/jquery.mobile.custom.min.js"></script>
+
+<!--
+	    <script src="<?php echo get_template_directory(); ?>/assets/js/plugin.min.js"></script>
+	    <script src="<?php echo get_template_directory(); ?>/assets/js/core.min.js"></script>
+-->
+<!--
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js" ></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js" ></script>
+-->
+<!-- 	    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" > -->
+
+	    <script type="text/javascript">
+			$(document).ready(function() {
+				$( "#tabs" ).tabs();
+			});
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {  
+		  		$(".carousel-inner").swiperight(function() {  
+			  		$(this).parent().carousel(prev);  
+			  	});  
+				$(".carousel-inner").swipeleft(function() {  
+					$(this).parent().carousel(next);  
+				});  
+			});  
+		</script>
+
+		<script type="text/javascript">
+			$( "#accordion" ).accordion({
+			  heightStyle: "content"
+			});
+		</script>
+	
+	    
+	    <?php wp_footer(); ?>
+
+	</body>
+</html>

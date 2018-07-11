@@ -1,0 +1,752 @@
+/*
+.home .page .page-title {
+display: none;
+}
+*/
+
+/* BODY */
+/* Padding Between Content and Header */
+#content-wrap {
+	padding:20px 0;
+	min-height:100%;
+}
+section article h2.entry-title {display:none;}
+h1 {
+	font-family: OpenSansBold, Arial, Serif;
+	color: #0079BC;
+	font-size: 30px;
+}
+
+
+/* FRONT PAGE */
+div#home-banner{
+	background-image: url(http://thinkinglimo.com/wp-content/uploads/2013/02/banner_fleet_on_road.png);
+	background-repeat: no-repeat;
+	height:470px;
+	width:1008px;
+/*	float:right;*/
+}
+#home-banner a.primary-button#home1 {
+	position:absolute;
+	left:0px;
+	bottom:150px;
+	border: #33b4ff 2px solid;
+	background-color: #33b4ff;
+}
+#home-banner a.primary-button#home1:hover,
+#home-banner a.primary-button#home1:focus {
+	position:absolute;
+	left:0px;
+	bottom:150px;
+	background-color:#f8ac32;
+	border:#f8ac32 2px solid!important
+}
+#home-banner a.primary-button#home2 {
+	position:absolute;
+	left:0px;
+	bottom:100px;
+}
+#home-banner a.primary-button#home3 {
+	position:absolute;
+	left:0px;
+	bottom:50px;
+}
+
+
+text-shadow: 0 1px 0 rgba(255,255,255,.3);
+padding: 10px 20px;
+font-size: 19px;
+text-decoration: none;
+text-align: center;
+white-space: nowrap;
+}
+a.primary-button:hover, 
+a.primary-button:focus {
+text-decoration:none!important;
+}
+
+/* QUOTE Form */
+.rounded_medium {
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;}
+.quote_home {
+	position:relative;
+	width:326px;
+	background:#465872;
+	color:#fff;
+	padding:10px 0 42px;}
+.quote_home hr {
+	border-color:#627187;
+	margin:7px 0 0;}
+.quote_home fieldset {
+	background:#506179;
+	margin:0 10px;
+	font-size:15px;
+	padding:7px 14px 14px;
+	width:278px;
+	}
+.quote_home fieldset div,
+.quote_home fieldset #isbiz{
+	position:relative;
+	margin-top:7px;
+	}
+.gform_wrapper form li {
+	margin-left: 0;
+	}
+
+/* LIGHTBOX css */
+/* datepicker */
+#ui-datepicker-div {
+	z-index: 999999;
+}
+
+
+
+/* Gravity RESERVATION Form */
+body .gform_wrapper .gform_heading .gform_title {
+	color:#AECE4F;
+	font-size:25px;
+	font-family:OpenSansBold,Arial,Verdana;
+	}
+
+
+
+
+/*   HEADER  */
+#header {
+        font-family: OpenSansBold, Arial, Serif;
+		clear: both;
+        padding: 7px 0px 20px 0px;
+        position: relative;
+        background:#ffffff none repeat scroll 0 0;
+        border-top:4px solid #0079BC;
+        font-size: 18px; color:#111111;
+} 
+span.header-phone {
+		font-family: OpenSansBold, Arial, Serif;;
+        font-size: 30px;
+        color:#111111 !important;
+        background-position: left center;
+        background-image: url(http://thinkinglimo.com/wp-content/uploads/2013/03/phone-2.png);
+        background-size: auto 20px;
+        position:relative;
+        bottom: 10px;      
+}
+div.lambda-header-widget.clearfix {
+        position:relative; 
+        top:13px;
+} 
+header h1#logo-h1 {
+	margin: 0;
+	padding: 0;
+	line-height:100%;
+	color: #0079BC;
+	font-size:50px;
+	font-family: OpenSansBold, Arial, serif;
+/*	position: relative;
+	top: 5px;*/
+}
+header a#logo-a {
+	margin: 0;
+	padding: 0;
+	line-height:100%;
+	color: #0079BC;
+	font-size:50px;
+	font-family: OpenSansBold, Arial, serif;
+/*	position: relative;
+	top: 5px;*/
+}
+header a#logo-a:visited {
+	color: #0079BC;
+}
+header a#logo-a:hover {
+	color: #0079BC;
+}
+header a#logo-a:active {
+	color: #0079BC;
+}
+
+
+
+
+
+/* {
+border-bottom-left-radius: 5px;
+border-bottom-right-radius: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+} */
+
+
+
+
+
+
+/* NAVI BAR */
+#navigation li a {
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	-ms-transition: none;
+	transition: none;
+} 
+/*  nav bar height and border color  */
+.nav-wrap {
+	border-bottom:1px solid #0079BC;
+	border-top:1px solid #0079BC;
+	background-color: #0079BC;	
+} 
+#navigation {
+        background-color: #0079BC;
+        height:50px;
+} 
+/* nav divider colors and sub menu color*/
+#navigation ul li {
+        border-left:1px solid #0079BC;
+        background:#0079BC;
+}
+/* nav font color and location */
+#navigation ul li a {
+		display:block;
+		padding: 14px 15px 0px 15px;
+		border-top:1px solid transparent;
+        font-family: OpenSansBold, Verdana, sans-serif;
+        font-size:18px;
+        color: #ffffff;  
+}  
+/* nav bg and font color on top level subnav item */
+#navigation ul li:hover a {
+        color:#ffffff;
+        background: #111111;
+} 
+/* last divider on right color */
+#navigation ul li:last-child  {
+	border-right:1px solid #0079BC;
+} 
+header nav li > a {
+font-weight: normal;
+display: block;
+text-decoration: none;
+padding: 5px 12px 5px 12px;
+line-height: 25px;
+font-size: 1.45em;
+color: #fffff;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+#navigation ul > li.active  {
+	border-left:none;
+	border-right:none;
+} 
+/* hover background color - seems useLess */
+#navigation ul a:hover, #navigation ul a:active {
+         color: #ffffff !important;
+         background: #111111 !important;
+}
+
+/* NAV SUB MENU */
+#navigation li ul {
+/*z-index: 1000!important;
+float: none;
+top: -999em;
+display: block;
+margin-left: 0;
+position: absolute;
+width: 200px;*/
+background: #111;
+-webkit-border-bottom-right-radius: 5px;
+-webkit-border-bottom-left-radius: 5px;
+-moz-border-radius-bottomright: 5px;
+-moz-border-radius-bottomleft: 5px;
+border-bottom-right-radius: 5px;
+border-bottom-left-radius: 5px;
+-webkit-border-top-left-radius: 0;
+-moz-border-radius-topleft: 0;
+border-top-left-radius: 0;
+-moz-box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+-webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+#navigation ul.sub-menu {
+	-webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+	-ms-box-shadow:0px 0px 2px rgba(0, 0, 0, 0.2);
+	-o-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+	border:0 none;
+}
+/*#navigation ul.sub-menu li {
+	border-radius:4px;
+*/
+#navigation ul.sub-menu li a {
+	color: #ffffff;
+    background: #111111;
+   /* border-radius:4px;*/
+} 
+#navigation ul.sub-menu li a {
+	height: 32px;
+	line-height: 32px;
+	min-width: 165px;
+	position: static; 
+	margin:0;
+	padding: 0px 10px 0px 10px;
+	border-top:0 none !important; 
+	border-bottom:0 none;
+}
+#navigation ul.sub-menu li a  {
+		-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	-ms-transition: none;
+	transition: none;
+}
+#main nav{margin:0 10px 0 0;padding:10px 0;clear:both}
+#main nav ul{list-style:none;float:right}
+#main nav li{padding:0;float:left;text-align:right;position:relative}
+#main nav a{padding:5px 5px 5px 25px;display:block;line-height:19px;white-space:nowrap;font-weight:normal}
+#main nav li[role=active] a{cursor:text;color:#96c4fd}
+#main nav li[role=active] a:hover{text-decoration:none}
+
+
+
+
+
+/* CAR SERVICE BOX */
+/* box-shadow: 0 2px 5px rgba(0,0,0,.23);
+-webkit-border-radius: 5px; */
+/* H2 heading color and size */
+h2 {
+/* line-height: 1.5; */
+font-size: 19px;
+/* margin: 25px 0 10px 0; */
+color: #047bb3;
+font-family: OpenSansBold, arial, serif;
+}
+#content.without-aside {
+width: 960px;
+padding: 0;
+margin-bottom: 80px;
+}
+#content ul, ol {
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+/* Best Value box */
+#content.fleet ul.fleet li.best-value {
+border: #16a2e2 1px solid;
+}
+#content.fleet ul.fleet li.best-value:after {
+font-family: Arial,Helvetica,sans-serif;
+content:'Popular';
+background: url(http://thinkinglimo.com/wp-content/uploads/2013/03/fleet_blue_check_box.gif) 6px center no-repeat #16a2e2;
+border-radius: 10px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+padding: 2px 10px 0 25px;
+text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+right: 120px;
+top: -10px;
+position: absolute;
+color: #fff;
+font-size: 12px;
+line-height: 18px;
+-webkit-box-shadow: 0 1px 0 rgba(0,0,0,.3);
+-moz-box-shadow: 0 1px 0 rgba(0,0,0,.3);
+box-shadow: 0 1px 0 rgba(0,0,0,.3);
+}
+/* this one below made the first box move and the others arrange */
+#content.fleet ul.fleet {
+clear: both;
+/* margin: 20px 0; */
+display: block;
+/* height: 339px; */
+}
+#content.fleet ul.fleet li {
+width: 32%;
+min-height: 265px;
+float: left;
+background-color: #edeeed;
+box-shadow: 0 2px 5px rgba(0,0,0,.23);
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+margin: 20px 0 0 15px;
+position: relative;
+}
+#content.fleet ul.fleet li.car {
+	line-height: 18px;
+	margin-bottom: 6px;
+	margin-left:0px;
+}
+/* car box name and header */
+#content.fleet ul.fleet li h2 {
+float: left;
+width: 45%;
+margin: 0;
+padding: 15px;
+height: 50px;
+line-height: 35px;
+}
+/* car box description text*/
+#content.fleet ul.fleet li p {
+padding: 8px 10px;
+margin: 0;
+color: #000;
+font-size: 12px;
+font-weight: 700;
+height: 80px;
+float: left;
+width: 50%;
+}
+/* passenger and luggage image */
+#content.fleet ul.fleet li img.pass-lugg {
+margin: 0 auto;
+padding: 15px;
+display: block;
+float: right;
+}
+/* car box Book Now button */
+a.primary-button.small {
+padding: 8px 15px;
+font-size: 14px;
+}
+a.primary-button, a.primary-button:visited {
+border-radius: 4px;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+-webkit-box-shadow: 2px 2px 2px rgba(255,255,255,.3) inset,0px -2px 2px rgba(255,255,255,.3) inset,2px 0 2px rgba(255,255,255,.3) inset,-2px 0 2px rgba(255,255,255,.3) inset;
+-moz-box-shadow: 2px 2px 2px rgba(255,255,255,.3) inset,0px -2px 2px rgba(255,255,255,.3) inset,2px 0 2px rgba(255,255,255,.3) inset,-2px 0 2px rgba(255,255,255,.3) inset;
+box-shadow: 0 2px 2px rgba(255,255,255,.3) inset,0px -2px 2px rgba(255,255,255,.3) inset,2px 0 2px rgba(255,255,255,.3) inset,-2px 0 2px rgba(255,255,255,.3) inset;
+font-family: "Verdana",arial,sans-serif;
+font-weight:bold; 
+color: #000000;
+cursor: pointer;
+border: #f8ac32 2px solid;
+background-color: #f8ac32;
+text-shadow: 0 1px 0 rgba(255,255,255,.3);
+padding: 10px 20px;
+font-size: 19px;
+text-decoration: none;
+text-align: center;
+white-space: nowrap;
+}
+a.primary-button:hover, 
+a.primary-button:focus {
+text-decoration:none!important;
+background-color:#33b4ff;
+border:#33b4ff 2px solid!important
+}
+a.primary-button:active, 
+a.primary-button:active {
+box-shadow:inset 0 1px 3px rgba(0,0,0,.8);
+-webkit-box-shadow:inset 0 1px 3px rgba(0,0,0,.8);
+-moz-box-shadow:inset 0 1px 3px rgba(0,0,0,.8);
+}
+#content.fleet ul.fleet li a {
+float: right;
+margin: 15px;
+}
+
+
+/* PRICES PAGE table */
+table.prices tr td {}
+table.prices tr td.light, table.prices tr td.dark { padding:10px 30px; color:#000000;}
+table.prices tr td.light { background:#cccccc;}
+table.prices tr td.dark { background:#a2a2a2;}
+table.prices tr td.orange { text-align:center; color: #ffffff; background:#eda12d; padding:10px 15px;}
+/* PRICES PAGE widget button color*/
+.widget-sidebar a,
+#sidebar a,
+#sidebar_second a,
+#footer a {
+	color: #000000;
+	font-weight:normal;
+}
+/* ALL PRICES PAGE */
+#main #content.world-wide-prices ul.explore-prices{clear:both;margin:20px 0;display:block}
+#main #content.world-wide-prices ul.explore-prices li{width:23%;min-height:300px;float:left;background-color:#edeeed;box-shadow:0 2px 5px rgba(0,0,0,.23);-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px}
+#main #content.world-wide-prices ul.explore-prices li{margin:20px 0 0 15px}
+#main #content.world-wide-prices ul.explore-prices li.first{margin-left:0!important}
+
+
+/* MOBILE APP BOX */
+div#download-app {
+padding: 5px;
+border-bottom: 1px solid #ccc;
+border-top: 1px solid #ccc;
+margin: 30px 0 40px 0;
+position: relative;
+clear: both;
+}
+#download-app p {
+margin: 0;
+padding: 0!important;
+font-size: 12px;
+text-align: center!important;
+}
+div#download-app ul {
+margin: 0 auto;
+margin-top: 20px;
+width: 70%;
+list-style: none;
+}
+div#download-app ul li {
+float: left;
+margin-left: 30px;
+}
+
+/* The Thinking Advantage page */
+div#content.difference{width:960px;zoom:1;background:#f5f5f5;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;border:#e3e3e3 1px solid;margin-top:20px;padding:10px 0!important}div#content.difference:before,
+div#content.difference:after{content:"";display:table}
+div#content.difference:after{clear:both}
+div#content.difference h1{border-bottom:#e3e3e3 1px solid;text-align:center;padding:20px 0;color:#000;background:url(http://thinkinglimo.com/wp-content/uploads/2013/03/destination_dots_1.png) center center no-repeat transparent;margin:0}
+div#content.difference section.column{float:left;overflow:auto;min-height:410px;width:239px;padding:50px 0 10px 0;margin:0;text-align:center;border-right:#e3e3e3 1px solid;border-bottom:#e3e3e3 1px solid}
+div#content.difference section.column p{padding:10px 20px!important;text-align:center;font-size:14px}div#content.difference section.column h2{color:#000;text-align:center}
+div#content.difference section.column h2 span{color:#fb912b}
+div#content.difference section.column img{margin:0 auto}
+div#content.difference section.column:last-child{border-right:0}
+div#content.difference div{zoom:1;text-align:center}
+div#content.difference div:before,
+div#content.difference div:after{content:"";display:table}
+div#content.difference div:after{clear:both}
+div#content.difference div a{margin:20px auto;display:inline-block}
+
+/* BETTER THAN A TAXI PAGE table */
+/*table.limovstaxi tr td {}
+table.limovstaxi {background: #ededed;}
+table.limovstaxi tr.light { background:#cccccc;}
+table.limovstaxi tr.dark { background:#a2a2a2;} */
+#content.airport-taxi h4{text-align:center;font-size:20px;margin:25px 0 10px 0;color:#000;text-shadow:0 1px 0 rgba(255,255,255,1);font-style:italic;font-family:OpenSansBold,verdana,arial,sans-serif;}
+table.limo-vs-taxi{width:100%}
+table.limo-vs-taxi{background:#ededed}
+table.limo-vs-taxi tr.even{background:#d9d9d9}
+table.limo-vs-taxi tr td{width:32%;font-size:14px}
+table.limo-vs-taxi tr td h4{color:#047bb3!important}
+div#content.airport-taxi a.primary-button{margin:50px auto 25px auto;display:block;width:25%}
+div#car-taxi{overflow:hidden;margin:10px 0;padding:5px 60px;clear:both:}
+#car-taxi section h4{margin:0!important}
+#car-taxi section.taxi{float:left}
+#car-taxi section.car{float:right}
+td{display: table-cell;vertical-align:middle;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MOBILE APP COMING SOON PAGE */
+/* .apps h2,.apps ol,#download-app,footer{display:none}
+h1 b{display:none;font-weight:normal}
+h1 span{display:block;font-weight:normal;font-size:19px;color:#333;text-align:center}h1{font-size:28px}
+a.primary-button{display:block;width:80%;margin:25px auto;font-size:19px!important;position:relative}a:after{display:block}
+a#bb_button:after{content:url(/public/images/apps/blackberry.jpg);position:absolute;left:50%;top:100px;margin-left:-119px}a.signup{display:none}
+.links{text-align:center}
+img{display:inline-block}
+a.secondary-link{text-align:center;display:block;width:80%;margin:25px auto;position:relative}
+p.mobile-contact{text-align:center;display:block;width:80%;margin:25px auto;position:relative}
+#main .wr{width:auto}
+p#feedback{display:block;position:absolute;bottom:5px;left:10px}}@media only screen and (min-width:640px){#main .wr{width:960px}
+a.primary-button{width:auto;font-size:14px!important;margin:auto;margin-left:10px}
+a.primary-button:after{display:none;content:""}
+a.signup{display:block;position:relative;padding-top:10px;float:right;width:50%;text-align:right}
+a.secondary-link{display:none}
+p.mobile-contact{display:none}
+p#feedback{display:block;position:relative}
+footer{display:block}
+.apps h2,#download-app{display:block}
+h1 b{display:inline}
+h1 span{position:static;margin:0;text-align:left;color:#047bb3;font-family:"HelveticaNeueBold",arial,sans-serif;font-size:28px} */
+
+.apps ol{display:block;position:relative;width:580px;font-family:'OpenSansBold',arial,sans-serif;margin:20px 0 100px 0;font-size:24px;text-shadow:0 1px 0 rgba(255,255,255,0.6);background:#d9e1e4;color:#047bb3;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px}
+.apps ol li{zoom:1;margin:0!important;border-bottom:1px solid #eee;border-bottom:1px solid rgba(0,0,0,0.1);-webkit-box-shadow:0 1px 0 #fff;-moz-box-shadow:0 1px 0 #fff;box-shadow:0 1px 0 #fff}
+.apps ol li:last-child{border-bottom:0 none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}
+.apps ol li a{text-decoration:none!important;color:#047bb3;line-height:3;padding:20px 15px 20px 80px;display:block;position:relative;outline:0}
+.apps ol li:first-child{-webkit-border-top-left-radius:5px;-moz-border-radius-topleft:5px;border-top-left-radius:5px}
+.apps ol li:last-child{-webkit-border-bottom-left-radius:5px;-moz-border-radius-bottomleft:5px;border-bottom-left-radius:5px}
+.apps ol li a:hover,.apps ol li a:focus{color:#005a8f}
+.apps ol li.first a,.apps ol li.second a{line-height:1.5}
+.apps ol li:first-child a,
+.apps ol li:nth-child(2) a{line-height:1.5}
+.apps ol li img{position:absolute;display:none;right:-330px;top:50%;margin-top:-262px}
+.apps ol li.active{background-color:#3b8dac;background-image:-webkit-gradient(linear,left top,left bottom,from(#3b8dac),to(#6e9fb1));background-image:-webkit-linear-gradient(top,#3b8dac,#6e9fb1);background-image:-moz-linear-gradient(top,#3b8dac,#6e9fb1);background-image:-ms-linear-gradient(top,#3b8dac,#6e9fb1);background-image:-o-linear-gradient(top,#3b8dac,#6e9fb1);background-image:linear-gradient(top,#3b8dac,#6e9fb1);filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#3b8dac',EndColorStr='#6e9fb1')}
+.apps ol li.active a,
+.apps ol li.active a:hover,
+.apps ol li.active a:focus{color:#fff;text-shadow:0 1px 0 rgba(0,0,0,0.2);text-decoration:none;cursor:text}
+.apps ol li.active img{display:block}
+.apps ol li a:before{display:block;-moz-border-radius:40px;-webkit-border-radius:40px;border-radius:40px;border:5px solid #fff;display:inline;position:absolute;width:40px;height:40px;left:20px;top:50%;margin-top:-25px;line-height:40px;text-align:center;font-size:32px;color:#fff;text-shadow:0 1px 0 rgba(0,0,0,0.8);background:#7b9eaf;-webkit-box-shadow:0 1px 4px rgba(0,0,0,0.7);-moz-box-shadow:0 1px 4px rgba(0,0,0,0.7);box-shadow:0 1px 4px rgba(0,0,0,0.7)}
+.apps ol li.active a:before{background:#dc4800}
+.apps ol li.first a:before{content:"1"}
+.apps ol li.second a:before{content:"2"}
+.apps ol li.third a:before{content:"3"}
+.apps ol li.fourth a:before{content:"4"} 
+
+
+
+
+
+
+
+
+
+/* LAMBDA SOCIAL LINKS */
+ul.lambda-sociallinks li a.linkedin {
+		background-color: #0e76a8; 
+		}
+ul.lambda-sociallinks li a.linkedin:hover { 
+		background-color: #0079bc; 
+		}
+				
+ul.lambda-sociallinks li a.youtube {
+        background-color: #c4302b;
+        }
+ul.lambda-sociallinks li a.youtube:hover { 
+        background-color: #0079bc; 
+        }
+
+ul.lambda-sociallinks li a.googleplus {
+        background-color: #db4a39;
+        }
+ul.lambda-sociallinks li a.googleplus:hover { 
+        background-color: #0079bc; 
+        }
+
+ul.lambda-sociallinks li a.facebook {
+		background-color: #3B5998;
+		}
+ul.lambda-sociallinks li a.facebook:hover { 
+		background-color: #0079bc; 
+		}
+		
+ul.lambda-sociallinks li a.twitter {
+		background-color: #9AE4E8;
+		}
+ul.lambda-sociallinks li a.twitter:hover { 
+		background-color: #0079bc; 
+		}
+
+
+
+
+
+/* ADD FONTS */
+
+/* Open Sans Font Face */
+/* Generated by Font Squirrel (http://www.fontsquirrel.com) on March 5, 2013 04:59:48 PM America/New_York */
+/* @font-face {
+    font-family: 'OpenSansLight';
+    src: url('/fonts/OpenSans-Light-webfont.eot');
+    src: url('/fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/OpenSans-Light-webfont.woff') format('woff'),
+         url('/fonts/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('/fonts/OpenSans-Light-webfont.svg#OpenSansLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OpenSansLightItalic';
+    src: url('fonts/OpenSans-LightItalic-webfont.eot');
+    src: url('fonts/OpenSans-LightItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-LightItalic-webfont.woff') format('woff'),
+         url('fonts/OpenSans-LightItalic-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-LightItalic-webfont.svg#OpenSansLightItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OpenSansRegular';
+    src: url('fonts/OpenSans-Regular-webfont.eot');
+    src: url('fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OpenSansItalic';
+    src: url('fonts/OpenSans-Italic-webfont.eot');
+    src: url('fonts/OpenSans-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Italic-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Italic-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Italic-webfont.svg#OpenSansItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OpenSansSemibold';
+    src: url('fonts/OpenSans-Semibold-webfont.eot');
+    src: url('fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Semibold-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Semibold-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Semibold-webfont.svg#OpenSansSemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OpenSansSemiboldItalic';
+    src: url('fonts/OpenSans-SemiboldItalic-webfont.eot');
+    src: url('fonts/OpenSans-SemiboldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-SemiboldItalic-webfont.woff') format('woff'),
+         url('fonts/OpenSans-SemiboldItalic-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-SemiboldItalic-webfont.svg#OpenSansSemiboldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OpenSansBold';
+    src: url('/fonts/OpenSans-Bold-webfont.eot');
+    src: url('/fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/OpenSans-Bold-webfont.woff') format('woff'),
+         url('/fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('/fonts/OpenSans-Bold-webfont.svg#OpenSansBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OpenSansBoldItalic';
+    src: url('fonts/OpenSans-BoldItalic-webfont.eot');
+    src: url('fonts/OpenSans-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-BoldItalic-webfont.woff') format('woff'),
+         url('fonts/OpenSans-BoldItalic-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-BoldItalic-webfont.svg#OpenSansBoldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OpenSansExtrabold';
+    src: url('fonts/OpenSans-ExtraBold-webfont.eot');
+    src: url('fonts/OpenSans-ExtraBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-ExtraBold-webfont.woff') format('woff'),
+         url('fonts/OpenSans-ExtraBold-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-ExtraBold-webfont.svg#OpenSansExtrabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OpenSansExtraboldItalic';
+    src: url('fonts/OpenSans-ExtraBoldItalic-webfont.eot');
+    src: url('fonts/OpenSans-ExtraBoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-ExtraBoldItalic-webfont.woff') format('woff'),
+         url('fonts/OpenSans-ExtraBoldItalic-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-ExtraBoldItalic-webfont.svg#OpenSansExtraboldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+/* Removed from footer.php */
+/* Powered by <a href="<?php echo $copyrightlink; ?>"><?php echo $copyright; ?></a> */

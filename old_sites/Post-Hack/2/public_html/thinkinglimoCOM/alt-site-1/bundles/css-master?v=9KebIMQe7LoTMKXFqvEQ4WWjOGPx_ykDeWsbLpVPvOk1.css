@@ -1,0 +1,653 @@
+/* Minification failed. Returning unminified contents.
+(543,54): run-time error CSS1035: Expected colon, found 'height'
+ */
+@charset "utf-8";
+/* DRiVER Master Stylesheet Document */
+
+/*	==========================
+	I.		Global definitions
+	II.		Header Section
+		1.	Navigation
+		2.	Minor Navigation
+	III.	Content Section
+		1.	Top Slider
+		2.	Content Section
+		3.	App Section
+		4.	Rates Section
+		5.	FAQ Section
+		6.	News Section
+		7.	Post Section
+		8.	About Section
+		9.	Top Image Section
+		10. Drive for us Content Section
+		11. Drive for us Form Section
+		12. Signin Section
+		13. Get App Section
+		14. Signup Content
+		15. Dashboard Nav Section
+		16. Dashboard Header Section
+		17. Dashboard Content Section
+		18. Dashboard Footer Section
+	IV.		Footer Section
+		1.	Footer Navigation
+	V.		Responsive Tweaks
+	==========================	*/
+	
+/* I. Global definitions */
+body {font-size:100%; background-color:#fff; min-width:320px;}
+header > div.row-fluid, section > div.row-fluid, footer > div.row-fluid {max-width:1500px; margin:0 auto; width:auto !important;}
+.top-slider .carousel-inner .item > img {display:block; width:100%; max-width:1500px; margin:0 auto;}
+.content > .row-fluid {width:100%;}
+.content .wrapper .row-fluid {max-width:960px; margin:0 auto;}
+.content .book, .content .track, .content .seamless {max-width:1500px; margin:0 auto;}
+.app .wrapper, .rates .wrapper, .drive .wrapper, footer .wrapper {max-width:960px;}
+span.fake-checkbox {display:block; width:1.25em !important; height:1.25em !important; background:url(../img/misc/checkbox.png) no-repeat 0 0 !important; background-size: cover !important; float:left !important; margin:0.05em 0.3em 0 0;}
+span.fake-checkbox._checked {background-position:0 -1.3em !important;}
+._show {display:block;}
+._showSpecial {display:block !important;}
+
+/* II. Header Section */
+header {padding:2.376% 0 1.98%; width:100%; /*height:4.313em;*/ margin:0; background:url(../img/misc/px-transparent-fff-90.png) repeat 0 0; border-bottom:1px solid #d6d2cd; position:fixed; left:0; top:0; z-index:1001;}
+header._absolute {position:absolute;}
+header._transition {transition:top 0.6s linear; -webkit-transition:top 0.6s linear;}
+header div.row-fluid {width:960px !important; margin:0 auto;}
+header h1 {float:left; margin:0; padding:0 3.646% 0 0; width:15.875%;}
+header h1 a, header h1 a img {display:block; width:103.5%;}
+/*   1. Navigation */
+header nav {float:left; width:80.479%;}
+header nav ul {width:100%; text-align:left; margin:0; padding:1.5% 0 0;}
+header nav ul li {font:1.375em/1em 'avenirnext_regular'; color:#5f6064; position:relative; padding:0 2% 0 3% !important;}
+header nav ul li:first-child {padding-left:0 !important;}
+header nav ul li a {color:#5f6064; text-decoration:none;}
+header nav ul li a:hover, header nav ul li a.active {color:#006a9f; text-decoration:none;}
+header nav ul li:before {content:"•"; font-size:0.5em; position:absolute; left:0;}
+header nav ul li:first-child:before{content:"";}
+header nav ul li.fR {float:right; padding:0 !important; font-size:1.25em; line-height:2em; margin-top:-0.5em; background:#f02400; -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px; width:180px;}
+header nav ul li.fR:hover {background:#047bb3;} /*By Andre*/
+header nav ul li.fR a {color:#fff; line-height:2em; display:block; width:100%; text-align:center;}
+header nav ul li.fR a:hover {color:#fff;}
+header nav ul li.fR:before {content:"";}
+/*   2. Minor Navigation */
+header div.extra-nav > ul {font-size:0.688em; line-height:1em; margin:0; padding:0;}
+header div.extra-nav > ul > li {position:relative; font:1em/1em "avenirnext_condensed_medium"; padding:1px 0 0 1em !important; text-transform:uppercase; display:block; float:left;}
+header div.extra-nav > ul > li > a {font:1em/1em "avenirnext_condensed_medium"; color:#2b2c32; text-decoration:none; outline:none !important;}
+header div.extra-nav > ul > li > a:hover {color:#006a9f; text-decoration:none;}
+header div.extra-nav > ul > li > a span {border:none !important;}
+header div.extra-nav > ul > li > a span.caret {width:0.727em; height:0.9em; background:url(../img/misc/chevron-small.png) no-repeat 0 center; background-size:contain; margin:0 1em 0 0.1em;}
+header div.extra-nav > ul > li:first-child:after {content:"|";}
+header div.extra-nav > ul > li:first-child {padding-left:0 !important;}
+header div.extra-nav > ul > li.user-area {float:right; padding-right:0 !important; width:11em; text-align:right;}
+header div.extra-nav > ul > li.user-area.logged {width:50%;}
+header div.extra-nav > ul > li.user-area a {display:inline-block; color:#006a9f;}
+header div.extra-nav > ul > li.user-area a.signin {margin-top:-0.5em; background:#006a9f; font:1.272em/2em 'avenirnext_regular'; color:#fff; text-transform:none; padding:0 7.44%; -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;}
+header div.extra-nav > ul > li.user-area span {padding:0 3%; display:inline-block; color:#1a1b1f;}
+header div.extra-nav > ul > li.user-area.logged span {padding:0;}
+header div.extra-nav > ul > li.user-area.logged a {padding-right:3%;}
+header div.extra-nav > ul > li.user-area.logged a.signout {margin-top:-0.5em; background:#006a9f; font:1.272em/2em 'avenirnext_regular'; color:#fff; text-transform:none; padding:0 2.44%; -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;}
+header div.extra-nav .dropdown-menu > li > a:hover, header div.extra-nav .dropdown-menu > li > a:focus, header div.extra-nav .dropdown-submenu:hover > a, header div.extra-nav .dropdown-submenu:focus > a {background-color:#006a9f;}
+
+/* III. Content Section */
+.wrapper {width:960px; margin:0 auto;}
+
+/*   1. Top Slider */
+.top-slider {}
+.top-slider .row-fluid {max-width:none;}
+.top-slider .carousel {margin:0;}
+.top-slider .carousel-control {height:19.83%; width:4.6%; margin:0; top:50%; text-indent:-9999px; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0; border:none; padding:0;}
+.top-slider .carousel-control.left {left:1px; background:#5f6064 url(../img/misc/arrow-left-white.png) no-repeat center center; background-size:37% 54%;}
+.top-slider .carousel-control.left:hover {opacity:0.75; filter:alpha(opacity=75);}
+.top-slider .carousel-control.right {right:1px; background:#5f6064 url(../img/misc/arrow-right-white.png) no-repeat center center; background-size:37% 54%;}
+.top-slider .rightButtonHolder {height:19.83%; padding:0; background:#5f6064; width:18.667%; position:absolute; top:50%; right:1px; opacity:0.5; filter:alpha(opacity=50); cursor:pointer;}
+.top-slider .rightButtonHolder:hover {opacity:0.75; filter:alpha(opacity=75);}
+.top-slider .rightButtonHolder .carousel-control.right {right:0; top:0; margin:0; padding:0; height:100%; width:24.645%; background-color:none; opacity:1; filter:alpha(opacity=100);}
+.top-slider .rightButtonHolder p {position:absolute; left:0; top:0; font:1.5em/1em 'avenirnext_ultralight'; color:#fff; width:75%; padding:1% 7% 0; margin:0; z-index:4;}
+.top-slider span.carousel-status {position:absolute; right:1px; top:70%; margin-top:0; display:block; background-color:#2b2c32; font:0.75em/3.166em 'trade_gothic_oblique'; color:#fff; padding:0 2%;}
+.top-slider .carousel-inner .item > div.slide-content {position:absolute; top:0; left:0;}
+.top-slider .carousel-inner .item > div.slide-content.template1 {width:40%; margin:0 0 0 6%; text-align:center;}
+.top-slider .carousel-inner .item > div.slide-content.template1 h2 {font:3.125em/1.04em 'avenirnext_ultralight'; color:#2b2c32; padding-top:30%; width:100%; margin:0 auto;}
+.top-slider .carousel-inner .item > div.slide-content.template1 h2 span {font:0.36em/2.888em 'avenirnext_regular'; display:block;}
+.top-slider .carousel-inner .item > div.slide-content.template2 {width:45%; margin:0 0 0 15.5%; text-align:center;}
+.top-slider .carousel-inner .item > div.slide-content.template2 h2 {font:3em/1.24em 'avenirnext_ultralight'; color:#fff; padding-top:35.483%; margin:0;}
+.top-slider .carousel-inner .item > div.slide-content.template2 h2 span {font:0.76em/1.316em 'avenirnext_ultralight'; display:block;}
+.top-slider .carousel-inner .item > div.slide-content.template2 h3 {font:1.25em/1.1em 'avenirnext_regular'; color:#fff; padding:6% 0 3.335%; margin:0;}
+.top-slider .carousel-inner .item > div.slide-content.template2 ul {list-style:none; margin:0; padding:0;}
+.top-slider .carousel-inner .item > div.slide-content.template2 ul li {display:inline; padding-left:1%;}
+.top-slider .carousel-inner .item > div.slide-content.template2 ul li:first-child {padding-left:0;}
+.top-slider .carousel-inner .item > div.slide-content.template2 ul li img {width:3.7%;}
+
+/*   2. Content Section */
+.content .wrapper {padding-bottom:3.667%;}
+.content .wrapper h2 {font:3.636em 'avenirnext_ultralight'; text-align:center; color:#2b2c32; margin:0; padding:6.25% 0 4.689%;}
+.content .wrapper img {display:block; width:9.5%;}
+.content .wrapper h4 {font:1.438em 'avenirnext_regular'; color:#2b2c32; margin:0; padding:6.53% 0 8.16%;}
+.content .wrapper p {font:1em/1.375em 'pt_sans_regular'; color:#1a1b1f; margin:0 10% 0 0; padding:0;}
+.content .row-fluid.book {padding:0; overflow:hidden; background:#efefef; max-width:none !important;}
+.content .row-fluid.track {padding:0; overflow:hidden; background:#dbdbd8; max-width:none !important;}
+.content .book {background:#efefef url(../img/misc/f/phone-bg-1.jpg) no-repeat 0 0; background-size:auto 100%; overflow:hidden; padding:9.334% 0 9.334%;}
+.content .track {background:#dbdbd8 url(../img/misc/f/phone-bg-2.jpg) no-repeat right 0; background-size:auto 100%; overflow:hidden; padding:9.334% 0 9.334%;}
+.content .seamless {background:#efefef url(../img/misc/f/phone-bg-3.jpg) no-repeat 0 0; background-size:auto 100%; overflow:hidden; padding:8% 0 6.667%;}
+.content .inner {width:960px; margin:0 auto;}
+.content .inner h2 {font:2.555em/1.517em 'avenirnext_regular'; color:#006a9f; margin:0 0 -4px; padding:0 1.25%; border:4px solid #fff; background:url(../img/misc/px-transparent-fff-50.png) repeat 0 0; float:left;}
+.content .inner p {font:1.533em/1.417em 'avenirnext_regular'; color:#006a9f; margin:0; padding:0 1.25%; width:50%; border:4px solid #fff; background:url(../img/misc/px-transparent-fff-50.png) repeat 0 0; clear:both;}
+.content .book .inner, .content .seamless .inner {float:right; margin:0 18% 0 0; width:32%;}
+.content .book .inner h2, .content .seamless .inner h2 {padding:0 2.5%;}
+.content .book .inner p, .content .seamless .inner p {width:100%; padding:0 2.5%;}
+
+/*   3. App Section */
+.app {background-color:#006a9f; padding:3.334% 0 5.334%;}
+.app .left {text-align:center;}
+.app .left > img {width:28.95%;}
+.app .left h2 {font:3.636em/0.945em 'avenirnext_ultralight'; color:#fff; margin:0; padding:4% 12%;}
+.app .left p {font:1.24em/2.757em 'avenirnext_regular'; color:#fff; margin:0; padding:0 0 2.13%;}
+.app .left ul {margin:0 auto; padding:0 0 6.39%; width:50%;}
+.app .left ul li {padding:0; width:11%;}
+.app .left ul li a {display:block; width:100%; text-decoration:none !important;}
+.app .left ul li a img {width:100%;}
+.app .left fieldset {overflow:hidden;}
+.app .left fieldset input[type="text"] {-webkit-border-radius:0; -moz-border-radius:0; border-radius:0; border:none; margin:0; padding:2.13% 3.195%; font:1.125em 'avenirnext_regular'; color:#2b2c32; height:auto; width:60%;}
+.app .left fieldset input[type="submit"] {-webkit-border-radius:6px; -moz-border-radius:6px; border-radius:6px; border:none; background-color:#005783; margin:0 0 0 2.13%; padding:2.13% 2.26%; font:1.125em 'avenirnext_regular'; color:#fff;}
+.app .right img {display:block; float:right; width:80%; padding:6% 0;}
+
+/*	4. Rates Section */
+.rates {background:#2b2c32 url(../img/misc/map.png) no-repeat center 0; background-size:auto 100%; text-align:center; padding:3.334% 0;}
+.rates h2 {font:3.438em/1em 'avenirnext_ultralight'; color:#efefef; margin:0; padding:0 0 1.563%;}
+.rates p {font:1.25em/1em 'avenirnext_regular'; color:#efefef; margin:0; padding:0 0 2%;}
+.rates p.vat {font:0.813em 'avenirnext_regular'; padding:3.125% 0 0;} 
+.rates .cityDropdown {width:35.4%; font-size:100%; margin-bottom:2%;}
+.rates .cityDropdown > a {margin:0 0 0 10% !important; outline:none; background:#fdfdfc !important; -webkit-border-radius:0 !important; -moz-border-radius:0 !important; border-radius:0 !important; padding:2.71%; display:block; text-align:left; font:1em 'avenirnext_regular'; color:#5f6064; position:relative; border:none;}
+.rates .cityDropdown > a:hover {background:#fdfdfc !important;}
+.rates .cityDropdown > ul {right:0; left:auto; background:#fdfdfc;}
+.rates .cityDropdown > a span.caret, .rates .drivrDropdown > a span.caret {border:none; background-color:#f00; width:5.615%; height:19.57%; position:absolute; right:2%; top:50%; margin:-1.46px 0 0; background:url(../img/misc/chevron.png) no-repeat 0 0; background-size:contain;}
+.rates .cityDropdown ul {margin:0; padding:0; width:84.58%; padding:0 2.71%; margin:0 0 0 10% !important; border:none; -webkit-box-shadow:none; -moz-box-shadow:none; box-shadow:none; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0; top:90%; min-width:0; font-size:100%;}
+.rates .cityDropdown ul li {margin:0; padding:0; width:100%; text-align:left;}
+.rates .cityDropdown ul li a {padding:0 0 0 5%; font:0.9em/2em 'avenirnext_regular'; color:#5f6064; width:100%; white-space:normal; background:none !important;}
+.rates .cityDropdown ul li a:hover {background:none; color:#006a9f;}
+.rates .cityDropdown ul li span {margin:0; padding:0;}
+.rates table {padding:0; border-bottom:1px solid #45464b; margin:0 5.25%;}
+.rates .span5:first-child table {border:none;}
+.rates .span5:first-child table h2 {font:1.1em/1.188em 'avenirnext_condensed_demibold'; color:#fff; margin:0; padding:0; padding-top:3%;}
+.rates .span5:first-child tr:first-child h2:first-child {padding-top:1%;}
+.rates .span5:first-child table p {font:1em/1.462em 'pt_sans_regular'; color:#fff; margin:0; padding:0}
+.rates .tables {width:100%;}
+.rates table td.no-border {border: none;}
+.rates table th {font:1.1em/1.25em 'avenirnext_condensed_medium'; color:#006a9f; text-align:center; text-transform:uppercase;}
+.rates table td {font:0.9em/1.462em 'pt_sans_regular'; color:#efefef; text-align:center; border-top:1px solid #45464b; width:17%;padding: 3px 0 3px 0;}
+.rates table tr:first-child td {border:none;}
+.rates .span4:first-child table td {border:none;}
+/*.rates .span4:first-child table td {border:none;}*/
+.rates .span4:first-child table p {font:0.813em/1.462em 'pt_sans_regular'; color:#fff; margin:0; padding:0 25% 0 0;}
+.rates table:first-child tbody tr:first-child {border-top:1px solid #595a5f;}
+.rates .span5:first-child table tbody tr:first-child {border:none;}
+.rates table th:first-child {text-align:left; width: 13%;}
+.rates table td:first-child {text-align:left; width:17%;}
+
+/*	5.	FAQ Section */
+.faq {background:#efefef; padding:3.667% 0 5%;}
+.faq h3 {font:1.875em/1em 'avenirnext_ultralight'; color:#2b2c32; margin:0; padding:0; text-align:center;}
+.faq h5 {font:1em/1.375em 'pt_sans_bold'; color:#2b2c32; margin:0; padding:8.16% 0 0;}
+.faq p {font:1em/1.375em 'pt_sans_regular'; color:#2b2c32; margin:0; padding:0;} 
+.faq p a {color:#006a9f; text-decoration:underline;}
+
+/*	6.	News Section */
+.news {background-color:#f7f7f7; padding:5% 0;}
+.news.postpage {padding-bottom:8.667%;}
+.news > div > h2 {text-align:center; font:3.636em/1em 'avenirnext_ultralight'; color:#2b2c32; margin:0; padding:12.373% 0 0;}
+.news > div > h4 {font:1.5em/1.458em 'avenirnext_condensed_medium'; color:#5f6064; margin:0; padding-bottom:1.355%;}
+.news > div > p {text-align:center; font:1.25em/1em 'avenirnext_regular'; color:#1a1b1f; padding:2.084% 0 6.251%;}
+.news > div > a, .news > div > a:hover {font:1em/1em 'avenirnext_medium'; color:#006a9f; text-decoration:none; padding-top:1em; clear:both; display:inline-block;}
+.news .row-fluid {background-color:#191a1f;}
+.news .row-fluid.blogs, .news .row-fluid.blogs3row .large {height:30.126em;}
+.news .row-fluid.blogs3row {height:45.189em;}
+.news .row-fluid.blogs .row-fluid, .news .row-fluid.blogs3row .row-fluid, .news .row-fluid.blogs1row {height:15.063em;}
+.news .row-fluid .span6 {width:50%; margin:0; height:100%; position:relative;}
+.news .row-fluid .span3 {width:25%; margin:0; height:100%; position:relative;}
+.news .row-fluid .span6.bgmain, .news .row-fluid .span3.bgmain {background:url(../img/misc/news-bg.jpg) repeat-x 0 0; background-size:auto 100%;}
+.news .row-fluid .span6.bgsmall, .news .row-fluid .span3.bgsmall {background:url(../img/misc/news-bg-small.jpg) repeat-x 0 0; background-size:auto 100%;}
+.news img {width:100%; height:100%;}
+.news h6 {position:absolute; top:0; left:0; margin:0 0 0 2.5%; padding:0 0.786em; font:0.875em/2.5em 'avenirnext_medium'; color:#fff; background-color:#f02400;}
+.news .post {position:absolute; bottom:0.875em; left:8%; width:82%; overflow:hidden; color:#fff;}
+.news .large .post {width:90%; left:5%;}
+.news .post a, .news .post a:hover {color:#006a9f; text-decoration:none;}
+.news .post span.comments {float:right; background:url(../img/misc/comments.png) no-repeat 0 0; background-size:auto 100%; padding:0 0 0.1em 1.5em; font:0.688em/1em 'pt_sans_regular';}
+.news .large .post span.comments {margin-top:1em;}
+.news .post h3 {margin:0; padding:0; font:0.938em/1em 'pt_sans_bold';}
+.news .post h3 a, .news .post h3 a:hover {color:#fff;}
+.news .post p {margin:0; padding:0; font:0.813em  'pt_sans_regular';}
+.news .large .post h3 {font:1.625em/1em 'avenirnext_regular';}
+.news .large .post p {margin:0; padding:0; font:1em/1.25em  'pt_sans_regular';}
+.news .post p.date {font-size:0.688em}
+.news .post .poster {overflow:hidden; vertical-align:middle;}
+.news .post .poster .image {float:left; width:24.08%;}
+.news .large .post .poster {width:50%;}
+.news .post .poster .icon {float:left; width:8.334%; margin:7% 4.63% 0;}
+.news .post .poster p {font:0.875em/1.071em 'avenirnext_medium'; color:#acadb1; padding-top:6%;}
+.news .photo .post .poster p {color:#fff; font-size:0.813em; padding-top:7%;}
+.news .post .poster img {height:auto;}
+.news .tweet .post {position:static; margin:0 8%;}
+.news .tweet.large .post {margin:0 5%;}
+.news .photo .post p {font-size:0.938em; padding-top:2%;}
+.news .tweet .post > p {font-size:1.25em; padding-top:5%; word-wrap:break-word;}
+.news .tweet.large .post > p {font-size:2.25em;}
+
+/*	7.	Post Section */
+.newspost {background-color:#f7f7f7; padding:4.989% 0 0;}
+.newspost > div {overflow:hidden;}
+.newspost > div > h3 {width:75%; font:3.63em 'avenirnext_ultralight'; color:#2b2c32; margin:0; padding:11.135% 0 3.093%;}
+.newspost > div > img {display:block; width:75%; height:auto;}
+.newspost > div > h5 {float:left; min-width:25%; font:0.875em/2.571em 'avenirnext_medium'; color:#fff; background-color:#f02400; margin:0; padding:0 1.043%; clear:both;}
+.newspost div.content {clear:left; float:left; width:74%; padding-top:1.564%;}
+.newspost div.content p {font:1em/1.25em 'pt_sans_regular'; color:#2b2c32; margin:0; padding:3.52% 0 0;}
+.newspost div.content p strong, .newspost div.content p b {font-weight:normal; font-family:'pt_sans_bold';}
+.newspost div.content p a, .newspost div.content p a:hover {color:#006a9f;}
+.newspost div.sidebar {float:right; width:25%;  padding-top:1.564%;}
+.newspost div.sidebar > div.img {padding-top:10.42%; width:17.92%;}
+.newspost div.sidebar > div.img img {display:block; width:100%;}
+.newspost div.sidebar p.date {font:1em 'pt_sans_regular'; color:#5f6064; margin:0; padding:6.25% 0 0;}
+.newspost div.sidebar p.author{font:1em 'pt_sans_regular'; color:#5f6064; margin:0; padding:0;}
+.newspost div.sidebar p.author span {font-family:'pt_sans_bold';}
+.newspost div.sidebar h6 {font:1.5em/1em 'avenirnext_condensed_medium'; color:#5f6064; text-transform:uppercase; margin:0; padding:14.585% 0 6.25%;}
+.newspost div.sidebar .span6 {margin:0; width:50%; height:5.188em;}
+.newspost div.sidebar .span6 a {display:block; width:100%; height:5.188em; line-height:5.188em; text-decoration:none; vertical-align:middle; text-align:center;}
+.newspost div.sidebar .span6 a.facebook {background-color:#dbdbd8;}
+.newspost div.sidebar .span6 a.facebook:hover {opacity:0.75; filter:alpha(opacity=75);}
+.newspost div.sidebar .span6 a.twitter {background-color:#efefef;}
+.newspost div.sidebar .span6 a.twitter:hover {opacity:0.75; filter:alpha(opacity=75);}
+.newspost div.sidebar .span6 a:hover {text-decoration:none;}
+.newspost div.sidebar ul {margin:0; padding:0; list-style:none; overflow:hidden;}
+.newspost div.sidebar li {display:block; width:100%;}
+.newspost div.sidebar li a {display:block; font:1em/2.125em 'avenirnext_condensed_medium'; color:#fff; padding:0 0.625em; text-decoration:none;}
+.newspost div.sidebar li a:hover {color:#ddd; text-decoration:none;}
+.newspost div.sidebar li.level1 a {width:100%; background-color:#000;}
+.newspost div.sidebar li.level2 a {width:80%; background-color:#1a1b1f;}
+.newspost div.sidebar li.level3 a {width:60%; background-color:#2b2c32;}
+.newspost div.sidebar li.level4 a {width:40%; background-color:#5f6064;}
+
+/*	8.	About Section */
+.about-us {background-color:#efefef; padding-bottom:4.667%;}
+.about-us h2 {font:5.195em/1em 'avenirnext_ultralight'; color:#006a9f; margin:0; padding:5.73% 0 8.334%; text-align:center;}
+.about-us cite {font: 1.825em/1.231em 'avenirnext_ultralight'; color: #5f6064; display: block; margin-bottom: 10px;}
+.about-us .span4 > span {font:1em/1.25em 'pt_sans_regular'; color:#2b2c32;}
+.about-us h6 {font:1em/1.375em 'pt_sans_bold'; color:#2b2c32; margin:0; padding:0;}
+.about-us p {font:1em/1.375em 'pt_sans_regular'; color:#2b2c32; margin:0; padding:0;}
+.about-us > p{line-height: 1.555em;}
+.about-us ul {list-style:none; margin:0; padding:0;}
+.about-us ul li {overflow:hidden; padding-bottom:3.88%;}
+.about-us ul li > div {display:block; float:left; width:11.63%; padding-right:5.815%;}
+.about-us ul li.about-phone > div {height:2.673em; line-height:2.673em; vertical-align:middle;}
+.about-us ul li.about-mail {vertical-align: middle; height: 2em; line-height: 2.5em;}
+.about-us ul li.about-facebook {vertical-align: middle; height: 2em; line-height: 1.9em;}
+.about-us ul li.about-twitter {vertical-align: middle; height: 2em; line-height: 2em;}
+.about-us ul li p {float:left;}
+.about-us ul li p a {margin-top:5.334%; display:block; float:left;}
+.about-us .row-fluid {padding-bottom:7.293%;}
+.about-us .google-maps {background-color:#f7f7f7; padding:1.146%;}
+.about-us .google-maps img {display:block; width:100%;}
+
+/*	9.	Top Image Section */
+.top-image {padding-top:8.934%;}
+.top-image .stand-alone-image {width:100%; background:url(../img/misc/about-us.jpg) no-repeat 0 0; background-size:contain;}
+.top-image .stand-alone-image img {display:block; width:100%; height:auto; opacity:0; filter:alpha(opacity=0);}
+.top-image.drive-for-us-image {padding:0; position:relative;}
+.top-image.drive-for-us-image .stand-alone-image {background:url(../img/misc/drive-for-us.jpg) no-repeat 0 0; background-size:contain;}
+.top-image .wrapper {position:absolute; bottom:0; left:0; width:960px; margin:0 18%;}
+.top-image h2 {font:5.195em/1em 'avenirnext_ultralight'; color:#fff; text-align:center; margin:0; padding:0 0 1.563%;}
+.top-image h3 {font:1.875em/1em 'avenirnext_regular'; color:#fff; text-align:center; margin:0; padding:0 0 6.25%;}
+
+/*	10.	Drive for us Content Section */
+.drive-for-us-content {background-color:#fff; padding:2.667% 0 3%;}
+.drive-for-us-content img {width:41.78%;}
+.drive-for-us-content h3 {font:1.438em/1em 'avenirnext_regular'; color:#2b2c32; margin:0; padding:6.53% 0 9.795%;}
+.drive-for-us-content p {font:1em/1.375em 'pt_sans_regular'; color:#1a1b1f; margin:0;}
+
+
+/*	11.	Drive for us Form Section */
+.drive-for-us-form {background:#f7f7f7 url(../img/misc/drive-for-us-form-background.png) no-repeat center bottom; background-size:50% auto; padding:3.334% 0 21.667%;}
+.drive-for-us-form.signup {background:#f7f7f7; padding-bottom:5%;}
+.drive-for-us-form.signup._edit .wrapper {background-color:#fff;}
+.drive-for-us-form .row-fluid {width:80%; margin:0 auto;}
+.drive-for-us-form h2 {font:3.75em/1em 'avenirnext_ultralight'; color:#006a9f; margin:0; text-align:center;}
+.drive-for-us-form h4 {font:1.351em/1em 'avenirnext_condensed_demibold'; color:#2b2c32; margin:0; padding:10.645% 0 6.655%;}
+.drive-for-us-form h4 {font:1.351em/1em 'avenirnext_condensed_demibold'; color:#2b2c32; margin:0; padding:10.645% 0 0;}
+.drive-for-us-form h4:first-child {padding-bottom:6.655%;}
+.drive-for-us-form h5 {font:0.935em/1em 'pt_sans_bold'; color:#2b2c32; margin:0; padding:9.313% 0 1.334%;}
+.drive-for-us-form label {font:0.935em/1.555em 'pt_sans_regular'; color:#2b2c32; margin:0; padding:1.334% 0;}
+.drive-for-us-form label span {color:#c00000;}
+.drive-for-us-form .option {overflow:hidden; clear:both;}
+.drive-for-us-form .option input[type='checkbox'] {display:block; float:left;}
+.drive-for-us-form .option label {display:block; float:left; padding:0; line-height:1.555em;}
+.drive-for-us-form input[type="text"], .drive-for-us-form input[type="password"], .drive-for-us-form input[type="email"], .drive-for-us-form textarea {width:94.46%; padding:2.664%; font:1.125em/1em 'pt_sans_regular'; color:#5f6064; margin:0; outline:none; border:1px solid #d8d7d9; height:1em; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0; background-color:#fdfdfc;}
+.drive-for-us-form textarea { height: 5.06em; }
+.drive-for-us-form input.error {border-color:#f02400;}
+.drive-for-us-form input.resetable {color:#a9aaaa;}
+.drive-for-us-form input.resetable._notDefault {color:#5f6064;}
+.drive-for-us-form .cars .row-fluid {width:100%; margin:0;}
+.drive-for-us-form .cars .form-row {overflow:hidden; clear:both; padding-bottom:1.09%;}
+.drive-for-us-form .cars input[type="text"]{width:59.82%; height:1.5em; display:block; float:left; padding-top:0; padding-bottom:0;}
+.drive-for-us-form .cars input[type="text"]:first-child {width:1.5em; text-align:center; margin-right:0.3em; padding:0;}
+.drive-for-us-form .cars label {display:block; float:left; padding:0; line-height:1.8em;}
+.drive-for-us-form .agree {text-align:center; padding:4.167% 0 3.125%;}
+.drive-for-us-form .agree span.fake-checkbox {display:inline-block; float:none !important; top:0.2em; position:relative;}
+.drive-for-us-form .agree label {padding:0; display:inline-block;}
+.drive-for-us-form .agree label a, .drive-for-us-form .agree label a:hover {color:#006a9f; text-decoration:none;}
+.drive-for-us-form .submit {text-align:center;}
+.drive-for-us-form .submit input[type="submit"] {border:none; outline:none; background-color:#006a9f; font:1.875em/2.367em 'avenirnext_ultralight'; color:#fff; height:2.367em; padding:0 4.167%; -webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px;}
+.drive-for-us-form p {font:1.25em 'avenirnext_regular'; color:#2b2c32; margin:0; text-align:center; padding:1.563% 0 2.084%;}
+.drive-for-us-form p#error {padding:5% 0; color:#f02400; text-align:center;}
+.drive-for-us-form.signup p {font:0.935em/1.555em 'pt_sans_regular'; color:#2b2c32; margin:0; padding:0 0 3.995%; text-align:left;}
+.drive-for-us-form form, .drive-for-us-form form fieldset {margin:0; padding:0;}
+.drive-for-us-form form .form-row.select {width:26.962%; margin:1.043% auto 0; position:relative;}
+.drive-for-us-form form .form-row.overlay {position:relative;}
+.drive-for-us-form form .form-row.overlay > span {display:block; position:absolute; left:1px; bottom:0; background:#dededb; padding:2.664%; font:1em/1.125em 'pt_sans_regular'; color:#2b2c32; width:6.92%; text-align:center;margin-bottom: 1px;}
+.drive-for-us-form form .form-row.overlay.error-parent > span {border-color:#ee3124;}
+.drive-for-us-form form .form-row.overlay > input {padding-left:14.635%; width:82.485%;}
+.drive-for-us-form form .fakeSelect {font:0.935em/2.272em 'avenirnext_medium'; color:#2b2c32; display:block; background:url(../img/misc/dropdown-bg.png) repeat-x 0 0; background-size:auto 100%; text-decoration:none; padding:0 14.35% 0 6.525%; outline:none !important; -webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px;}
+.drive-for-us-form form .fakeSelect:hover {text-decoration:none; color:#2b2c32;}
+.drive-for-us-form form .open .fakeSelect {-webkit-border-bottom-left-radius:0; -webkit-border-bottom-right-radius:0; -moz-border-radius-bottomleft:0; -moz-border-radius-bottomright:0; border-bottom-left-radius:0; border-bottom-right-radius:0;}
+.drive-for-us-form form .fakeSelect span.caret {border:none; background:url(../img/misc/chevron-select.png) no-repeat 0 center; background-size:100% auto; position:absolute; top:0; right:0; width:4.35%; height:2.272em; margin-right:4.35%;}
+.drive-for-us-form div.preloader {padding:10% 0;}
+.drive-for-us-form div.preloader img {display:block; margin:0 auto; height:4em; width:auto;}
+.drive-for-us-form .driver-registered h2 {font:5.714em/1em 'avenirnext_ultralight'; color:#2b2c32; margin:0; padding:5% 0 2.667%;}
+.drive-for-us-form .driver-registered p {font:1.375em/1.182em 'avenirnext_regular'; color:#2b2c32; margin:0; padding:0 0 5%; text-align:center;}
+.drive-for-us-form .driver-registered p a, .drive-for-us-form .driver-registered p a:hover {color:#006a9f; text-decoration:none;}
+.drive-for-us-form.signup .details {clear:both;}
+.drive-for-us-form.signup .details .row-fluid {width:100%;}
+.drive-for-us-form.signup form .details .row-fluid .span6 {width:60%; margin:0;}
+.drive-for-us-form.signup form .details .row-fluid .span6:first-child {width:40%;}
+.drive-for-us-form.signup form .details .row-fluid .span6 label {padding:3.42% 0;}
+.drive-for-us-form.signup form .details .row-fluid .span6:first-child label {padding:3.334% 0;}
+.drive-for-us-form.signup form .details .row-fluid .span6 .span6 {width:48%; margin-left:4%;}
+.drive-for-us-form.signup form .details .row-fluid .span6 .span6:first-child {margin:0;}
+.drive-for-us-form.signup form .details .form-row.select {width:100%; margin:0;}
+.drive-for-us-form.signup form .fakeSelect {padding:0 34.667% 0 13.875%;}
+.drive-for-us-form.signup form .fakeSelect span.caret {width:13.86%; margin-right:9.72%;}
+.drive-for-us-form.signup img {margin-top:6.66%; width:52.5%}
+.drive-for-us-form.signup .cvc-block {width:65%; float:right;}
+.drive-for-us-form.signup form .details .row-fluid .span6 > img {display:block; float:right; margin:19.96% 0 0 3%; width:7.25%;}
+.drive-for-us-form.signup input.tiny {padding:6.83%; width:auto; width:82.37%;}
+.drive-for-us-form.signup form .dropdown-menu {width:100%; min-width:0;}
+.drive-for-us-form.signup form .dropdown-menu a {padding:0 34.667% 0 13.875%;}
+
+.drive-for-us-form form .dropdown-menu {margin:0; padding:0; width:100% !important; border:none; -webkit-box-shadow:none; -moz-box-shadow:none; box-shadow:none; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0; background-color:#dbdbd8; outline:none !important;}
+.drive-for-us-form form .dropdown-menu li {line-height:none; display:block;}
+.drive-for-us-form form .dropdown-menu li a {padding:0 6.525%; display:block; font:0.935em/2.272em 'avenirnext_medium'; height:2.272em; display:block;}
+.drive-for-us-form form .jspContainer {outline:none !important; width:100% !important;}
+.drive-for-us-form form .jspContainer .jspPane {outline:none !important; width:100% !important; }
+
+.drive-for-us-form form .payment-info {position:relative;}
+.drive-for-us-form form .payment-info .overlay {position:absolute; left:0; top:0; width:101%; height:100%; background:url(../img/misc/px-transparent-fff-75.png) repeat 0 0;}
+
+/*	12.	Signin Section */
+.signinform {width:100%; background-color:#1a1b1f; z-index:1001; padding:3.667% 0 1.534%; display:none;}
+.signinform form {margin:0;}
+.signinform form label {display:block; float:left; font:1.875em/1.334em 'avenirnext_regular'; color:#006a9f; margin:0 2.188% 0 0;}
+.signinform form input {border:none; display:block; float:left; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0; margin:0 0 0 0.938%; font:1.25em/1em 'avenirnext_regular'; color:#5f6064; height:1em; width:22.293%; padding:0.5em 1.355%; background-color:#fdfdfc;}
+.signinform form input.error {background-color:#ffc4c4;}
+.signinform form input[type="submit"] {background-color:#006a9f; font:1.25em/2em 'avenirnext_regular'; color:#fff; height:2em; padding:0; width:100%; text-align:center; margin:0;}
+.signinform form fieldset > a {display:block; float:right; text-indent:-9999px; display:block; background:url(../img/misc/close.png) no-repeat 0 0; background-size:100%; height:2.5em; width:2.5em;}
+.signinform form div.submit {float:left; text-align:center; width:15.834%; margin:0 0 0 0.938%;}
+.signinform form div.submit a, .signinform form div.submit a:hover {font:0.75em/2.667em 'pt_sans_regular'; color:#006a9f; text-decoration:none;}
+/*	13.	Get App Section */
+.get-app {padding:13% 0 5%; background-color:#f7f7f7;}
+.get-app h2 {font:5.714em/1em 'avenirnext_ultralight'; color:#2b2c32; text-align:center; margin:0; padding:0;}
+.get-app h3 {font:3.125em/1em 'avenirnext_ultralight'; color:#2b2c32; text-align:center; margin:0; padding:5% 0 4.168%;}
+.get-app .row-fluid {width:62.5%; margin:0 auto;}
+.get-app p {font:0.875em/1.429em 'avenirnext_regular'; color:#2b2c32; margin:0; padding:0 0 15.33% 11.925%;}
+.get-app .span6:first-child p {padding-left:0;}
+.get-app > .wrapper > .row-fluid > a {display:block; clear:both; font:1.125em/3.333em 'avenirnext_regular'; color:#fff; background-color:#006a9f; -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px; text-align:center; width:48%; margin:0 auto; text-decoration:none;}
+.get-app > .wrapper > .row-fluid > a:hover {color:#fff; text-decoration:none;}
+.get-app > .wrapper > img {display:block; margin:5% auto 0; width:59.9%;}
+
+/*	14.	Signup Content Section */
+.signup-header {padding:12% 0 2%; background-color:#f7f7f7;}
+.signup-header h2 {font:5.188em/1em 'avenirnext_ultralight'; color:#006a9f; text-align:center; margin:0; padding:0;}
+.signup-header p {font:1.25em 'avenirnext_regular'; color:#2b2c32; text-align:center; margin:0; padding-top:1.043%;}
+.signup-content {background-color:#006a9f; padding:4% 0;}
+.signup-content img {width:41.78%;}
+.signup-content h3 {font:1.438em/1em 'avenirnext_regular'; color:#fff; margin:0; padding:6.53% 0 9.795%;}
+.signup-content p {font:1em/1.375em 'pt_sans_regular'; color:#fff; margin:0;}
+
+/*	15.	Dashboard Nav Section */
+.dashboard-nav {margin-top:8.934%; padding:0; background:#1a1b1f;}
+.dashboard-nav > div {overflow:hidden;}
+.dashboard-nav h2 {font:1.75em/2.364em 'avenirnext_regular'; color:#fff; float:left; margin:0; padding:0;}
+.dashboard-nav ul {list-style:none; margin:0; padding:0; overflow:hidden; padding-left:3.125%;}
+.dashboard-nav ul li {display:block; float:left; padding-left:5.712%;}
+.dashboard-nav ul li a {display:block; font:0.875em/1.571em 'avenirnext_regular'; color:#fff; text-decoration:none; padding:1.95em 0 0;}
+.dashboard-nav ul li a:hover {text-decoration:none; color:#006a9f;}
+.dashboard-nav ul li.active a {color:#006a9f;}
+
+/*	16.	Dashboard Header Section */
+.dashboard-header {background:#2b2c32;}
+.dashboard-header div.span4 {width:33.333%; margin:0;}
+.dashboard-header div.span4 div.bordered {border-right:1px solid #606165; text-align:center; overflow:hidden; padding:0 19px;}
+.dashboard-header div.span4 div.bordered > div {text-align:left; float:left;}
+.dashboard-header div.span4 div.bordered div.circle {margin-top:20px; position:relative; float:right;}
+.dashboard-header div.span4 div.bordered div.circle > span {position:absolute; left:0; top:0; font:1em/99px 'avenirnext_condensed_demibold'; color:#f7f7f7; width:100%; text-align:center;}
+.dashboard-header div.span4:first-child div.bordered {border-left:1px solid #606165;}
+.dashboard-header h5 {font:0.75em/1em 'avenirnext_condensed_demibold'; color:#f7f7f7; text-transform:uppercase; margin:0; padding:5.36% 0 4.29%;}
+.dashboard-header .center-block h5 {padding:9.81% 0 7.85%;}
+.dashboard-header h6 {font:5em/1em 'avenirnext_ultralight'; color:#f7f7f7; margin:0; padding:0 0 4.29%;}
+.dashboard-header .center-block h6 {padding-bottom:7.85%;}
+.dashboard-header h6 span {display:block; font:0.163em/1em 'pt_sans_regular'; color:#a6a7a8;}
+.dashboard-header p {font:0.813em/1em 'pt_sans_regular'; color:#f7f7f7; margin:0; padding:0;}
+
+/*	17.	Dashboard Content Section */
+.dashboard-content {background-color:#f7f7f7; padding:0}
+.dashboard-content .wrapper {background-color:#fff; overflow:hidden; padding-bottom:1.667%;}
+.dashboard-content .content-header {clear:both; padding-top:3.125%;}
+.dashboard-content .content-header h2 {font:1.875em/1em 'avenirnext_ultralight'; color:#006a9f; margin:0; padding:0.522% 0 0.522% 1.043%; float:left;}
+.dashboard-content .content-header .search {float:right; margin-right:1.043%; width:25.417%; position:relative;}
+.dashboard-content .content-header .search input[type="text"] {display:block; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0; background-color:#efefef; height:2em; border:none; outline:none; -webkit-box-shadow:none; -moz-box-shadow:none; box-shadow:none; font:0.875em/2em 'pt_sans_regular'; margin:0; padding:0.429em 13% 0.429em 3%; width:84%;}
+.dashboard-content .content-header .search input[type="submit"] {border:none; background:url(../img/misc/search.png) no-repeat 0 0; background-size:100%; display:block; position:absolute; right:0; top:0; font:0.875em/2.857em 'pt_sans_regular'; width:2.857em; padding:0;}
+.dashboard-content .content-header .search form, .dashboard-content .content-header .search input {margin:0;}
+.dashboard-content .content-header .month-select {float:right; position:relative; padding-right:1.043%; width:20.834%;}
+.dashboard-content .content-header .month-select label {display:block; float:left; font:0.75em/3.333em 'avenirnext_condensed_demibold'; color:2b2c32; text-transform:uppercase; margin:0; padding:0 5% 0 0; cursor:default;}
+.dashboard-content .content-header .month-select .select {display:block; float:left; position:relative; width:61.115%;}
+.dashboard-content .content-header .month-select a {display:block; font:0.875em/2.857em 'pt_sans_regular'; color:#2b2c32; background-color:#e5e5e4; text-decoration:none; padding:0 36.367% 0 9.091%; height:2.857em; outline:none !important; width:54.546%;}
+.dashboard-content .content-header .month-select a > span.caret {border:none; position:absolute; right:0; top:0; width:2.857em; height:2.857em; background:url(../img/misc/chevron-month.png) no-repeat 0 0; background-size:auto 100%;}
+.dashboard-content .content-header .month-select .select ul.dropdown-menu {margin:0; padding:0; border:none; min-width:0; -webkit-box-shadow:none; -moz-box-shadow:none; box-shadow:none; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0; width:100%;}
+.dashboard-content .content-header .month-select .select ul.dropdown-menu a {line-height:1.6em; height:1.6em;}
+.dashboard-content .content-header .month-select .select ul.dropdown-menu a.activated {color:#fff;}
+.dashboard-content .content-header .month-select .select ul.dropdown-menu .jspVerticalBar a.jspArrow {height:10px; display:none;}
+.dashboard-content .table-wrapper {clear:both; padding-top:3.125%;}
+.dashboard-content table {width:100%;}
+.dashboard-content table thead {background:#efefef;}
+.dashboard-content table tbody tr {border-bottom:1px solid #dfdfe0; background:none !important;}
+.dashboard-content table thead th {padding:1.043%; text-align:left; border:1px solid #d3d3d3; font:0.75em 'avenirnext_condensed_demibold'; color:#1a1b1f; text-transform:uppercase; outline:none !important;}
+.dashboard-content table th:first-child {border-left:none;}
+.dashboard-content table th:last-child {border-right:none; width:8% !important;}
+.dashboard-content table td {padding:1.043%; vertical-align:top; font:0.813em/1.154em 'pt_sans_regular'; color:#5f6064; background:none !important;}
+.dashboard-content table td img {float:right;}
+.dashboard-content .table-wrapper div.listing, .dashboard-content .table-wrapper div.paginator {display:block; float:none; overflow:hidden; text-align:center;}
+.dashboard-content .table-wrapper div.listing div, .dashboard-content .table-wrapper div.paginator div {float:none !important; text-align:center !important; height:auto;}
+.dashboard-content .table-wrapper div.listing h6 {font:0.75em/1em 'pt_sans_bold'; color:#2a2a2a; cursor:default; margin:0; padding:1.564% 0 1.043%;}
+.dashboard-content .table-wrapper div.listing label {margin:0; padding:0;}
+.dashboard-content .table-wrapper div.listing ul {list-style:none; margin:0; padding:0;}
+.dashboard-content .table-wrapper div.listing ul li {display:inline-block;}
+.dashboard-content .table-wrapper div.listing ul li a {display:block; width:2em; height:2em; font:0.75em/2em 'pt_sans_regular'; color:#2a2a2a; text-decoration:none; margin-left:0.625em;}
+.dashboard-content .table-wrapper div.listing ul li a.active, .dashboard-content .table-wrapper div.listing ul li a:hover {background-color:#dbdbd8; color:#006a9f;}
+.dashboard-content .table-wrapper div.listing ul li:first-child a {margin-left:0;}
+.dashboard-content .table-wrapper div.paginator {padding-top:0.834%; overflow:visible;}
+.dashboard-content .table-wrapper div.paginator a {background:none; border:none; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0; margin:0; padding:0; display:inline-block;}
+.dashboard-content .table-wrapper div.paginator a.previous, .dashboard-content .table-wrapper div.paginator a.next {background:#006a9f; margin:0 0.833em; font:0.75em/2.417em 'pt_sans_regular'; color:#d8dadb !important; height:2.417em; padding:0 0.833em;}
+.dashboard-content .table-wrapper .dataTables_paginate span a {width:2em; height:2em; font:0.75em/2em 'pt_sans_regular'; color:#2a2a2a; text-decoration:none; margin-left:0.625em; margin-top:0.25em;}
+.dashboard-content .table-wrapper .dataTables_paginate span a:first-child { margin-left:0;}
+.dashboard-content .table-wrapper div.paginator a.paginate_active, .dashboard-content .table-wrapper .dataTables_paginate span a:hover {background-color:#dbdbd8; color:#006a9f;}
+
+.paging_full_numbers .first, .paging_full_numbers .last {display:none !important;}
+.dataTables_filter {display:none;}
+.dataTables_length select {display:none;}
+
+/*	18.	Dashboard Footer Section */
+.dashboard-footer {background:#f7f7f7; padding:3% 0 4.667%;}
+.dashboard-footer .export {clear:both; padding:0 2.605%;}
+.dashboard-footer .export h3 {float:left; font:1.25em/1.1em 'avenirnext_regular'; color:#2b2c32; margin:0; padding:0;}
+.dashboard-footer .export div {float:left; padding-top:0.157em;}
+.dashboard-footer .export div.from {padding:0.157em 1.043% 0 5%; width:13.646%;}
+.dashboard-footer .export div.to {padding:0.157em 2.605% 0 1.043%; width:13.646%;}
+.dashboard-footer .export a {display:block; float:left; background-color:#006a9f; font:0.75em/3.667em 'avenirnext_medium'; color:#fff; text-transform:uppercase; text-decoration:none; padding:0 1.25em; margin:0 0 0 1.564%;}
+.dashboard-footer .export a img {margin-right:0.833em;}
+.dashboard-footer .export div input {border:none; display:block; outline:none; -webkit-box-shadow:none; -moz-box-shadow:none; box-shadow:none; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0; background:#fff url(../img/misc/calendar.png) no-repeat right top; background-size:auto 100%; width:111px; margin:0; padding:0.667em 7.64%; font:0.75em/1.917em 'avenirnext_condensed_demibold'; color:#2b2c32; width:84.74%;}
+.dashboard-footer .invite {margin:5.73% 0 0; background-color:#2b2c32; clear:both; padding:2.084% 2.605%;}
+.dashboard-footer .invite form {margin:0;}
+.dashboard-footer .invite h3 {float:left; font:1.25em/1.1em 'avenirnext_regular'; color:#fff; margin:0; padding:1em 0;}
+.dashboard-footer .invite .form-data {float:left; padding-left:10%;}
+.dashboard-footer .invite .form-data .form-row {float:left;}
+.dashboard-footer .invite .form-data .form-row.select {padding:0 40px 0 20px;}
+.dashboard-footer .invite .form-data input[type="text"] {display:block; margin:0.417em 0 0; outline:none; -webkit-box-shadow:none; -moz-box-shadow:none; box-shadow:none; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0; width:17.583em; padding:0.667em 0.833em; font:0.75em/2em 'avenirnext_condensed_demibold'; color:#a9aaaa;}
+.dashboard-footer .invite .form-data input.error[type="text"] {background-color:#fff1f1;}
+.dashboard-footer .invite .form-data input[type="submit"] {display:block; outline:none; background:#006a9f; border:none; font:0.75em/3.667em 'avenirnext_medium'; color:#fff; margin:1.818em 0 !important; padding:0 2.5em;}
+.dashboard-footer .invite .form-data input:first-child {margin:0;}
+.dashboard-footer .invite .form-data .form-row.select .select {position:relative; padding-top:0.333em; font-size:0.938em;}
+.dashboard-footer .invite .form-data .form-row.select .select:first-child {padding:0;}
+.dashboard-footer .invite .form-data .form-row.select .select > a {font:1em/2.267em 'avenirnext_medium'; color:#2b2c32; margin:0.2em 0 0; background-color:#e1e1df; text-decoration:none; display:block; padding:0 3em 0 1em; position:relative; height:2.267em; -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px; width:7.6em;}
+.dashboard-footer .invite .form-data .form-row.select .select.open > a {-webkit-border-bottom-left-radius:0; -webkit-border-bottom-right-radius:0; -moz-border-radius-bottomleft:0; -moz-border-radius-bottomright:0; border-bottom-left-radius:0; border-bottom-right-radius:0;}
+.dashboard-footer .invite .form-data .form-row.select .select > a > span.caret {border:none; position:absolute; right:0; top:0; width:2.267em; height:2.267em; background:url(../img/misc/chevron-month.png) no-repeat 0 0; background-size:auto 100%;}
+.dashboard-footer .invite .form-data .form-row.select .select ul {padding:0; margin:0; border:none; width:100%; min-width:0; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0; background-color:#e1e1df;}
+.dashboard-footer .invite .form-data .form-row.select .select ul a {font:0.938em/2.267em 'avenirnext_medium'; color:#2b2c32; padding:0 3em 0 1em;}
+.dashboard-footer .invite .form-data .form-row.select .select ul a.activated, .dashboard-footer .invite .form-data .form-row.select .select ul a:hover {color:#fff;}
+.dashboard-footer .misc {padding-top:10%;}
+.dashboard-footer .misc .span3 {margin:0; width:25%;}
+.dashboard-footer .misc h3 {font:1.25em/1.1em 'avenirnext_regular'; color:#006a9f; margin:0; padding:0 0 7.43%;}
+.dashboard-footer .misc .mobile-app h3, .dashboard-footer .misc .balance h3 {color:#efefef;}
+.dashboard-footer .misc .inner-wrapper {padding:1.188em; height:10em;}
+.dashboard-footer .misc .credits {background-color:#efefef;}
+.dashboard-footer .misc .credits ol {list-style:none; margin:0; padding:0;}
+.dashboard-footer .misc .credits ol li {font:0.875em/1.143em 'pt_sans_regular'; color:#5f6064; margin:0; padding:0;}
+.dashboard-footer .misc .credits ol li span {font-family:'pt_sans_bold'; padding-right:0.375em;}
+.dashboard-footer .misc .social {background-color:#dbdbd8; position:relative; height:12.376em;}
+.dashboard-footer .misc .social h3 {padding:0.95em 0.95em 0.75em;}
+.dashboard-footer .misc .social p {font:1em/1em 'avenirnext_condensed_medium'; color:#5f6064; text-transform:uppercase; padding:0 1.188em 1.188em; margin:0;}
+.dashboard-footer .misc .social p span {color:#006a9f; font-family:'avenirnext_condensed_demibold';}
+.dashboard-footer .misc .social .row-fluid {position:absolute; bottom:0; left:0;}
+.dashboard-footer .misc .social .span6 {width:50%; margin:0; text-align:center; background-color:#efefef; height:5.375em; line-height:5.375em; vertical-align:middle;}
+.dashboard-footer .misc .social .span6:first-child {background-color:#e5e5e4;}
+.dashboard-footer .misc .mobile-app {background-color:#2b2c32;}
+.dashboard-footer .misc .mobile-app > div > img {display:block; margin:0 auto;}
+.dashboard-footer .misc .mobile-app ul {list-style:none; margin:0; padding:5px 0 0; text-align:center; width:100%;}
+.dashboard-footer .misc .mobile-app ul li {display:inline-block; padding-left:10px;}
+.dashboard-footer .misc .mobile-app ul li:first-child {padding-left:0;}
+.dashboard-footer .misc .balance {background-color:#1a1b1f;}
+.dashboard-footer .misc .balance h6 {font:5em/1em 'avenirnext_ultralight'; color:#006a9f; margin:0; padding:0;}
+.dashboard-footer .misc .balance p {font:0.875em/1.143em 'pt_sans_regular'; color:#dbdbd8; margin:0; padding:0;}
+
+/* IV. Footer Section */
+footer {background-color:#18191d;}
+footer .nav, footer .map {width:50% !important; margin:0 !important;}
+footer .nav p {font:1.125em/normal 'avenirnext_condensed_medium'; color:#006a9f; margin:0; padding:12% 0 3.1%;}
+footer .nav h4 {float:left; font:43px/43px 'avenirnext_ultralight'; color:#e9ebeb; margin:0; padding:0 0 0 10%;}
+footer .nav h4:first-child {padding:0;}
+footer .nav h4 span {display:block; font:0.255em/1.636em 'avenirnext_condensed_demibold'; color:#5f6064; text-transform:uppercase;}
+footer .map .span6 {width:50%; margin:0;}
+footer .top, footer .topdark {font:0.687em/5.636em 'avenirnext_condensed_medium'; border-bottom:1px solid #515255; margin:0; padding:0; width:100%; /*height:5.636em;*/}
+footer .map .top {background-color:#1f2024;}
+footer .map .map {background:url(../img/misc/footer-map.jpg) no-repeat 0 0; background-size:cover; margin:0; padding:0; width:100% !important; height:256px;}
+footer .map .map h2 {margin:0; padding:17% 8% 0; font:2em/1em 'avenirnext_ultralight'; color:#006a9f;}
+footer .map .map p {padding:0 8%; font:0.937em/1.8em 'avenirnext_condensed_demibold'; color:#006a9f;}
+footer .map ul {margin:0; padding:0 0 0 4.2%; overflow:hidden;}
+footer .map ul li {display:block; float:right; width:10.4%; padding:11% 0 0 3%; line-height:5.636em; color:#dbdbd8; text-transform:uppercase;}
+footer .map ul li.social {background: none repeat scroll 0 0 transparent; /*margin: 5px;*/}
+footer .map ul li.social a {
+    background: url(../img/sprites/social-icons.png) no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 24px;
+    width: 24px;
+    text-indent: -9999px;
+    padding: 0;
+}
+footer .map ul li.linkedin a {background-position: 0 -24px;}
+footer .map ul li.facebook a {background-position: 0 0;}
+footer .map ul li.twitter a {background-position: -24px 0;}
+footer .map ul li.googleplus a {background-position: 0 -48px;}
+
+footer .map ul li:first-child {float:left; width:46.4%; padding:0;}
+footer .map ul li a {display:block; width:100%; font height:5.636em;}
+footer .map ul li a img {vertical-align:middle;}
+footer .map p {margin:0; padding:25% 4.2% 0; text-transform:uppercase; font:1em/1em 'avenirnext_condensed_medium'; color:#bbbec0; clear:both;}
+footer .map p a {color:#c00000;}
+
+/*   1. Navigation */
+footer .nav > a {display:block; width:18.7%; float:left; margin:4.8% 3% 0 0;}
+footer .nav > a > img {display:block; width:100%;}
+footer .nav ul {margin:0; padding:0; border-bottom:1px solid #515255;}
+footer .nav ul li {margin:0; padding:0; color:#90908f;}
+footer .nav ul li:before{content:'•'; font-size:0.5em; line-height:1em; color:#90908f; vertical-align:middle; display:inline-block; width:1em; text-align:center;}
+footer .nav ul li:first-child {padding-left:0 !important;}
+footer .nav ul li:first-child:before {content:''; width:0; height:0; display:none;}
+footer .nav ul li a {font:0.687em/5.636em 'avenirnext_condensed_medium'; color:#90908f; text-transform:uppercase;}
+footer .nav ul li a:hover {color:#90908f; text-decoration:none;}
+
+@media screen and (min-width:1500px) {
+	header {padding:35px 0 30px;}
+	.content .wrapper {padding:0 0 60px;}
+	.content .wrapper h2 {padding:60px 0 50px;}
+	.content .wrapper h4 {padding:20px 0;}
+	.content .row-fluid .book {padding:135px 0 142px;}
+	.content .row-fluid .track {padding:140px 0 140px;}
+	.content .row-fluid .seamless {padding:125px 0 100px;}
+	.top-slider .carousel-inner .item > div.slide-content.template1 {width:1500px; left:50%; margin-left:-750px;}
+	.top-slider .carousel-inner .item > div.slide-content.template1 h2 {padding-top:150px; width:600px; margin-left:232px;}
+	.top-slider .rightButtonHolder {width:280px;}
+	.top-slider .carousel-inner .item > div.slide-content.template2 {width:1500px; left:50%; margin-left:-750px}
+	.top-slider .carousel-inner .item > div.slide-content.template2 h2 {padding-top:240px; width:675px; margin-left:232px;}
+	.top-slider .carousel-inner .item > div.slide-content.template2 h3 {width:675px; margin-left:232px; padding:40px 0 20px;}
+	.top-slider .carousel-inner .item > div.slide-content.template2 ul {width:675px; margin-left:232px;}
+	.app {padding:55px 0 80px;}
+	.app .left h2 {padding:10px 90px;}
+	.app .right {height:470px;}
+	.app .right img {padding:0; height:440px; width:auto;}
+	.rates {padding:55px 0;}
+	.drive {padding:50px 0 70px;}
+	.news {padding:75px 0;}
+	.about-us {padding-bottom:70px;}
+	.top-image {padding-top:134px;}
+	.top-image.drive-for-us-image {background:url(../img/misc/drive-for-us-extension.jpg) repeat-x 0 0;}
+	.top-image.drive-for-us-image .stand-alone-image {width:1500px; margin:0 auto;}
+	.drive-for-us-content {padding:40px 0 45px;}
+	.drive-for-us-form {padding:50px 0 325px; background-size:750px auto;}
+	.drive-for-us-form.signup {padding-bottom:75px;}
+	.signinform {padding:55px 0 23px;}
+	.faq {padding:55px 0 75px;}
+	.news .wrapper, .about-us .wrapper, .drive-for-us-content .wrapper, .drive-for-us-form .wrapper, .faq .wrapper, .signinform .wrapper, .get-app .wrapper, .signup-header .wrapper, .signup-content .wrapper {width:960px;}
+	.top-image .wrapper {width:960px; left:50%; margin:0 0 0 -480px;}
+	.get-app {padding:195px 0 75px;}
+	.signup-header {padding:180px 0 30px;}
+	.signup-content {padding:60px 0;}
+	.driver-registered {width:1500px; margin:0 auto;}
+	.dashboard-nav {margin-top:134px;}
+	.dashboard-footer {padding:45px 0 70px;}
+	.dashboard-nav .wrapper, .dashboard-header .wrapper, .dashboard-content .wrapper, .dashboard-footer .wrapper {width:960px; margin:0 auto;}
+	.dashboard-content .wrapper {padding-bottom:25px;}
+}
+
+.dropdown-menu>li>span {
+    padding-left: 10px;
+    font: 0.835em/2.272em 'avenirnext_medium';
+    color: #999999;
+}
+
+div.submit img.spinner {
+    padding-left: 10px;
+    position: absolute;
+    margin-top: 23px;
+}
+
+div.recaptcha {
+    width: 330px;
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+
+#recaptcha_response_field { height: 20px;}
+
+.ui-autocomplete-loading {
+	background:white url('../img/spinner.gif') right center no-repeat;
+}
+
+.city-spinner {
+    display: inline;
+    position: absolute;
+    margin-top: 3px;
+    margin-left: 5px;
+}
+

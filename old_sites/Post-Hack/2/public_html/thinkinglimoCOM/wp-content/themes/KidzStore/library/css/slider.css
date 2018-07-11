@@ -1,0 +1,59 @@
+/* Most common stuff you'll need to change */
+
+	.coda-slider-wrapper { padding:0;  }
+	.coda-slider {  }
+	
+	/* Use this to keep the slider content contained in a box even when JavaScript is disabled */
+	.coda-slider-no-js .coda-slider { height: 200px; overflow: auto !important; }
+	
+	/* Change the width of the entire slider (without dynamic arrows) */
+	.coda-slider, .coda-slider .panel {  width: 590px !important; } 
+	
+	/* Change margin and width of the slider (with dynamic arrows) */
+	.coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel { width: 590px;  }
+	.coda-slider-wrapper.arrows .coda-slider { margin: 0 3px }
+	
+	/* Arrow styling */
+	.coda-nav-right a {  width:83px; height:19px; text-indent:-9009px; cursor:pointer; }
+	.coda-nav-left a { width:83px; height:19px; text-indent:-9009px; cursor:pointer;  }
+	.coda-nav-left a:hover, .coda-nav-right a:hover { background-position:0 -19px; }
+	
+	/* Tab nav */
+	.coda-nav ul li a.current { background: #39c }
+	
+	/* Panel padding */
+	.coda-slider .panel-wrapper { padding: 0px }
+	
+	/* Preloader */
+	.coda-slider p.loading { padding: 20px; text-align: center }
+
+/* Don't change anything below here unless you know what you're doing */
+
+	/* Tabbed nav */
+	.coda-nav ul { clear: both; display: block; margin: auto; overflow: hidden; display:none; }
+	.coda-nav ul li { display: inline }
+	.coda-nav ul li a { background: #000; color: #fff; display: block; float: left; margin-right: 1px; padding: 3px 6px; text-decoration: none }
+	
+	/* Miscellaneous */
+	.coda-slider-wrapper { float:left; position:relative; width:590px;  }
+	.coda-slider { float: right; overflow: hidden; position: relative; }
+	.coda-slider .panel { display: block; float: left }
+	.coda-slider .panel-container { position: relative;  }
+	.coda-nav-left { position:absolute; right:150px; top: 272px; z-index:99999; }
+	.coda-nav-right {position:absolute; right:5px; top: 272px;  z-index:99999; }
+	* html .coda-nav-right  { right:165px;  }
+	
+	.coda-nav-left a, .coda-nav-right a { display: block; text-align: center; text-decoration: none }
+	
+	.panel-wrapper h3 { margin:0 0 10px 0; padding:0; }
+ 	.banner_img { text-align:center; margin-bottom:20px; min-height:200px; }
+	
+	#slider { padding:0 55px; }
+	
+	
+	.coda-nav-left a { background:url(../../images/b_previous.png) no-repeat left top;  }
+	.coda-nav-right a { background:url(../../images/b_next.png) no-repeat left top;  }
+	
+
+	
+	

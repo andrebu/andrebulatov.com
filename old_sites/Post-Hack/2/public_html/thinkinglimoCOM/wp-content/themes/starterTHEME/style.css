@@ -1,0 +1,13 @@
+/*
+Theme Name: StarterTheme
+Theme URI: http://andrebulatov.com 
+Description: Basic, blank starter theme.  This is the foundation to build a theme on top of.
+Author: Andre Bulatov
+Author URI: http://andrebulatov.com 
+Version: 1.0
+Tags: basic, blank, start, foundation, zero, scratch
+License: GNU/GPL Version 2 or later
+License URI: http://www.gnu.org/licenses/gpl.html
+*/
+
+@import url('css/bootstrap.min.css');

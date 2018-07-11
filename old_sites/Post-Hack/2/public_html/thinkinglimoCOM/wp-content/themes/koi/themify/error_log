@@ -1,0 +1,1 @@
+[01-Dec-2013 18:16:21] PHP Fatal error:  Call to undefined function  init_db() in /home2/iamandre/public_html/wp-content/themes/koi/themify/themify-config.php on line 51

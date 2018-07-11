@@ -1,0 +1,216 @@
+/* LayerSlider Full Width Skin */
+
+
+
+.ls-mydesign .ls-playvideo {
+	width: 50px;
+	height: 50px;
+	margin-left: -25px;
+	margin-top: -25px;
+}
+
+.ls-mydesign .ls-playvideo,
+.ls-mydesign .ls-nav-sides,
+.ls-mydesign .ls-bottom-slidebuttons a,
+.ls-mydesign .ls-nav-start,
+.ls-mydesign .ls-nav-stop,
+.ls-mydesign .ls-fullscreen,
+.ls-mydesign .ls-loading-container {
+	background-image: url(skin.png);	
+}
+
+.ls-mydesign .ls-playvideo {
+	background-position: -300px -150px;
+}
+
+.ls-mydesign .ls-playvideo:hover,
+.ls-mydesign .ls-vpcontainer:hover .ls-playvideo {
+	background-position: -375px -150px;
+}
+
+.ls-mydesign .ls-nav-prev {
+	background: url(left.png) no-repeat #555;
+	width: 46px;
+	background-position: -5px;
+	border-radius: 2px;
+	height: 46px;
+	width: 100px;
+	height: 100px;	
+	opacity: 0.6;
+	/*	-webkit-transition: all 0.4s linear;
+	-moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+	-o-transition: all 0.4s linear;*/
+}.ls-mydesign .ls-nav-prev:hover {opacity: 0.9;}
+
+.ls-mydesign .ls-nav-next {
+	background: url("right.png") no-repeat #555;opacity: 0.6;
+		-webkit-transition: all 0.4s linear;
+	-moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+	-o-transition: all 0.4s linear;
+}.ls-mydesign .ls-nav-next:hover {opacity: 0.9;}
+
+.ls-mydesign .ls-nav-start {
+	background-position: -300px 0px;
+}
+
+.ls-mydesign .ls-nav-start:hover,
+.ls-mydesign .ls-nav-start-active {
+	background-position: -300px -75px;
+}
+
+.ls-mydesign .ls-nav-stop {
+	background-position: -450px 0px;
+}
+
+.ls-mydesign .ls-nav-stop:hover,
+.ls-mydesign .ls-nav-stop-active {
+	background-position: -450px -75px;
+}
+
+.ls-mydesign .ls-bottom-slidebuttons a {
+	background-position: 0px -150px;
+}
+
+.ls-mydesign .ls-bottom-slidebuttons a.ls-nav-active,
+.ls-mydesign .ls-bottom-slidebuttons a:hover {
+	background-position: -75px -150px;
+}
+
+.ls-mydesign .ls-nav-sideleft {
+	background-position: -150px -150px;	
+}
+
+.ls-mydesign .ls-nav-sideright {
+	background-position: -225px -150px;	
+}
+
+
+
+.ls-mydesign .ls-nav-prev,
+.ls-mydesign .ls-nav-next {
+	background-position: -5px;
+	width: 46px;
+	height: 46px;
+	z-index: 10000;
+	top: 50%;
+	margin-top: -23px;	
+	position: absolute;
+	border-radius: 5px;
+}
+
+
+.ls-mydesign .ls-nav-prev {
+	left: 5%;	
+}
+
+.ls-mydesign .ls-nav-next {
+	right: 5%;	
+}
+
+
+
+.ls-mydesign .ls-bottom-slidebuttons,
+.ls-mydesign .ls-bottom-slidebuttons a,
+.ls-mydesign .ls-nav-start,
+.ls-mydesign .ls-nav-stop,
+.ls-mydesign .ls-nav-sides {
+	height: 20px;
+}
+
+.ls-mydesign .ls-bottom-slidebuttons,
+.ls-mydesign .ls-bottom-slidebuttons a,
+.ls-mydesign .ls-nav-start,
+.ls-mydesign .ls-nav-stop,
+.ls-mydesign .ls-nav-sides {
+	display: inline-block;
+}
+
+.ls-mydesign .ls-bottom-slidebuttons,
+.ls-mydesign .ls-nav-start,
+.ls-mydesign .ls-nav-stop,
+.ls-mydesign .ls-nav-sides {
+	top: -30px;
+}
+
+.ls-mydesign .ls-nav-start,
+.ls-mydesign .ls-nav-stop {
+	width: 25px;
+}
+
+.ls-mydesign .ls-bottom-slidebuttons a {
+	width: 20px;
+}
+
+.ls-mydesign .ls-nav-sides {
+	width: 0px;	
+}
+
+
+
+.ls-mydesign .ls-thumbnail-hover {
+	bottom: 30px;
+	padding: 2px;
+	margin-left: 1px;
+}
+
+.ls-mydesign .ls-thumbnail-hover-bg {
+	background: #eee;
+}
+
+.ls-mydesign .ls-thumbnail-hover span {
+	border: 5px solid #eee;
+	margin-left: -5px;
+}
+
+
+
+.ls-mydesign .ls-thumbnail {
+	top: 10px;
+}
+
+.ls-mydesign .ls-thumbnail-inner {
+	padding: 2px;
+	margin-left: -2px;
+	background: #fff;
+}
+
+.ls-mydesign .ls-thumbnail-slide a {
+	margin-right: 2px;
+}
+
+.ls-mydesign .ls-nothumb {
+	background: #eee;
+}
+
+
+
+.ls-mydesign .ls-loading-container {
+	width: 40px;
+	height: 40px;
+	margin-left: -20px;
+	margin-top: -20px;
+	background-position: -450px -150px;	
+}
+
+.ls-mydesign .ls-loading-indicator {
+	width: 22px;
+	height: 22px;
+	margin-top: 9px;
+	background-image: url(loading.gif);	
+}
+
+
+
+.ls-mydesign .ls-fullscreen {
+	width: 30px;
+	height: 30px;
+	right: 10px;
+	top: 10px;
+	background-position: -525px -150px;
+}
+
+.ls-mydesign .ls-fullscreen:hover {
+	background-position: -525px -190px;
+}

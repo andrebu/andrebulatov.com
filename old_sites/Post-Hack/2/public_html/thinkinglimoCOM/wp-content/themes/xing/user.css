@@ -1,0 +1,35 @@
+/* 	-------------------------------------------------
+	user.css for customizations
+	-------------------------------------------------
+	Use this file for adding custom CSS style.
+	These styles will override default theme styles.
+	You can enable/disable this CSS file inside
+	WordPress Appearance > Xing Options > General
+	-------------------------------------------------
+*/
+
+/* Add your custom styles in this section */
+/* -------------------------------------- */
+
+
+
+
+
+/* ------------------------------------------------- */
+/* Add responsive styles inside media queries below */
+
+
+/* TABLET: 740px */
+@media only screen and (min-width: 740px) and (max-width: 999px) {
+
+}
+
+/* MOBILE: 412px */
+@media only screen and (min-width: 412px) and (max-width: 739px) {
+
+}
+
+/* MOBILE: 282px */
+@media only screen and (max-width: 411px) {
+
+}

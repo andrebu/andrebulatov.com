@@ -1,0 +1,526 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Meta tags -->
+<meta http-equiv="content-type" content="text/html; charset=utf-8" charset="utf-8" />
+<meta name="keywords" content="taxi, taxi london, taxis, book taxi, drivr, drivr uk, taxi phone number, taxi london city, taxi london west," />
+<meta name="description" content="Need a car now? Book a licensed car from Drivr, the most reliable transportation provider in London. &#163;5 voucher for all new customers. Book here." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>London - DRIVR</title>
+<!-- Fav icon-->
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<!-- Fonts -->
+<link rel="stylesheet" media="screen" type="text/css" href="css/fonts.css" />
+<!-- CSS -->
+<link href="bundles/css-3rdparty%3Fv=MpYfHC-GgBGzcQcxB0v0uesoyURypkFHDF_ZZNOhSNY1.css" rel="stylesheet"/>
+
+<link href="bundles/css-city%3Fv=CrtQsVxZJtJJKXDpasrvuPYHE4cvKwq-66jZH1rw6iY1.css" rel="stylesheet"/>
+
+
+
+
+<!-- IE crap fix -->
+<!-- html5shiv makes html5 tags available in IE7 and 8 -->
+<!--[if lt IE 9]>
+	<script src="/scripts/html5shiv.js"></script>
+<![endif]-->
+<script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script></head>
+    
+        <body class="sticky-header">   
+    
+<div id="fb-root"></div>
+	<!--
+		<script>
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '437422203015133',                    // App ID from the app dashboard
+      status     : true,                                 // Check Facebook Login status
+	  cookie     : true,
+      xfbml      : true                                  // Look for social plugins on the page
+    });
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+		-->
+<div id="wrapper" ng-app="app">
+        <!-- START HEADER SECTION -->
+        <header>
+            <div class="row-fluid">
+                <div class="row-fluid">
+                    <h1>
+                        <a href="index.html">
+                            <img src="img/logo-blue.png" width="120" height="45" alt="DRIVR" title="DRIVR" />
+                        </a>
+                    </h1>
+                    <div class="extra-nav">
+
+<ul class="inline">
+<li ng-controller="UserHeaderCtrl" ng-init="init()" class="user-area">
+    <span class="user-logged-in-view" ng-show="isUserAuthenticated()" style="display: none">
+        Welcome <span class="name">{{name}}</span>
+        <div class="user-header-bookings" ng-show="isLookingForBookings"><img src="img/spinner.gif" /> Checking for active bookings...</div>
+        <div class="user-header-bookings" ng-show="!isLookingForBookings && activeBookings.length == 0">Active bookings: 0</div>
+        <div class="user-header-bookings" ng-show="!isLookingForBookings && activeBookings.length > 0">Active bookings: <a href="https://drivr.com/{{getBookingUrl(activeBookings[0])}}">{{activeBookings.length}}</a></div>
+        <a href="javascript:void(0)" ng-click="signout()" class="btn btn-blue">Sign out</a>
+    </span>
+
+    <span class="login-signup-view" ng-show="!isUserAuthenticated()" style="display: none">
+        <a href="london.html#/signup">Sign up</a>
+        <span class="or">or</span>
+        <a href="london.html#/signin" class="signin">Sign in</a>
+    </span>
+</li>
+</ul>
+
+                    </div>
+
+                    <div ng-controller="BookingStepsCtrl" class="ride-details first" ng-class="rideDetailsClass" >
+                        <span class="first active" ng-class="firstStepClass">
+                            Ride details
+                            <span></span>
+                        </span>
+                        <span class="second" ng-class="secondStepClass">
+                            Payment info
+                            <span></span>
+                        </span>
+                        <span class="third" ng-class="thirdStepClass">
+                            Confirmation
+                            <span></span>
+                        </span>
+                    </div>
+                    <script type="text/javascript">
+                        var rideDetailsStep = 'first';
+                        var firstStepClass = 'active';
+                        var secondStepClass = '';
+                        var thirdStepClass = '';
+                    </script>
+                </div>
+            </div>
+        </header>
+        <!-- END HEADER SECTION -->
+
+<section class="online-booking">
+    <div class="row-fluid sizeBreak">
+        <div class="span12">
+			<!-- First step of the booking flow -->
+			<div ng-view class="ng-view-container"></div>
+			<div id="step1" ng-controller="BookingCtrl" ng-init="init()">
+				<div id="berrors" ng-show="error != null" class="alert alert-error" style="display:none">
+					<b>{{error.message}}</b>
+					<ul ng-show="errors.errors">
+						<li ng-repeat="err in error.errors">{{err}}</li>
+					</ul>
+				</div>
+				<!-- Online Booking Form -->
+				<form ng-submit="submitBook()" ng-show="viewState=='edit'">
+					<fieldset>
+						<div class="input-wrapper">
+							<div class="search-container">
+								<input type="text" id="pick-up-location" name="pick-up-location" value="Enter pickup location" data-default-value="Enter pickup location" class="resetable dropdownable" ng-readonly="isBusy" />
+							</div>
+						</div>
+						<img src="img/misc/arrows.png" width="17" height="16" alt="Select pickup location and dropoff" title="Select pickup location and dropoff" />
+						<div class="input-wrapper">
+							<div class="search-container">
+								<input type="text" id="drop-off-location" name="drop-off-location" value="Enter dropoff location" data-default-value="Enter dropoff location" class="resetable dropdownable" ng-readonly="isBusy" />
+							</div>
+						</div>
+						<div class="input-wrapper short">
+							<input type="text" id="time" name="time" value="ASAP" />
+						</div>
+						<input type="submit" id="bbook" value="Next &rsaquo;" class="br3" ng-show="!isBusy" ng-disabled="disableNextButton"/>
+						<input type="submit" id="bwait" value="Wait..." class="br3" ng-show="isBusy" disabled style="display: none" />
+					</fieldset>
+				</form>
+				<div class="booking-details" ng-show="viewState=='view'" style="display: none">
+					<div class="pickup">
+						<span class="edit" ng-click="clickEdit()">Edit</span>
+						<span>Pickup</span>
+						<div>{{pickupAddress}}</div>
+					</div>
+					<div class="dropoff">
+						<span class="edit" ng-click="clickEdit()">Edit</span>
+						<span>Dropoff</span>
+						<div>{{dropoffAddress}}</div>
+					</div>
+					<div class="when">
+						<span class="edit" ng-click="clickEdit()">Edit</span>
+						<span>When</span>
+						<div>{{arrivalTime}}</div>
+					</div>
+					<a href="london.html#/signup?booking=1" id="bsignup" class="red-btn br4" role="button" ng-show="!isUserAuthenticated() && !isBusy" ng-click="confirmBooking()">Confirm &gt;</a>
+					<a href="javascript:void(0)" id="bconfirm" class="red-btn br4" role="button" ng-show="isUserAuthenticated() && !isBusy" ng-click="confirm()">Confirm &rsaquo;</a>
+					<a href="javascript:void(0)" id="bwait2" class="red-btn br4" role="button" ng-show="isBusy">Wait...</a>
+				</div>
+
+				<!-- Online Booking Taxi Details -->
+				<div class="row-fluid taxi-details">
+					<div class="car">
+						<span>Car:</span>
+						<span ng-show="!showCarSelection()" style="display: none">
+							<img src="https://drivr.com/{{vehicleType.iconUrl}}" width="50" /> {{vehicleType.name}} - {{vehicleType.description}}
+						</span>
+						<div id="carDropdown" class="input-wrapper" ng-show="showCarSelection()" style="display: none">
+							<input type="text" id="car" name="car" value="{{vehicleType.name}} - {{vehicleType.description}}" data-default-value="{{vehicleType.name}} - {{vehicleType.description}}" class="resetable dropdownable dropdown" />
+							<div class="drop-down">
+								<ul class="primary taxis">
+									<li ng-repeat="vt in vehicleTypes" ng-click="selectVehicleType(vt.id)">
+										<img src="https://drivr.com/{{vt.iconUrl}}" width="50" align="left" />
+										{{vt.name}}
+										<span>{{vt.description}}&nbsp;</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="details">
+						<div class="eta" ng-class="getEtaInfoClass()" ng-show="eta != null &amp;&amp; eta > 0" style="display: none">
+							<i>eta</i>
+							<span>ETA:</span>{{ distanceEta() }}
+						</div>
+
+						<div class="trip" ng-class="getInfoClass()">
+							<i>trip</i>
+							<span>Trip:</span>
+							<b ng-bind="trip"></b>
+						</div>
+						<div class="distance" ng-class="getInfoClass()">
+							<i>distance</i>
+							<span>Distance:</span>
+							<b ng-bind="distance"></b>
+						</div>
+						<div class="price" ng-class="getInfoClass()">
+							<i>price</i>
+							<span>Price:</span>
+							<b ng-bind="priceEstimate"></b>
+						</div>
+					</div>
+				</div>
+				<!-- Online Booking Map Area -->
+				<div class="large-map clearfix">
+					<div id="map_canvas" ui-map="myMap" class="span8 map" ui-options="mapOptions"></div>
+                    
+                    <div class="weather"> 
+                        <span style="background:url(img/weather/ico_weather_partly_cloudy_night@2x.png) no-repeat 0 0;">Weather in London</span>
+                        21&deg;
+                    </div>
+
+				</div>
+
+<div class="row-fluid rates-and-pricing">
+    <div class="span4">
+        
+    </div>
+    <div class="span4">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="4">Pricing</th>
+                </tr>
+            </thead>
+			<tbody>
+            	<tr style="" ng-show="price.startingPrice != ''">
+            		<td>Base Fare</td>
+            		<td class="ar" ng-bind="price.startingPrice | currency:price.currencySymbol">&#163;1.20</td>
+            	</tr>
+
+                
+
+                <tr style="" ng-show="price.distancePrice != ''">
+                    <td>Per <span style="display:none" ng-show="price.distancePrice != ''">{{currentDistanceUnit}}</span></td>
+                    <td class="ar" ng-bind="price.distancePrice | currency:price.currencySymbol">&#163;0.67</td>
+                </tr>
+
+
+                <tr style="" ng-show="price.perMinute != ''">
+                    <td>Per Minute</td>
+                    <td class="ar" ng-bind="price.perMinute | currency:price.currencySymbol">&#163;0.08</td>
+                </tr>
+			</tbody>
+        </table>
+    </div>
+    <div class="span4">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="" ng-show="price.minimumPrice != ''">
+                    <td>Min. Fare</td>
+                    <td class="ar" ng-bind="price.minimumPrice | currency:price.currencySymbol">&#163;2.00</td>
+                </tr>
+
+                <tr style="" ng-show="price.noShowFee != ''">
+                    <td>No Show Fee</td>
+                    <td class="ar" ng-bind="price.noShowFee | currency:price.currencySymbol">&#163;5.00</td>
+                </tr>
+
+            	<tr style="" ng-show="price.cancellationFee != ''">
+            		<td>Cancellation Fee</td>
+            		<td class="ar" ng-bind="price.cancellationFee | currency:price.currencySymbol">&#163;1.00</td>
+            	</tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+	var startingPrice = 1.20;
+	var minimumPrice = 2.00;
+	var perMinute = 0.08;
+	var cancellationFee = 1.00;
+	var noShowFee = 5.00;
+	var distanceUnit = 'mi';
+	var distancePrice = 0.67;
+	var defaultUnitSystem = 'imperial';
+	var currencySymbol = '£';
+</script>
+			</div>
+        </div>
+    </div>
+</section>
+        <!-- START General Info Section -->
+        <section class="general-info">
+        	<div class="infoWrapper">
+                <div class="row-fluid sizeBreak">
+                    <div class="span12">
+                                                <h1>Drivr London</h1>
+                        <p>Book a premier car at awesome prices</p>
+                        <ul>
+                            <li>Average pick-up within 15 minutes</li>
+                            <li>Track your car in a mobile browser</li>
+                            <li>10% discount for new customers.</li>
+                        </ul>
+						<p class="calltobook">
+                        	<span>Call to book</span>
+                        	+44 20 3322 2250
+                        </p>
+                        <div class="row-fluid stepBreak">
+                            <div class="span4 first">
+                                <h4>Book a car</h4>
+                                <span>online or from our iPhone or Android app.</span>
+                            </div>
+                            <div class="span4 second">
+                                <h4>Track your car</h4>
+                                <span>and relax until we pick you up.</span>
+                            </div>
+                            <div class="span4 third">
+                                <h4>Seamless payment</h4>
+                                <span>directly on your phone. No cash or paper receipts.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END General Info Section -->
+        
+        <!-- START Mobile App Section -->
+        <section class="mobile-app">
+            <div class="row-fluid sizeBreak">
+                <div class="span12 oH">
+                	<div class="data">
+                        <h2>
+                            <img src="img/app-logo.png" width="136" height="85" alt="DRIVR" title="DRIVR" />
+							Your driver<br/>at your<br/>fingertips
+                        </h2>
+		                <span>Launching on iPhone and Android in August</span>
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0);" class="android">Android</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="ios">iPhone</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="image">
+                       	<img src="img/mobile-devices.jpg" width="579" height="430" alt="Your driver at your fingertips" title="Your driver at your fingertips" />
+                    </div>
+				</div>
+            </div>
+        </section>
+        <!-- END Mobile App Section -->
+        
+        <!-- START Articles Section (aside can be used without styling issues if no relating content) -->
+        <section class="articles">
+            <div class="row-fluid sizeBreakArticles articles">
+                <div class="span3 article">
+                	<a href="javasctipt:void(0);">
+                    	<img src="img/articles/article1.jpg" width="240" height="169" alt="A fleet of hybrid eco-friendly cars" title="A fleet of hybrid eco-friendly cars" />
+                    </a>
+                    <h4>Premier Rides</h4>
+                    <h5>Proper cars</h5>
+                    <p>We only drive Mercedes E or S Class or similar vehicles in good clean and sleek conditions.</p>
+                </div>
+                <div class="span3 article">
+                	<a href="javasctipt:void(0);">
+                    	<img src="img/articles/article2.jpg" width="240" height="169" alt="Always suited. Meet our stylish drivers" title="Always suited. Meet our stylish drivers" />
+                    </a>
+                    <h4>Fast Booking</h4>
+                    <h5>Book your ride</h5>
+					<p>Open the app, see the live updated pick up time in your area and request the car.</p>
+                </div>
+                <div class="span3 article">
+                	<a href="javasctipt:void(0);">
+                    	<img src="img/articles/article3.jpg" width="240" height="169" alt="You help ensure we always provide the best service" title="You help ensure we always provide the best service" />
+                    </a>
+                    <h4>Live Tracking</h4>
+                    <h5>Track your car</h5>
+					<p>We'll send the nearest driver to pick you up. Follow the driver live on the map.</p>
+                </div>
+                <div class="span3 article">
+                	<a href="javasctipt:void(0);">
+                    	<img src="img/articles/article4.jpg" width="240" height="169" alt="Track your Drivr and pay directly from your phone" title="Track your Drivr and pay directly from your phone" />
+                    </a>
+                    <h4>Easy Payment</h4>
+                    <h5>Seamless payment</h5>
+					<p>No more cash or paper receipts. We automatically charge your credit card after the trip. Rate the trip to help us build the world's best fleet of drivers.</p>
+                </div>
+            </div>
+        </section>
+        <!-- END Articles Section -->
+        
+        <!-- START About DRIVR Section -->
+        <section class="about">
+            <div class="row-fluid sizeBreak">
+                <div class="span12">
+					<h2>About DRIVR London</h2>
+                    <p>DRIVR London is a new technology driven ground transportation service in central London. We want to bring quality and great customer service back into the taxi business and we do so by combining modern technology with the best, and most service minded chauffeurs in the business.   </p>
+                    <p>Unlike our competitors like Addison Lee, we have developed our own booking and dispatching system, which allow us to run a more efficient fleet with lower fares and faster pick up times. In addition to being a more efficient system, our new booking platform has several advantages compared to other radio dispatching systems. On our booking apps for Android and iOS, customers get all the features they expect from a modern taxi booking app. Before you book, you get an estimated ETA and a price estimate, in addition to an overview of the rates. After a car is requested, the customer get a booking confirmation, details about the driver and can see the car approaching the pick up address live on the map. These features has normally only been available on native apps, but DRIVR London brings all of these advantages to customers who book their car online or by phone.</p>
+                    
+<p>After booking a private hire car online or via our call centre the customers receives a SMS with a link so they can track their dispatch vehicle live on a map and get information about the driver, rates and live ETA’s. At arrival will the customer also receive an arrival confirmation on SMS so they don’t need to go outside, before the car arrives.</p>
+         <div>
+         <p>Reasons to choose DRIVR London:</p>
+         <ul>
+             <li>Only professional and friendly licenced drivers</li>
+             <li>We calculate pick up times based on live traffic data</li>
+             <li>All jobs confirmed via SMS or notifications.</li>
+             <li>High quality cars, to taxi prices.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- END About DRIVR Section -->
+
+        <!-- START Welcome to London Content Section -->
+        <section class="content">
+            <div class="row-fluid sizeBreak">
+                <div class="span6 contentSection">
+                    <div class="lpImage">
+                        <img src="media/1001/london.jpg" width="481" height="349" alt="Welcome to London" title="Welcome to London" />
+                        <h2>Welcome to London</h2>
+                        <div class="caption">
+                            <h3>The global car service for business users </h3>
+                            <span>Seamless payment and eco friendly</span>
+                            <div>
+                                <a href="javascript:void(0);">
+                                	<img src="img/lago-med.png" width="102" height="37" alt="DRIVR" title="DRIVR" />
+                                </a>
+                                <span>All of UK.<br />All of the world.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span6 contentSection">
+                    <div class="lpText">
+						                    <h2>Welcome to London</h2>
+<p>Famous for it fantastic range of theatres, tourist attractions, shopping districts and football clubs, the majestic city of London needs little introduction. This vibrant city, has something to offer for everyone, no matter if it's your first visit, or if you are a borne and raised Londoner.</p>
+
+<p>There are some historic must sees. We recommend a tour around Westminster to see <a href="http://www.visitlondon.com/things-to-do/sightseeing/tourist-attraction/big-ben">Big Ben</a>, get a birds view of the city from <a href="http://www.londoneye.com/">London Eye</a> and visit to the <a href="http://www.hrp.org.uk/TowerOfLondon/">Tower of London</a> to see the Crown Jewels of the United Kingdom. In addition to the mandatory tourist sites,  make sure to visit fashionable Notting Hill and the vibrant <a href="http://www.tripadvisor.co.uk/Attraction_Review-g186338-d189016-Reviews-Portobello_Road_Market-London_England.html">Portebello Market</a>, pay a visit to the colourful <a href="https://en.wikipedia.org/wiki/Camden_Market"> Camden Market</a>, shop till you drop in the famous Oxford and Regent Street and <a href="http://www.visitlondon.com/things-to-do/whats-on/theatre/index"> see a musical in West End entertainment district</a></p>
+
+<p>If you are looking for things to do in London, we recommend <a href="https://drivr.com/www.yplanapp.com">yplan</a>, a great app with a vide selection of events that even locals haven’t heard about. And don’t worry about the transportation, with the DRIVR app you can get picked up within 15 minutes and get a quality ride to your next destination. It could also be a good idea to <a href="https://oyster.tfl.gov.uk/oyster/entry.do">get a oyster card</a>, so you easily can jump on and off the London tube, which can be an experience by itself </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END Welcome to London Content Section -->
+        
+        <!-- START Footer Area -->
+        <footer>
+            <div class="row-fluid sizeBreak">
+				<div class="span12">
+					<div class="nav">
+						<div>
+							<img src="img/logo-white.png" width="88" height="32" />
+						</div>
+						<span>Getting you around wherever you are</span>
+						<div class="details">
+							<span><span>50</span>countries</span>
+							<span><span>5.000+</span>cities around the world</span>
+							<span><span>300.000+</span>taxies available around the world</span>
+						</div>
+					</div>
+					<div class="world">
+						<div>
+							<h6>Launching soon in a city near you.</h6>
+						</div>
+					</div>
+					<div class="contact">
+						<span>Connect with us</span>
+						<ul>
+							<li><a href="http://facebook.com/drivrhq" target="_blank" class="facebook">Facebook</a></li>
+							<li><a href="https://twitter.com/drivr_uk" target="_blank" class="twitter">Twitter</a></li>
+
+						</ul>
+						<div>
+                            DRiVR UK LTD<br />
+8 WARNER YARD<br/>
+CLERKENWELL<br/>
+LONDON | EC1R 5EY<br/>
+UNITED KINGDOM<br/>
+							<a href="mailto:hello@drivr.com">hello@drivr.com</a>
+						</div>
+					</div>
+				</div>
+            </div>
+        </footer>
+        <!-- END Footer Area -->
+    </div>
+	<!-- Javascript -->
+<script type="text/javascript">
+	var testing = false;
+</script>
+    <script src="bundles/js-3rdparty%3Fv=BOfPwtmItnTeTjbGXyqiDSMdB_UO2VNPDiC1REDxipA1"></script>
+
+
+
+    
+<!-- Main Functionality -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-cookies.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?client=gme-clickataxiaps&sensor=false"></script>		
+<script src="bundles/js-city-custom%3Fv=UyGEtbnVbVcvH45kv3AapInQnvOOnM2psWAWCnaURvI1"></script>
+
+
+<script type="text/javascript">
+	var apiUrl = "https://api.clickataxi.com";
+	var clientId = null;
+	var accessToken = '';
+	var getAccessTokenParam = function () { return '';/*"access_token_fake=" + accessToken*/ };
+	var coordinates = [51.513443,-0.120163];
+	var zoom = 14;
+	var addressApiUrl = "/api/places/search?" + getAccessTokenParam() + "&latlng=51.513443,-0.120163";
+	var braintree = Braintree.create("MIIBCgKCAQEA3QNIBzAB7b25quPX4h94plczMuBab1lXPF9aPN11cD6JmQSO2GX0WfBnb9o4d0U37dBT/wOv0zYNdLDgEsuKAxQcf/25PVHlL06noEy5FxS9g59Y5x2OZ4MoY/Or23V7LxaPxrKPJhAZe/AxiBAUCyHc2Y1Hp8UMmiIct4lK/k78U4a+E6fYE98K/v+K0PmCcdoW2fIB7YgxyZQ4pjLL/ihRdrNBFveBfLcmwfF+HbhO8/xCsABTSkcoNDknFrQcRa+j7ZU3NQbkOqbTKW1kN9lscerhF2pYas8FLLym7+RghY60fpbuct8UjnWErMayOHt5eVKG7h+2Z0ip0hCkwwIDAQAB");
+	var eta = '4'
+	var cityPhone = "+44 20 3322 2250";
+	var cityName = "London";
+</script>
+<script type="text/javascript" src="scripts/ga.js"></script>
+<script type="text/javascript"> if (!NREUMQ.f) {NREUMQ.f=function() {NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script"); e.type="text/javascript"; e.src=(("http:"===document.location.protocol)?"http:":"https:") + "//" + "rpm-images.newrelic.com/42/eum/rum.js"; document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-4.newrelic.com","cce6bc8d8b","1821533","ZgEAbUNVWxVUUhINVl9LJlZFelASdl4IEEteCA5cQxt2D0FISS1XVQEa",0,15,new Date().getTime(),"E05E8B2A6D7106CA","","","",""]);</script></body>
+</html>

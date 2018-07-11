@@ -1,0 +1,5 @@
+[02-Nov-2013 19:46:32] PHP Fatal error:  Call to undefined function  is_home() in /home2/iamandre/public_html/wp-content/themes/nebraska/index.php on line 11
+[11-Nov-2013 02:18:19] PHP Fatal error:  Call to undefined function  is_home() in /home2/iamandre/public_html/wp-content/themes/nebraska/index.php on line 11
+[14-Nov-2013 23:53:59] PHP Fatal error:  Call to undefined function  is_home() in /home2/iamandre/public_html/wp-content/themes/nebraska/index.php on line 11
+[15-Feb-2014 13:30:45] PHP Fatal error:  Call to undefined function  is_home() in /home2/iamandre/public_html/wp-content/themes/nebraska/index.php on line 11
+[08-Jul-2014 13:37:10 America/Chicago] PHP Fatal error:  Call to undefined function is_home() in /home2/iamandre/public_html/wp-content/themes/nebraska/index.php on line 11

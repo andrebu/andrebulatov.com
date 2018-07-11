@@ -1,0 +1,21 @@
+.divproductsmain { width:100%; }
+.divcheckout { width:100%; }
+.tblcheckout { width:90%; margin-left:auto; margin-right:auto; border:none; }
+.tblcheckout td { padding:8px; vertical-align:top; border:none; }
+.tblproducts { width:90%; margin-left:auto; margin-right:auto; border:none; }
+.tblproducts td { padding:5px; vertical-align:top; border:none; }
+.tblproductlist { border:none; }
+.tblproductlist td { vertical-align:top; border:none; }
+.tblproduct { border:none; }
+.tblproduct td { padding:5px; border:none; }
+.tblproductdetails { width:100%; border:none; }
+.tbladdtocartform { text-align:left; border:none; }
+.tbladdtocartform td { vertical-align:middle; padding:none; border:none; }
+.tblshoppingcart { border:none; }
+.tblshoppingcart td { padding:3px; vertical-align:middle; border:none; }
+.ui-state-focus { outline: none; }
+.lblmsg { font-weight:bold; color:#cc0000; font-size:12px; }
+.wopordercartwidgetorderform td { padding:5px; }
+.tblnoborder td { border:none; }
+.requiredfield { font-weight:bold; color:#cc0000; }
+.lihowto li { padding:5px; font-size:14px; }

@@ -1,0 +1,1 @@
+ <p class="aligncenter spcaer_top clearfix"> <a href="#"><img src="<?php bloginfo('template_url'); ?>/images/advt3.png" alt=""   /></a></p>

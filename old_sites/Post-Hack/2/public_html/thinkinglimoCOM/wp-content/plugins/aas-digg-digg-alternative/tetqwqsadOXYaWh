@@ -1,0 +1,23 @@
+    <div id="footer">
+     <div class="footer-in container_12 clearfix">
+        	<p> &copy; <?php the_time(Y); ?> <?php bloginfo(); ?>  All rights reserved.  <br />
+            <span class="copyright">Store Theme by  <a href="http://templatic.com" title="templatic.com"><strong>Premium Wordpress Themes</strong></a>  </span></p>
+            
+           
+     </div> <!-- footer in #end -->
+    </div><!-- footer #end -->
+
+ <?php wp_footer(); ?><?php if ( get_option(ptthemes_google_analytics) <> "" ) { echo stripslashes(get_option(ptthemes_google_analytics)); } ?>
+ <script type="text/javascript" src="<?php bloginfo(template_directory); ?>/library/js/superfish.js"></script>
+ <!-- For Menu -->
+<script type="text/javascript">
+jQuery(function(){
+	jQuery(ul.sf-menu).superfish();
+});
+
+</script>
+
+</body>
+
+</html>
+		

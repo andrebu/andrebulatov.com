@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* Text color */
+#reply-title, .colr, 
+.txthover:hover,
+.widget_rss h1 a,
+.ft-left ul.links li a:hover,
+.post:hover .desc .date h1,
+.post .desc .desc-sec h3 a:hover,
+.post .desc .desc-sec .post-opts p a:hover,
+.post-detail .desc h3 a:hover,
+.post-detail .desc .post-opts p a:hover,
+.comments ul li:hover .desc h5 a,
+.tracklist li.title p a:hover,
+.gig-post .desc .txt-sec h3 a:hover,
+.gig-post:hover .date h1,
+.gallery-head nav a:hover, 
+.gallery-head nav a.active,
+.post .desc .desc-sec h3 a,
+#gallery #images .slide .caption h3 a										{color:#ffc400 !important;}
+
+
+
+.bordercolr,
+.bordercolrover:hover														{border-color:#ffc400 !important;}
+
+
+#login-box 																	{border-top:#ffc400 2px solid !important;}
+.cs_gal_2_column li:hover													{border:#ffc400 solid 2px !important;}
+
+
+.backcolr,
+.backcolrhover:hover,
+.navigation > div > ul > li:hover,
+.nivo-prevNav:hover,
+.nivo-nextNav:hover,
+#wp-calendar thead,
+#mcs5_container .dragger,
+li.jp-playlist-current														{background-color:#ffc400 !important;}
+
+
+.jp-title li:hover,
+.jp-playlist li:hover,
+a.ticket:hover,														
+a.buttonone:hover,
+a.buttonsmaller:hover,
+.other-albums .desc a.buynow:hover,
+.comments ul li .desc a.comment-reply-link:hover,
+a.bigbutton:hover,
+.tracklist li a.lyrics:hover,
+.widget input[type="submit"],
+.widget_tag_cloud a:hover,
+.tracklist li a.download:hover												{background:#ffc400 !important;}

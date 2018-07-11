@@ -1,0 +1,3673 @@
+/*
+Theme Name: LimoStrap
+Theme URI: http://thinkinglimo.com 
+Description: Theme built on bootstrap, oriented for limousine companies.
+Author: Andre Bulatov
+Author URI: http://andrebulatov.com 
+Version: 1.0
+Tags: bootstrap, limo 
+License: GNU/GPL Version 2 or later
+License URI: http://www.gnu.org/licenses/gpl.html
+*/
+
+@charset "utf-8";
+/* Thinking Limo Master Stylesheet Document */
+
+/*	==========================
+	I.		Global definitions
+	II.		Header Section
+		1.	Navigation
+		2.	Minor Navigation
+	III.	Content Section
+		1.	Top Slider
+		2.	Content Section
+		3.	App Section
+		4.	Rates Section
+		5.	FAQ Section
+		6.	News Section
+		7.	Post Section
+		8.	About Section
+		9.	Top Image Section
+		10. Drive for us Content Section
+		11. Drive for us Form Section
+		12. Signin Section
+		13. Get App Section
+		14. Signup Content
+		15. Dashboard Nav Section
+		16. Dashboard Header Section
+		17. Dashboard Content Section
+		18. Dashboard Footer Section
+	IV.		Footer Section
+		1.	Footer Navigation
+	V.		Responsive Tweaks
+	==========================	*/
+	
+/* I. Global definitions */
+
+@import url('../LimoStrap/assets/css/bootstrap.min.css'); 
+
+@import url('../LimoStrap/assets/css/animate.css'); 
+
+@import url('../LimoStrap/assets/css/fonts.css'); 
+
+@import url('../LimoStrap/assets/css/social_sprite.css'); 
+
+
+
+/* 	II.		Header Section */
+/* 		1.	Navigation */
+/* 		2.	Minor Navigation */
+
+
+
+/* 	III.	Content Section */
+
+
+/* OLD CSS */ 
+ 
+.pace{
+	-webkit-pointer-events:none;
+	pointer-events:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	user-select:none;
+} 
+ 
+.pace-inactive{
+	display:none;
+} 
+ 
+.pace .pace-progress{
+	background:#ff7f15;
+	position:fixed;
+	z-index:2000;
+	top:0;
+	left:0;
+	height:2px;
+	-webkit-transition:width 1s;
+	-moz-transition:width 1s;
+	-o-transition:width 1s;
+	transition:width 1s;
+} 
+ 
+.pace .pace-progress-inner{
+	display:block;
+	position:absolute;
+	right:0;
+	width:100px;
+	height:100%;
+	box-shadow:0 0 10px #ff7f15,0 0 5px #ff7f15;
+	opacity:1;
+	-webkit-transform:rotate(3deg) translate(0, -4px);
+	-moz-transform:rotate(3deg) translate(0, -4px);
+	-ms-transform:rotate(3deg) translate(0, -4px);
+	-o-transform:rotate(3deg) translate(0, -4px);
+	transform:rotate(3deg) translate(0, -4px);
+}
+
+.pace .pace-activity{
+	display:block;
+	position:fixed;
+	z-index:2000;
+	top:15px;
+	right:15px;
+	width:20px;
+	height:20px;
+	border:solid 3px transparent;
+	border-top-color:#ff7f15;
+	border-left-color:#ff7f15;
+	border-radius:30px;
+	-webkit-animation:pace-spinner 400ms linear infinite;
+	-moz-animation:pace-spinner 400ms linear infinite;
+	-ms-animation:pace-spinner 400ms linear infinite;
+	-o-animation:pace-spinner 400ms linear infinite;
+	animation:pace-spinner 400ms linear infinite;
+}
+
+@-webkit-keyframes pace-spinner{
+	0%{
+		-webkit-transform:rotate(0deg);
+		transform:rotate(0deg);
+	}
+
+	100%{
+		-webkit-transform:rotate(360deg);
+		transform:rotate(360deg);
+	}
+
+}
+
+@-moz-keyframes pace-spinner{
+	0%{
+		-moz-transform:rotate(0deg);
+		transform:rotate(0deg);
+	}
+
+	100%{
+		-moz-transform:rotate(360deg);
+		transform:rotate(360deg);
+	}
+
+}
+
+@-o-keyframes pace-spinner{
+	0%{
+		-o-transform:rotate(0deg);
+		transform:rotate(0deg);
+	}
+
+	100%{
+		-o-transform:rotate(360deg);
+		transform:rotate(360deg);
+	}
+
+}
+
+@-ms-keyframes pace-spinner{
+	0%{
+		-ms-transform:rotate(0deg);
+		transform:rotate(0deg);
+	}
+
+	100%{
+		-ms-transform:rotate(360deg);
+		transform:rotate(360deg);
+	}
+
+}
+
+@keyframes pace-spinner{
+	0%{
+		transform:rotate(0deg);
+	}
+
+	100%{
+		transform:rotate(360deg);
+	}
+
+}
+
+.font-regular{
+	font-family:'brandon_grotesque_regularRg';
+	font-weight:normal;
+}
+
+.font-medium{
+	font-family:'brandon_grotesquemedium';
+	font-weight:normal;
+}
+
+.font-bold{
+	font-family:'brandon_grotesquebold';
+	font-weight:normal;
+}
+
+.font-black{
+	font-family:'brandon_grotesqueblack';
+	font-weight:normal;
+}
+
+.trans{
+	transition-property:all;
+	transition-duration:.2s;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:.2s;
+}
+
+.color-trans{
+	transition-property:color;
+	transition-duration:.1s;
+	-webkit-transition-property:color;
+	-webkit-transition-duration:.1s;
+}
+
+.full-bg{
+	background-position:center center;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+}
+
+.fluid-container{
+	padding:0 15px;
+	margin:0 auto;
+}
+
+.pad90{
+	padding-top:90px;
+	padding-bottom:90px;
+}
+
+.pad70{
+	padding-top:70px;
+	padding-bottom:70px;
+}
+
+.pad50{
+	padding-top:50px;
+	padding-bottom:50px;
+}
+
+.pad30{
+	padding-top:30px;
+	padding-bottom:30px;
+}
+
+.mar50{
+	margin:50px auto;
+}
+
+.mar100{
+	margin:100px auto;
+}
+
+.clearfix{
+	*zoom:1;
+}
+
+.clearfix:before,.clearfix:after{
+	display:table;
+	content:'';
+	line-height:0;
+}
+
+.clearfix:after{
+	clear:both;
+}
+
+.clear{
+	clear:both;
+}
+
+::-moz-selection{
+	background:#ff7808;
+	color:#fff;
+	text-shadow:none;
+}
+
+::selection{
+	background:#ff7808;
+	color:#fff;
+	text-shadow:none;
+}
+
+::-webkit-scrollbar-thumb:vertical{
+	background-color:#ff7f15;
+}
+
+::-webkit-scrollbar{ 
+	width:5px;
+	height:0;
+	background:#000;
+}
+
+html,body{
+	height:100%;
+}
+
+body{
+	-webkit-font-smoothing:antialiased;
+	font-size:16px;
+	line-height:1.6;
+	font-family:'brandon_grotesque_regularRg';
+	font-weight:normal;
+/* 	background:#000; */
+}
+
+p{
+	text-align:justify;
+}
+
+strong{
+	font-family:'brandon_grotesquebold';
+	font-weight:normal;
+}
+
+a{
+	transition-property:color;
+	transition-duration:.1s;
+	-webkit-transition-property:color;
+	-webkit-transition-duration:.1s;
+/* 	color:#9e6335; */
+	outline:none;
+}
+
+a:hover{
+	color:#ff7808; 
+}
+
+a:focus{
+	outline:none;
+}
+
+h1{
+	font-family:'brandon_grotesquemedium';
+	font-weight:normal;
+	font-size:22px;
+	color:#666;
+}
+
+h2{
+	font-family:'brandon_grotesquemedium';
+	font-weight:normal;
+	font-size:21px;
+	color:#666;
+}
+
+h3{
+	font-family:'brandon_grotesquemedium';
+	font-weight:normal;
+	font-size:21px;
+	color:#666;
+}
+
+h4{
+	font-family:'brandon_grotesquebold';
+	font-weight:normal;
+	font-size:20px;
+	color:#666;
+}
+
+h5{
+	font-family:'brandon_grotesquebold';
+	font-weight:normal;
+	font-size:16px;
+	color:#735768;
+	text-transform:uppercase;
+}
+
+h6{
+	font-family:'brandon_grotesquebold';
+	font-weight:normal;
+	font-size:14px;
+	color:#555;
+	text-transform:uppercase;
+}
+
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
+	line-height:1.5;
+}
+
+h1,h2,h3{
+	margin-top:40px;
+}
+
+h4,h5,h6{
+	margin-top:30px;
+}
+
+.contact-form .form-control input {
+	display:block;
+	width:100%;
+	height:43px;
+	padding:14px 16px;
+	font-size:14px;
+	text-transform:none;
+	letter-spacing:2px;
+	line-height:1.428571429;
+	color:#00000b;
+	text-align:center;
+	vertical-align:middle;
+	background-color:transparent;
+	border:2px solid #7c7c7c;
+	border-radius:0;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+	-webkit-transition:none;
+	transition:none;
+	font-family:'segoe_uilight';
+	font-weight:normal;
+}
+
+.form-control:focus{
+	border-color:#00000b;
+	outline:0;
+	box-shadow:none;
+}
+
+.form-control.light{
+	color:#fff;
+	border-color:#fff;
+}
+
+.form-control.light:focus{
+	border-color:#fff;
+	background-color:#fff;
+	color:#555;
+	outline:0;
+	box-shadow:none;
+}
+
+.form-control.required,.form-control.required:focus{
+	border-color:#c00;
+}
+
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{
+	-webkit-appearance:none;
+	margin:0;
+}
+
+.contact-form input,.contact-form textarea{
+	margin-bottom:10px;
+	resize:none;
+}
+
+.contact-form textarea{
+	color:#00000b;
+}
+
+.contact-form.reservation textarea
+{
+	width:280px;
+	margin:0 auto;
+}
+
+.contact-form h5
+{
+	color:#181818;
+	font-size:18px;
+	text-align:center;
+	font-weight:normal; 
+	font-family:'segoe_uilight';
+	margin-top:5px;
+}
+
+.select-wrapper
+{
+	display: block;
+	border: 2px solid #7C7C7C;         
+	background: url("http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/dropdown.png") no-repeat right center;
+	cursor: pointer;
+	margin:0 auto;
+	margin-bottom:10px;
+	padding-right:10px;
+}
+.select-wrapper, .select-wrapper select{
+	width: 280px;
+	height: 43px;
+	line-height: 43px;
+}
+
+.short
+{
+	width:280px;
+	margin:0 auto;
+	margin-bottom:10px;
+	display:block;
+	height:43px;
+}
+
+.short .select-wrapper
+{
+	float:left;
+	margin-right:5px;
+}
+
+.short .right_s .select-wrapper
+{
+	margin-right:0;
+	float:right;
+}
+
+.short .select-wrapper, .short .select-wrapper select
+{
+	width:90px;
+	height: 43px;
+	line-height: 43px;
+}
+
+.short.for_two .select-wrapper, .short.for_two .select-wrapper select
+{
+	width:130px;
+	height: 43px;
+	line-height: 43px;
+}
+
+.select-wrapper:hover, .select-wrapper.focussed{
+	border:2px solid #00000B;
+	
+}
+.select-wrapper .holder{
+	display: block;
+	margin: 0 35px 0 5px;
+	white-space: nowrap;            
+	overflow: hidden;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+}
+.select-wrapper select{
+	margin: 0;
+	position: absolute;
+	z-index: 2;            
+	cursor: pointer;
+	outline: none;
+	opacity: 0;
+	/* CSS hacks for older browsers */
+	_noFocusLine: expression(this.hideFocus=true); 
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	-khtml-opacity: 0;
+	-moz-opacity: 0;
+}
+
+.ui-datepicker-trigger
+{
+	background:transparent;
+	border:none;
+	position:absolute;
+	right:5px;
+	top:6px;
+}
+
+.fc_label
+{
+	width:100%;
+	text-align:center;
+	color:#909090;
+	font-size:18px;
+	font-family:'segoe_uilight';
+	margin-bottom:10px;
+	display:block;
+	height:43px;
+	line-height:43px;
+}
+
+.contact-form .checkinside
+{
+	width:280px;
+	margin:0 auto;
+	margin-bottom: 15px;
+	display:block;
+	font-size:11px;
+	text-transform:uppercase;
+}
+
+.contact-form .checkinside input
+{
+	float:left;
+	width:20px;
+	height:20px;
+	border:1px solid #7c7c7c;
+	margin-right:5px;
+}
+
+.btn{
+	display:inline-block;
+	padding:10px 20px;
+	margin-bottom:0;
+	font-size:24px;
+	line-height:1.428571429;
+	white-space:nowrap;
+	vertical-align:middle;
+	text-align:center;
+	letter-spacing:2px;
+	color:#555;
+	cursor:pointer;
+	background-color:transparent;
+	border:2px solid #666;
+	border-radius:0;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	-o-user-select:none;
+	user-select:none;
+	transition-property:all;
+	transition-duration:.2s;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:.2s;
+	font-family:'segoe_uiregular';
+	font-weight:normal;
+}
+
+.btn:focus{
+	outline:none;
+	outline-offset:0;
+}
+
+.btn:hover,.btn:focus{
+	color:#fff;
+	text-decoration:none;
+	background-color:#735768;
+	border-color:#735768;
+}
+
+.btn:active,.btn .active{
+	background-image:none;
+	outline:0;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+}
+
+.btn-large{
+	padding:15px 26px;
+	font-size:14px;
+}
+
+.btn-large:active,.btn-large .active{
+	padding:15px 26px;
+}
+
+.btn-light{
+	color:#fff;
+	background-color:transparent;
+	border-color:#fff;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+}
+
+.btn-light:hover,.btn-light:focus,.btn-light:active,.btn-light .active{
+	color:#010101;
+	background-color:#fff;
+	border-color:#fff;
+}
+
+.btn-light:active,.btn-light .active{
+	background-image:none;
+}
+
+.btn-viola{
+	color:#040404;
+	background-color:transparent;
+	border-color:#7c7c7c;
+}
+
+.btn-viola:hover,.btn-viola:focus,.btn-viola:active,.btn-viola .active{
+	color:#fff;
+	background-color:#FF7F15;
+	border-color:#FF7F15;
+}
+
+.btn-viola:active,.btn-viola .active{
+	background-image:none;
+}
+
+.navbar-header {
+	float: none; 
+	background-color: white; 
+}
+
+.navbar-mobile
+{
+	font-family:'segoe_uilight';
+	font-weight:normal;
+	letter-spacing:2px;
+	line-height:1;
+	border-bottom:none;
+	background:#fff;
+	min-height:63px;
+}
+
+.navbar-mobile .navbar-collapse
+{
+	border-top:0 solid transparent;
+	box-shadow:inset 0 0 0 rgba(255,255,255,0.1);
+}
+
+.navbar-mobile .navbar-nav
+{
+	margin:0 -15px
+}
+
+.navbar-mobile .navbar-nav li
+{
+	text-align:center
+}
+
+.navbar-mobile .navbar-nav li a
+{
+	font-size:20px
+}
+
+.navbar-mobile .navbar-brand
+{
+	width:54px;
+	height:45px;
+	margin:8px 0 0 15px;
+	background:url('http://thinkinglimo.com/wp-content/uploads/T-logo-winged-100x100-blue-T.png') no-repeat center center;
+	background-size:cover; 
+}
+
+.navbar-mobile .navbar-toggle{
+	border:0;
+	outline:0;
+	border-radius:0;
+	background: #000; 
+}
+
+.navbar-mobile .navbar-toggle:hover,.navbar-mobile .navbar-toggle:focus{
+	background-color:#ff8621
+}
+
+.navbar-mobile .navbar-toggle
+{
+	margin-top:15px;
+}
+
+
+.navbar-mobile .navbar-toggle:hover .icon-bar,.navbar-mobile .navbar-toggle:focus .icon-bar{
+	background-color:#fff
+}
+
+.navbar-mobile .top_phone
+{
+	display:none;
+}
+
+.navbar-fissa
+{
+	font-family:'segoe_uilight';
+	font-weight:normal;
+	letter-spacing:1px;
+	line-height:1;
+	border-bottom:0;
+	background:#000;
+	background-color: white;
+}
+
+	.navbar-fissa .navbar-nav
+	{
+		position:relative;
+		float:none;
+		text-align:center;
+/* 		height:115px; */
+		padding: 0;
+		margin: 30px 0 0;
+	}
+
+		.navbar-fissa .navbar-nav li
+		{
+			float:none;
+			display:inline-block;
+			text-align:center;
+		}
+
+			.navbar-fissa .navbar-nav li a, 
+			.navbar-fissa .navbar-nav li .no_link
+			{
+				display:inline-block;
+/* 				color:#d1d1d1; */
+				color: #000; 
+				font-size:18px; 
+				font-weight: bold; 
+			}
+			
+			.no_link
+			{
+				position: relative;
+				display: block;
+				line-height: 20px;
+/*
+				padding: 10px 15px;
+				padding-top: 40px;
+				padding-bottom: 40px;
+*/
+			}
+
+.navbar-nav>li>a {
+	padding-bottom: 0; 
+	padding-top: 0; 	
+}
+			
+				.navbar-fissa .navbar-nav li.dropdown a
+				{
+					background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/sub_icon.png') right center no-repeat;
+				
+				}
+
+				.navbar-fissa .navbar-nav li a .line, .navbar-fissa .navbar-nav li .no_link .line 
+				{
+					display:inline-block;
+					padding:7px 0 5px 0;
+					border-bottom:2px solid transparent;
+					transition-duration:.1s;
+					-webkit-transition-property:color;
+					-webkit-transition-duration:.1s;
+					transition-property:border-color;
+					transition-duration:.3s;
+					-webkit-transition-property:border-color;
+					-webkit-transition-duration:.3s;
+				}
+
+.navbar-fissa .navbar-nav li a:hover,.navbar-fissa .navbar-nav li a:focus
+{
+	outline:none;
+	color:#ff7808;
+}
+
+	.navbar-fissa .navbar-nav li.dropdown a:hover,.navbar-fissa .navbar-nav li.dropdown a:focus
+	{
+		background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/sub_active_icon.png') right center no-repeat;
+	}
+
+.navbar-fissa .navbar-nav li li
+{
+	margin-left:0;
+	display:block;
+	width:100%;
+	float:left;
+	margin-bottom:2px;
+	padding:2px;
+}
+
+
+
+.navbar-fissa .navbar-nav li:hover .line{
+	
+}
+
+.navbar-fissa .navbar-nav .active a,
+.navbar-fissa .navbar-nav .active a:hover,
+.navbar-fissa .navbar-nav .active a:focus
+{
+	background:transparent;
+	color:#fff;
+}
+
+
+.navbar-fissa .navbar-nav .open>a,
+.navbar-fissa .navbar-nav .open>a:hover,
+.navbar-fissa .navbar-nav .open>a:focus{
+	background-color:transparent;
+	color:#fff;
+}
+
+.navbar-fissa .navbar-brand
+{
+	display:block;
+	position:absolute;
+	width:130px;
+	height:100px;
+	background:url('http://thinkinglimo.com/wp-content/uploads/T-logo-winged-100x100-blue-T.png') no-repeat center center;
+	left:51%;
+	margin:0 0 0 -78px;
+	z-index:10;
+	top:-10px;
+	padding: 0; 
+	background-color: white; 
+	border-radius: 50%;
+}
+.navbar-fissa .navbar-brand a {
+	text-decoration-line: initial;
+}
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+	background-color: inherit;
+}
+/*
+.navbar-fissa .navbar-brand a .brand-letter {
+	vertical-align: middle;
+	text-align: center;
+	display: block;
+	font-size: 80px; 
+	font-family: sans-serif; 
+	line-height: 85px;
+	font-weight: bold;
+	background-color: black;
+	border-radius: 50%;
+	border: 3px solid lightgray;
+}
+.navbar-fissa .navbar-brand a:hover {
+	color: #ff7808; 
+}
+*/
+.navbar-fissa .top_phone
+{
+	position:absolute;
+	top: 0px;
+	left: 50px;
+	font-family:'segoe_uiregular';
+	text-decoration:none;
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/phone_icon.png') no-repeat left center;
+	display:block;
+	float:right;
+	padding:5px 15px 5px 30px;
+/* 	color:#fbf2eb; */
+	font-size:27px !important;
+}
+
+.navbar-fissa .top_reserve
+{
+	position:absolute;
+	top:0px;
+	right:0;
+	float:right;
+	font-family:'segoe_uiregular';
+	text-decoration:none;
+	display:block;
+	padding:5px 15px 5px 30px;
+	font-size:27px !important;
+	width: 235px;
+	text-align:right;
+/* 	color:#fbf2eb; */
+/* 	display: none;  */
+}
+
+.navbar-fissa .dropdown-menu li:hover .sub-menu
+{
+	visibility:visible
+}
+
+.navbar-fissa .dropdown .dropdown-menu li.active a
+{
+	background:transparent;
+	color:#fff;
+}
+
+.navbar-fissa .dropdown .dropdown-menu li.active a .line{
+	border-bottom:2px solid #fff
+}
+
+.navbar-fissa .dropdown.open .dropdown-menu,.navbar-fissa .dropdown:hover .dropdown-menu,.navbar-fissa .dropdown:focus .dropdown-menu
+{
+	display:block;
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/submenu_top.png') top center no-repeat;
+	border-radius:0;
+	min-width:260px;
+	left:50%;
+	margin:0 0 0 -130px;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+	border:none;
+	padding:4px 0 15px 0;
+}
+
+.navbar-fissa .dropdown.open .dropdown-menu a,.navbar-fissa .dropdown:hover .dropdown-menu a,.navbar-fissa .dropdown:focus .dropdown-menu a
+{
+	color:#fff;
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/submenu.png') left top repeat;
+	padding-top:5px;
+	padding-bottom:5px
+}
+
+.navbar-fissa .dropdown.open .dropdown-menu a .line,.navbar-fissa .dropdown:hover .dropdown-menu a .line,.navbar-fissa .dropdown:focus .dropdown-menu a .line
+{
+	border-bottom:2px solid transparent;
+	padding:2px 0 0 0;
+	transition-duration:.1s;
+	-webkit-transition-property:color;
+	-webkit-transition-duration:.1s;
+	transition-property:border-color;
+	transition-duration:.3s;
+	-webkit-transition-property:border-color;
+	-webkit-transition-duration:.3s
+}
+
+.navbar-fissa .dropdown.open .dropdown-menu a:hover .line,.navbar-fissa .dropdown:hover .dropdown-menu a:hover .line,.navbar-fissa .dropdown:focus .dropdown-menu a:hover .line
+{
+	
+	
+}
+
+.navbar-fissa .navbar-nav li li a
+{
+	width:100%;
+	text-transform:uppercase;
+	border:2px solid transparent;
+}
+
+.navbar-fissa .navbar-nav li li a:hover
+{
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/submenu.png') left top repeat !important;
+	border:2px solid #ff8015;
+}
+
+
+#section_nav_wrapper{
+	right:60px;
+	position:fixed;
+	z-index:99;
+	top:50%;
+	width:25px;
+	transition-property:all;
+	transition-duration:.2s;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:.2s
+}
+
+#section_nav_wrapper #section_nav{
+	list-style:none;
+	width:25px
+}
+
+#section_nav_wrapper #section_nav li{
+	list-style:none;
+	width:25px;
+	height:25px
+}
+
+#section_nav_wrapper #section_nav li a{
+	transition-property:all;
+	transition-duration:.2s;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:.2s;
+	width:25px;
+	height:25px;
+	display:block;
+	text-decoration:none;
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/dot-25.png') no-repeat center center;
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/square-25.png') no-repeat center center
+}
+
+#section_nav_wrapper #section_nav li a:hover{
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/dot-empty-25.png') no-repeat center center;
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/square-empty-25.png') no-repeat center center
+}
+
+#section_nav_wrapper #section_nav .active a{
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/dot-empty-25.png') no-repeat center left;
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/square-empty-25.png') no-repeat center center
+}
+
+.tooltip-inner{
+	white-space:nowrap;
+	line-height:1;
+	padding:10px 12px;
+	font-family:'brandon_grotesquebold';
+	font-weight:normal
+}
+
+.intro-header{
+	height:455px;
+	width:100%;
+	display:block;
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:cover;
+	overflow:hidden; 
+	background-image: url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/contact_header.jpg'); 
+	}
+
+.intro-header.reservation { 
+	background-image: url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/reservation_header.jpg'); 
+	}
+.intro-header.limo-service-rates { 
+	height:264px; 
+	background-image: url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/big/map-world-ub.gif'); 
+	}
+	
+.intro-header.limo-fleet { 
+	background-image: url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_header.jpg'); 
+	}
+.intro-header.airport-services { 
+	background-image: url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/services/airport.jpg'); 
+	}
+.intro-header.corporate-services { 
+	background-image: url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/services/corporate.jpg'); 
+	}
+.intro-header.wedding-services { 
+	background-image: url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/services/wedding.jpg'); 
+	}
+.intro-header.personal-services { 
+	background-image: url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/services/personal.jpg'); 
+	}
+	
+
+.intro-header.contact {
+	height:264px; 
+	background-image: url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/big/map-world-driv.png'); 
+	background-color: #78C5DA; 
+}
+
+.intro-header h2{
+	font-family:'segoe_uiregular';
+	font-weight:normal;
+	color:#fff;
+	text-transform:uppercase;
+	font-size:57px;
+	letter-spacing:8px;
+	padding:105px 0 18px 0;
+	background: url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/spacer-100-2-white-space.png') no-repeat bottom center;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.05),0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.intro-header h2 small{
+	font-family:'segoe_uiregular';
+	font-weight:normal;
+	color:#fff;
+	font-size:24px;
+	letter-spacing:8px;
+	text-transform:uppecase;
+	display:block;
+	padding:15px 0
+}
+
+.intro-header:before{
+	content:' ';
+	height:455px;
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	/*background-color:#42353d;*/
+	opacity:.8
+}
+
+
+.carousel-montere{
+	height:100%;
+	min-height:600px;
+	overflow:hidden;
+/* 	background:#000; */
+}
+
+.carousel-montere .item{
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover
+}
+
+.carousel-montere .item,.carousel-montere .item.active{
+	height:100%
+}
+
+.carousel-montere .carousel-inner{
+	height:100%
+}
+
+.carousel-montere .carousel-caption{
+/*
+	top:33%;
+	bottom:auto;
+	left:0;
+	right:0
+*/
+}
+
+.carousel-montere .carousel-caption h2
+{
+	font-size:60px;
+	color:#fff;
+	text-transform:uppercase;
+	display:block;
+	text-shadow:0 0 1px rgba(0,0,0,0.05),0 1px 2px rgba(0,0,0,0.3);
+	font-family:'segoe_uiregular';
+	font-weight:normal;
+	letter-spacing:8px;
+	line-height:1.5;
+	margin-top:0px;
+}
+
+.carousel-montere .carousel-caption h3
+{
+	font-size:30px;
+	color:#fff;
+	text-transform:uppercase;
+	display:block;
+	text-shadow:0 0 1px rgba(0,0,0,0.05),0 1px 2px rgba(0,0,0,0.3);
+	font-family:'segoe_uiregular';
+	font-weight:normal;
+	letter-spacing:1px;
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/spacer-50x2-white.png') no-repeat top center;
+	line-height:1.5;
+	padding-top:40px;
+	margin-top:30px;
+	margin-bottom:0px;
+}
+
+.carousel-montere .carousel-caption p{
+	font-size:18px;
+	text-align:center;
+	color:#fff;
+	display:block;
+	text-shadow:0 0 1px rgba(0,0,0,0.05),0 1px 2px rgba(0,0,0,0.3);
+	line-height:1.5;
+	margin-top:7px;
+	font-family:'segoe_uilight';
+	font-weight:normal;
+	text-transform:uppercase;
+	margin-bottom:40px;
+}
+
+.carousel-montere .carousel-caption a
+{
+	background: #ff7400;
+	background: -moz-linear-gradient(top,  #ff7400 0%, #ff8926 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff7400), color-stop(100%,#ff8926));
+	background: -webkit-linear-gradient(top,  #ff7400 0%,#ff8926 100%);
+	background: -o-linear-gradient(top,  #ff7400 0%,#ff8926 100%);
+	background: -ms-linear-gradient(top,  #ff7400 0%,#ff8926 100%);
+	background: linear-gradient(to bottom,  #ff7400 0%,#ff8926 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7400', endColorstr='#ff8926',GradientType=0 );
+	font-size:32px;
+	text-decoration:none;
+	color:#fff;
+	text-transform:uppercase;
+	border-radius:4px;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	padding:5px 10px;
+	
+
+}
+
+.carousel-montere .carousel-indicators li,.carousel-montere .carousel-indicators .active{
+	display:inline-block;
+	width:10px;
+	height:10px;
+	margin:4px;
+	text-indent:-999px;
+	cursor:pointer;
+	background-color:transparent;
+	border:1px solid #fff;
+	border-radius:8px;
+	opacity:1;
+	transition-property:all;
+	transition-duration:.2s;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:.2s
+}
+
+.carousel-montere .carousel-indicators li.active{
+	opacity:1;
+	background-color:#fff;
+}
+
+.carousel-indicators li{
+	background-color:#999;
+	background-color:rgba(70,70,70,0.25)
+}
+
+.carousel-indicators .active{
+	background-color:#444
+}
+
+.carousel-overlay .item:after{
+	content:' ';
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:-moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.5) 0, rgba(0,0,0,0) 100%);
+	background:-webkit-gradient(radial, center center, 0, center center, 100%, color-stop(0, rgba(0,0,0,0.5)), color-stop(100%, rgba(0,0,0,0)));
+	background:-webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.5) 0, rgba(0,0,0,0) 100%);
+	background:-o-radial-gradient(center, ellipse cover, rgba(0,0,0,0.5) 0, rgba(0,0,0,0) 100%);
+	background:-ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0.5) 0, rgba(0,0,0,0) 100%);
+	background:radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0, rgba(0,0,0,0) 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1)
+}
+
+.carousel-overlay .item:before{
+	content:' ';
+	display:block;
+	height:50%;
+	width:100%;
+	position:absolute;
+	bottom:0;
+	left:0;
+	background:-moz-linear-gradient(top, rgba(255,255,255,0) 0, rgba(0,0,0,0) 1%, rgba(0,0,0,0.07) 26%, rgba(0,0,0,0.5) 71%, rgba(0,0,0,0.7) 100%);
+	background:-webkit-linear-gradient(top, rgba(255,255,255,0) 0, rgba(0,0,0,0) 1%, rgba(0,0,0,0.05) 26%, rgba(0,0,0,0.5) 71%, rgba(0,0,0,0.7) 100%);
+	background:-o-linear-gradient(top, rgba(255,255,255,0) 0, rgba(0,0,0,0) 1%, rgba(0,0,0,0.07) 26%, rgba(0,0,0,0.5) 71%, rgba(0,0,0,0.7) 100%);
+	background:-ms-linear-gradient(top, rgba(255,255,255,0) 0, rgba(0,0,0,0) 1%, rgba(0,0,0,0.07) 26%, rgba(0,0,0,0.5) 71%, rgba(0,0,0,0.7) 100%);
+	opacity:.1
+}
+
+.item-1{
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/sliderhome/WELS_2.jpg') no-repeat center center
+}
+
+.item-2{
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/sliderhome/WELS_3.jpg') no-repeat center center
+}
+
+.item-3{
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/sliderhome/WELS_1.jpg') no-repeat center center
+}
+
+.item-4{
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/sliderhome/WELS_4.jpg') no-repeat center center
+}
+
+.item-5{
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/sliderhome/WELS_5.jpg') no-repeat center center
+}
+
+.item-6{
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/sliderhome/WELS_6.jpg') no-repeat center center
+}
+
+.item-7{
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/sliderhome/WELS_7.jpg') no-repeat center center
+}
+
+/*
+a.left-slider-button {
+	margin-right: 20px; 
+}
+*/
+
+.half-block{
+	text-align:center;
+	margin:0 -15px;
+	background-position:center center;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover
+}
+
+.half-block .inner{
+	background:-moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.5) 0, rgba(0,0,0,0) 100%);
+	background:-webkit-gradient(radial, center center, 0, center center, 100%, color-stop(0, rgba(0,0,0,0.5)), color-stop(100%, rgba(0,0,0,0)));
+	background:-webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.5) 0, rgba(0,0,0,0) 100%);
+	background:-o-radial-gradient(center, ellipse cover, rgba(0,0,0,0.5) 0, rgba(0,0,0,0) 100%);
+	background:-ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0.5) 0, rgba(0,0,0,0) 100%);
+	background:radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0, rgba(0,0,0,0) 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+	transition-property:background-color;
+	transition-duration:.4s;
+	-webkit-transition-property:background-color;
+	-webkit-transition-duration:.4s
+}
+
+.half-block .inner:hover{
+	background-color:rgba(27,23,28,0.8)
+}
+
+.half-block p{
+	padding:30px 0 0 0;
+	text-align:center
+}
+
+.half-block h4
+{
+	font-family:'segoe_uiregular';
+	font-weight:normal;
+	color:#fff;
+	font-size:48px;
+	letter-spacing:3px;
+	margin-top:10px;
+	text-shadow: 1px 6px 1px rgba(0, 0, 0, 0.3),0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.half-block h4 small
+{
+	color:#fff;
+	display:block;
+	font-size:19px;
+	letter-spacing:12px;
+	padding:0 0 10px 0;
+	text-shadow: 1px 6px 1px rgba(0, 0, 0, 0.3),0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#qualitycycle-wrapper.half-block{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/bg-qualitycycle-wrapper.jpg')
+}
+
+#qualitymap-wrapper.half-block{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/bg-qualitymap-wrapper.jpg')
+}
+
+#recipes-wrapper.half-block{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/bg-recipes-wrapper.jpg')
+}
+
+#journal-wrapper.half-block{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/bg-journal-wrapper.jpg')
+}
+
+.main-content{
+	background:#fff
+}
+
+h3.page-title{
+	font-family:'segoeuil';
+	font-weight:normal;
+	font-size:34px;
+	text-align:center;
+	text-transform:uppercase;
+	margin-top:20px;
+	margin-bottom:5px;
+	padding-bottom:0px;
+	letter-spacing:1px;
+	color:#040404
+}
+
+h3.page-title small{
+	font-family:'brandon_grotesque_regularRg';
+	font-weight:normal;
+	font-size:14px;
+	color:#666;
+	letter-spacing:1px;
+	display:block;
+	padding:0 0 15px 0
+}
+
+h4.contact-page
+{
+	font-family:'segoeuil';
+	font-weight:normal;
+	font-size:50px;
+	text-align:center;
+	text-transform:uppercase;
+	margin-top:0px;
+	margin-bottom:10px;
+	padding-bottom:5px;
+	letter-spacing:3px;
+	color:#040404
+}
+
+.page-intro{
+	text-align:center;
+	font-size:18px
+}
+
+.mini-title{
+	padding:30px 0;
+	text-align:center
+}
+
+.mini-title h4{
+	font-family:'brandon_grotesqueblack';
+	font-weight:normal;
+	margin-top:10px;
+	font-size:12px;
+	text-transform:uppercase;
+	letter-spacing:3px;
+	color:#735768;
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/spacer-10x1-viola.png') repeat-x center center;
+	margin-top:0
+}
+
+.mini-title h4 span{
+	background:#fff;
+	padding:0 30px;
+	display:inline-block
+}
+
+.narra-block.hero{
+	background-color:#fff;
+}
+
+.narra-block.hero h3.page-title{
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/spacer-40x2-white.png') no-repeat bottom center
+}
+
+.narra-block.hero h3,.narra-block.hero p{
+	color:#010101;
+	font-size:22px;
+	font-family:'segoe_uilight';
+}
+
+.narra-block{
+	padding:40px 0 40px;
+	text-align:center;
+}
+ 
+.narra-block.services 
+{
+	padding:20px 0 100px;
+	font-size:14px;
+}
+
+.narra-block.services p
+{
+	font-size:14px;
+	padding-top:20px;
+	padding-bottom:40px;
+	text-transform:uppercase;
+}
+
+
+.service_reserve
+{
+	border:2px solid #ff8015;
+	padding:10px 20px;
+	border-radius:4px;
+	color:#010101;
+	font-size:24px;
+	text-transform:uppercase;
+}
+
+	.service_reserve:hover
+	{
+		text-decoration:none;
+		background:#ff8015;
+		color:#fff;
+	}
+
+.narra-block p{
+	text-align:center
+}
+
+.reserve_btn
+{
+	color:#010101;
+	text-decoration:none;
+	text-transform:uppercase;
+	font-size:24px;
+	border:2px solid #000000;
+	padding:5px 10px;
+	background:#fff;
+}
+
+	.reserve_btn:hover
+	{
+		color:#fff;
+		text-decoration:none;
+		text-transform:uppercase;
+		font-size:24px;
+		border:1px solid #000000;
+		padding:5px 10px;
+		background:#010101;
+	}
+	
+	.wrl
+	{
+		padding-top:34px;
+	}
+	
+
+.img-block.b1{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_1.jpg')
+}
+
+.img-block.b2{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_2.jpg')
+}
+
+.img-block.b3{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_3.jpg')
+}
+
+.img-block.b4{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_4.jpg')
+}
+
+.img-block.b5{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_5.jpg')
+}
+
+.img-block.b6{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_6.jpg')
+}
+.img-block.b7{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_7.jpg')
+}
+.img-block.b8{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_8.jpg')
+}
+.img-block.b9{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_9.jpg')
+}
+.img-block.b10{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_10.jpg')
+}
+.img-block.b11{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_11.jpg')
+}
+.img-block.b12{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_12.jpg')
+}
+.img-block.b13{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_13.jpg')
+}
+.img-block.b14{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_14.jpg')
+}
+.img-block.b15{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_15.jpg')
+}
+.img-block.b16{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_16.jpg')
+}
+.img-block.b17{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_17.jpg')
+}
+.img-block.b18{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_18.jpg')
+}
+.img-block.b19{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_19.jpg')
+}
+.img-block.b20{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_20.jpg')
+}
+.img-block.b21{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_21.jpg')
+}
+.img-block.b22{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/fleet/limo_22.jpg')
+}
+
+.img-block
+{
+	height:421px;
+	width:100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color:#fff;
+	font-family:'segoe_uilight';
+	text-align:center;
+}
+
+	.img-block h3
+	{
+		color:#fff;
+		text-align:center;
+		font-weight:normal;
+		font-family:'segoe_uilight';
+		background: url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/spacer-40x2-white.png') no-repeat bottom center;
+		padding-bottom:10px;
+		text-transform:uppercase;
+	}
+	
+	.img-block p
+	{
+		color:#fff;
+		text-align:center;
+		font-weight:normal;
+		font-family:'segoe_uilight';
+		padding-bottom:10px;
+		text-transform:uppercase;
+	}
+	
+
+.img-block.cp31{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp31.jpg')
+}
+
+.img-block.cp30{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp30.jpg')
+}
+
+.img-block.cp29{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp29.jpg')
+}
+
+.img-block.cp28{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp28.jpg')
+}
+
+.img-block.cp27{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp27.jpg')
+}
+
+.img-block.cp26{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp26.jpg')
+}
+
+.img-block.cp25{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp25.jpg')
+}
+
+.img-block.cp24{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp24.jpg')
+}
+
+.img-block.cp23{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp23.jpg')
+}
+
+.img-block.cp22{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp22.jpg')
+}
+
+.img-block.cp21{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp21.jpg')
+}
+
+.img-block.cp20{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp20.jpg')
+}
+
+.img-block.cp19{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp19.jpg')
+}
+
+.img-block.cp18{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp18.jpg')
+}
+
+.img-block.cp17{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp17.jpg')
+}
+
+.img-block.cp16{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp16.jpg')
+}
+
+.img-block.cp15{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp15.jpg')
+}
+
+.img-block.cp14{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp14.jpg')
+}
+
+.img-block.cp13{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp13.jpg')
+}
+
+.img-block.cp12{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp12.jpg')
+}
+
+.img-block.cp11{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp11.jpg')
+}
+
+.img-block.cp10{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp10.jpg')
+}
+
+.img-block.cp9{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp9.jpg')
+}
+
+.img-block.cp8{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp8.jpg')
+}
+
+.img-block.cp7{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp7.jpg')
+}
+
+.img-block.cp6{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp6.jpg')
+}
+
+.img-block.cp5{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp5.jpg')
+}
+
+.img-block.cp4{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp4.jpg')
+}
+
+.img-block.cp3{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp3.jpg')
+}
+
+.img-block.cp2{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp2.jpg')
+}
+
+.img-block.cp1{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/cp1.jpg')
+}
+
+.img-block.ca1{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/ca1.jpg')
+}
+
+.img-block.ca2{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/ca2.jpg')
+}
+
+.img-block.ca3{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/ca3.jpg')
+}
+
+.img-block.ca4{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/ca4.jpg')
+}
+
+.img-block.ca5{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/ca5.jpg')
+}
+
+.img-block.ca6{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/ca6.jpg')
+}
+
+.img-block.ca7{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/ca7.jpg')
+}
+
+.img-block.ca8{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/ca8.jpg')
+}
+
+.img-block.ca9{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/ca9.jpg')
+}
+
+.img-block.ca10{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/ca10.jpg')
+}
+
+.img-block.ca11{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/ca11.jpg')
+}
+
+.img-block.ca12{
+	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/ciclo/ca12.jpg')
+}
+
+.grid-item .inner{
+	padding:20px 0
+}
+
+.grid-item .inner a{
+	text-decoration:none;
+	transition-property:color;
+	transition-duration:.1s;
+	-webkit-transition-property:color;
+	-webkit-transition-duration:.1s
+}
+
+.grid-item .inner a img{
+	padding:0 0 20px 0;
+	display:inline;
+	transition-property:all;
+	transition-duration:.2s;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:.2s
+}
+
+.grid-item .inner a p{
+	font-family:'brandon_grotesquemedium';
+	font-weight:normal;
+	font-size:14px;
+	color:#999;
+	padding:0 0 15px 0;
+	letter-spacing:1px;
+	text-align:center;
+	text-transform:uppercase;
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/spacer-20x2-grey.png') no-repeat bottom center
+}
+
+.grid-item .inner a h5{
+	font-family:'brandon_grotesquebold';
+	font-weight:normal;
+	font-size:18px;
+	letter-spacing:3px;
+	text-transform:uppercase;
+	color:#666;
+	line-height:1.4;
+	padding-top:10px;
+	margin:0
+}
+
+.grid-item .inner a:hover h5{
+	color:#735768
+}
+
+.grid-item .inner a:hover img{
+	opacity:.8
+}
+
+.filtri a{
+	color:#735768;
+	text-decoration:none;
+	transition-property:all;
+	transition-duration:.2s;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:.2s
+}
+
+.filtri a.current{
+	opacity:.3
+}
+
+.filtri em{
+	font-style:normal !important;
+	display:inline;
+	padding:0 15px
+}
+
+.table-wapper td,.table-wapper th{
+	text-align:right;
+	font-size:14px
+}
+
+.table-wapper th{
+	border-color:#666 !important
+}
+
+.table-wapper td{
+	border-color:#ccc !important
+}
+
+.table-wapper tr td:first-child,.table-wapper tr th:first-child{
+	text-align:left
+}
+
+.table-wapper td{
+	transition-property:all;
+	transition-duration:.2s;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:.2s
+}
+
+.table-wapper thead th{
+	text-transform:uppercase;
+	font-size:12px
+}
+
+.table-wapper tfoot tr td{
+	font-size:12px;
+	padding-top:15px;
+	color:#888
+}
+
+.recipe-header .img-responsive{
+	display:inline
+}
+
+.recipe-summary h4{
+	font-family:'brandon_grotesquebold';
+	font-weight:normal;
+	font-size:16px;
+	letter-spacing:2px;
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/spacer-20x2-grey.png') no-repeat bottom left;
+	padding-bottom:15px;
+	margin-bottom:30px
+}
+
+.recipe-content h4{
+	font-family:'brandon_grotesquebold';
+	font-weight:normal;
+	font-size:16px;
+	letter-spacing:2px;
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/spacer-20x2-grey.png') repeat-x bottom left;
+	padding-bottom:15px;
+	margin-bottom:30px
+}
+
+.map-wrapper{
+	height:80%;
+	background:#42353d
+}
+
+.map-wrapper #gmap{
+	height:100%
+}
+
+.bubble_inner{
+	text-align:center;
+	padding:30px 10px 30px 30px;
+	background-color:
+}
+
+.bubble_inner h4{
+	font-family:'brandon_grotesquebold';
+	font-weight:normal;
+	font-size:16px;
+	text-transform:uppercase;
+	margin:0;
+	padding:0;
+	text-align:center;
+	color:#735768;
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/spacer-20x2-grey.png') no-repeat bottom center;
+	padding-bottom:13px;
+	margin-bottom:11px
+}
+
+.bubble_inner p{
+	font-family:'brandon_grotesque_regularRg';
+	font-weight:normal;
+	font-size:16px;
+	text-transform:none;
+	margin:0;
+	padding:0;
+	text-align:center
+}
+
+.bubble_inner h6{
+	font-family:'brandon_grotesquebold';
+	font-weight:normal;
+	font-size:12px;
+	border-bottom:2px solid #ddd
+}
+
+.bubble_inner small{
+	font-family:'brandon_grotesque_regularRg';
+	font-weight:normal;
+	font-size:14px
+}
+
+.timeline{
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/line.png') center repeat-y;
+	width:951px;
+	padding:0 0 100px;
+	margin:0 auto;
+	list-style:none;
+	position:relative;
+	overflow:hidden
+}
+
+.timeline:after{
+	content:'';
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/line-bottom.png') center repeat-y;
+	width:100%;
+	height:100px;
+	display:block;
+	position:absolute;
+	bottom:0
+}
+
+.timeline>li:before{
+	content:'';
+	width:60px;
+	height:1px;
+	background:#735768;
+	position:absolute;
+	right:-60px;
+	top:50%
+}
+
+.timeline>li:after{
+	content:' ';
+	width:16px;
+	height:16px;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+	border-radius:50%;
+	border:2px solid #735768;
+	background:#fff;
+	position:absolute;
+	right:-74px;
+	top:50%;
+	margin-top:-8px
+}
+
+.timeline>li.right{
+	float:right;
+	left:2px
+}
+
+.timeline>li.right:before{
+	left:-60px;
+	right:auto
+}
+
+.timeline>li.right:after{
+	left:-75px;
+	right:auto
+}
+
+.timeline>li.present:after,.timeline>li.right.present:after{
+	width:32px;
+	height:32px;
+	background:#fff;
+	border-color:#eee;
+	margin-top:-16px;
+	top:50%;
+	right:-82px
+}
+
+.timeline>li.right.present:after{
+	left:-82px;
+	right:auto
+}
+
+.timeline>li{
+	position:relative;
+	clear:both;
+	float:left;
+	width:410px;
+	padding:0 20px;
+	margin:-150px 0 0;
+	text-align:center;
+	background:#fff
+}
+
+.timeline>li:hover{
+	border-color:#555
+}
+
+.timeline>li.year{
+	text-align:center;
+	margin:0;
+	padding:125px 0 250px;
+	float:none;
+	width:100%;
+	background:transparent;
+	border:0
+}
+
+.timeline>li.year span{
+	display:inline-block;
+	background:#fff;
+	border:1px solid #eee
+}
+
+.timeline>li.year.top{
+	padding-top:0;
+	border:0
+}
+
+.timeline>li.year.top h4{
+	display:inline-block;
+	padding:20px 0;
+	background:#fff;
+	margin:0;
+	text-transform:uppercase;
+	letter-spacing:3px;
+	border-bottom:2px solid #735768
+}
+
+.timeline>li.break{
+	margin:30px 0
+}
+
+.timeline>li header h5{
+	font-family:'brandon_grotesquebold';
+	font-weight:normal;
+	font-size:30px;
+	color:#555;
+	margin:0;
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/spacer-20x2-grey.png') no-repeat bottom center;
+	margin-top:20px;
+	margin-bottom:20px;
+	padding-bottom:10px;
+	letter-spacing:3px;
+	color:#666
+}
+
+.timeline>li p{
+	text-align:center;
+	margin-bottom:20px
+}
+
+#faq-wrapper #faq-group .faq h3{
+	text-align:center;
+	padding-bottom:20px;
+	margin-bottom:25px;
+	border-bottom:2px solid #fff;
+	transition-property:all;
+	transition-duration:.2s;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:.2s
+}
+
+#faq-wrapper #faq-group .faq h3 a{
+	color:#666;
+	text-transform:;
+	text-decoration:none
+}
+
+#faq-wrapper #faq-group .faq h3.aperto{
+	border-bottom:2px solid #735768
+}
+
+#faq-wrapper #faq-group .faq h3.aperto a{
+	color:#735768
+}
+
+#faq-wrapper #faq-group .faq .btn{
+	margin:50px auto;
+	text-align:center
+}
+
+.track-result{
+	height:0;
+	overflow:hidden
+}
+
+.loader-temp{
+	height:50px;
+	width:50px;
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/loader.gif') no-repeat center center;
+	margin:0 auto;
+	float:none;
+	clear:both
+}
+
+.loader-temp-mini{
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/loader-mini.gif') no-repeat center center
+}
+
+.share-bar .inner{
+	text-align:center;
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/spacer-40x2-grey.png') no-repeat bottom center;
+	padding-bottom:50px;
+	padding-top:30px
+}
+
+.share-bar .inner h6{
+	font-family:'brandon_grotesquemedium';
+	font-weight:normal;
+	font-size:12px;
+	text-transform:uppercase;
+	color:#666;
+	letter-spacing:2px;
+	margin-bottom:30px
+}
+
+.share-bar .inner .btn-facebook{
+	color:#5c6578;
+	background-color:transparent;
+	border-color:#5c6578
+}
+
+.share-bar .inner .btn-facebook:hover,.share-bar .inner .btn-facebook:focus,.share-bar .inner .btn-facebook:active,.share-bar .inner .btn-facebook .active{
+	color:#fff;
+	background-color:#425d93;
+	border-color:#425d93
+}
+
+.share-bar .inner .btn-facebook:active,.share-bar .inner .btn-facebook .active{
+	background-image:none
+}
+
+.share-bar .inner .btn-twitter{
+	color:#588c9a;
+	background-color:transparent;
+	border-color:#588c9a
+}
+
+.share-bar .inner .btn-twitter:hover,.share-bar .inner .btn-twitter:focus,.share-bar .inner .btn-twitter:active,.share-bar .inner .btn-twitter .active{
+	color:#fff;
+	background-color:#1bafd8;
+	border-color:#1bafd8
+}
+
+.share-bar .inner .btn-twitter:active,.share-bar .inner .btn-twitter .active{
+	background-image:none
+}
+
+.share-bar .inner .btn-google{
+	color:#956863;
+	background-color:transparent;
+	border-color:#956863
+}
+
+.share-bar .inner .btn-google:hover,.share-bar .inner .btn-google:focus,.share-bar .inner .btn-google:active,.share-bar .inner .btn-google .active{
+	color:#fff;
+	background-color:#c34536;
+	border-color:#c34536
+}
+
+.share-bar .inner .btn-google:active,.share-bar .inner .btn-google .active{
+	background-image:none
+}
+
+.back-toarchive .inner{
+	padding-bottom:0;
+	padding-top:90px
+}
+
+.recommend-bar{
+	padding-top:80px;
+	padding-bottom:0;
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/spacer-160x1-grey.png');
+	background-position:50% 115px;
+	background-repeat:no-repeat
+}
+
+.recommend-bar .like-wrapper{
+	text-align:center;
+	display:block;
+	width:80px;
+	height:80px;
+	margin:0 auto;
+	background:#fff
+}
+
+.recommend-bar .like-wrapper .dot-irecommendthis{
+	color:#999;
+	text-decoration:none
+}
+
+.recommend-bar .like-wrapper .dot-irecommendthis .glyphicon{
+	font-size:30px;
+	transition-property:color;
+	transition-duration:.1s;
+	-webkit-transition-property:color;
+	-webkit-transition-duration:.1s
+}
+
+.recommend-bar .like-wrapper .dot-irecommendthis .dot-irecommendthis-count{
+	font-family:'brandon_grotesquemedium';
+	font-weight:normal;
+	font-size:16px;
+	transition-property:color;
+	transition-duration:.1s;
+	-webkit-transition-property:color;
+	-webkit-transition-duration:.1s
+}
+
+.recommend-bar .like-wrapper .dot-irecommendthis:hover,.recommend-bar .like-wrapper .dot-irecommendthis.active{
+	color:#f56559 !important
+}
+
+.recommend-bar .like-wrapper .dot-irecommendthis:hover .glyphicon,.recommend-bar .like-wrapper .dot-irecommendthis.active .glyphicon{
+	font-size:30px
+}
+
+.totop-wrapper
+{
+	background-color:#000;
+	transition-property:all;
+	transition-duration:.2s;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:.2s;
+}
+
+.totop-wrapper:hover{
+	background-color:#ff7f15;
+}
+
+.video-container{
+	position:relative;
+	padding-bottom:56.25%;
+	padding-top:30px;
+	height:0;
+	overflow:hidden
+}
+
+.video-container iframe,.video-container object,.video-container embed{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%
+}
+
+section#main-text
+{
+	overflow:hidden;
+	position:relative;
+/* 	color:#d3d3d4; */
+	text-align:center;
+	font-size:16px;
+/* 	background-image:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/bg-tracking-wrapper.jpg'); */
+	background-position:center center;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+	font-family:'segoe_uilight';
+}
+
+
+section#main-text p
+{
+	padding:10px 5px 10px 5px;
+	margin:0 0 0 0;
+	text-align:center;
+	font-size:20px;
+}
+
+section#main-text .inner{
+	
+}
+
+
+
+section#main-text h4{
+/* 	color:#d3d3d4; */
+	font-size:30px;
+	font-weight:normal;
+	letter-spacing:3px;
+	margin-top:10px;
+	text-transform:uppercase;
+	font-family:'segoe_uiregular';
+}
+
+section#main-text h4 small{
+	display:block;
+	font-size:14px;
+	letter-spacing:2px;
+	padding:0 0 10px 0
+}
+
+a img.coupon-img {
+	max-width:100%;
+}
+
+
+
+
+
+
+
+/* IV. Footer Section  */
+
+footer#footer
+{
+	color:#d2cfcf;
+	text-align:center;
+	font-size:12px;
+	letter-spacing:3px;
+	font-family:'segoe_uilight';
+	font-weight:normal;
+	background-color:#363636;
+/* 	height:100px; */
+}
+
+footer#footer small
+{
+	color:#fff
+}
+
+footer #bottom_logo {
+	position:absolute;
+	left:0px;
+	top:21px;
+}
+
+footer#footer p {
+	margin:0;
+	line-height:2; 
+	text-align: center; 
+}
+
+footer#footer a {
+	color:#fff;
+	transition-property:color;
+	transition-duration:.1s;
+	-webkit-transition-property:color;
+	-webkit-transition-duration:.1s;
+}
+
+footer#footer a:hover
+{
+	text-decoration:none;
+	color:#735768;
+}
+
+footer#footer h4
+{
+	font-family:'brandon_grotesquebold';
+	font-weight:normal;
+	font-size:20px;
+	letter-spacing:3px;
+	margin-top:10px;
+	color:#fff;
+}
+
+footer#footer h4 small
+{
+	display:block;
+	font-size:14px;
+	letter-spacing:2px;
+	padding:0 0 10px 0;
+}
+
+footer#footer .prima
+{
+	
+	max-width:960px;
+	margin:0 auto;
+	position:relative;
+}
+
+footer#footer .prima p
+{
+	text-align:center;
+/* 	padding-top:40px; */
+	text-transform:uppercase;
+}
+
+/*
+footer#footer .prima p.andre
+{
+	padding-top:0px;
+}
+
+
+
+footer#footer .social_menu
+{
+	margin:13px 0 13px 0;
+	position:absolute;
+	right:0px;
+	top:25px;
+}
+*/
+
+
+
+/* Custom Footer */
+
+/*
+footer {background-color:#18191d;}
+footer .wrapper {width:77%; margin:0 auto;}
+footer .footernav, footer .map {width:50% !important; margin:0 !important;float: left;}
+
+footer .row-fluid:after {
+    clear: both;
+}
+footer .row-fluid:before, .row-fluid:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+footer .footernav p {font:1.125em/normal 'avenirnext_condensed_medium'; color:#006a9f; margin:0; padding:12% 0 3.1%;}
+footer .footernav h4 {float:left; font:43px/43px 'avenirnext_ultralight'; color:#e9ebeb; margin:0; padding:0 0 0 10%;}
+footer .footernav h4:first-child {padding:0;}
+footer .footernav h4 span {display:block; font:0.255em/1.636em 'avenirnext_condensed_demibold'; color:#5f6064; text-transform:uppercase;}
+footer .map .span6 {width:50%; margin:0;float: left;}
+footer .top, footer .topdark {font:0.687em/5.636em 'avenirnext_condensed_medium'; border-bottom:1px solid #515255; margin:0; padding:0; width:100%;}
+footer .map .top {background-color:#1f2024;}
+footer .map .map {background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/footer-map.jpg') no-repeat 0 0; background-size:cover; margin:0; padding:0; width:100% !important; height:256px;}
+footer .map .map h2 {margin:0; padding:17% 8% 0; font:2em/1em 'avenirnext_ultralight'; color:#006a9f;}
+footer .map .map p {padding:0 8%; font:0.937em/1.8em 'avenirnext_condensed_demibold'; color:#006a9f;}
+footer .map ul {margin:0; padding:0 0 0 4.2%; overflow:hidden;}
+footer .map ul li {display:block; float:right; width:13%; padding:11% 0 0 3%; line-height:5.636em; color:#dbdbd8; text-transform:uppercase;}
+footer .map ul li.social {background: none repeat scroll 0 0 transparent;}
+footer .map ul li.social a {
+    background: url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/icons/social-icons.png') no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 24px;
+    width: 24px;
+    text-indent: -9999px;
+    padding: 0;
+}
+footer .map ul li.linkedin a {background-position: 0 -24px;}
+footer .map ul li.facebook a {background-position: 0 0;}
+footer .map ul li.twitter a {background-position: -24px 0;}
+footer .map ul li.googleplus a {background-position: 0 -48px;}
+
+footer .map ul li:first-child {float:left; width:46.4%; padding:0;}
+footer .map ul li a {display:block; width:100%; font height:5.636em;}
+footer .map ul li a img {vertical-align:middle;}
+footer .map p {margin:0; padding:25% 4.2% 0; text-transform:uppercase; font:1em/1em 'avenirnext_condensed_medium'; color:#bbbec0; clear:both;}
+footer .map p a {color:#c00000;}
+*/
+
+/*   1. Footer Navigation */
+/*
+footer .footernav > a {display:block; width:18.7%; float:left; margin:4.8% 3% 0 0;}
+footer .footernav > a > img {display:block; width:100%;}
+footer .footernav ul {margin:0; padding:0; border-bottom:1px solid #515255;list-style: none outside none;}
+footer .footernav ul li {margin:0; padding:0; color:#90908f;display: inline-block;}
+footer .footernav ul li:before{content:'•'; font-size:0.5em; line-height:1em; color:#90908f; vertical-align:middle; display:inline-block; width:1em; text-align:center;}
+footer .footernav ul li:first-child {padding-left:0 !important;}
+footer .footernav ul li:first-child:before {content:''; width:0; height:0; display:none;}
+footer .footernav ul li a {font:0.687em/5.636em 'avenirnext_condensed_medium'; color:#90908f; text-transform:uppercase;}
+footer .footernav ul li a:hover {color:#90908f; text-decoration:none;}
+*/
+
+/* Custom Footer End */
+
+/* IV. Footer Section End */
+
+
+
+
+.progressbar
+{
+	list-style:none;
+	margin:0 auto;
+	padding:0;
+	position:relative;
+	text-align:center;
+	margin-bottom:15px;
+	
+}
+
+	.progressbar li
+	{
+		display: inline-block;
+		background:#181818 url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/black_black.png') right center no-repeat;
+		color:#fff;
+		text-align:center;
+		font-size:18px;
+		text-transform:uppercase;
+		position:relative;
+		padding: 5px 0;
+		margin: 0 0 0 0;
+		width:33.33333333333333%;
+		float: left;
+		margin-bottom:15px;
+	}
+	
+		.progressbar li.last
+		{
+			background:#181818 url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/black.png') right center no-repeat;
+		}
+		
+		.progressbar li.pre_active
+		{
+			background:#181818 url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/black_orange.png') right center no-repeat;
+		}
+	
+		.progressbar li.active
+		{
+			background: #fe9518 url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/orange_black.png') right center no-repeat;
+			color: #fff;
+		}
+		
+			.progressbar li.active.last
+			{
+				background: #fe9518 url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/orange_arrow.png') right center no-repeat;
+			}
+
+
+
+
+#accordion h3
+{
+	padding-left:10px;
+	padding-right:20px;
+	font-size:12px;
+	text-transform:uppercase;
+	color:#000000;
+	font-family:'segoe_uilight';
+	padding-top:5px;
+	padding-bottom:5px;
+	cursor:pointer;
+	background:#f7f7f7 url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/faq_icon.png') right center no-repeat;
+	margin-top:3px;
+}
+
+	#accordion h3.ui-state-active
+	{
+		color:#f48605;
+		background:#fff;
+	}
+
+.ui-accordion-content 
+{
+	background:url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/accordion_text.png') left top no-repeat;
+	margin-left:27px;
+	padding-left:20px;
+	font-size:16px;
+	color:#494949;
+	font-family:'segoe_uilight';
+}
+
+#tabs  ul
+{
+	list-style:none;
+	width:100%;
+	float:left;
+	padding:0;
+}
+
+
+.ui-tabs .ui-tabs-nav li 
+{
+	list-style: none;
+	float: left;
+	position: relative;
+	top: 0;
+	border-bottom-width: 0;
+	padding: 0;
+	white-space: nowrap;
+	width:50%;
+}
+
+
+
+#tabs .btns li a
+{
+	padding: 10px 0px;
+	font-size: 20px;
+	color: #fff;
+	font-family: 'segoe_uilight';
+	background: #000000;
+	text-decoration:none;
+	width:100%;
+	text-align:center;
+	float:left;
+	
+ }
+#tabs .btns li.ui-tabs-active a
+{
+	background: #fa8e01;
+	color: #fff;
+ }
+.ui-tabs .ui-tabs-panel 
+{
+	padding: 10px 0;
+}
+.ui-widget 
+{
+	font-family: 'segoe_uilight';
+	font-size: 14px;
+}
+
+#tabs p
+{
+	color: #444;
+}
+
+table.rate
+{
+	width:100%;
+}
+
+table.rate td, table.rate th
+{
+	padding: 10px 0px;
+	font-family: 'segoe_uilight';
+	font-size:13px;
+}
+
+table.rate th
+{
+	text-align:center;
+}
+
+table.rate td:first-child
+{
+	background: #fff; 
+	width: 90%;
+	text-align: left;
+	color: #444;
+ }
+table.rate tr.odd td:first-child
+{
+	background: #fff;
+}
+table.rate td
+{
+	background: #fff;
+	text-align: center;
+	color: #6a6a6a;
+	font-weight: normal;
+	border-bottom: 1px dashed #6a6a6a;
+	font-size:16px;
+}
+
+table.rate tr:hover td
+{
+	background:#ff7808;
+	color:#fff;
+}
+
+table.rate tr:hover td:first-child
+{
+	background:#f4f4f4;
+	color: #6a6a6a;
+}
+
+.notes
+{
+	font-size:12px;
+	float:left;
+	margin-top:10px;
+}
+
+
+#tabs-2 table.rate td:first-child
+{
+	width: 60%;
+}
+
+.reservation_input_block
+{
+	width:50%;
+	float:left;
+	position:relative;
+}
+
+.reservation_input_block input
+{
+	max-width:280px;
+	margin:0 auto;
+	margin-bottom:10px;
+}
+
+
+
+
+.controls
+{
+	width:100%;
+	float:left;
+	margin-top:10px;
+}
+
+.step button.reset, .step button.previous {
+	background: none;
+	padding: 10px 15px;
+	font-size: 14px;
+	text-transform: lowercase;
+	font-style: italic;
+	color: #fa991a;
+	border:none;
+}
+
+button.submit
+{
+	padding: 5px 50px;
+	font-size: 22px;
+	color: #fff;
+	font-family: 'segoe_uilight';
+	background: #FF7F15;
+	cursor: pointer;
+	border:none;
+}
+
+
+
+.pickupblock
+{
+position:relative;
+ width: 280px;
+ margin: 0 auto;
+}
+
+
+.facebook .no-like{
+	width:100%;
+	height:100%;
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-image:url('http://thinkinglimo.com/facebook/no-like.jpg')
+}
+
+.facebook .intro-header{
+	height:300px;
+	width:100%;
+	display:block;
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:cover;
+	overflow:hidden
+}
+
+.facebook .intro-header h2{
+	font-family:'brandon_grotesquebold';
+	font-weight:normal;
+	color:#fff;
+	text-transform:uppercase;
+	font-size:40px;
+	letter-spacing:8px;
+	padding:80px 0 0 0
+}
+
+.facebook .intro-header h2 small{
+	font-family:'brandon_grotesquemedium';
+	font-weight:normal;
+	color:#fff;
+	font-size:16px;
+	letter-spacing:normal;
+	text-transform:none;
+	display:block;
+	padding:0 0 10px 0
+}
+
+.facebook .intro-header:before{
+	content:' ';
+	height:300px;
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	background-color:#42353d;
+	opacity:.8
+}
+
+.facebook h4{
+	font-family:'brandon_grotesquebold';
+	font-weight:normal;
+	font-size:20px;
+	letter-spacing:3px;
+	margin-top:10px
+}
+
+.facebook h4 small{
+	display:block;
+	font-size:14px;
+	letter-spacing:2px;
+	padding:0 0 10px 0
+}
+
+.facebook .newsletter-form{
+	margin:30px 0 30px 0
+}
+
+.facebook .newsletter-form .form-group{
+	height:70px
+}
+
+.facebook .newsletter-form #result{
+	font-size:14px;
+	line-height:1.3;
+	display:block;
+	letter-spacing:0;
+	transition-property:all;
+	transition-duration:.2s;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:.2s;
+	font-family:'brandon_grotesquemedium';
+	font-weight:normal
+}
+
+.facebook .newsletter-form .input-wrapper{
+	overflow:hidden
+}
+
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:#00000b;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:#00000b;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:#00000b;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:#00000b;
+}
+
+.form-control:-moz-placeholder{
+	color:#00000b
+}
+
+.form-control::-moz-placeholder{
+	color:#00000b
+}
+
+.form-control:-ms-input-placeholder{
+	color:#00000b
+}
+
+.form-control::-webkit-input-placeholder{
+	color:#00000b
+}
+
+
+input.invalid, textarea.invalid, .custom-select.invalid .select2-container .select2-choice {
+border-color: #F00;
+}
+
+label.invalid {
+display: block;
+float: none;
+text-align: center;
+color: #F00;
+width: auto;
+padding: 0 0 5px 125px;
+text-align: left;
+font-size:10px;
+font-family:'segoe_uilight';
+}
+
+#terms_block  label.invalid 
+{
+	text-align: center;
+	padding-left:0px;
+}
+
+/* OLD CSS END */
+
+
+
+
+
+
+
+
+
+
+
+
+/* New Andre CSS Begin */
+
+
+/* Front page CSS */
+
+.front-page-text {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.col-sm-6 {
+    width: 40%; 
+    margin: 5% 5%; 
+}
+
+/* Front page CSS END */
+
+
+
+
+
+article.error404 {
+	text-align: center; 
+	padding: 200px 100px; 
+}
+
+article.error404 p {
+	text-align: center; 
+}
+
+
+.ui-widget {
+    font-family: "segoe_uilight";
+    font-size: 14px;
+}
+
+#tabs .ui-tabs-nav li a {
+    padding: 10px 0px;
+    font-size: 20px;
+    color: #FFF;
+    font-family: "segoe_uilight";
+    background: none repeat scroll 0% 0% #000;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    float: left;
+}
+
+#tabs .ui-tabs-nav li.ui-tabs-active a {
+    background: none repeat scroll 0% 0% #FA8E01;
+    color: #FFF;
+}
+
+
+/* GRAVITY FORMS */
+
+/* Contact Us Form */
+
+#gform_wrapper_10 .ginput_complex .ginput_right {
+	float: left;
+	clear: left;
+}
+
+#gform_wrapper_10 .ginput_complex .ginput_left,
+#gform_wrapper_10 .ginput_complex .ginput_right {
+	float: none; 
+	margin: 0 auto; 
+}
+
+ul#gform_fields_10 {
+	text-align: center;
+}
+
+#gform_wrapper_10 span {
+	width: 100%; 
+}
+
+#gform_wrapper_10 input, 
+#gform_wrapper_10 textarea {
+	width:100% !important; 
+	height:43px;
+	padding:14px 16px;
+	font-size:14px;
+	text-transform:none;
+	letter-spacing:2px;
+	color:#00000b;
+	text-align:center;
+	vertical-align:middle;
+	background-color:transparent;
+	border:2px solid #7c7c7c;
+	border-radius: 4px; 
+	-webkit-box-shadow:none;
+	box-shadow:none;
+	-webkit-transition:none;
+	transition:none;
+	font-family:'segoe_uilight';
+	font-weight:normal;
+/*
+	line-height:1.428571429;
+	display:block;
+*/
+}
+
+#gform_wrapper_10 input:hover, 
+#gform_wrapper_10 textarea:hover {
+	border-color: #009CDE;
+	outline:0;
+	box-shadow:none; 
+}
+
+#gform_wrapper_10 input:focus, 
+#gform_wrapper_10 textarea:focus {
+	border-color: #009CDE;
+	outline:0;
+	box-shadow:none; 
+}
+
+#gform_wrapper_10 #gform_submit_button_10 {
+	display: inline-block;
+	padding: 10px 20px;
+	margin-bottom: 0px;
+	font-size: 24px;
+	line-height: 1.42857;
+	white-space: nowrap;
+	vertical-align: middle;
+	text-align: center;
+	letter-spacing: 2px;
+	color: #555;
+	cursor: pointer;
+	background-color: transparent;
+	border: 2px solid #666;
+	-moz-user-select: none;
+	transition-property: all;
+	transition-duration: 0.2s;
+	font-family: "segoe_uiregular";
+	font-weight: normal;
+	height: auto; 
+/* 	border-radius: 0px;  */
+}
+
+#gform_wrapper_10 #gform_submit_button_10:hover {
+	color: #FFF; 
+	background-color: #FF7F15; 
+	border-color: #FF7F15; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-form .form-control input {
+	display:block;
+	width:100%;
+	height:43px;
+	padding:14px 16px;
+	font-size:14px;
+	text-transform:none;
+	letter-spacing:2px;
+	line-height:1.428571429;
+	color:#00000b;
+	text-align:center;
+	vertical-align:middle;
+	background-color:transparent;
+	border:2px solid #7c7c7c;
+	border-radius:0;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+	-webkit-transition:none;
+	transition:none;
+	font-family:'segoe_uilight';
+	font-weight:normal;
+}
+
+.form-control:focus{
+	border-color:#00000b;
+	outline:0;
+	box-shadow:none;
+}
+
+.form-control.light{
+	color:#fff;
+	border-color:#fff;
+}
+
+.form-control.light:focus{
+	border-color:#fff;
+	background-color:#fff;
+	color:#555;
+	outline:0;
+	box-shadow:none;
+}
+
+.form-control.required,.form-control.required:focus{
+	border-color:#c00;
+}
+
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{
+	-webkit-appearance:none;
+	margin:0;
+}
+
+.contact-form input,.contact-form textarea{
+	margin-bottom:10px;
+	resize:none;
+}
+
+.contact-form textarea{
+	color:#00000b;
+}
+
+.contact-form.reservation textarea
+{
+	width:280px;
+	margin:0 auto;
+}
+
+.contact-form h5
+{
+	color:#181818;
+	font-size:18px;
+	text-align:center;
+	font-weight:normal; 
+	font-family:'segoe_uilight';
+	margin-top:5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive CSS */
+@media (min-width:1200px){
+	.navbar-statica .navbar-nav li{
+		min-width:9%
+	}
+
+	.navbar-fissa .navbar-nav li{
+		min-width:8%
+	}
+
+}
+
+@media (min-width:768px){
+	.navbar-statica .navbar-nav li{
+		min-width:12%
+	}
+
+	.navbar-fissa .navbar-nav li{
+		min-width:13%;
+	}
+
+}
+
+@media (max-width:768px){
+	.navbar-fissa .navbar-nav li{
+		min-width:7%
+	}
+	
+	.progressbar li
+	{
+		font-size:12px;
+	}
+
+}
+
+@media (max-width:500px){
+
+	.progressbar li
+	{
+		font-size:8px;
+	
+	}
+
+}
+
+@media (max-width:1119px){
+
+	.carousel-montere .carousel-caption
+	{
+		top:15%;
+	}
+}
+
+@media (max-width:1200px){
+	.parallax,.img-block{
+		background-position:center center !important;
+		background-attachment:scroll !important
+	}
+	
+	
+
+}
+
+@media  screen and (min-width:991px) and (max-width:1200px)
+{
+	.progressbar li
+	{
+		font-size:14px;
+	}
+}
+
+@media screen and (min-width:768px) and (max-width:991px){
+	.timeline{
+		width:731px
+	}
+
+	.timeline>li{
+		width:320px
+	}
+
+	.timeline>li:after{
+		right:-54px
+	}
+
+	.timeline>li.right:after{
+		left:-55px
+	}
+
+	.timeline>li.present:after{
+		right:-62px
+	}
+
+	.timeline>li.right.present:after{
+		left:-63px
+	}
+
+	.timeline>li:before{
+		width:50px;
+		right:-50px
+	}
+
+	.timeline>li.right:before{
+		left:-50px
+	}
+
+	#section_nav{
+		display:none
+	}
+	
+	.progressbar li
+	{
+		font-size:14px;
+	}
+}
+
+@media screen and (max-width : 767px) {
+
+	.col-sm-6 {
+		width: 90%; 
+	}
+}
+
+
+@media (max-width:767px){
+	
+	footer #bottom_logo
+	{
+		display:none;
+	}
+	
+	footer#footer .prima p
+	{
+		font-size:11px;
+	}
+	
+	footer#footer .social_menu
+	{
+/*
+		left:50%;
+		margin-left:-70px;
+		top:-4px;
+*/
+	}
+	
+	.reservation_input_block
+	{
+		width:100% !important;
+	}
+	
+	.pad90{
+		padding-top:40px;
+		padding-bottom:40px
+	}
+
+	.pad70{
+		padding-top:30px;
+		padding-bottom:30px
+	}
+
+	.pad50{
+		padding-top:20px;
+		padding-bottom:20px
+	}
+
+	.pad30{
+		padding-top:10px;
+		padding-bottom:10px
+	}
+
+	.mar50{
+		margin:25px auto
+	}
+
+	.mar100{
+		margin:50px auto
+	}
+
+	.mini-title{
+		padding:14px 0 6px 0
+	}
+
+	.mini-title h4 span{
+		padding:0 15px
+	}
+
+	.carousel-montere .carousel-caption{
+/*
+		top:25%;
+		bottom:auto;
+		left:0;
+		right:0
+*/
+	}
+
+	.carousel-montere .carousel-caption h2{
+		font-size:30px;
+		letter-spacing:1px;
+		margin-top:0px;
+	}
+	
+	.carousel-montere .carousel-caption h3
+	{
+		font-size:16px;
+	}
+	
+	.carousel-montere .carousel-caption p
+	{
+		font-size:12px;
+	}
+	
+	.carousel-montere .carousel-caption a
+	{
+		font-size:17px;
+	}
+	
+	.half-block h4
+	{
+		font-size:20px;
+	}
+	
+	.half-block h4 small
+	{
+		font-size:10px;
+	}
+	
+	.btn-light
+	{
+		font-size:10px;
+	}
+	.intro-header{
+		height:60%; 
+		background-image: url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/contact_header.jpg');
+	}
+	.intro-header.reservation {
+		background-image: url('http://thinkinglimo.com/wp-content/themes/LimoStrap/assets/img/reservation_header.jpg');
+	}
+
+	.intro-header h2{
+		font-size:30px;
+		letter-spacing:4px;
+		padding:30px 0
+	}
+
+	.intro-header:before{
+		height:60%
+	}
+
+	.share-bar .inner{
+		margin-bottom:0;
+		padding-bottom:20px;
+		padding-top:20px
+	}
+
+	.share-bar .inner h6{
+		font-family:'brandon_grotesquemedium';
+		font-weight:normal;
+		font-size:12px;
+		text-transform:uppercase;
+		color:#666;
+		letter-spacing:2px;
+		background:;
+		margin-bottom:20px
+	}
+
+	.narra-block{
+		padding:40px 0 50px
+	}
+
+	.img-block{
+		height:225px
+	}
+
+	.timeline{
+		width:100%
+	}
+
+	.timeline>li{
+		width:100%;
+		margin:20px 0
+	}
+
+	.timeline>li:before,.timeline>li:after{
+		display:none
+	}
+
+	.timeline>li.year.top{
+		padding:0 0 20px
+	}
+
+	#section_nav{
+		display:none
+	}
+
+/* full width front page tiles panels for mobile */
+.col-sm-6 {
+	width: 90%; 
+}
+
+}
+
+
+@media  screen and (min-width:760px) and (max-width:991px)
+{
+	.container 
+	{
+		max-width: 95%;
+	}
+	
+	.reservation_input_block input 
+	{
+		max-width: 280px;
+		width:95%;
+		margin: 0 auto;
+		margin-bottom: 10px;
+	}
+	
+	.contact-form.reservation textarea
+	{
+		max-width: 280px;
+		width:95%;
+	}
+	
+	.short
+	{
+		max-width: 280px;
+		width:95%;
+	}
+	
+	.pickupblock
+	{
+		max-width: 280px;
+		width:95%;
+	}
+	
+	.short.for_two .select-wrapper, .short.for_two .select-wrapper select 
+	{
+		max-width: 130px;
+		width:45%;
+		height: 43px;
+		line-height: 43px;
+	}
+	
+	.short .select-wrapper, .short .select-wrapper select
+	{
+		max-width: 75px;
+		width:31%;
+		height: 43px;
+		line-height: 43px;
+	}
+	
+	
+	.select-wrapper, .select-wrapper select {
+	max-width: 280px;
+	width:95%;
+	height: 43px;
+	line-height: 43px;
+	}
+}

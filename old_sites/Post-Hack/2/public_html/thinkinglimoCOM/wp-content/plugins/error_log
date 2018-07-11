@@ -1,0 +1,4 @@
+[17-Apr-2014 10:55:19] PHP Fatal error:  Call to undefined function  add_action() in /home2/iamandre/public_html/wp-content/plugins/hello.php on line 60
+[17-Apr-2014 14:46:07] PHP Fatal error:  Call to undefined function  add_action() in /home2/iamandre/public_html/wp-content/plugins/hello.php on line 60
+[12-May-2014 05:40:18] PHP Fatal error:  Call to undefined function  add_action() in /home2/iamandre/public_html/wp-content/plugins/hello.php on line 60
+[13-Oct-2015 04:04:53 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home2/iamandre/public_html/thinkinglimoCOM/wp-content/plugins/hello.php on line 60

@@ -1,0 +1,11 @@
+Version 1.1
+- fixed an issue with twitter widget
+- fixed an issue with prettyphoto
+
+- changed files
+- lambda/widgets/lambda_twitter.php
+- style.css
+
+Version 1.0
+
+- initial version

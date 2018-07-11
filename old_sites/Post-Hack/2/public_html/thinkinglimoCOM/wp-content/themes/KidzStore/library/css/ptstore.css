@@ -1,0 +1,57 @@
+/**
+ * Shopp style resets
+ * These styles override the theme's styles for shopp-specific shopping pages
+ **/
+#ptstore,
+br.clear,
+div.clear,
+#ptstore div.description,
+#ptstore .products, 
+#ptstore .products ul,
+#ptstore .products li.row,
+#ptstore .category,
+#ptstore #cart,
+#ptstore #cart table { clear: both; }
+#ptstore { position: relative; }
+#ptstore ul { list-style: none; text-indent: 0; text-align: left; padding: 0; margin: 0; }
+#ptstore li { background: none; padding: 0; margin: 0; }
+#ptstore li:before,
+#ptstore-cart:before,
+#ptstore-cart ul li:before,
+#ptstore-cart #ptstore-cart-ajax ul li:before,
+#ptstore ul.breadcrumb li:before { content: ""; }
+#ptstore div.hidden { display: none; }
+
+#ptstore .products, #ptstore .products ul { width: 100%; margin: 0; padding: 0;}
+#ptstore .products ul li { display: block; float: left; }
+#ptstore .products li.row { display: block; width: 100%; }
+
+#ptstore .products .frame { width: 96px; text-align: center; }
+#ptstore .products .frame img { display: inline; }
+
+#ptstore ul.paging { clear: none; display: inline; }
+#ptstore ul.paging li { display: inline; margin-left: 5px;}
+
+/* Product Grid (Default View) */
+#ptstore ul.products li.product { width: 33%; }
+/* Positions the cart's "default button" way off the screen to hide it, but keep it active */
+#hidden-update { position: absolute; left: -999em; }
+
+#ptstore form.product label { clear: none; display: inline; }
+
+#ptstore .gallery { float: left; display: block;  }
+#ptstore .gallery ul { display: block; margin: 0; padding: 0 !important; position: relative; list-style: none !important; text-indent: 0; width: auto; }
+#ptstore .gallery ul li:before { content: ""; border:none; }
+#ptstore .gallery .previews { position: relative; margin: 0 !important; }
+#ptstore .gallery .previews li { position: absolute; width:340px; height: auto; line-height: 220px; visibility: hidden; top: 0; left: 0; border:none; background:none; margin: 0; display: block; text-align: center; background:#fff; border:1px solid #ccc; padding:5px; }
+
+#ptstore .gallery .previews li img { display: inline; vertical-align: middle; margin-top: -3px; }
+
+#ptstore .gallery .previews li.fill { position: relative; }
+#ptstore .gallery .previews li.active { visibility: visible; }
+#ptstore .gallery .thumbnails { margin-top:110%; width:300px;  }
+#ptstore .gallery .thumbnails ul { padding: 0; }
+#ptstore .gallery .thumbnails li { position: relative; display: inline; visibility: visible; height: auto; line-height: 1; top: auto; left: auto;  }
+#ptstore .gallery .thumbnails li.first { margin-left: 0; }
+#ptstore .gallery .thumbnails li img { cursor: pointer; border:1px solid #ccc; margin-right:10px; }
+

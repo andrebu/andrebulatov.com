@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "thinkinglimo.com Statistics"
+AuthUserFile /var/chroot/home/content/97/10609197/html/stats/.statspwd
+Require valid-user
+DirectoryIndex index.html

@@ -1,0 +1,28 @@
+.tblproducts {}
+.tblproducts td { text-align:center; padding:5px; }
+.tblshoppingcart {  }
+.tblshoppingcart td { padding:5px; vertical-align:middle; }
+#tdordercart { padding-left:10px; padding-right:10px; }
+
+.tbladdtocartform {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 150%;
+	font-weight: normal;
+	color: #000;
+	text-decoration: none;
+	width: 295px;
+	min-height: 30px;
+	padding: 5px;
+}
+
+.aupdatecart { font-size:15px; }
+.lihowto li { padding:5px; font-size:14px; }
+.tblorderform { font-family: Arial, Helvetica, sans-serif; }
+.tblorderform td { padding:5px; }
+.divorderform { 
+	padding-left:15px; 
+	padding-right:15px; 
+	padding-top:5px; 
+	font-family: Arial, Helvetica, sans-serif;
+}

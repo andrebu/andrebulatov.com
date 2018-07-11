@@ -1,0 +1,2 @@
+[09-Apr-2015 15:35:41 America/Chicago] PHP Fatal error:  Class 'WP_Widget' not found in /home2/iamandre/public_html/thinkinglimo.com/wp-content/plugins/revslider/inc_php/revslider_widget.class.php on line 3
+[10-Apr-2015 14:48:31 America/Chicago] PHP Fatal error:  Class 'WP_Widget' not found in /home2/iamandre/public_html/thinkinglimo.com/wp-content/plugins/revslider/inc_php/revslider_widget.class.php on line 3

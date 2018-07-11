@@ -1,0 +1,2894 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Kidz Store v1.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2010-07-28 11:08+0000\n"
+"Last-Translator: Johan11  3223 <miteshru@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: comments-old.php:82
+#: comments-old.php:88
+#: comments.php:73
+#: comments.php:79
+#@ ptthemes_breadcrumbs
+msgid "*"
+msgstr ""
+
+#: header.php:119
+#@ ptthemes_breadcrumbs
+msgid "You have"
+msgstr ""
+
+#: index.php:87
+#: search.php:11
+#: single.php:130
+#@ ptthemes_breadcrumbs
+msgid "Product"
+msgstr ""
+
+#: index.php:87
+#: library/functions/general_functions.php:842
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:69
+#: library/includes/affiliates/export_report.php:21
+#: message.php:116
+#: message.php:251
+#@ ptthemes_breadcrumbs
+msgid "Qty"
+msgstr ""
+
+#: index.php:87
+#: library/functions/custom.php:683
+#: library/functions/general_functions.php:843
+#: message.php:19
+#: message.php:115
+#@ ptthemes_breadcrumbs
+msgid "Price"
+msgstr ""
+
+#: index.php:95
+#: library/includes/admin_manage_orders.php:353
+#: library/includes/affiliates/export_report.php:109
+#: message.php:117
+#: message.php:256
+#@ ptthemes_breadcrumbs
+msgid "Total"
+msgstr ""
+
+#: index.php:96
+#: library/includes/edit_profile.php:176
+#: library/includes/edit_profile.php:309
+#: message.php:64
+#: message.php:70
+#: message.php:125
+#: message.php:226
+#: sidebar.php:57
+#@ ptthemes_breadcrumbs
+msgid "Checkout"
+msgstr ""
+
+#: library/functions/admin_settings.php:70
+#@ ptthemes_breadcrumbs
+msgid "Theme Options"
+msgstr ""
+
+#: library/functions/admin_settings.php:71
+#@ ptthemes_breadcrumbs
+msgid "Show/Hide All Options"
+msgstr ""
+
+#: library/functions/admin_settings.php:74
+#@ ptthemes_breadcrumbs
+msgid "settings saved!"
+msgstr ""
+
+#: library/functions/admin_settings.php:74
+#: library/functions/admin_settings.php:75
+#@ ptthemes_breadcrumbs
+msgid "Check out your blog"
+msgstr ""
+
+#: library/functions/admin_settings.php:75
+#@ ptthemes_breadcrumbs
+msgid " settings reset!"
+msgstr ""
+
+#: library/functions/admin_settings.php:158
+#@ ptthemes_breadcrumbs
+msgid "label"
+msgstr ""
+
+#: library/functions/admin_settings.php:194
+#: library/functions/admin_settings.php:209
+#: library/functions/admin_settings.php:285
+#: library/functions/general_functions.php:35
+#: library/includes/admin_shipping_settings.php:55
+#: library/includes/admin_shippings.php:221
+#@ ptthemes_breadcrumbs
+msgid "name"
+msgstr ""
+
+#: library/functions/admin_settings.php:196
+#: library/functions/admin_settings.php:263
+#@ ptthemes_breadcrumbs
+msgid "Save changes"
+msgstr ""
+
+#: library/functions/admin_settings.php:269
+#@ ptthemes_breadcrumbs
+msgid "Reset"
+msgstr ""
+
+#: library/functions/admin_settings.php:289
+#@ ptthemes_breadcrumbs
+msgid "desc"
+msgstr ""
+
+#: library/functions/comments_functions.php:61
+#@ ptthemes_breadcrumbs
+msgid "Reply"
+msgstr ""
+
+#: library/functions/custom.php:663
+#@ ptthemes_breadcrumbs
+msgid "View all posts and products"
+msgstr ""
+
+#: library/functions/custom.php:666
+#@ ptthemes_breadcrumbs
+msgid "View only products"
+msgstr ""
+
+#: library/functions/custom.php:684
+#@ ptthemes_breadcrumbs
+msgid "Is Taxable"
+msgstr ""
+
+#: library/functions/custom.php:685
+#: product_menu.php:25
+#@ ptthemes_breadcrumbs
+msgid "Stock"
+msgstr ""
+
+#: library/functions/custom.php:686
+#@ ptthemes_breadcrumbs
+msgid "Main Image"
+msgstr ""
+
+#: library/functions/custom.php:689
+#@ ptthemes_breadcrumbs
+msgid "Digital Product"
+msgstr ""
+
+#: library/functions/custom.php:691
+#@ ptthemes_breadcrumbs
+msgid "Thumbnails"
+msgstr ""
+
+#: library/functions/custom.php:694
+#@ ptthemes_breadcrumbs
+msgid "Is Product"
+msgstr ""
+
+#: library/functions/custom.php:708
+#: library/functions/custom.php:722
+#: library/functions/custom.php:745
+#: library/functions/custom.php:757
+#: library/includes/affiliates/affiliates_settings.php:56
+#@ ptthemes_breadcrumbs
+msgid "Yes"
+msgstr ""
+
+#: library/functions/custom.php:711
+#: library/functions/custom.php:725
+#: library/functions/custom.php:748
+#: library/functions/custom.php:760
+#: library/includes/affiliates/affiliates_settings.php:55
+#@ ptthemes_breadcrumbs
+msgid "No"
+msgstr ""
+
+#: library/functions/custom.php:1042
+#@ ptthemes_breadcrumbs
+msgid "Shopping Cart Summary"
+msgstr ""
+
+#: library/functions/custom.php:1045
+#@ ptthemes_breadcrumbs
+msgid "Latest Order List"
+msgstr ""
+
+#: library/functions/general_functions.php:20
+#@ ptthemes_breadcrumbs
+msgid "Pay with"
+msgstr ""
+
+#: library/functions/general_functions.php:205
+#: library/functions/general_functions.php:871
+#: library/includes/admin_manage_coupon.php:55
+#: message.php:126
+#@ ptthemes_breadcrumbs
+msgid "Discount Amount"
+msgstr ""
+
+#: library/functions/general_functions.php:784
+#: library/includes/admin_manage_orders.php:297
+#: message.php:49
+#@ ptthemes_breadcrumbs
+msgid "Order Number"
+msgstr ""
+
+#: library/functions/general_functions.php:786
+#@ ptthemes_breadcrumbs
+msgid "Order Date"
+msgstr ""
+
+#: library/functions/general_functions.php:789
+#: library/includes/admin_manage_orders.php:189
+#: library/includes/admin_order_detail.php:491
+#@ ptthemes_breadcrumbs
+msgid "Order Status"
+msgstr ""
+
+#: library/functions/general_functions.php:797
+#: message.php:96
+#: message.php:131
+#@ ptthemes_breadcrumbs
+msgid "User Information"
+msgstr ""
+
+#: library/functions/general_functions.php:810
+#: message.php:72
+#: message.php:241
+#@ ptthemes_breadcrumbs
+msgid "Shipping Address"
+msgstr ""
+
+#: library/functions/general_functions.php:826
+#@ ptthemes_breadcrumbs
+msgid "Payment Information"
+msgstr ""
+
+#: library/functions/general_functions.php:827
+#: message.php:97
+#@ ptthemes_breadcrumbs
+msgid "Shipping Information"
+msgstr ""
+
+#: library/functions/general_functions.php:837
+#@ ptthemes_breadcrumbs
+msgid "Products Information"
+msgstr ""
+
+#: library/functions/general_functions.php:841
+#: message.php:76
+#@ ptthemes_breadcrumbs
+msgid "Product Name"
+msgstr ""
+
+#: library/functions/general_functions.php:844
+#@ ptthemes_breadcrumbs
+msgid "Price Total"
+msgstr ""
+
+#: library/functions/general_functions.php:865
+#@ ptthemes_breadcrumbs
+msgid "Sub Total"
+msgstr ""
+
+#: library/functions/general_functions.php:878
+#: library/includes/admin_coupon.php:117
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:70
+#: library/includes/affiliates/export_report.php:22
+#: library/includes/cart_detail.php:158
+#: library/includes/normal_checkout.php:153
+#: library/includes/single_checkout.php:152
+#: message.php:252
+#@ ptthemes_breadcrumbs
+msgid "Amount"
+msgstr ""
+
+#: library/functions/general_functions.php:885
+#: message.php:119
+#@ ptthemes_breadcrumbs
+msgid "Tax Amount"
+msgstr ""
+
+#: library/functions/general_functions.php:890
+#@ ptthemes_breadcrumbs
+msgid "Total Payable Amount"
+msgstr ""
+
+#: library/functions/general_functions.php:906
+#@ ptthemes_breadcrumbs
+msgid "Please transfer amount of"
+msgstr ""
+
+#: library/functions/general_functions.php:906
+#@ ptthemes_breadcrumbs
+msgid "to out bank with following information"
+msgstr ""
+
+#: library/functions/general_functions.php:907
+#@ ptthemes_breadcrumbs
+msgid "payment for Order Number"
+msgstr ""
+
+#: library/functions/general_functions.php:908
+#@ ptthemes_breadcrumbs
+msgid "Bank Name"
+msgstr ""
+
+#: library/functions/general_functions.php:909
+#@ ptthemes_breadcrumbs
+msgid "Account Number"
+msgstr ""
+
+#: library/functions/general_functions.php:1191
+#@ ptthemes_breadcrumbs
+msgid "out_of_stock"
+msgstr ""
+
+#: library/functions/general_functions.php:1397
+#: library/functions/general_functions.php:1402
+#@ ptthemes_breadcrumbs
+msgid "Current stock is"
+msgstr ""
+
+#: library/functions/general_functions.php:1500
+#: library/functions/general_functions.php:1504
+#: library/includes/admin_stock.php:132
+#: library/includes/admin_stock.php:146
+#: library/includes/admin_stock.php:154
+#@ ptthemes_breadcrumbs
+msgid "Out of Stock"
+msgstr ""
+
+#: library/functions/product.php:135
+#@ ptthemes_breadcrumbs
+msgid "select "
+msgstr ""
+
+#: library/functions/widgets_functions.php:617
+#@ ptthemes_breadcrumbs
+msgid "Twitter Account ID:"
+msgstr ""
+
+#: library/functions/widgets_functions.php:621
+#@ ptthemes_breadcrumbs
+msgid "Title:"
+msgstr ""
+
+#: library/functions/widgets_functions.php:625
+#@ ptthemes_breadcrumbs
+msgid "Show Twitter Posts:"
+msgstr ""
+
+#: library/functions/yoast-breadcrumbs.php:4
+#: message.php:57
+#@ ptthemes_breadcrumbs
+msgid "Home"
+msgstr ""
+
+#: library/functions/yoast-breadcrumbs.php:5
+#: message.php:59
+#: single.php:133
+#: tags.php:32
+#@ ptthemes_breadcrumbs
+msgid "Blog"
+msgstr ""
+
+#: library/functions/yoast-breadcrumbs.php:12
+#@ ptthemes_breadcrumbs
+msgid "Archives for"
+msgstr ""
+
+#: library/functions/yoast-breadcrumbs.php:13
+#@ ptthemes_breadcrumbs
+msgid "Search for"
+msgstr ""
+
+#: library/functions/yoast-breadcrumbs.php:44
+#: library/includes/admin_paymet_settings.php:70
+#: library/includes/admin_paymethods.php:259
+#: library/includes/admin_paymethods.php:293
+#: library/includes/admin_shipping_settings.php:55
+#: library/includes/admin_shippings.php:226
+#: library/includes/admin_shippings.php:229
+#@ ptthemes_breadcrumbs
+msgid "Settings"
+msgstr ""
+
+#: library/functions/yoast-breadcrumbs.php:52
+#@ ptthemes_breadcrumbs
+msgid "You cannot edit the Yoast Breadcrumbs options."
+msgstr ""
+
+#: library/functions/yoast-breadcrumbs.php:168
+#: library/functions/yoast-breadcrumbs.php:172
+#: library/functions/yoast-breadcrumbs.php:254
+#@ ptthemes_breadcrumbs
+msgid "home"
+msgstr ""
+
+#: library/functions/yoast-breadcrumbs.php:169
+#@ ptthemes_breadcrumbs
+msgid "blog"
+msgstr ""
+
+#: library/functions/yoast-posts.php:23
+#@ ptthemes_breadcrumbs
+msgid "Yoast - Tweaking Websites"
+msgstr ""
+
+#: library/includes/admin_bulk_upload.php:204
+#: product_menu.php:29
+#@ ptthemes_breadcrumbs
+msgid "Bulk Upload"
+msgstr ""
+
+#: library/includes/admin_bulk_upload.php:207
+#@ ptthemes_breadcrumbs
+msgid "Uploaded successully."
+msgstr ""
+
+#: library/includes/admin_bulk_upload.php:212
+#@ ptthemes_breadcrumbs
+msgid "Select CSV file"
+msgstr ""
+
+#: library/includes/admin_bulk_upload.php:218
+#: library/includes/admin_coupon.php:126
+#: library/includes/admin_notification_edit.php:100
+#: library/includes/admin_paymet_settings.php:112
+#: library/includes/admin_settings.php:373
+#: library/includes/admin_shipping_settings.php:80
+#: library/includes/admin_shippings.php:242
+#: library/includes/affiliates/admin_affiliates_frm.php:102
+#: library/includes/affiliates/affiliates_settings.php:95
+#: message.php:267
+#@ ptthemes_breadcrumbs
+msgid "Submit"
+msgstr ""
+
+#: library/includes/admin_bulk_upload.php:223
+#@ ptthemes_breadcrumbs
+msgid "You can download"
+msgstr ""
+
+#: library/includes/admin_bulk_upload.php:223
+#@ ptthemes_breadcrumbs
+msgid "sample CSV file"
+msgstr ""
+
+#: library/includes/admin_bulk_upload.php:232
+#@ ptthemes_breadcrumbs
+msgid "Please select csv file to upload"
+msgstr ""
+
+#: library/includes/admin_coupon.php:87
+#@ ptthemes_breadcrumbs
+msgid "Edit Coupon"
+msgstr ""
+
+#: library/includes/admin_coupon.php:90
+#: library/includes/admin_manage_coupon.php:49
+#@ ptthemes_breadcrumbs
+msgid "Add Coupon"
+msgstr ""
+
+#: library/includes/admin_coupon.php:96
+#@ ptthemes_breadcrumbs
+msgid "Coupon code already exists, Please user different one."
+msgstr ""
+
+#: library/includes/admin_coupon.php:101
+#: library/includes/admin_manage_coupon.php:53
+#@ ptthemes_breadcrumbs
+msgid "Coupon Code"
+msgstr ""
+
+#: library/includes/admin_coupon.php:106
+#: library/includes/admin_manage_coupon.php:54
+#@ ptthemes_breadcrumbs
+msgid "Discount Type"
+msgstr ""
+
+#: library/includes/admin_coupon.php:109
+#@ ptthemes_breadcrumbs
+msgid "Percentage"
+msgstr ""
+
+#: library/includes/admin_coupon.php:128
+#: library/includes/admin_notification_edit.php:100
+#: library/includes/admin_paymet_settings.php:114
+#: library/includes/admin_shipping_settings.php:82
+#: library/includes/affiliates/admin_affiliates_frm.php:104
+#: message.php:297
+#@ ptthemes_breadcrumbs
+msgid "Cancel"
+msgstr ""
+
+#: library/includes/admin_coupon.php:139
+#: library/includes/affiliates/admin_affiliates_frm.php:115
+#@ ptthemes_breadcrumbs
+msgid "Percentage should be less than or equal to 100"
+msgstr ""
+
+#: library/includes/admin_manage_coupon.php:38
+#@ ptthemes_breadcrumbs
+msgid "Manage Coupons"
+msgstr ""
+
+#: library/includes/admin_manage_coupon.php:41
+#@ ptthemes_breadcrumbs
+msgid "Coupon updated successfully."
+msgstr ""
+
+#: library/includes/admin_manage_coupon.php:46
+#@ ptthemes_breadcrumbs
+msgid "Coupon deleted successfully."
+msgstr ""
+
+#: library/includes/admin_manage_coupon.php:56
+#: library/includes/admin_manage_coupon.php:75
+#: library/includes/admin_product_edit.php:204
+#: library/includes/admin_product_edit.php:280
+#: library/includes/affiliates/admin_affiliates.php:61
+#: message.php:84
+#@ ptthemes_breadcrumbs
+msgid "Edit"
+msgstr ""
+
+#: library/includes/admin_manage_coupon.php:57
+#: library/includes/admin_manage_coupon.php:76
+#: library/includes/admin_manage_orders.php:347
+#: library/includes/admin_product_edit.php:207
+#: library/includes/admin_product_edit.php:283
+#: library/includes/affiliates/admin_affiliates.php:75
+#@ ptthemes_breadcrumbs
+msgid "Delete"
+msgstr ""
+
+#: library/includes/admin_manage_orders.php:116
+#@ ptthemes_breadcrumbs
+msgid "Please select atleast one record to delete."
+msgstr ""
+
+#: library/includes/admin_manage_orders.php:120
+#@ ptthemes_breadcrumbs
+msgid "Are you sure want to delete orders?"
+msgstr ""
+
+#: library/includes/admin_manage_orders.php:144
+#: product_menu.php:24
+#@ ptthemes_breadcrumbs
+msgid "Manage Orders"
+msgstr ""
+
+#: library/includes/admin_manage_orders.php:155
+#: library/includes/admin_manage_orders.php:200
+#: library/includes/admin_stock.php:73
+#: library/includes/admin_stock.php:82
+#: library/includes/affiliates/admin_affiliate_sale_report_default.php:44
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:37
+#: message.php:245
+#@ ptthemes_breadcrumbs
+msgid "Search"
+msgstr ""
+
+#: library/includes/admin_manage_orders.php:165
+#@ ptthemes_breadcrumbs
+msgid "order number"
+msgstr ""
+
+#: library/includes/admin_manage_orders.php:180
+#@ ptthemes_breadcrumbs
+msgid "Select Payment Type"
+msgstr ""
+
+#: library/includes/admin_manage_orders.php:191
+#@ ptthemes_breadcrumbs
+msgid "Select Status"
+msgstr ""
+
+#: library/includes/admin_manage_orders.php:212
+#@ ptthemes_breadcrumbs
+msgid "List All Orders"
+msgstr ""
+
+#: library/includes/admin_manage_orders.php:298
+#@ ptthemes_breadcrumbs
+msgid "Customer Name"
+msgstr ""
+
+#: library/includes/admin_manage_orders.php:299
+#@ ptthemes_breadcrumbs
+msgid "Order Total"
+msgstr ""
+
+#: library/includes/admin_manage_orders.php:300
+#@ ptthemes_breadcrumbs
+msgid "Payment Type"
+msgstr ""
+
+#: library/includes/admin_manage_orders.php:301
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:65
+#: library/includes/affiliates/export_report.php:17
+#: message.php:247
+#@ ptthemes_breadcrumbs
+msgid "Date"
+msgstr ""
+
+#: library/includes/admin_manage_orders.php:302
+#: message.php:303
+#@ ptthemes_breadcrumbs
+msgid "Status"
+msgstr ""
+
+#: library/includes/admin_manage_orders.php:353
+#@ ptthemes_breadcrumbs
+msgid "orders"
+msgstr ""
+
+#: library/includes/admin_manage_orders.php:364
+#@ ptthemes_breadcrumbs
+msgid "No Orders Available"
+msgstr ""
+
+#: library/includes/admin_notification.php:20
+#: library/includes/admin_notification_edit.php:40
+#@ ptthemes_breadcrumbs
+msgid "Manage Notification"
+msgstr ""
+
+#: library/includes/admin_notification.php:23
+#@ ptthemes_breadcrumbs
+msgid "updated successfully."
+msgstr ""
+
+#: library/includes/admin_notification.php:124
+#@ ptthemes_breadcrumbs
+msgid "Emails"
+msgstr ""
+
+#: library/includes/admin_notification.php:128
+#: library/includes/admin_notification.php:157
+#: library/includes/admin_notification_edit.php:76
+#@ ptthemes_breadcrumbs
+msgid "File Name"
+msgstr ""
+
+#: library/includes/admin_notification.php:129
+#: library/includes/admin_notification_edit.php:88
+#: message.php:14
+#: message.php:34
+#@ ptthemes_breadcrumbs
+msgid "Subject"
+msgstr ""
+
+#: library/includes/admin_notification.php:130
+#: library/includes/admin_notification.php:158
+#@ ptthemes_breadcrumbs
+msgid "Description"
+msgstr ""
+
+#: library/includes/admin_notification.php:153
+#@ ptthemes_breadcrumbs
+msgid "Messages"
+msgstr ""
+
+#: library/includes/admin_notification_edit.php:80
+#@ ptthemes_breadcrumbs
+msgid "File Path"
+msgstr ""
+
+#: library/includes/admin_notification_edit.php:95
+#@ ptthemes_breadcrumbs
+msgid "Message"
+msgstr ""
+
+#: library/includes/admin_notification_edit.php:101
+#: message.php:81
+#@ ptthemes_breadcrumbs
+msgid "Back"
+msgstr ""
+
+#: library/includes/admin_order_detail.php:476
+#@ ptthemes_breadcrumbs
+msgid "Order Detail of Order"
+msgstr ""
+
+#: library/includes/admin_order_detail.php:502
+#@ ptthemes_breadcrumbs
+msgid "Comments"
+msgstr ""
+
+#: library/includes/admin_order_detail.php:507
+#: message.php:104
+#@ ptthemes_breadcrumbs
+msgid "Update"
+msgstr ""
+
+#: library/includes/admin_order_detail.php:513
+#@ ptthemes_breadcrumbs
+msgid "Back to Orders Listing"
+msgstr ""
+
+#: library/includes/admin_paymet_settings.php:73
+#: library/includes/admin_shipping_settings.php:58
+#@ ptthemes_breadcrumbs
+msgid "Updated Succesfully"
+msgstr ""
+
+#: library/includes/admin_paymet_settings.php:79
+#@ ptthemes_breadcrumbs
+msgid "Payment Method"
+msgstr ""
+
+#: library/includes/admin_paymet_settings.php:83
+#: library/includes/admin_paymethods.php:256
+#@ ptthemes_breadcrumbs
+msgid "Is Active"
+msgstr ""
+
+#: library/includes/admin_paymet_settings.php:85
+#: library/includes/admin_paymethods.php:289
+#@ ptthemes_breadcrumbs
+msgid "Activate"
+msgstr ""
+
+#: library/includes/admin_paymet_settings.php:86
+#: library/includes/admin_paymethods.php:286
+#@ ptthemes_breadcrumbs
+msgid "Deactivate"
+msgstr ""
+
+#: library/includes/admin_paymet_settings.php:91
+#@ ptthemes_breadcrumbs
+msgid "Display Order"
+msgstr ""
+
+#: library/includes/admin_paymet_settings.php:125
+#@ ptthemes_breadcrumbs
+msgid "Please enter Payment Method"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:38
+#: library/includes/admin_paymethods.php:74
+#@ ptthemes_breadcrumbs
+msgid "Merchant Id"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:41
+#@ ptthemes_breadcrumbs
+msgid "Example : myaccount@paypal.com"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:44
+#@ ptthemes_breadcrumbs
+msgid "Cancel Url"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:47
+#@ ptthemes_breadcrumbs
+msgid "Example : http://mydomain.com/cancel_return.php"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:50
+#@ ptthemes_breadcrumbs
+msgid "Return Url"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:53
+#@ ptthemes_breadcrumbs
+msgid "Example : http://mydomain.com/return.php"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:56
+#: library/includes/admin_paymethods.php:148
+#@ ptthemes_breadcrumbs
+msgid "Notify Url"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:59
+#@ ptthemes_breadcrumbs
+msgid "Example : http://mydomain.com/notifyurl.php"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:63
+#@ ptthemes_breadcrumbs
+msgid "Paypal"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:77
+#: library/includes/admin_paymethods.php:102
+#@ ptthemes_breadcrumbs
+msgid "Example : 1234567890"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:81
+#@ ptthemes_breadcrumbs
+msgid "Google Checkout"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:93
+#@ ptthemes_breadcrumbs
+msgid "Login ID"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:96
+#@ ptthemes_breadcrumbs
+msgid "Example : yourname@domain.com"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:99
+#@ ptthemes_breadcrumbs
+msgid "Transaction Key"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:106
+#@ ptthemes_breadcrumbs
+msgid "Authorize.net"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:118
+#@ ptthemes_breadcrumbs
+msgid "Instant Id"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:121
+#@ ptthemes_breadcrumbs
+msgid "Example : 123456"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:124
+#@ ptthemes_breadcrumbs
+msgid "Account Id"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:127
+#@ ptthemes_breadcrumbs
+msgid "Example : 12345"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:131
+#@ ptthemes_breadcrumbs
+msgid "Worldpay"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:142
+#@ ptthemes_breadcrumbs
+msgid "Vendor ID"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:145
+#@ ptthemes_breadcrumbs
+msgid "Enter Vendor ID Example : 1303908"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:151
+#@ ptthemes_breadcrumbs
+msgid "Example : http://mydomain.com/2co_notifyurl.php"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:155
+#@ ptthemes_breadcrumbs
+msgid "2CO (2Checkout)"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:168
+#@ ptthemes_breadcrumbs
+msgid "Bank Information"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:171
+#@ ptthemes_breadcrumbs
+msgid "Enter the bank name to which you want to transfer payment"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:174
+#@ ptthemes_breadcrumbs
+msgid "Account ID"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:177
+#@ ptthemes_breadcrumbs
+msgid "Enter your bank Account ID"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:181
+#@ ptthemes_breadcrumbs
+msgid "Pre Bank Transfer"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:192
+#@ ptthemes_breadcrumbs
+msgid "Pay Cash On Delivery"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:246
+#@ ptthemes_breadcrumbs
+msgid "Manage Payment Options"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:255
+#: library/includes/admin_shippings.php:197
+#@ ptthemes_breadcrumbs
+msgid "Method Name"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:257
+#@ ptthemes_breadcrumbs
+msgid "Sort Order"
+msgstr ""
+
+#: library/includes/admin_paymethods.php:258
+#: library/includes/admin_shippings.php:199
+#: library/includes/affiliates/admin_affiliates.php:52
+#@ ptthemes_breadcrumbs
+msgid "Action"
+msgstr ""
+
+#: library/includes/admin_product_edit.php:14
+#@ ptthemes_breadcrumbs
+msgid "Cheatin&#8217; uh?"
+msgstr ""
+
+#: library/includes/admin_product_edit.php:37
+#@ ptthemes_breadcrumbs
+msgid "You are not allowed to delete this post."
+msgstr ""
+
+#: library/includes/admin_product_edit.php:41
+#: library/includes/admin_product_edit.php:44
+#@ ptthemes_breadcrumbs
+msgid "Error in deleting..."
+msgstr ""
+
+#: library/includes/admin_product_edit.php:85
+#@ ptthemes_breadcrumbs
+msgid "Edit Posts"
+msgstr ""
+
+#: library/includes/admin_product_edit.php:105
+#, php-format
+#@ ptthemes_breadcrumbs
+msgid "Search results for &#8220;%s&#8221;"
+msgstr ""
+
+#: library/includes/admin_product_edit.php:110
+#@ ptthemes_breadcrumbs
+msgid "Your post has been saved."
+msgstr ""
+
+#: library/includes/admin_product_edit.php:112
+#@ ptthemes_breadcrumbs
+msgid "View post"
+msgstr ""
+
+#: library/includes/admin_product_edit.php:114
+#@ ptthemes_breadcrumbs
+msgid "Edit post"
+msgstr ""
+
+#: library/includes/admin_product_edit.php:123
+#, php-format
+#@ ptthemes_breadcrumbs
+msgid "%s post updated."
+msgid_plural "%s posts updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: library/includes/admin_product_edit.php:131
+#, php-format
+#@ ptthemes_breadcrumbs
+msgid "%s post not updated, somebody is editing it."
+msgid_plural "%s posts not updated, somebody is editing them."
+msgstr[0] ""
+msgstr[1] ""
+
+#: library/includes/admin_product_edit.php:136
+#, php-format
+#@ ptthemes_breadcrumbs
+msgid "Post deleted."
+msgid_plural "%s posts deleted."
+msgstr[0] ""
+msgstr[1] ""
+
+#: library/includes/admin_product_edit.php:153
+#, php-format
+#@ ptthemes_breadcrumbs
+msgctxt "posts"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: library/includes/admin_product_edit.php:176
+#: library/includes/admin_product_edit.php:179
+#@ ptthemes_breadcrumbs
+msgid "Search Posts"
+msgstr ""
+
+#: library/includes/admin_product_edit.php:191
+#@ ptthemes_breadcrumbs
+msgid "&laquo;"
+msgstr ""
+
+#: library/includes/admin_product_edit.php:192
+#@ ptthemes_breadcrumbs
+msgid "&raquo;"
+msgstr ""
+
+#: library/includes/admin_product_edit.php:201
+#: library/includes/admin_product_edit.php:277
+#@ ptthemes_breadcrumbs
+msgid "Bulk Actions"
+msgstr ""
+
+#: library/includes/admin_product_edit.php:210
+#: library/includes/admin_product_edit.php:286
+#@ ptthemes_breadcrumbs
+msgid "Apply"
+msgstr ""
+
+#: library/includes/admin_product_edit.php:225
+#@ ptthemes_breadcrumbs
+msgid "Show all dates"
+msgstr ""
+
+#: library/includes/admin_product_edit.php:246
+#@ ptthemes_breadcrumbs
+msgid "View all categories"
+msgstr ""
+
+#: library/includes/admin_product_edit.php:251
+#@ ptthemes_breadcrumbs
+msgid "Filter"
+msgstr ""
+
+#: library/includes/admin_product_edit.php:256
+#, php-format
+#@ ptthemes_breadcrumbs
+msgid "Displaying %s&#8211;%s of %s"
+msgstr ""
+
+#: library/includes/admin_product_edit.php:264
+#@ ptthemes_breadcrumbs
+msgid "List View"
+msgstr ""
+
+#: library/includes/admin_product_edit.php:264
+#@ ptthemes_breadcrumbs
+msgid "Excerpt View"
+msgstr ""
+
+#: library/includes/admin_product_edit.php:294
+#@ ptthemes_breadcrumbs
+msgid "No posts found"
+msgstr ""
+
+#: library/includes/admin_settings.php:198
+#@ ptthemes_breadcrumbs
+msgid "Shopping Cart General Settings"
+msgstr ""
+
+#: library/includes/admin_settings.php:207
+#@ ptthemes_breadcrumbs
+msgid "Store Type"
+msgstr ""
+
+#: library/includes/admin_settings.php:216
+#@ ptthemes_breadcrumbs
+msgid "Checkout Type (for \"Shopping Cart\" and \"Digital Shop\" only)"
+msgstr ""
+
+#: library/includes/admin_settings.php:223
+#@ ptthemes_breadcrumbs
+msgid "Checkout/Login Method"
+msgstr ""
+
+#: library/includes/admin_settings.php:230
+#@ ptthemes_breadcrumbs
+msgid "Send Registration Email Notification"
+msgstr ""
+
+#: library/includes/admin_settings.php:231
+#@ ptthemes_breadcrumbs
+msgid "In case of Checkout as Guest do you want to send Registration Email Notification"
+msgstr ""
+
+#: library/includes/admin_settings.php:240
+#@ ptthemes_breadcrumbs
+msgid "From Email Name"
+msgstr ""
+
+#: library/includes/admin_settings.php:244
+#@ ptthemes_breadcrumbs
+msgid "From Email ID"
+msgstr ""
+
+#: library/includes/admin_settings.php:248
+#@ ptthemes_breadcrumbs
+msgid "Default Currency (Ex.: USD)"
+msgstr ""
+
+#: library/includes/admin_settings.php:252
+#@ ptthemes_breadcrumbs
+msgid "Default Currency Symbol (Ex.: $)"
+msgstr ""
+
+#: library/includes/admin_settings.php:256
+#@ ptthemes_breadcrumbs
+msgid "Product Tax - apply to each products (%)"
+msgstr ""
+
+#: library/includes/admin_settings.php:259
+#@ ptthemes_breadcrumbs
+msgid "Product Settings"
+msgstr ""
+
+#: library/includes/admin_settings.php:261
+#@ ptthemes_breadcrumbs
+msgid "Product Image Path"
+msgstr ""
+
+#: library/includes/admin_settings.php:262
+#@ ptthemes_breadcrumbs
+msgid "(Default folder is \"products_img\")"
+msgstr ""
+
+#: library/includes/admin_settings.php:266
+#@ ptthemes_breadcrumbs
+msgid "Digital Product Path"
+msgstr ""
+
+#: library/includes/admin_settings.php:267
+#@ ptthemes_breadcrumbs
+msgid "(Default folder is \"digital_products\")"
+msgstr ""
+
+#: library/includes/admin_settings.php:271
+#@ ptthemes_breadcrumbs
+msgid "Display Product Weight"
+msgstr ""
+
+#: library/includes/admin_settings.php:278
+#@ ptthemes_breadcrumbs
+msgid "Display \"Tell a Friend\" on Product detail page"
+msgstr ""
+
+#: library/includes/admin_settings.php:285
+#@ ptthemes_breadcrumbs
+msgid "Display \"Add Comment\" on Product detail page"
+msgstr ""
+
+#: library/includes/admin_settings.php:292
+#@ ptthemes_breadcrumbs
+msgid "Display \"Related Products\" on Product detail page"
+msgstr ""
+
+#: library/includes/admin_settings.php:298
+#@ ptthemes_breadcrumbs
+msgid "Stock Settings"
+msgstr ""
+
+#: library/includes/admin_settings.php:300
+#@ ptthemes_breadcrumbs
+msgid "Set email alert on minimum stock of Product"
+msgstr ""
+
+#: library/includes/admin_settings.php:308
+#@ ptthemes_breadcrumbs
+msgid "Other Settings"
+msgstr ""
+
+#: library/includes/admin_settings.php:310
+#@ ptthemes_breadcrumbs
+msgid "Enable SSL - https on checkout page"
+msgstr ""
+
+#: library/includes/admin_settings.php:317
+#@ ptthemes_breadcrumbs
+msgid "Display Blog Page link on header navigation"
+msgstr ""
+
+#: library/includes/admin_settings.php:324
+#@ ptthemes_breadcrumbs
+msgid "Display Store Page link on header navigation"
+msgstr ""
+
+#: library/includes/admin_settings.php:338
+#@ ptthemes_breadcrumbs
+msgid "Display Number of Orders on Admin Dashboard"
+msgstr ""
+
+#: library/includes/admin_settings.php:342
+#@ ptthemes_breadcrumbs
+msgid "Display Coupon code on checkout page"
+msgstr ""
+
+#: library/includes/admin_settings.php:349
+#@ ptthemes_breadcrumbs
+msgid "Display Term and Conditions"
+msgstr ""
+
+#: library/includes/admin_settings.php:350
+#@ ptthemes_breadcrumbs
+msgid "Display Term and Conditions checkbox at checkout page"
+msgstr ""
+
+#: library/includes/admin_settings.php:358
+#@ ptthemes_breadcrumbs
+msgid "Registration Page Mandatory Fields"
+msgstr ""
+
+#: library/includes/admin_settings.php:359
+#@ ptthemes_breadcrumbs
+msgid "the selected fields will be Mandatory Fields while collecting user information"
+msgstr ""
+
+#: library/includes/admin_settings.php:368
+#@ ptthemes_breadcrumbs
+msgid "Login Page Top Content"
+msgstr ""
+
+#: library/includes/admin_shipping_settings.php:69
+#@ ptthemes_breadcrumbs
+msgid "title"
+msgstr ""
+
+#: library/includes/admin_shipping_settings.php:72
+#@ ptthemes_breadcrumbs
+msgid "description"
+msgstr ""
+
+#: library/includes/admin_shippings.php:46
+#@ ptthemes_breadcrumbs
+msgid "Enable Free Shipping?"
+msgstr ""
+
+#: library/includes/admin_shippings.php:49
+#@ ptthemes_breadcrumbs
+msgid "Example : shipping amt = 0 "
+msgstr ""
+
+#: library/includes/admin_shippings.php:54
+#@ ptthemes_breadcrumbs
+msgid "Free Shipping"
+msgstr ""
+
+#: library/includes/admin_shippings.php:63
+#@ ptthemes_breadcrumbs
+msgid "Shipping Amount"
+msgstr ""
+
+#: library/includes/admin_shippings.php:66
+#@ ptthemes_breadcrumbs
+msgid "Example : enter a value that will be added as default for shipping when someone goes throught checkout"
+msgstr ""
+
+#: library/includes/admin_shippings.php:70
+#@ ptthemes_breadcrumbs
+msgid "Flat Rate Shipping"
+msgstr ""
+
+#: library/includes/admin_shippings.php:79
+#@ ptthemes_breadcrumbs
+msgid "Price Shipping 1"
+msgstr ""
+
+#: library/includes/admin_shippings.php:82
+#@ ptthemes_breadcrumbs
+msgid "Example : if total price is between $10 and $100 then shipping price is $1 so the equation is -> <strong>10->100=1</strong>"
+msgstr ""
+
+#: library/includes/admin_shippings.php:85
+#@ ptthemes_breadcrumbs
+msgid "Price Shipping 2"
+msgstr ""
+
+#: library/includes/admin_shippings.php:88
+#@ ptthemes_breadcrumbs
+msgid "Example : if total price is between $101 and $200 then shipping price is $10 so the equation is -> <strong>101->200=10</strong>"
+msgstr ""
+
+#: library/includes/admin_shippings.php:91
+#@ ptthemes_breadcrumbs
+msgid "Price Shipping 3"
+msgstr ""
+
+#: library/includes/admin_shippings.php:94
+#@ ptthemes_breadcrumbs
+msgid "Example : if total price is between $201 and $300 then shipping price is $20 so the equation is -> <strong>201->300=20</strong>"
+msgstr ""
+
+#: library/includes/admin_shippings.php:97
+#@ ptthemes_breadcrumbs
+msgid "Price Shipping 4"
+msgstr ""
+
+#: library/includes/admin_shippings.php:100
+#@ ptthemes_breadcrumbs
+msgid "Example : if total price is between $301 and $500 then shipping price is $50 so the equation is -> <strong>301->500=50</strong>"
+msgstr ""
+
+#: library/includes/admin_shippings.php:103
+#@ ptthemes_breadcrumbs
+msgid "Price Shipping 5"
+msgstr ""
+
+#: library/includes/admin_shippings.php:106
+#@ ptthemes_breadcrumbs
+msgid "Example : if total price is between $301 and $500 then shipping price is $60 so the equation is -> <strong>301->500=60</strong>"
+msgstr ""
+
+#: library/includes/admin_shippings.php:110
+#@ ptthemes_breadcrumbs
+msgid "Price Base Shipping"
+msgstr ""
+
+#: library/includes/admin_shippings.php:119
+#@ ptthemes_breadcrumbs
+msgid "Weight Shipping 1"
+msgstr ""
+
+#: library/includes/admin_shippings.php:122
+#@ ptthemes_breadcrumbs
+msgid "Example : if total weight is between 1 lbs and 10 lbs then shipping price is $10 so the equation is -> <strong>1->10=10</strong>"
+msgstr ""
+
+#: library/includes/admin_shippings.php:125
+#@ ptthemes_breadcrumbs
+msgid "Weight Shipping 2"
+msgstr ""
+
+#: library/includes/admin_shippings.php:128
+#@ ptthemes_breadcrumbs
+msgid "Example : if total weight is between 11 lbs and 51 lbs then shipping price is $20 so the equation is -> <strong>11->51=20</strong>"
+msgstr ""
+
+#: library/includes/admin_shippings.php:131
+#@ ptthemes_breadcrumbs
+msgid "Weight Shipping 3"
+msgstr ""
+
+#: library/includes/admin_shippings.php:134
+#@ ptthemes_breadcrumbs
+msgid "Example : if total weight is between 51 lbs and 100 lbs then shipping price is $30 so the equation is -> <strong>51->100=30</strong>"
+msgstr ""
+
+#: library/includes/admin_shippings.php:137
+#@ ptthemes_breadcrumbs
+msgid "Weight Shipping 4"
+msgstr ""
+
+#: library/includes/admin_shippings.php:140
+#@ ptthemes_breadcrumbs
+msgid "Example : if total weight is between 101 lbs and 150 lbs then shipping price is $40 so the equation is -> <strong>101->150=40</strong>"
+msgstr ""
+
+#: library/includes/admin_shippings.php:143
+#@ ptthemes_breadcrumbs
+msgid "Weight Shipping 5"
+msgstr ""
+
+#: library/includes/admin_shippings.php:146
+#@ ptthemes_breadcrumbs
+msgid "Example : if total weight is between 101 lbs and 150 lbs then shipping price is $40 so the equation is -> <strong>151->200=40</strong>"
+msgstr ""
+
+#: library/includes/admin_shippings.php:150
+#@ ptthemes_breadcrumbs
+msgid "Weight Base Shipping"
+msgstr ""
+
+#: library/includes/admin_shippings.php:185
+#@ ptthemes_breadcrumbs
+msgid "Manage Shipping Options"
+msgstr ""
+
+#: library/includes/admin_shippings.php:196
+#@ ptthemes_breadcrumbs
+msgid "Select"
+msgstr ""
+
+#: library/includes/admin_stock.php:50
+#@ ptthemes_breadcrumbs
+msgid "Manage Stock"
+msgstr ""
+
+#: library/includes/admin_stock.php:101
+#: message.php:50
+#: message.php:58
+#@ ptthemes_breadcrumbs
+msgid "Products"
+msgstr ""
+
+#: library/includes/admin_stock.php:102
+#@ ptthemes_breadcrumbs
+msgid "Opening Stock"
+msgstr ""
+
+#: library/includes/admin_stock.php:103
+#@ ptthemes_breadcrumbs
+msgid "Sold Out"
+msgstr ""
+
+#: library/includes/admin_stock.php:104
+#@ ptthemes_breadcrumbs
+msgid "Current Stock"
+msgstr ""
+
+#: library/includes/admin_stock.php:105
+#@ ptthemes_breadcrumbs
+msgid "Low stock value"
+msgstr ""
+
+#: library/includes/admin_stock.php:106
+#@ ptthemes_breadcrumbs
+msgid "Stock enabled?"
+msgstr ""
+
+#: library/includes/admin_stock.php:129
+#: library/includes/admin_stock.php:143
+#@ ptthemes_breadcrumbs
+msgid "Unlimited"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_default.php:24
+#@ ptthemes_breadcrumbs
+msgid "Affiliates Share"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_default.php:39
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:32
+#: message.php:258
+#@ ptthemes_breadcrumbs
+msgid "Search By"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_default.php:40
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:33
+#: message.php:259
+#@ ptthemes_breadcrumbs
+msgid "Date From"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_default.php:42
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:35
+#: library/includes/affiliates/affiliate_sale_report.php:43
+#@ ptthemes_breadcrumbs
+msgid "To"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_default.php:45
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:38
+#: message.php:246
+#@ ptthemes_breadcrumbs
+msgid "Default"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_default.php:61
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:54
+#: message.php:257
+#@ ptthemes_breadcrumbs
+msgid "Export to Excel"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_default.php:67
+#: message.php:277
+#@ ptthemes_breadcrumbs
+msgid "User Name"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_default.php:68
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:21
+#: message.php:271
+#: message.php:278
+#@ ptthemes_breadcrumbs
+msgid "Total Sale Amount"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_default.php:69
+#: message.php:279
+#@ ptthemes_breadcrumbs
+msgid "Total Share Amount"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_default.php:101
+#@ ptthemes_breadcrumbs
+msgid "No affiliates share available."
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:5
+#@ ptthemes_breadcrumbs
+msgid "Affiliate Detail Report"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:15
+#@ ptthemes_breadcrumbs
+msgid "'s Affiliate Detail Report"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:17
+#@ ptthemes_breadcrumbs
+msgid "No of Transactions"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:19
+#@ ptthemes_breadcrumbs
+msgid "Total Item Sold"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:23
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:159
+#@ ptthemes_breadcrumbs
+msgid "Total Earn Amount"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:66
+#: library/includes/affiliates/export_report.php:18
+#: message.php:248
+#@ ptthemes_breadcrumbs
+msgid "Transaction ID"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:67
+#: library/includes/affiliates/export_report.php:19
+#: message.php:249
+#@ ptthemes_breadcrumbs
+msgid "Payment Status"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:68
+#: library/includes/affiliates/export_report.php:20
+#: message.php:250
+#@ ptthemes_breadcrumbs
+msgid "Item Name"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:71
+#: library/includes/affiliates/export_report.php:23
+#: message.php:253
+#@ ptthemes_breadcrumbs
+msgid "Currency"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:72
+#: library/includes/affiliates/export_report.php:24
+#: message.php:254
+#@ ptthemes_breadcrumbs
+msgid "Affiliate Share"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliate_sale_report_detail.php:154
+#@ ptthemes_breadcrumbs
+msgid "No record available"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliates.php:37
+#@ ptthemes_breadcrumbs
+msgid "Manage Affiliate Links"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliates.php:45
+#: library/includes/affiliates/admin_affiliates_frm.php:70
+#@ ptthemes_breadcrumbs
+msgid "Add Affiliate Link"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliates.php:49
+#@ ptthemes_breadcrumbs
+msgid "Title"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliates.php:50
+#: library/includes/affiliates/admin_affiliates_frm.php:86
+#@ ptthemes_breadcrumbs
+msgid "Link URL"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliates.php:51
+#@ ptthemes_breadcrumbs
+msgid "Link Key"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliates.php:68
+#: library/includes/affiliates/admin_affiliates_frm.php:95
+#@ ptthemes_breadcrumbs
+msgid "Hide"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliates.php:71
+#: library/includes/affiliates/admin_affiliates_frm.php:94
+#@ ptthemes_breadcrumbs
+msgid "Show"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliates.php:83
+#@ ptthemes_breadcrumbs
+msgid "No records available"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliates.php:92
+#@ ptthemes_breadcrumbs
+msgid "Are you sure want to delete the link?"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliates_frm.php:67
+#@ ptthemes_breadcrumbs
+msgid "Edit Affiliate Link"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliates_frm.php:81
+#@ ptthemes_breadcrumbs
+msgid "Link Title"
+msgstr ""
+
+#: library/includes/affiliates/admin_affiliates_frm.php:91
+#@ ptthemes_breadcrumbs
+msgid "Link Status"
+msgstr ""
+
+#: library/includes/affiliates/affiliate_account.php:81
+#@ ptthemes_breadcrumbs
+msgid "Affiliate Links"
+msgstr ""
+
+#: library/includes/affiliates/affiliate_login.php:41
+#: library/includes/registration.php:41
+#@ ptthemes_breadcrumbs
+msgid "<strong>ERROR</strong>: Enter a username or e-mail address."
+msgstr ""
+
+#: library/includes/affiliates/affiliate_login.php:46
+#: library/includes/registration.php:46
+#@ ptthemes_breadcrumbs
+msgid "<strong>ERROR</strong>: There is no user registered with that email address."
+msgstr ""
+
+#: library/includes/affiliates/affiliate_login.php:58
+#: library/includes/registration.php:58
+#@ ptthemes_breadcrumbs
+msgid "<strong>ERROR</strong>: Invalid username or e-mail."
+msgstr ""
+
+#: library/includes/affiliates/affiliate_login.php:88
+#: library/includes/registration.php:82
+#, php-format
+#@ ptthemes_breadcrumbs
+msgid "Username: %s"
+msgstr ""
+
+#: library/includes/affiliates/affiliate_login.php:89
+#: library/includes/registration.php:83
+#, php-format
+#@ ptthemes_breadcrumbs
+msgid "Password: %s"
+msgstr ""
+
+#: library/includes/affiliates/affiliate_login.php:91
+#: library/includes/registration.php:85
+#, php-format
+#@ ptthemes_breadcrumbs
+msgid "[%s] Your new password"
+msgstr ""
+
+#: library/includes/affiliates/affiliate_login.php:201
+#: library/includes/registration.php:391
+#@ ptthemes_breadcrumbs
+msgid "Sorry, that key does not appear to be valid."
+msgstr ""
+
+#: library/includes/affiliates/affiliate_login.php:269
+#: library/includes/affiliates/affiliate_reg.php:332
+#: library/includes/registration.php:526
+#@ ptthemes_breadcrumbs
+msgid "<strong>ERROR</strong>: Cookies are blocked or not supported by your browser. You must <a href='http://www.google.com/cookies.html'>enable cookies</a> to use WordPress."
+msgstr ""
+
+#: library/includes/affiliates/affiliate_login.php:327
+#: library/includes/affiliates/affiliate_login.php:356
+#: library/includes/registration.php:619
+#: message.php:217
+#@ ptthemes_breadcrumbs
+msgid "Sign In"
+msgstr ""
+
+#: library/includes/affiliates/affiliate_login.php:340
+#: library/includes/affiliates/affiliate_login.php:390
+#: library/includes/registration.php:205
+#: message.php:228
+#@ ptthemes_breadcrumbs
+msgid "Username"
+msgstr ""
+
+#: library/includes/affiliates/affiliate_login.php:346
+#: library/includes/affiliates/affiliate_login.php:396
+#: library/includes/registration.php:206
+#: message.php:229
+#@ ptthemes_breadcrumbs
+msgid "Password"
+msgstr ""
+
+#: library/includes/affiliates/affiliate_login.php:353
+#: library/includes/registration.php:616
+#@ ptthemes_breadcrumbs
+msgid "Remember me on this computer"
+msgstr ""
+
+#: library/includes/affiliates/affiliate_login.php:407
+#@ ptthemes_breadcrumbs
+msgid "Username or E-mail"
+msgstr ""
+
+#: library/includes/affiliates/affiliate_login.php:412
+#: message.php:213
+#@ ptthemes_breadcrumbs
+msgid "Get New Password"
+msgstr ""
+
+#: library/includes/affiliates/affiliate_reg.php:45
+#: library/includes/registration.php:113
+#: library/includes/single_page_checkout_insertuser.php:24
+#: message.php:183
+#@ ptthemes_breadcrumbs
+msgid "ERROR: Please enter a username."
+msgstr ""
+
+#: library/includes/affiliates/affiliate_reg.php:47
+#: library/includes/registration.php:115
+#: library/includes/single_page_checkout_insertuser.php:26
+#: message.php:182
+#@ ptthemes_breadcrumbs
+msgid "<strong>ERROR</strong>: This username is invalid.  Please enter a valid username."
+msgstr ""
+
+#: library/includes/affiliates/affiliate_reg.php:50
+#: library/includes/registration.php:118
+#: message.php:181
+#@ ptthemes_breadcrumbs
+msgid "<strong>ERROR</strong>: This username is already registered, please choose another one."
+msgstr ""
+
+#: library/includes/affiliates/affiliate_reg.php:54
+#: library/includes/registration.php:122
+#: library/includes/single_page_checkout_insertuser.php:33
+#: message.php:180
+#@ ptthemes_breadcrumbs
+msgid "<strong>ERROR</strong>: Please type your e-mail address."
+msgstr ""
+
+#: library/includes/affiliates/affiliate_reg.php:56
+#: library/includes/registration.php:124
+#: library/includes/single_page_checkout_insertuser.php:35
+#: message.php:179
+#@ ptthemes_breadcrumbs
+msgid "<strong>ERROR</strong>: The email address isn&#8217;t correct."
+msgstr ""
+
+#: library/includes/affiliates/affiliate_reg.php:59
+#: library/includes/registration.php:127
+#: message.php:178
+#@ ptthemes_breadcrumbs
+msgid "<strong>ERROR</strong>: This email is already registered, please choose another one."
+msgstr ""
+
+#: library/includes/affiliates/affiliate_reg.php:104
+#: library/includes/registration.php:175
+#: library/includes/single_page_checkout_insertuser.php:69
+#, php-format
+#@ ptthemes_breadcrumbs
+msgid "<strong>ERROR</strong>: Couldn&#8217;t register you... please contact the <a href=\"mailto:%s\">webmaster</a> !"
+msgstr ""
+
+#: library/includes/affiliates/affiliates_settings.php:43
+#@ ptthemes_breadcrumbs
+msgid "Affiliate Settings"
+msgstr ""
+
+#: library/includes/checkout_cart.php:10
+#: library/includes/checkout_cart_2.php:10
+#@ ptthemes_breadcrumbs
+msgid "Please select size"
+msgstr ""
+
+#: library/includes/checkout_cart.php:24
+#: library/includes/checkout_cart_2.php:24
+#@ ptthemes_breadcrumbs
+msgid "Please select color"
+msgstr ""
+
+#: library/includes/checkout_cart.php:36
+#: library/includes/checkout_cart.php:40
+#: library/includes/checkout_cart_2.php:36
+#: library/includes/checkout_cart_2.php:40
+#: library/includes/checkout_cart_2.php:44
+#@ ptthemes_breadcrumbs
+msgid "processing ..."
+msgstr ""
+
+#: library/includes/checkout_cart.php:170
+#: library/includes/checkout_cart_2.php:150
+#@ ptthemes_breadcrumbs
+msgid "Qty:"
+msgstr ""
+
+#: library/includes/checkout_cart.php:200
+#@ ptthemes_breadcrumbs
+msgid "Already Added in the cart"
+msgstr ""
+
+#: library/includes/checkout_cart.php:200
+#: message.php:313
+#@ ptthemes_breadcrumbs
+msgid "View Cart Detail"
+msgstr ""
+
+#: library/includes/checkout_cart.php:200
+#@ ptthemes_breadcrumbs
+msgid "Checkout &raquo;"
+msgstr ""
+
+#: library/includes/download.php:27
+#: library/includes/download.php:78
+#@ ptthemes_breadcrumbs
+msgid "Download Page"
+msgstr ""
+
+#: library/includes/download.php:31
+#: message.php:41
+#@ ptthemes_breadcrumbs
+msgid "Sorry, The file you are trying to Download is not available right now."
+msgstr ""
+
+#: library/includes/download.php:81
+#: message.php:42
+#@ ptthemes_breadcrumbs
+msgid "The link you are trying to download is not a Valid link. Please Check once."
+msgstr ""
+
+#: library/includes/edit_profile.php:252
+#@ ptthemes_breadcrumbs
+msgid "same as"
+msgstr ""
+
+#: library/includes/edit_profile.php:318
+#@ ptthemes_breadcrumbs
+msgid "Please enter"
+msgstr ""
+
+#: library/includes/edit_profile.php:328
+#: library/includes/edit_profile.php:341
+#: library/includes/edit_profile.php:354
+#: library/includes/edit_profile.php:367
+#: library/includes/edit_profile.php:380
+#: library/includes/edit_profile.php:393
+#@ ptthemes_breadcrumbs
+msgid "Please enter "
+msgstr ""
+
+#: library/includes/normal_checkout.php:40
+#: library/includes/single_checkout.php:39
+#: message.php:74
+#@ ptthemes_breadcrumbs
+msgid "Select Payment Method"
+msgstr ""
+
+#: library/includes/product_detail.php:3
+#@ ptthemes_breadcrumbs
+msgid "Print"
+msgstr ""
+
+#: library/includes/product_detail.php:14
+#: library/includes/product_detail_24march.php:14
+#@ ptthemes_breadcrumbs
+msgid "Share This"
+msgstr ""
+
+#: library/includes/product_detail.php:23
+#: library/includes/product_detail_24march.php:23
+#@ ptthemes_breadcrumbs
+msgid "RSS"
+msgstr ""
+
+#: library/includes/product_detail.php:85
+#: library/includes/product_detail.php:181
+#: library/includes/product_detail_24march.php:85
+#: library/includes/product_detail_24march.php:170
+#: message.php:20
+#: message.php:290
+#@ ptthemes_breadcrumbs
+msgid "Size"
+msgstr ""
+
+#: library/includes/product_detail.php:100
+#: library/includes/product_detail.php:194
+#: library/includes/product_detail_24march.php:100
+#: library/includes/product_detail_24march.php:183
+#@ ptthemes_breadcrumbs
+msgid "Colors"
+msgstr ""
+
+#: library/includes/product_detail.php:106
+#: library/includes/product_detail.php:200
+#: library/includes/product_detail_24march.php:106
+#: library/includes/product_detail_24march.php:189
+#@ ptthemes_breadcrumbs
+msgid "Weight"
+msgstr ""
+
+#: library/includes/registration.php:203
+#@ ptthemes_breadcrumbs
+msgid "Registration Email"
+msgstr ""
+
+#: library/includes/registration.php:209
+#@ ptthemes_breadcrumbs
+msgid "We hope you enjoy shopping. Thanks!"
+msgstr ""
+
+#: library/includes/related_products.php:7
+#@ ptthemes_breadcrumbs
+msgid "Related Products"
+msgstr ""
+
+#: library/includes/send_inquiry.php:30
+#: library/includes/tellafriend.php:21
+#@ ptthemes_breadcrumbs
+msgid "Dear"
+msgstr ""
+
+#: library/includes/send_inquiry.php:97
+#@ ptthemes_breadcrumbs
+msgid "Hello,"
+msgstr ""
+
+#: library/includes/single_checkout.php:24
+#@ ptthemes_breadcrumbs
+msgid "<div style='color:red'>Select Payment method to continue.</div><br>"
+msgstr ""
+
+#: library/includes/single_checkout.php:227
+#: message.php:82
+#@ ptthemes_breadcrumbs
+msgid "Please accept the terms and conditions"
+msgstr ""
+
+#: library/includes/single_checkout.php:290
+#@ ptthemes_breadcrumbs
+msgid "Please enter Address"
+msgstr ""
+
+#: library/includes/single_checkout.php:303
+#@ ptthemes_breadcrumbs
+msgid "Please enter City"
+msgstr ""
+
+#: library/includes/single_checkout.php:316
+#@ ptthemes_breadcrumbs
+msgid "Please enter State"
+msgstr ""
+
+#: library/includes/single_checkout.php:329
+#: message.php:238
+#@ ptthemes_breadcrumbs
+msgid "Country"
+msgstr ""
+
+#: library/includes/single_checkout.php:342
+#@ ptthemes_breadcrumbs
+msgid "Please enter Postal Code"
+msgstr ""
+
+#: library/includes/single_page_checkout_insertuser.php:29
+#@ ptthemes_breadcrumbs
+msgid "<strong>ERROR</strong>:  This username is already registered, please choose another one."
+msgstr ""
+
+#: library/includes/tellafriend.php:25
+#@ ptthemes_breadcrumbs
+msgid "Your can see the following link"
+msgstr ""
+
+#: library/includes/tellafriend.php:25
+#@ ptthemes_breadcrumbs
+msgid "Click Here"
+msgstr ""
+
+#: library/includes/tellafriend.php:27
+#@ ptthemes_breadcrumbs
+msgid "Thank you"
+msgstr ""
+
+#: library/includes/view_account.php:53
+#@ ptthemes_breadcrumbs
+msgid "Click here"
+msgstr ""
+
+#: library/payment/2co/2co_response.php:70
+#@ ptthemes_breadcrumbs
+msgid "Processing for 2 Checkout, Please wait ...."
+msgstr ""
+
+#: library/payment/googlechkout/googlechkout_response.php:76
+#@ ptthemes_breadcrumbs
+msgid "Processing for Google Checkout, Please wait ...."
+msgstr ""
+
+#: library/payment/paypal/paypal_response.php:54
+#@ ptthemes_breadcrumbs
+msgid "Processing for Paypal, Please wait ...."
+msgstr ""
+
+#: library/payment/worldpay/worldpay_response.php:45
+#@ ptthemes_breadcrumbs
+msgid "Processing for World Pay, Please wait ...."
+msgstr ""
+
+#: message.php:9
+#@ ptthemes_breadcrumbs
+msgid "Email This Item To A Friend"
+msgstr ""
+
+#: message.php:10
+#@ ptthemes_breadcrumbs
+msgid "Inform a Friend"
+msgstr ""
+
+#: message.php:11
+#@ ptthemes_breadcrumbs
+msgid "Your Name"
+msgstr ""
+
+#: message.php:12
+#@ ptthemes_breadcrumbs
+msgid "Your Email Address"
+msgstr ""
+
+#: message.php:13
+#@ ptthemes_breadcrumbs
+msgid "Friend Name"
+msgstr ""
+
+#: message.php:15
+#@ ptthemes_breadcrumbs
+msgid "Your Comments"
+msgstr ""
+
+#: message.php:16
+#: message.php:33
+#: message.php:91
+#@ ptthemes_breadcrumbs
+msgid "Email Address"
+msgstr ""
+
+#: message.php:17
+#@ ptthemes_breadcrumbs
+msgid "Regular Price"
+msgstr ""
+
+#: message.php:18
+#@ ptthemes_breadcrumbs
+msgid "Sale Price"
+msgstr ""
+
+#: message.php:21
+#: message.php:289
+#@ ptthemes_breadcrumbs
+msgid "Color"
+msgstr ""
+
+#: message.php:22
+#@ ptthemes_breadcrumbs
+msgid "Size Chart"
+msgstr ""
+
+#: message.php:23
+#@ ptthemes_breadcrumbs
+msgid "Close X"
+msgstr ""
+
+#: message.php:24
+#@ ptthemes_breadcrumbs
+msgid "Inquiry send successfully"
+msgstr ""
+
+#: message.php:25
+#: message.php:30
+#@ ptthemes_breadcrumbs
+msgid "Send Inquiry"
+msgstr ""
+
+#: message.php:29
+#@ ptthemes_breadcrumbs
+msgid "Thank you, your inquiry has been sent."
+msgstr ""
+
+#: message.php:31
+#@ ptthemes_breadcrumbs
+msgid "Inquiry"
+msgstr ""
+
+#: message.php:32
+#@ ptthemes_breadcrumbs
+msgid "Here is an Inquiry for you related to"
+msgstr ""
+
+#: message.php:35
+#@ ptthemes_breadcrumbs
+msgid "Send Email"
+msgstr ""
+
+#: message.php:36
+#@ ptthemes_breadcrumbs
+msgid "Back to Product Detail"
+msgstr ""
+
+#: message.php:40
+#@ ptthemes_breadcrumbs
+msgid "Download"
+msgstr ""
+
+#: message.php:45
+#@ ptthemes_breadcrumbs
+msgid "Order Detail"
+msgstr ""
+
+#: message.php:48
+#@ ptthemes_breadcrumbs
+msgid "My Downloads"
+msgstr ""
+
+#: message.php:53
+#@ ptthemes_breadcrumbs
+msgid "Welcome"
+msgstr ""
+
+#: message.php:54
+#@ ptthemes_breadcrumbs
+msgid "Hello Guest"
+msgstr ""
+
+#: message.php:55
+#@ ptthemes_breadcrumbs
+msgid "Logout"
+msgstr ""
+
+#: message.php:56
+#: message.php:225
+#@ ptthemes_breadcrumbs
+msgid "Login"
+msgstr ""
+
+#: message.php:60
+#: message.php:87
+#@ ptthemes_breadcrumbs
+msgid "My Account"
+msgstr ""
+
+#: message.php:61
+#@ ptthemes_breadcrumbs
+msgid "Register"
+msgstr ""
+
+#: message.php:62
+#@ ptthemes_breadcrumbs
+msgid "Join Our Affiliate Program"
+msgstr ""
+
+#: message.php:63
+#: product_menu.php:14
+#: product_menu.php:18
+#@ ptthemes_breadcrumbs
+msgid "Shopping Cart"
+msgstr ""
+
+#: message.php:65
+#@ ptthemes_breadcrumbs
+msgid "Categories"
+msgstr ""
+
+#: message.php:66
+#@ ptthemes_breadcrumbs
+msgid "item in your Shopping Bag"
+msgstr ""
+
+#: message.php:67
+#@ ptthemes_breadcrumbs
+msgid "cart is empty."
+msgstr ""
+
+#: message.php:71
+#@ ptthemes_breadcrumbs
+msgid "Billing Address"
+msgstr ""
+
+#: message.php:73
+#@ ptthemes_breadcrumbs
+msgid "Shipping Method"
+msgstr ""
+
+#: message.php:75
+#@ ptthemes_breadcrumbs
+msgid "Your Selection"
+msgstr ""
+
+#: message.php:77
+#: message.php:219
+#@ ptthemes_breadcrumbs
+msgid "Guest Checkout"
+msgstr ""
+
+#: message.php:78
+#@ ptthemes_breadcrumbs
+msgid "Select Payment method to continue."
+msgstr ""
+
+#: message.php:79
+#@ ptthemes_breadcrumbs
+msgid "I accept the terms and conditions"
+msgstr ""
+
+#: message.php:80
+#@ ptthemes_breadcrumbs
+msgid "Confirm"
+msgstr ""
+
+#: message.php:83
+#@ ptthemes_breadcrumbs
+msgid "same as above"
+msgstr ""
+
+#: message.php:88
+#@ ptthemes_breadcrumbs
+msgid "want to become our affiliate?"
+msgstr ""
+
+#: message.php:89
+#@ ptthemes_breadcrumbs
+msgid "My Personal Information"
+msgstr ""
+
+#: message.php:90
+#@ ptthemes_breadcrumbs
+msgid "Name"
+msgstr ""
+
+#: message.php:92
+#: message.php:95
+#@ ptthemes_breadcrumbs
+msgid "Edit Profile"
+msgstr "Edit Profile 11"
+
+#: message.php:98
+#@ ptthemes_breadcrumbs
+msgid "Personal Information"
+msgstr ""
+
+#: message.php:99
+#@ ptthemes_breadcrumbs
+msgid "Your Information updated successfully."
+msgstr ""
+
+#: message.php:100
+#@ ptthemes_breadcrumbs
+msgid "Change Password"
+msgstr ""
+
+#: message.php:101
+#@ ptthemes_breadcrumbs
+msgid "Password Changed successfully."
+msgstr ""
+
+#: message.php:102
+#@ ptthemes_breadcrumbs
+msgid "New Password"
+msgstr ""
+
+#: message.php:103
+#@ ptthemes_breadcrumbs
+msgid "Confirm New Password"
+msgstr ""
+
+#: message.php:107
+#@ ptthemes_breadcrumbs
+msgid "My Shopping Cart"
+msgstr ""
+
+#: message.php:108
+#@ ptthemes_breadcrumbs
+msgid "Please Enter Coupon Code"
+msgstr ""
+
+#: message.php:109
+#@ ptthemes_breadcrumbs
+msgid "Sorry! your cart is empty. Select product(s) to continue."
+msgstr ""
+
+#: message.php:110
+#@ ptthemes_breadcrumbs
+msgid "Not a valid Coupon. Please enter correct one."
+msgstr ""
+
+#: message.php:111
+#@ ptthemes_breadcrumbs
+msgid "Sorry, the Cart is empty.  Select Products via Continue Shopping."
+msgstr ""
+
+#: message.php:112
+#@ ptthemes_breadcrumbs
+msgid "Update Cart"
+msgstr ""
+
+#: message.php:113
+#@ ptthemes_breadcrumbs
+msgid "Remove Item"
+msgstr ""
+
+#: message.php:114
+#@ ptthemes_breadcrumbs
+msgid "Product(s)"
+msgstr ""
+
+#: message.php:118
+#@ ptthemes_breadcrumbs
+msgid "Sub Total Amount"
+msgstr ""
+
+#: message.php:120
+#@ ptthemes_breadcrumbs
+msgid "Total Amount"
+msgstr ""
+
+#: message.php:121
+#: message.php:134
+#@ ptthemes_breadcrumbs
+msgid "Shipping Methods"
+msgstr ""
+
+#: message.php:122
+#@ ptthemes_breadcrumbs
+msgid "Discount Code"
+msgstr ""
+
+#: message.php:123
+#@ ptthemes_breadcrumbs
+msgid "Recalculate"
+msgstr ""
+
+#: message.php:124
+#@ ptthemes_breadcrumbs
+msgid "Continue Shopping"
+msgstr ""
+
+#: message.php:127
+#@ ptthemes_breadcrumbs
+msgid "Final Amount"
+msgstr ""
+
+#: message.php:130
+#@ ptthemes_breadcrumbs
+msgid "Confirmation"
+msgstr ""
+
+#: message.php:132
+#@ ptthemes_breadcrumbs
+msgid "Billing Information"
+msgstr ""
+
+#: message.php:133
+#@ ptthemes_breadcrumbs
+msgid "Payment Methods"
+msgstr ""
+
+#: message.php:135
+#@ ptthemes_breadcrumbs
+msgid "Cart Information"
+msgstr ""
+
+#: message.php:139
+#@ ptthemes_breadcrumbs
+msgid "Affiliates"
+msgstr ""
+
+#: message.php:140
+#@ ptthemes_breadcrumbs
+msgid "Affiliate Login"
+msgstr ""
+
+#: message.php:141
+#@ ptthemes_breadcrumbs
+msgid "Affiliate Registration"
+msgstr ""
+
+#: message.php:144
+#@ ptthemes_breadcrumbs
+msgid "Please enter your username or e-mail address. You will receive a new password via e-mail."
+msgstr ""
+
+#: message.php:145
+#@ ptthemes_breadcrumbs
+msgid "You are now logged out."
+msgstr ""
+
+#: message.php:146
+#@ ptthemes_breadcrumbs
+msgid "Affiliate registration is currently not allowed."
+msgstr ""
+
+#: message.php:147
+#@ ptthemes_breadcrumbs
+msgid "Check your e-mail for the confirmation link."
+msgstr ""
+
+#: message.php:148
+#@ ptthemes_breadcrumbs
+msgid "Check your e-mail for your new password."
+msgstr ""
+
+#: message.php:151
+#: message.php:207
+#@ ptthemes_breadcrumbs
+msgid "A password will be e-mailed to you for future use."
+msgstr ""
+
+#: message.php:152
+#: message.php:161
+#@ ptthemes_breadcrumbs
+msgid "already a member?"
+msgstr ""
+
+#: message.php:153
+#@ ptthemes_breadcrumbs
+msgid "new user?"
+msgstr ""
+
+#: message.php:154
+#@ ptthemes_breadcrumbs
+msgid "Register Now"
+msgstr ""
+
+#: message.php:155
+#@ ptthemes_breadcrumbs
+msgid "forget password?"
+msgstr ""
+
+#: message.php:157
+#@ ptthemes_breadcrumbs
+msgid "Active Affiliates"
+msgstr ""
+
+#: message.php:158
+#@ ptthemes_breadcrumbs
+msgid "Affiliate Registration Page URL"
+msgstr ""
+
+#: message.php:159
+#@ ptthemes_breadcrumbs
+msgid "Affiliate Login Page URL"
+msgstr ""
+
+#: message.php:162
+#@ ptthemes_breadcrumbs
+msgid "Sign Up"
+msgstr ""
+
+#: message.php:165
+#@ ptthemes_breadcrumbs
+msgid "Affiliates Share Amount"
+msgstr ""
+
+#: message.php:166
+#@ ptthemes_breadcrumbs
+msgid "(Default Share Amount is 0%)"
+msgstr ""
+
+#: message.php:167
+#@ ptthemes_breadcrumbs
+msgid "Affiliates Cookie Alive time (in Days)"
+msgstr ""
+
+#: message.php:168
+#@ ptthemes_breadcrumbs
+msgid "(Default alive time is 1 day)"
+msgstr ""
+
+#: message.php:169
+#@ ptthemes_breadcrumbs
+msgid "Registration Page Content Top"
+msgstr ""
+
+#: message.php:170
+#@ ptthemes_breadcrumbs
+msgid "(This content will show at top in affiliate registration page content area)"
+msgstr ""
+
+#: message.php:171
+#@ ptthemes_breadcrumbs
+msgid "Registration Page Content Bottom"
+msgstr ""
+
+#: message.php:172
+#@ ptthemes_breadcrumbs
+msgid "(This content will show at bottom in affiliate registration page content area)"
+msgstr ""
+
+#: message.php:173
+#@ ptthemes_breadcrumbs
+msgid "Terms &amp; Conditions text"
+msgstr ""
+
+#: message.php:174
+#@ ptthemes_breadcrumbs
+msgid "Set Terms &amp; Conditions text beside checkbox on affiliate registration page"
+msgstr ""
+
+#: message.php:177
+#@ ptthemes_breadcrumbs
+msgid "I accept the Terms &amp; Conditions of the [#$store_name#] affiliate program"
+msgstr ""
+
+#: message.php:184
+#@ ptthemes_breadcrumbs
+msgid "Please accept Terms and Conditions"
+msgstr ""
+
+#: message.php:188
+#@ ptthemes_breadcrumbs
+msgid "Please Refresh the page if any effect not appear"
+msgstr ""
+
+#: message.php:191
+#@ ptthemes_breadcrumbs
+msgid "Checkout as Guest"
+msgstr ""
+
+#: message.php:194
+#@ ptthemes_breadcrumbs
+msgid "Payment Cancellation"
+msgstr ""
+
+#: message.php:195
+#@ ptthemes_breadcrumbs
+msgid "We are sorry for Cancellation of your order payment."
+msgstr ""
+
+#: message.php:198
+#@ ptthemes_breadcrumbs
+msgid "Payment Success"
+msgstr ""
+
+#: message.php:199
+#@ ptthemes_breadcrumbs
+msgid "Thank you for Shipping"
+msgstr ""
+
+#: message.php:200
+#@ ptthemes_breadcrumbs
+msgid "Your payment has been successfully received and your order will be processed for shipping.<br>"
+msgstr ""
+
+#: message.php:201
+#@ ptthemes_breadcrumbs
+msgid "Thank you for shopping at"
+msgstr ""
+
+#: message.php:204
+#@ ptthemes_breadcrumbs
+msgid "Thank You"
+msgstr ""
+
+#: message.php:208
+#: message.php:222
+#@ ptthemes_breadcrumbs
+msgid "Your Information"
+msgstr ""
+
+#: message.php:209
+#@ ptthemes_breadcrumbs
+msgid "Indicates mandatory fields"
+msgstr ""
+
+#: message.php:210
+#@ ptthemes_breadcrumbs
+msgid "Create Account"
+msgstr ""
+
+#: message.php:211
+#@ ptthemes_breadcrumbs
+msgid "Forgot Password?"
+msgstr ""
+
+#: message.php:212
+#@ ptthemes_breadcrumbs
+msgid "Username or E-mail:"
+msgstr ""
+
+#: message.php:215
+#@ ptthemes_breadcrumbs
+msgid "Register &amp; Checkout"
+msgstr ""
+
+#: message.php:216
+#@ ptthemes_breadcrumbs
+msgid "Click below to register and check out."
+msgstr ""
+
+#: message.php:218
+#@ ptthemes_breadcrumbs
+msgid "Click below to Sign In if you have previously registered."
+msgstr ""
+
+#: message.php:220
+#@ ptthemes_breadcrumbs
+msgid "Click below to checkout without registering."
+msgstr ""
+
+#: message.php:221
+#@ ptthemes_breadcrumbs
+msgid "Indicates Mendatory"
+msgstr ""
+
+#: message.php:223
+#@ ptthemes_breadcrumbs
+msgid ""
+"<p>Please select one of the options below to continue.</p>\n"
+"\t<p>If you choose to register while checking out an account will be created for you so next time you can simply Sign In without having to re-enter your information.</p>"
+msgstr ""
+
+#: message.php:230
+#@ ptthemes_breadcrumbs
+msgid "E-mail"
+msgstr ""
+
+#: message.php:231
+#@ ptthemes_breadcrumbs
+msgid "First Name"
+msgstr ""
+
+#: message.php:232
+#@ ptthemes_breadcrumbs
+msgid "Last Name"
+msgstr ""
+
+#: message.php:233
+#@ ptthemes_breadcrumbs
+msgid "Location Info"
+msgstr ""
+
+#: message.php:234
+#@ ptthemes_breadcrumbs
+msgid "Address1"
+msgstr ""
+
+#: message.php:235
+#@ ptthemes_breadcrumbs
+msgid "Address2"
+msgstr ""
+
+#: message.php:236
+#@ ptthemes_breadcrumbs
+msgid "City"
+msgstr ""
+
+#: message.php:237
+#@ ptthemes_breadcrumbs
+msgid "State"
+msgstr ""
+
+#: message.php:239
+#@ ptthemes_breadcrumbs
+msgid "Postal Code"
+msgstr ""
+
+#: message.php:240
+#@ ptthemes_breadcrumbs
+msgid "Address"
+msgstr ""
+
+#: message.php:244
+#@ ptthemes_breadcrumbs
+msgid "My Sale Report"
+msgstr ""
+
+#: message.php:255
+#@ ptthemes_breadcrumbs
+msgid "Not record available."
+msgstr ""
+
+#: message.php:262
+#@ ptthemes_breadcrumbs
+msgid "Affiliate Information"
+msgstr ""
+
+#: message.php:263
+#@ ptthemes_breadcrumbs
+msgid "Affiliate Code"
+msgstr ""
+
+#: message.php:264
+#@ ptthemes_breadcrumbs
+msgid "Paypal Account"
+msgstr ""
+
+#: message.php:265
+#@ ptthemes_breadcrumbs
+msgid "Not Specified"
+msgstr ""
+
+#: message.php:266
+#@ ptthemes_breadcrumbs
+msgid "Change"
+msgstr ""
+
+#: message.php:268
+#@ ptthemes_breadcrumbs
+msgid "Sale Summary"
+msgstr ""
+
+#: message.php:269
+#@ ptthemes_breadcrumbs
+msgid "Number of Transactions"
+msgstr ""
+
+#: message.php:270
+#@ ptthemes_breadcrumbs
+msgid "Items Sold"
+msgstr ""
+
+#: message.php:272
+#@ ptthemes_breadcrumbs
+msgid "Your Total Earning"
+msgstr ""
+
+#: message.php:273
+#@ ptthemes_breadcrumbs
+msgid "View Detail"
+msgstr ""
+
+#: message.php:276
+#@ ptthemes_breadcrumbs
+msgid "Affiliates Members"
+msgstr ""
+
+#: message.php:282
+#@ ptthemes_breadcrumbs
+msgid "View Store"
+msgstr ""
+
+#: message.php:283
+#@ ptthemes_breadcrumbs
+msgid "View Details"
+msgstr ""
+
+#: message.php:286
+#@ ptthemes_breadcrumbs
+msgid "Buy Now"
+msgstr ""
+
+#: message.php:291
+#@ ptthemes_breadcrumbs
+msgid "pics"
+msgstr ""
+
+#: message.php:294
+#@ ptthemes_breadcrumbs
+msgid "Pending"
+msgstr ""
+
+#: message.php:295
+#@ ptthemes_breadcrumbs
+msgid "Approve"
+msgstr ""
+
+#: message.php:296
+#@ ptthemes_breadcrumbs
+msgid "Reject"
+msgstr ""
+
+#: message.php:298
+#@ ptthemes_breadcrumbs
+msgid "Shipping"
+msgstr ""
+
+#: message.php:299
+#@ ptthemes_breadcrumbs
+msgid "Delivered"
+msgstr ""
+
+#: message.php:302
+#@ ptthemes_breadcrumbs
+msgid "My Orders"
+msgstr ""
+
+#: message.php:306
+#@ ptthemes_breadcrumbs
+msgid "Hello, I am sending information about"
+msgstr ""
+
+#: message.php:307
+#@ ptthemes_breadcrumbs
+msgid "It is a good one. Please see."
+msgstr ""
+
+#: message.php:310
+#@ ptthemes_breadcrumbs
+msgid "Latest Products"
+msgstr ""
+
+#: message.php:314
+#@ ptthemes_breadcrumbs
+msgid "Added To Cart Successfully"
+msgstr ""
+
+#: product_listing.php:53
+#: store.php:73
+#@ ptthemes_breadcrumbs
+msgid "Switch Thumb"
+msgstr ""
+
+#: product_menu.php:22
+#@ ptthemes_breadcrumbs
+msgid "Add Product"
+msgstr ""
+
+#: product_menu.php:23
+#@ ptthemes_breadcrumbs
+msgid "Manage Products"
+msgstr ""
+
+#: product_menu.php:26
+#@ ptthemes_breadcrumbs
+msgid "Payment Options"
+msgstr ""
+
+#: product_menu.php:27
+#@ ptthemes_breadcrumbs
+msgid "Manage Shipping"
+msgstr ""
+
+#: product_menu.php:28
+#@ ptthemes_breadcrumbs
+msgid "Manage Coupon"
+msgstr ""
+
+#: product_menu.php:30
+#@ ptthemes_breadcrumbs
+msgid "Notifications"
+msgstr ""
+
+#: product_menu.php:31
+#@ ptthemes_breadcrumbs
+msgid "Design Settings"
+msgstr ""
+
+#: product_menu.php:32
+#@ ptthemes_breadcrumbs
+msgid "General Settings"
+msgstr ""
+
+#: product_menu.php:35
+#@ ptthemes_breadcrumbs
+msgid "Manage Affiliate"
+msgstr ""
+
+#: sidebar.php:56
+#@ ptthemes_breadcrumbs
+msgid "Cart Detail"
+msgstr ""
+

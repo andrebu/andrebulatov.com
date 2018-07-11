@@ -1,0 +1,504 @@
+
+/* #Tablet (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 768px */
+
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+
+        .inner										{ width:768px; }
+		.container									{ width:768px; }
+		#header .eleven								{ margin:0; }
+		.top-links li								{ padding:0 10px; }
+		.top-links > li > a							{ font-size:12px; }
+		#banner										{ margin:0 0 20px 0; height:auto; }
+		#banner .banner-in							{ width:768px; height:288px; padding:0; background:none; }
+		.anythingSlider								{ width:100% !important; height:288px !important; }
+		.anythingSlider .anythingBase				{ width:100% !important; }
+		.anythingSlider .fade .panel				{ width:100% !important; height:288px !important; }
+		.anythingSlider img							{ width:100% !important; }
+		.nivoSlider									{ width:100% !important; height:288px !important; }
+		.theme-default								{ width:100% !important; height:288px !important; }
+		.sudo-slider, .sudo-slider li				{ width:100% !important; height:288px !important; }
+		.sudoslid									{ width:100% !important; height:288px !important; }
+		.banner										{ width:100%; height:288px !important; }
+		.banner .sudoslider							{ width:100% !important; height:288px !important; }
+		.about-albums								{ width:488px; }
+		.about-albums p								{ font-size:11px; }
+		.col1										{ width:200px; overflow:hidden; }
+		.col2										{ width:288px; overflow:hidden; }
+		.col3										{ width:528px; overflow:hidden; }
+		.ft-left									{ width:485px; }
+		.gotop										{ display:none; }
+		#sub-banner									{ height:237px; }
+		#sub-banner .in								{ width:768px; height:237px; background:none; padding:0px; overflow:hidden; }
+		.ddsmoothmenu ul li a						{ font-size:12px; padding:14px 17px 0; }
+		#album-shelves .heading						{ width:100%; }
+		#album-shelves .inner						{ width:768px; background:none; }
+		.album-list									{ padding:0; margin-left:-10px !important; }
+		.album-list li								{ margin:8px 0 10px 10px !important; width:149px !important; height:323px !important; }
+		.album-list li h3							{ line-height:25px; font-size:15px; }
+		.col4 .album-list							{ padding:0; margin-left:-10px !important; }
+		.col4 .album-list li						{ margin:8px 0 10px 10px !important; width:164px !important; height:338px !important; }
+		.col4 .album-list li h3						{ font-size:17px; }
+		
+		.col4 .post									{ background:url("../images/line-vl.gif") repeat-y 391px 0 #0F0F0F; }
+		
+		#mcs5_container								{ width:488px; }
+		#mcs5_container .customScrollBox			{ width:473px; }
+		#mcs5_container .dragger_container			{ width:352px; top:113px; }
+		#mcs5_container .dragger					{ width:198px; }
+		#mcs5_container .dragger_pressed			{ width:198px; }
+		#mcs5_container .container					{ width:900px; }
+		
+		.late-news li .thumb						{ width:150px; float:left; }
+		.late-news li .thumb img					{ width:100%; }
+		.late-news li .desc							{ width:358px; float:right; padding:0px 0px 0px 0px; position:relative; }
+		.col4 .late-news li .desc					{ width:596px; }
+		.albums-widget .thumb						{ width:60px; position:relative; float:left; }
+		.albums-widget .desc						{ float:left; width:120px; padding:0px 0px 0px 10px; position:relative; }
+		.albums-widget ul li						{ padding:10px 0px; }
+		
+		.album-detail-sec .thumb					{ width:150px; }
+		.album-detail-sec .desc						{ width:358px !important; }
+		.col4 .album-detail-sec .desc				{ width:598px !important; }
+		.tracklist li.title							{ width:328px; }
+		.buynow li									{ padding:0 5px; }
+		.heading									{ font-size:18px; }
+		.gig-post .upper-sec						{ height:202px; }
+		.gig-post .desc .txt-sec h3					{ font-size:16px; }
+		.gallery-two-col li							{ width:370px; height:240px; }
+		.gal-caption								{ display:none !important; }
+		.cs_gal_2_column							{ width:788px; }
+		.cs_gal_2_column li							{ width:370px; }
+		.cs_gal_3_column							{ width:789px; }
+		.cs_gal_3_column li							{ width:239px; }
+		.cs_gal_4_column							{ width:789px; }
+		.cs_gal_4_column li							{ width:173px; }
+		
+		.col3 .cs_gal_2_column						{ width:548px; }
+		.col3 .cs_gal_2_column li					{ width:250px; }
+		.col3 .cs_gal_3_column						{ width:548px; }
+		.col3 .cs_gal_3_column li					{ width:159px; }
+		.col3 .cs_gal_4_column						{ width:548px; }
+		.col3 .cs_gal_4_column li					{ width:113px; }
+		.inquiry form ul li textarea				{ width:376px; }
+		
+		#gallery									{ height:565px; }
+		#gallery #main								{ width:768px; }
+		#gallery #images .slide						{ width:748px; overflow:hidden; }
+		.toggleHolder								{ width:748px; }
+		#gallery #images .slide .caption			{ width:708px; }
+		#gallery .gallery-thumbs					{ width:768px; }
+		.gallery-thumbs .caroufredsel_wrapper		{ width:695px !important; }
+		#gallery #thumbs .thumb						{ width:44px; height:44px; overflow:hidden; }
+		#gallery #prev, #gallery #next				{ bottom:30px; }
+		.contact-page .cont-sec .thumb				{ width:200px; }
+		.contact-page .cont-sec .desc				{ width:308px; }
+		.late-news li.featured .thumb				{ width:100%; }
+		.late-news li.featured .desc				{ width:100%; }
+		.twocol 									{ background:none; }
+		.threecol									{ background:url(../images/threecol-small.gif) repeat-y; }
+		.styles										{ display:none !important; }
+		
+		.container .one.column,
+        .container .one.columns                     { width: 28px; }
+        .container .tw.o.columns                     { width: 76px; }
+        .container .three.columns                   { width: 124px; }
+        .container .four.columns                    { width: 172px; }
+        .container .five.columns                    { width: 220px; }
+        .container .six.columns                     { width: 268px; }
+        .container .seven.columns                   { width: 316px; }
+        .container .eight.columns                   { width: 364px; }
+        .container .nine.columns                    { width: 412px; }
+        .container .ten.columns                     { width: 460px; }
+        .container .eleven.columns                  { width: 508px; }
+        .container .twelve.columns                  { width: 556px; }
+        .container .thirteen.columns                { width: 604px; }
+        .container .fourteen.columns                { width: 652px; }
+        .container .fifteen.columns                 { width: 700px; }
+        .container .sixteen.columns                 { width: 748px; }
+
+        .container .one-third.column                { width: 236px; }
+        .container .two-thirds.column               { width: 492px; }
+
+        /* Offsets */
+        .container .offset-by-one                   { padding-left: 48px; }
+        .container .offset-by-two                   { padding-left: 96px; }
+        .container .offset-by-three                 { padding-left: 144px; }
+        .container .offset-by-four                  { padding-left: 192px; }
+        .container .offset-by-five                  { padding-left: 240px; }
+        .container .offset-by-six                   { padding-left: 288px; }
+        .container .offset-by-seven                 { padding-left: 336px; }
+        .container .offset-by-eight                 { padding-left: 384px; }
+        .container .offset-by-nine                  { padding-left: 432px; }
+        .container .offset-by-ten                   { padding-left: 480px; }
+        .container .offset-by-eleven                { padding-left: 528px; }
+        .container .offset-by-twelve                { padding-left: 576px; }
+        .container .offset-by-thirteen              { padding-left: 624px; }
+        .container .offset-by-fourteen              { padding-left: 672px; }
+        .container .offset-by-fifteen               { padding-left: 720px; }
+		
+    }
+
+
+/*  #Mobile (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 320px */
+
+    @media only screen and (max-width: 767px) {
+		
+		.inner										{ width:300px; }
+		.container									{ width:300px; margin:0; }
+		.top-links									{ display:none; }
+		#banner										{ margin:0 0 20px 0; height:auto; }
+		#banner .banner-in							{ width:300px; height:114px; padding:0; background:none; }
+		.anythingSlider								{ width:100% !important; height:113px !important; }
+		.anythingSlider .anythingBase				{ width:100% !important; }
+		.anythingSlider .fade .panel				{ width:100% !important; height:113px !important; }
+		.anythingSlider img							{ width:100% !important; }
+		.nivoSlider									{ width:100% !important; height:113px !important; }
+		.theme-default								{ width:100% !important; height:113px !important; }
+		.sudo-slider, .sudo-slider li				{ width:100% !important; height:113px !important; }
+		.sudoslid									{ width:100% !important; height:113px !important; }
+		.banner										{ width:100%; height:113px !important; }
+		.banner .sudoslider							{ width:100% !important; height:113px !important; }
+		.sudo-slider li .caption					{ display:none !important; }
+		.nivo-caption-in							{ display:none !important; }
+		.any-caption								{ display:none !important; }
+		.about-albums								{ width:300px; display:none; }
+		.togglebtn									{ display:none; }
+		.about-albums p								{ font-size:11px; }
+		.nowplaying									{ width:100%; }
+		.jp-volume-bar								{ width:252px !important; }
+		.columns-sec								{ width:300px !important;}
+		div.jp-interface ul.jp-controls a			{ width:73px !important; }
+		.col1										{ width:300px; overflow:hidden; padding:0; margin:0; background:none; }
+		.col2										{ width:300px; overflow:hidden; padding:0; margin:0; background:none; }
+		.col3										{ width:300px; overflow:hidden; }
+		.shade										{ background:none; }
+		ul.news-list li .thumb						{ float:left; width:120px; margin-right:10px; position:relative; }
+		ul.news-list li .desc						{ float:left; padding:0; width:170px; }
+		.ft-left									{ width:300px; }
+		.ft-right									{ display:none; }
+		.gotop										{ display:none; }
+		#sub-banner									{ height:105px; }
+		#sub-banner .in								{ width:300px; height:auto; background:none; padding:0px; overflow:hidden; }
+		#sub-banner .in img							{ width:100%; height:auto; }
+		.ddsmoothmenu ul li a						{ font-size:12px; padding:9px 17px 10px 17px !important; width:264px !important; }
+		#album-shelves .heading						{ width:300px; }
+		#album-shelves .inner						{ width:300px; background:none; }
+		.album-list									{ padding:0; margin-left:-20px; }
+		.album-list li								{ margin:8px 0 10px 20px; width:120px; height:301px; }
+		
+		#mcs5_container								{ width:300px; }
+		#mcs5_container .customScrollBox			{ width:300px; }
+		#mcs5_container .dragger_container			{ width:300px; top:113px; }
+		#mcs5_container .dragger					{ width:300px; }
+		#mcs5_container .dragger_pressed			{ width:100px; }
+		#mcs5_container .container					{ width:900px; }
+		
+		.late-news li .thumb						{ width:100px; float:left; display:none; }
+		.late-news li .thumb img					{ width:100%; }
+		.late-news li .desc							{ width:100%; float:right; padding:0px 0px 0px 0px; position:relative; }
+		.albums-widget .thumb						{ width:120px; position:relative; float:left; }
+		.albums-widget .desc						{ float:left; width:290px; padding:0px 0px 0px 10px; position:relative; }
+		.albums-widget ul li						{ padding:10px 0px; }
+		
+		.album-detail-sec .thumb					{ width:100px; display:none; }
+		.album-detail-sec .desc						{ width:300px; }
+		.tracklist li.title							{ width:220px; }
+		.tracklist li.title p						{ font-size:12px; }
+		.tracklist li.title span					{ font-size:10px; }
+		.buynow li									{ padding:0 5px; }
+		.heading									{ font-size:18px; }
+		.gig-post .upper-sec						{ height:240px; }
+		.gig-post .date								{ height:267px; display:none; }
+		.gig-post .desc								{ padding-left:0px; }
+		.gig-post .desc .thumb						{ left:10px; width:80px; }
+		.gig-post .desc .thumb img					{ width:100%; }
+		.gig-post .desc .txt-sec					{ padding-left:100px; }
+		.gig-post .desc .txt-sec h3					{ font-size:16px; }
+		.gallery-two-col li							{ width:370px; height:240px; }
+		.gal-caption								{ padding:50px 40px 10px; }
+		.gallery-two-col							{ width:320px; }
+		.gallery-two-col li							{ width:136px; height:82px; }
+		.gallery-two-col li	.gal-caption			{ display:none !important; }
+		.gallery-two-col li img						{ width:100%; }
+		.gallery-three-col							{ width:320px; }
+		.gallery-three-col li						{ width:82px; height:52px; }
+		.gallery-three-col li img					{ width:100%; }
+		.gallery-four-col							{ width:320px; }
+		.gallery-four-col li						{ width:56px; height:39px; }
+		.gallery-four-col li img					{ width:100%; }
+		#gallery									{ height:565px; }
+		#gallery #main								{ width:300px; }
+		#gallery #images .slide						{ width:280px; overflow:hidden; }
+		.toggleHolder								{ width:280px; }
+		#gallery #images .slide .caption			{ width:240px; }
+		#gallery .gallery-thumbs					{ width:300px; }
+		.gallery-thumbs .caroufredsel_wrapper		{ width:212px !important; left:45px !important; }
+		#gallery #thumbs .thumb						{ width:44px; height:44px; overflow:hidden; }
+		#gallery #prev, #gallery #next				{ bottom:30px; }
+		.contact-page .cont-sec .thumb				{ width:100px; }
+		.contact-page .cont-sec .desc				{ width:180px; }
+		.late-news li.featured .thumb				{ width:100%; }
+		.late-news li.featured .desc				{ width:100%; }
+		.paging										{ margin:0px 0px 30px 0px; }
+		.buynow li h4								{ display:none; }
+		.hidemobile									{ display:none; }
+		.paging ul li a								{ padding:9px 10px 0; }
+		input[type="text"], 
+		input[type="password"], 
+		input[type="email"], 
+		textarea, 
+		select										{ width:100%; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+		
+		.cont-forms ul li input[type="text"], 
+		.cont-forms ul li input[type="password"], 
+		.cont-forms ul li input[type="email"], 
+		.cont-forms ul li textarea, 
+		.cont-forms ul li select					{ width:100%; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+		.twocol 									{ background:none; }
+		.threecol									{ background:none; }
+		.logo										{ background:none; width:300px; }
+		.styles										{ display:none !important; }
+		
+		.post .thumb-sec							{ width:100% !important; }
+		.col4 .post .desc							{ width:100% !important; }
+		#respond dt									{ float:left; padding:0; }
+		#respond dd									{ float:left; padding:0; }
+		#respond form p #submit						{ margin-left:0; }
+		#respond form								{ padding-left:0; padding-right:0; }
+		
+		.cs_gal_2_column							{ width:320px; }
+		.cs_gal_2_column li							{ width:136px; }
+		.cs_gal_3_column							{ width:320px; }
+		.cs_gal_3_column li							{ width:83px; }
+		.cs_gal_4_column							{ width:320px; }
+		.cs_gal_4_column li							{ width:56px; }
+		.gal-caption								{ display:none !important; }
+		.album-list li h3							{ font-size:12px; }
+		.inquiry form ul li #recaptcha_widget_div	{ margin-left:0; }
+		.inquiry form ul li input[type="submit"]	{ margin-left:0; }
+
+        .container .one.column,
+        .container .one.columns,
+        .container .two.columns,
+        .container .three.columns,
+        .container .four.columns,
+        .container .five.columns,
+        .container .six.columns,
+        .container .seven.columns,
+        .container .eight.columns,
+        .container .nine.columns,
+        .container .ten.columns,
+        .container .eleven.columns,
+        .container .twelve.columns,
+        .container .thirteen.columns,
+        .container .fourteen.columns,
+        .container .fifteen.columns,
+        .container .sixteen.columns,
+        .container .one-third.column,
+        .container .two-thirds.column  { width: 300px; margin:0; }
+
+        /* Offsets */
+        .container .offset-by-one,
+        .container .offset-by-two,
+        .container .offset-by-three,
+        .container .offset-by-four,
+        .container .offset-by-five,
+        .container .offset-by-six,
+        .container .offset-by-seven,
+        .container .offset-by-eight,
+        .container .offset-by-nine,
+        .container .offset-by-ten,
+        .container .offset-by-eleven,
+        .container .offset-by-twelve,
+        .container .offset-by-thirteen,
+        .container .offset-by-fourteen,
+        .container .offset-by-fifteen { padding-left: 0; }
+
+    }
+
+
+/* #Mobile (Landscape)
+================================================== */
+
+    /* Note: Design for a width of 480px */
+
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+		.inner										{ width:420px; }
+		.container									{ width:420px; margin:0; }
+		.top-links									{ display:none; }
+		#banner										{ margin:0 0 20px 0; height:auto; }
+		#banner .banner-in							{ width:420px; height:158px; padding:0; background:none; }
+		.anythingSlider								{ width:100% !important; height:158px !important; }
+		.anythingSlider .anythingBase				{ width:100% !important; }
+		.anythingSlider .fade .panel				{ width:100% !important; height:158px !important; }
+		.anythingSlider img							{ width:100% !important; }
+		.nivoSlider									{ width:100% !important; height:158px !important; }
+		.theme-default								{ width:100% !important; height:158px !important; }
+		.sudo-slider, .sudo-slider li				{ width:100% !important; height:158px !important; }
+		.sudoslid									{ width:100% !important; height:158px !important; }
+		.banner										{ width:100%; height:158px !important; }
+		.banner .sudoslider							{ width:100% !important; height:158px !important; }
+		.theme-default .nivoSlider					{ height:158px !important; overflow:hidden;}
+		.nivo-html-caption							{ display:none !important; }
+		.nivo-caption								{ display:none !important; }
+		.any-caption								{ display:none !important; }
+		.nivo-directionNav							{ bottom:41px; }
+		.about-albums								{ width:420px; display:none; }
+		.togglebtn									{ display:none; }
+		.about-albums p								{ font-size:11px; }
+		.nowplaying									{ width:100%; }
+		.jp-volume-bar								{ width:372px !important; }
+		.columns-sec								{ width:420px !important;}
+		div.jp-interface ul.jp-controls a		{ width:103px !important; }
+		.col1										{ width:420px; overflow:hidden; padding:0; margin:0; background:none; }
+		.col2										{ width:420px; overflow:hidden; padding:0; margin:0; background:none; }
+		.col3										{ width:420px; overflow:hidden; }
+		.shade										{ background:none; }
+		ul.news-list li .thumb						{ float:left; width:120px; margin-right:10px; position:relative; }
+		ul.news-list li .desc						{ float:left; padding:0; width:290px; }
+		.ft-left									{ width:420px; }
+		.ft-right									{ display:none; }
+		.gotop										{ display:none; }
+		#sub-banner									{ height:230px; }
+		#sub-banner .in								{ width:420px; height:237px; background:none; padding:0px; overflow:hidden; }
+		#album-shelves .heading						{ width:420px; }
+		#album-shelves .inner						{ width:420px; background:none; }
+		.album-list									{ padding:0; margin-left:-20px; }
+		.album-list li								{ margin:8px 0 10px 20px; width:180px; height:323px; }
+		
+		#mcs5_container								{ width:420px; }
+		#mcs5_container .customScrollBox			{ width:420px; }
+		#mcs5_container .dragger_container			{ width:420px; top:113px; }
+		#mcs5_container .dragger					{ width:420px; }
+		#mcs5_container .dragger_pressed			{ width:100px; }
+		#mcs5_container .container					{ width:900px; }
+		
+		.late-news li .thumb						{ width:120px; float:left; }
+		.late-news li .thumb img					{ width:100%; }
+		.late-news li .desc							{ width:100%; float:right; padding:0px 0px 0px 0px; position:relative; }
+		.albums-widget .thumb						{ width:120px; position:relative; float:left; }
+		.albums-widget .desc						{ float:left; width:290px; padding:0px 0px 0px 10px; position:relative; }
+		.albums-widget ul li						{ padding:10px 0px; }
+		
+		.album-detail-sec .thumb					{ width:150px; }
+		.album-detail-sec .desc						{ width:100%; }
+		.tracklist li.title							{ width:220px; }
+		.tracklist li.title p						{ font-size:12px; }
+		.tracklist li.title span					{ font-size:10px; }
+		.buynow li									{ padding:0 5px; }
+		.heading									{ font-size:18px; }
+		.gig-post .upper-sec						{ height:287px; }
+		.gig-post .date								{ height:267px; }
+		.gig-post .desc .txt-sec h3					{ font-size:16px; }
+		.gallery-two-col li							{ width:370px; height:240px; }
+		.gal-caption								{ padding:50px 40px 10px; }
+		.gallery-two-col							{ width:440px; }
+		.gallery-two-col li							{ width:196px; height:118px; }
+		.gallery-two-col li	.gal-caption			{ display:none !important; }
+		.gallery-two-col li img						{ width:100%; }
+		.gallery-three-col							{ width:440px; }
+		.gallery-three-col li						{ width:122px; height:77px; }
+		.gallery-three-col li img					{ width:100%; }
+		.gallery-four-col							{ width:440px; }
+		.gallery-four-col li						{ width:86px; height:59px; }
+		.gallery-four-col li img					{ width:100%; }
+		#gallery									{ height:565px; }
+		#gallery #main								{ width:420px; }
+		#gallery #images .slide						{ width:400px; overflow:hidden; }
+		.toggleHolder								{ width:400px; }
+		#gallery #images .slide .caption			{ width:360px; }
+		#gallery .gallery-thumbs					{ width:420px; }
+		.gallery-thumbs .caroufredsel_wrapper		{ width:320px !important; left:51px !important; }
+		#gallery #thumbs .thumb						{ width:44px; height:44px; overflow:hidden; }
+		#gallery #prev, #gallery #next				{ bottom:30px; }
+		.contact-page .cont-sec .thumb				{ display:none; }
+		.contact-page .cont-sec .desc				{ width:400px; }
+		.late-news li.featured .thumb				{ width:100%; }
+		.late-news li.featured .desc				{ width:100%; }
+		.paging										{ margin:0px 0px 30px 0px; }
+		.buynow li h4								{ display:none; }
+		.hidemobile									{ display:none; }
+		input[type="text"], 
+		input[type="password"], 
+		input[type="email"], 
+		textarea, 
+		select										{ width:100%; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+		
+		.cont-forms ul li input[type="text"], 
+		.cont-forms ul li input[type="password"], 
+		.cont-forms ul li input[type="email"], 
+		.cont-forms ul li textarea, 
+		.cont-forms ul li select					{ width:100%; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+		.twocol 									{ background:none; }
+		.threecol									{ background:none; }
+		.styles										{ display:none !important; }
+		
+		.cs_gal_2_column							{ width:440px; }
+		.cs_gal_2_column li							{ width:196px; }
+		.cs_gal_3_column							{ width:440px; }
+		.cs_gal_3_column li							{ width:123px; }
+		.cs_gal_4_column							{ width:440px; }
+		.cs_gal_4_column li							{ width:86px; }
+		
+		
+		
+        .container .one.column,
+        .container .one.columns,
+        .container .two.columns,
+        .container .three.columns,
+        .container .four.columns,
+        .container .five.columns,
+        .container .six.columns,
+        .container .seven.columns,
+        .container .eight.columns,
+        .container .nine.columns,
+        .container .ten.columns,
+        .container .eleven.columns,
+        .container .twelve.columns,
+        .container .thirteen.columns,
+        .container .fourteen.columns,
+        .container .fifteen.columns,
+        .container .sixteen.columns,
+        .container .one-third.column,
+        .container .two-thirds.column { width: 420px; margin:0; }
+    }
+
+@media screen and (max-width: 768px) {
+	#smoothmenu1 									{ position:relative; width:100%; }
+	#menu-icon 										{ 
+														color:#fff; width:100%; height:40px; background:#333333; padding:8px 10px 0 10px; cursor:pointer; 
+														margin:4px 0px 0px 0px; display:block; font-size:20px; text-transform:uppercase; 
+														font-family: 'Oswald', sans-serif; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;
+														box-sizing:border-box;
+													}
+	#menu-icon:hover 								{ background-color:#000; }
+	#menu-icon.active 								{ background-color:#000; }
+	.main-navi 										{ 
+														clear:both; position:inherit !important; width:100%; z-index:10000; padding:5px 0px; background:#000; 
+														display:none; margin:0 !important;
+													}
+	.main-navi li 									{ clear:both; float:none; margin:2px 0; width:100%; display:block; }
+	.main-navi a, .main-navi ul a 					{ 
+														font:inherit; background:none; display:inline-block; padding:10px 10px 0px 10px; color:#fff;
+														border:none; width:100%; font-size:14px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;
+														box-sizing:border-box; font-size:14px; text-transform:uppercase; font-family: 'Oswald', sans-serif;
+													}
+	.main-navi a:hover, 
+	.main-navi ul a:hover {
+	}
+	.main-navi ul 									{ width:100% !important; position:inherit !important; display:block !important; border:none; background:inherit; 														top:0 !important; left:0 !important;
+	}
+	.main-navi ul li 								{ margin:3px 0 3px 15px; }
+	.main-navi ul li a 								{ font-size:12px; font-family:Arial, Helvetica, sans-serif; }
+	.ddsmoothmenu ul li ul li:first-child 			{ padding-top:0px; }
+}
+
+@media screen and (min-width: 768px) {
+	.main-navi 										{ display:block !important; }
+}

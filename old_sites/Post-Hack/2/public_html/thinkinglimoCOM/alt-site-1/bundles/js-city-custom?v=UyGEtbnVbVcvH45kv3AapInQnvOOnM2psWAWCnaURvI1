@@ -1,0 +1,2292 @@
+/* Minification failed. Returning unminified contents.
+(2206,9-15): run-time error JS1137: 'delete' is a new reserved word and should not be used as an identifier: delete
+ */
+(function () {
+  var app = angular.module('ui.map', ['ui.event']);
+
+  //Setup map events from a google map object to trigger on a given element too,
+  //then we just use ui-event to catch events from an element
+  function bindMapEvents(scope, eventsStr, googleObject, element) {
+    angular.forEach(eventsStr.split(' '), function (eventName) {
+      //Prefix all googlemap events with 'map-', so eg 'click' 
+      //for the googlemap doesn't interfere with a normal 'click' event
+      google.maps.event.addListener(googleObject, eventName, function (event) {
+        element.triggerHandler('map-' + eventName, event);
+        //We create an $apply if it isn't happening. we need better support for this
+        //We don't want to use timeout because tons of these events fire at once,
+        //and we only need one $apply
+        if (!scope.$$phase){ scope.$apply();}
+      });
+    });
+  }
+
+  app.value('uiMapConfig', {}).directive('uiMap',
+    ['uiMapConfig', '$parse', function (uiMapConfig, $parse) {
+
+      var mapEvents = 'bounds_changed center_changed click dblclick drag dragend ' +
+        'dragstart heading_changed idle maptypeid_changed mousemove mouseout ' +
+        'mouseover projection_changed resize rightclick tilesloaded tilt_changed ' +
+        'zoom_changed';
+      var options = uiMapConfig || {};
+
+      return {
+        restrict: 'A',
+        //doesn't work as E for unknown reason
+        link: function (scope, elm, attrs) {
+          var opts = angular.extend({}, options, scope.$eval(attrs.uiOptions));
+          var map = new google.maps.Map(elm[0], opts);
+          var model = $parse(attrs.uiMap);
+
+          //Set scope variable for the map
+          model.assign(scope, map);
+
+          bindMapEvents(scope, mapEvents, map, elm);
+        }
+      };
+    }]);
+
+  app.value('uiMapInfoWindowConfig', {}).directive('uiMapInfoWindow',
+    ['uiMapInfoWindowConfig', '$parse', '$compile', function (uiMapInfoWindowConfig, $parse, $compile) {
+
+      var infoWindowEvents = 'closeclick content_change domready ' +
+        'position_changed zindex_changed';
+      var options = uiMapInfoWindowConfig || {};
+
+      return {
+        link: function (scope, elm, attrs) {
+          var opts = angular.extend({}, options, scope.$eval(attrs.uiOptions));
+          opts.content = elm[0];
+          var model = $parse(attrs.uiMapInfoWindow);
+          var infoWindow = model(scope);
+
+          if (!infoWindow) {
+            infoWindow = new google.maps.InfoWindow(opts);
+            model.assign(scope, infoWindow);
+          }
+
+          bindMapEvents(scope, infoWindowEvents, infoWindow, elm);
+
+          /* The info window's contents dont' need to be on the dom anymore,
+           google maps has them stored.  So we just replace the infowindow element
+           with an empty div. (we don't just straight remove it from the dom because
+           straight removing things from the dom can mess up angular) */
+          elm.replaceWith('<div></div>');
+
+          //Decorate infoWindow.open to $compile contents before opening
+          var _open = infoWindow.open;
+          infoWindow.open = function open(a1, a2, a3, a4, a5, a6) {
+            $compile(elm.contents())(scope);
+            _open.call(infoWindow, a1, a2, a3, a4, a5, a6);
+          };
+        }
+      };
+    }]);
+
+  /* 
+   * Map overlay directives all work the same. Take map marker for example
+   * <ui-map-marker="myMarker"> will $watch 'myMarker' and each time it changes,
+   * it will hook up myMarker's events to the directive dom element.  Then
+   * ui-event will be able to catch all of myMarker's events. Super simple.
+   */
+  function mapOverlayDirective(directiveName, events) {
+    app.directive(directiveName, [function () {
+      return {
+        restrict: 'A',
+        link: function (scope, elm, attrs) {
+          scope.$watch(attrs[directiveName], function (newObject) {
+            if (newObject) {
+              bindMapEvents(scope, events, newObject, elm);
+            }
+          });
+        }
+      };
+    }]);
+  }
+
+  mapOverlayDirective('uiMapMarker',
+    'animation_changed click clickable_changed cursor_changed ' +
+      'dblclick drag dragend draggable_changed dragstart flat_changed icon_changed ' +
+      'mousedown mouseout mouseover mouseup position_changed rightclick ' +
+      'shadow_changed shape_changed title_changed visible_changed zindex_changed');
+
+  mapOverlayDirective('uiMapPolyline',
+    'click dblclick mousedown mousemove mouseout mouseover mouseup rightclick');
+
+  mapOverlayDirective('uiMapPolygon',
+    'click dblclick mousedown mousemove mouseout mouseover mouseup rightclick');
+
+  mapOverlayDirective('uiMapRectangle',
+    'bounds_changed click dblclick mousedown mousemove mouseout mouseover ' +
+      'mouseup rightclick');
+
+  mapOverlayDirective('uiMapCircle',
+    'center_changed click dblclick mousedown mousemove ' +
+      'mouseout mouseover mouseup radius_changed rightclick');
+
+  mapOverlayDirective('uiMapGroundOverlay',
+    'click dblclick');
+
+})();
+;
+/**
+ * General-purpose Event binding. Bind any event not natively supported by Angular
+ * Pass an object with keynames for events to ui-event
+ * Allows $event object and $params object to be passed
+ *
+ * @example <input ui-event="{ focus : 'counter++', blur : 'someCallback()' }">
+ * @example <input ui-event="{ myCustomEvent : 'myEventHandler($event, $params)'}">
+ *
+ * @param ui-event {string|object literal} The event to bind to as a string or a hash of events with their callbacks
+ */
+angular.module('ui.event',[]).directive('uiEvent', ['$parse',
+  function ($parse) {
+    return function ($scope, elm, attrs) {
+      var events = $scope.$eval(attrs.uiEvent);
+      angular.forEach(events, function (uiEvent, eventName) {
+        var fn = $parse(uiEvent);
+        elm.bind(eventName, function (evt) {
+          var params = Array.prototype.slice.call(arguments);
+          //Take out first paramater (event object);
+          params = params.splice(1);
+          fn($scope, {$event: evt, $params: params});
+          if (!$scope.$$phase) {
+            $scope.$apply();
+          }
+        });
+      });
+    };
+  }]);
+;
+(function($) {
+	$.fn.addressSuggestion = function (options) {
+		return new AddressSuggestion($(this).attr('id'));
+	};
+})(jQuery);
+
+function AddressSuggestion(id) {
+
+	this.timerSearch = null;
+	this.timerAddressNotSelected = null;
+	this.selectedRef = null;
+	this.selectedAddress = null;
+	this.selectedLocation = null;
+	this.id = id;
+	this.onSelected = null;
+	var self = this;
+
+	this.el = $("#" + id);
+	this.el.on("keyup", function () { self.addressSearchKeyUp(this); });
+
+
+	this.el.autocomplete({
+		minLength: 3,
+		autoFocus: true,
+		source: function(request, response) {
+			if ($.trim(request.term).length > 2) {
+
+				var t = $(this.element).closest(".search-container");
+				self.showSearchSpinner(t);
+
+				$.ajax({
+					url: addressApiUrl,
+					dataType: "json",
+					data: {
+						query: request.term
+					},
+					headers: {
+						Accept: "application/vnd.clickataxi.v2+json",
+					},
+					success: function(data) { self.fillupDropdown(data, response); },
+					complete: function() {
+						self.hideSearchSpinner(t);
+					}
+				});
+			}
+		},
+		select: function(event, ui) {
+
+			window.clearTimeout(self.timerAddressNotSelected);
+			self.timerAddressNotSelected = null;
+			self.selectedRef = ui.item.reference;
+			self.selectedAddress = ui.item.value;
+			self.el.addClass("_notDefault");
+			self.getLocationDetails();
+
+			if (ui.item && ui.item.latitude && ui.item.longitude) {
+				self.setAddress(
+					ui.item.countryName, ui.item.cityName, ui.item.cityId,
+					ui.item.zipCode, ui.item.streetName, ui.item.houseNumber,
+					ui.item.placeName, ui.item.latitude, ui.item.longitude
+				);
+			}
+		},
+		focus: function (event, ui) {
+			$(event.currentTarget).find("li").each(function () {
+				$(this).removeClass("item-focused");
+			});
+			$(event.currentTarget).find("a").each(function () {
+				var el = $(this);
+				if (el.text() == ui.item.label) {
+					el.parent().addClass("item-focused");
+				}
+			});
+			return false;
+		},
+		messages: {
+			noResults: null,
+			results: function() {
+			}
+		}
+	})
+	.data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+		return $("<li>")
+		  .removeClass("ui-menu-item")
+		  .addClass("nearby-places")
+		  .append( "<a>" + item.label + "</a>" )
+		  .appendTo( ul );
+	};
+
+	this.fillupDropdown = function(data, response) {
+		var results = [];
+		$.map(data, function (item) {
+			results.push({
+				value: item.name,
+				reference: item.ref,
+				type: item.type,
+				category: "Suggestions"
+			});
+		});
+		if ($('#' + this.id + ':visible').length > 0)
+			response(results);
+	};
+
+	this.showSearchSpinner = function(t) {
+		this.timerSearch = window.setTimeout(function() {
+			t.find(".search > i").hide();
+			t.find(".search > img").show();
+		}, 100);
+	};
+
+	this.hideSearchSpinner = function(t) {
+		window.clearTimeout(this.timerSearch);
+		t.find(".search > img").hide();
+		t.find(".search > i").show();
+	};
+
+	this.addressSearchKeyUp = function (t) {
+		if (this.getText() != this.selectedAddress) {
+			this.selectedRef = null;
+			this.el.removeClass("_notDefault");
+		}
+	};
+
+	this.setAddress = function(countryName, cityName, cityId, zipCode, streetName, houseNumber, placeName, latitude, longitude) {
+
+		//var order = ClickATaxi.CallCenter.InboundOrder;
+
+		var validation = $(this.element).closest(".field-validation-error");
+		validation.hide().data("valid", true);
+		window.clearTimeout(this.timerAddressNotSelected);
+		this.timerAddressNotSelected = null;
+
+		//order.departureAddress.cityId = cityId;
+		//order.departureAddress.streetName = streetName;
+		//order.departureAddress.houseNumber = houseNumber;
+		//order.departureAddress.latitude = latitude;
+		//order.departureAddress.longitude = longitude;
+	};
+
+	this.isAddressValid = function() {
+		var validation = $(this.element).closest(".field-validation-error");
+		return this.timerAddressNotSelected == null && validation.is(":hidden");
+	};
+
+	this.getText = function () {
+		return $("#" + this.id).val();
+	};
+
+	this.autoPickupAddress = function (callBack) {
+		this.selectedRef = null;
+		$.ajax({
+			url: addressApiUrl,
+			dataType: "json",
+			data: {
+				query: this.getText()
+			},
+			headers: {
+				Accept: "application/vnd.clickataxi.v2+json",
+			},
+			success: function (data) {
+				if (data.length > 0) {
+					self.selectedRef = data[0].ref;
+					self.selectedAddress = data[0].name;
+					self.getLocationDetails(callBack);
+				}
+			},
+		});
+	};
+
+	this.isEmpty = function() {
+		return this.getText().length == 0 || this.getText() == this.el.attr('data-default-value');
+	};
+
+	this.getLocationDetails = function(callBack) {
+		this.selectedLocation = null;
+		var self = this;
+		$.ajax({
+			url: "/api/places/ref?ref=" + this.selectedRef + "&type=google",
+			dataType: "json",
+			headers: {
+				Accept: "application/vnd.clickataxi.v2+json",
+			},
+			success: function(data) {
+				self.selectedLocation = data.location;
+				if (callBack) callBack(true);
+				if (self.onSelected) self.onSelected(true);
+			},
+			error: function (data) {
+				self.selectedLocation = null;
+				self.selectedAddress = null;
+				self.selectedRef = null;
+				if (callBack) callBack(false);
+				if (self.onSelected) self.onSelected(false);
+			}
+		});
+	};
+};
+function timePickerDropdown(id) {
+	this.hour = null;
+	this.minute = null;
+	this.date = null;
+
+	this.textbox = $('#' + id);
+	var self = this;
+
+	this.initDropdown = function () {
+
+		var d = new Date(new Date().getTime() + (4 * 3600000));
+		var h = d.getHours();
+
+		var days = self.getDaysDropdown(d);
+		$('#' + id).after(
+			'<div class="drop-down date">' +
+				'<div class="time-chooser">' +
+				'<div class="time-header">Select date and time</div>' +
+				'<div class="date-picker">' +
+				'<div class="hour">' +
+				'<a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">' + (h < 10 ? "0" : "") + h + '</a>' +
+				'<ul class="dropdown-menu" role="menu">' + this.getHoursDropdown(h) + '</ul>' +
+				'</div>' +
+				'<span class="separator">:</span>' +
+				'<div class="minute">' +
+				'<a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">00</a>' +
+				'<ul class="dropdown-menu" role="menu">' + self.getMinutesDropdown() + '</ul>' +
+				'</div>' +
+				'<div class="date pickup-date">' +
+				'<a class="dropdown-toggle" data-toggle="dropdown" data-value="' + days.date + '" href="javascript:void(0);">' + days.text + '</a>' +
+				'<ul class="dropdown-menu" role="menu">' + days.html + '</ul>' +
+				'</div>' +
+				'</div>' +
+				'<div class="time-footer">' +
+				'<a href="javascript:void(0)" class="asap br4">ASAP</a>' +
+				'<span>or set</span>' +
+				'<a href="javascript:void(0)" class="done br4">Done</a>' +
+				'</div>' +
+				'</div>' +
+				'</div>');
+		this.dropDownInput();
+		var y = h * 24 - 75;
+		if (y < 0) y = 0;
+		$('#' + id).parent().find('div.hour ul.dropdown-menu').data('jsp').scrollToY(y, false);
+	};
+
+	this.getHoursDropdown = function(h) {
+		var c = "";
+		for (var a = 0; a <= 23; a++) {
+			c += '<li' + (h==a ? ' class="selected"' : '') + '>' + (a < 10 ? "0" + a : a) + "</li>";
+		}
+		return c;
+	};
+
+	this.getMinutesDropdown = function() {
+		var c = "";
+		for (var a = 0; a <= 55; a += 5) {
+			c += '<li' + (a == 0 ? ' class="selected"' : '') + '>' + (a < 10 ? "0" + a : a) + "</li>";
+		}
+		return c;
+	};
+
+	this.getDaysDropdown = function (dd) {
+		var result = {
+			html: null,
+			date: null,
+			text: null
+		};
+		dd = dd.toLocaleDateString();
+		var c = "";
+		var d = new Date().getTime();
+		for (var a = d; a <= d + (7 * 86400000); a += 86400000) {
+			var t = (new Date(a)).toLocaleDateString();
+			var s = t;
+			if (a == d) t = "Today";
+			if (a == d + 86400000) t = "Tomorrow";
+
+			var selected = false;
+			if (new Date(a).toLocaleDateString() == dd) {
+				result.date = s;
+				result.text = t;
+				selected = true;
+			}
+
+			c += '<li data-value="' + s + '"' + (selected ? ' class="selected"' : '') + '>' + t + '</li>';
+		}
+		result.html = c;
+		return result;
+	};
+
+	this.dropDownInput = function() {
+		var $input = this.textbox;
+		$input.parent().append('<span class="_ignore"></span>');
+		$input.parent().addClass("_dropDownWrapper");
+		var $span = $input.parent().children("span").last();
+		var $content = $input.parent().find(".drop-down");
+		$content.prepend('<span class="arrow"></span>');
+		$content.append('<span class="border-fix-left"></span>');
+		$content.append('<span class="border-fix-right"></span>');
+		$input.parent().append('<span class="overlay"></span>');
+
+		$input.siblings(".overlay").addClass("_persistent");
+		if ($input.val() != "ASAP") {
+			$input.addClass("small-font");
+		}
+
+		$input.parent().find(".overlay").css("opacity", 0);
+		$span.off("click.dropdown").on("click.dropdown", function() {
+			if (!$span.parent().hasClass("_animating")) {
+				if (!$span.parent().hasClass("_openDropdown")) {
+					$span.parent().addClass("_openDropdown _animating");
+					$content.slideDown(300, function() {
+						$span.parent().removeClass("_animating");
+					});
+				} else {
+					$span.parent().addClass("_animating");
+					$content.slideUp(300, function() {
+						$span.parent().removeClass("_openDropdown _animating");
+					});
+				}
+			}
+		});
+		$input.parent().off("click.dropdown").on("click.dropdown", "._persistent", function() {
+			$span.trigger("click");
+		});
+		$("body").off("click.dropdown").on("click.dropdown", function(e) {
+			var $target = $(e.target || e.srcElement).first();
+			if (!$target.hasClass("_ignore")) {
+				if ($target.parents("._dropDownWrapper").size() == 1) {
+					$target.parents("._dropDownWrapper").addClass("_protect");
+				}
+			}
+			closeUnprotected();
+		});
+		$input.parent().find(".dropdown-menu").each(function() {
+			scrollableul($(this));
+			$(this).find("li").off("click.select").on("click.select", function () {
+				var el = $(this).parents("ul").first().siblings("a.dropdown-toggle");
+				el.attr("data-value", $(this).attr("data-value"));
+				el.text($(this).text());
+				$(this).addClass("selected").siblings().removeClass("selected");
+			});
+		});
+		$input.parent().find("a.asap").off("click.asap").on("click.asap", function(e) {
+			e.preventDefault();
+			self.hour = null;
+			self.minute = null;
+			self.date = null;
+			self.textbox.val("ASAP").removeClass("small-font");
+			closeUnprotected();
+		});
+		$input.parent().find("a.done").off("click.setTime").on("click.setTime", function(e) {
+			e.preventDefault();
+			self.hour = $(".date-picker .hour a.dropdown-toggle").text();
+			self.minute = $(".date-picker .minute a.dropdown-toggle").text();
+			self.date = $(".date-picker .date a.dropdown-toggle").attr('data-value');
+			
+			var time = self.hour + ":" + self.minute + " " + self.date;
+			self.textbox.val(time).addClass("small-font");
+			closeUnprotected();
+		});
+	};
+
+	this.getText = function() {
+		return this.textbox.val();
+	};
+
+	this.initDropdown();
+};
+angular.module("authentication", ['ngCookies']).factory("authentication", ['$cookieStore', '$http', '$document', function (cookieStore, http, doc) {
+	return {
+		isAuthenticated: function () {
+			return this.getClientId() != null;
+		},
+		clientId: null,
+		clientName: null,
+		client: null,
+		token: null,
+		getClientId: function () {
+			if (this.clientId == null) {
+				var userInfo = cookieStore.get("user");
+				if (userInfo) {
+					this.clientId = userInfo.id;
+					this.token = userInfo.token;
+				}
+			}
+			return this.clientId;
+		},
+		getClientName: function () {
+			if (this.clientName == null) {
+				var userInfo = cookieStore.get("user");
+				if (userInfo) {
+					this.clientName = userInfo.name;
+				}
+			}
+			return this.clientName;
+		},
+		saveUserToCookie: function () {
+			//cookieStore.put("user", { id: this.clientId, token: this.token, name: this.client.name });
+		},
+		authenticate: function (email, password, onSuccess, onFail) {
+			var self = this;
+			http.post('/api/authorizations', { "username": email, "password": password }, { headers: { "Accept": "application/vnd.clickataxi.v2+json" } })
+				.success(function (data, status, headers, config) {
+					self.token = data.token;
+					self.requestClientInfo(email, password, onSuccess, onFail);
+				})
+				.error(function (data, status, headers, config) {
+					if (onFail) onFail(data, status, headers);
+				});
+		},
+		requestClientInfo: function (email, password, onSuccess, onFail) {
+			var self = this;
+			http.post('/api/sessions', { "email": email, "password": password }, { headers: { "Accept": "application/vnd.clickataxi.v2+json" } })
+				.success(function (data, status, headers, config) {
+					self.token = data.token;
+					self.updateClientInfoLocal(data.client);
+					self.saveUserToCookie();
+					if (onSuccess) onSuccess();
+				})
+				.error(function (data, status, headers, config) {
+					if (onFail) onFail(data, status, headers);
+				});
+		},
+		updateClientInfo: function (callback) {
+			if (this.client != null) {
+				if (callback) callback(this.client);
+			}
+
+			var self = this;
+			http.get('/api/clients/' + this.getClientId(), { headers: { "Accept": "application/vnd.clickataxi.v2+json" }, cache: true })
+				.success(function (data, status, headers, config) {
+					self.updateClientInfoLocal(data);
+					if (callback) callback(self.client);
+				})
+				.error(function (data, status, headers, config) {
+					self.client = null;
+					if (callback) callback(self.client);
+				});
+		},
+		updateClientInfoLocal: function(client) {
+			this.client = client;
+			this.clientName = client.name;
+			this.clientId = client.id;
+		},
+		signout: function() {
+			cookieStore.remove("user");
+			doc[0].cookie = 'user=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+			this.clientId = null;
+			this.client = null;
+			this.clientName = null;
+			this.token = null;
+		}
+	};
+}])
+;
+var lModules = ['authentication', 'ui.map'];
+if (testing) lModules.push('ngMockE2E');
+
+var app = angular.module('app', lModules).config(function ($routeProvider) {
+	$routeProvider
+		.when("/signup", { controller: SignUpCtrl, templateUrl: "/partials/signup.html" })
+		.when("/signin", { controller: SignInCtrl, templateUrl: "/partials/signin.html" })
+		.otherwise({ template: '' });
+})
+.factory("externalParam", function () {
+	return function(id) { return eval(id); };
+})
+.directive('infoTooltip', function() {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+        //$(element).tooltip()
+        
+        $(element).popover({
+            html: true,
+            trigger: "hover",
+            template: '<div class="popover"><div class="arrow"></div><div class="popover-inner" style="width: 200px; height=150px;"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>',
+            content: '<div><img src="../img/misc/cvv.png" style="width: 70px; height: 50px;" /><span style="display: table-cell; font: 12px/14px "pt_sans_regular";">The card security code is located on the back of MasterCard, Visa and Discover credit or debit cards and is typically a separate group of 3 digits to the right of the signature strip.</span></div>'
+        });
+    }
+  };
+});
+
+if (testing) {
+	var setupHttpBackend;
+	app.run(function($httpBackend) {
+		var topParent = window;
+		while (topParent.parent != topParent)
+			topParent = topParent.parent;
+
+		if (topParent['setupHttpBackend'])
+			topParent['setupHttpBackend']($httpBackend);
+
+		$httpBackend.when('GET', /\/api\//).passThrough();
+	});
+}
+
+/* DRiVER Master JavaScript Document */
+var pickupAddress, dropoffAddress, timePicker;
+
+/* Document ready start execution */
+$(document).ready(function() {
+	appInit();
+	responsiveOnlineBooking();
+});
+
+function responsiveOnlineBooking(){
+	var setPadding = function(padding) {
+		$('.online-booking').css({
+			paddingTop: padding + 1
+		});
+	};
+
+	setPadding(getRealHeight($('header')));
+	baseFont($("#wrapper").width());
+
+	$(window).resize(function(){
+		setPadding(getRealHeight($('header')));
+		baseFont($("#wrapper").width());
+	});
+}
+
+/* font resize linarization */
+function baseFont(wdt) {
+	if( wdt > 1500 ) {
+		wdt = 1500;
+	} else if(wdt < 1100) {
+		wdt = 1100;
+	}
+
+	var perc = wdt / 15;
+	$("body").css("font-size", perc + "%");
+}
+
+
+/* Application initialization script */
+function appInit() {
+
+	if ($('#pick-up-location').size() > 0) {
+		pickupAddress = $('#pick-up-location').addressSuggestion();
+		dropoffAddress = $('#drop-off-location').addressSuggestion();
+		timePicker = new timePickerDropdown('time');
+	}
+
+	if ($("input.resetable").size() > 0) {
+		$("input.resetable").each( function() {
+			resetInput($(this));
+		});
+	}
+	if( $("input.dropdownable").size() > 0 ) {
+		$("input.dropdownable").each( function() {
+			dropDownInput($(this));
+		});
+	}
+	if( $("div.drop-down ul.primary").size() > 0 ) {
+		dropDownFlow();
+	}
+}
+
+/* Dropdown input functionality */
+function dropDownInput($input) {
+	$input.parent().append('<span class="_ignore"></span>');
+	$input.parent().addClass("_dropDownWrapper");
+	var $span = $input.parent().children("span").last();
+	var $content = $input.parent().find(".drop-down");
+	$content.prepend('<span class="arrow"></span>');
+	$content.append('<span class="border-fix-left"></span>');
+	$content.append('<span class="border-fix-right"></span>');
+	$input.parent().append('<span class="overlay"></span>');
+	if( $input.hasClass("dropdown") ) {
+		$input.siblings(".overlay").addClass("_persistent");
+		$content.addClass("dropdown");
+		if( $input.siblings(".drop-down").find(".listWrapper").hasClass("addScroll") ) {
+			enableScrollbar($input.siblings(".drop-down").find(".listWrapper"));
+		}
+	}
+	if( $input.attr("id") == 'time' ) {
+		$input.siblings(".overlay").addClass("_persistent");
+		if( $input.val() != "ASAP" ) {
+			$input.addClass("small-font");
+		}
+	}
+	$input.parent().find(".overlay").css("opacity", 0);
+	$span.off("click.dropdown").on("click.dropdown", function() {
+		if( !$span.parent().hasClass("_animating") ) {
+			if( !$span.parent().hasClass("_openDropdown") ) {
+				$span.parent().addClass("_openDropdown _animating");
+				$content.slideDown(300, function() {
+					$span.parent().removeClass("_animating");
+				});
+			} else {
+				$span.parent().addClass("_animating");
+				$content.slideUp(300, function() {
+					$span.parent().removeClass("_openDropdown _animating");
+				});
+			}
+		}
+	});
+	$input.parent().off("click.dropdown").on("click.dropdown", "._persistent", function() {
+		$span.trigger("click");
+	});
+	$("body").off("click.dropdown").on("click.dropdown", function(e) {
+		var $target = $(e.target || e.srcElement).first();
+		if( !$target.hasClass("_ignore") ) {
+			if( $target.parents("._dropDownWrapper").size() == 1 ) {
+				$target.parents("._dropDownWrapper").addClass("_protect");
+			}
+		}
+		closeUnprotected();
+	});
+	$input.parent().find(".dropdown-menu").each( function() {
+		scrollableul($(this));
+		$(this).find("li").off("click.select").on("click.select", function() {
+			$(this).parents("ul").first().siblings("a.dropdown-toggle").text($(this).text());
+			$(this).addClass("selected").siblings().removeClass("selected");
+		});
+	});
+	$input.parent().find("a.asap").off("click.asap").on("click.asap", function(e) {
+		e.preventDefault();
+		$("#time").val("ASAP").removeClass("small-font");
+		closeUnprotected();
+	});
+	$input.parent().find("a.done").off("click.setTime").on("click.setTime", function(e) {
+		e.preventDefault();
+		var time = $(".date-picker .hour a.dropdown-toggle").text() + ":" + $(".date-picker .minute a.dropdown-toggle").text() + " " + $(".date-picker .date a.dropdown-toggle").text();
+		$("#time").val(time).addClass("small-font");
+		closeUnprotected();
+	});
+}
+
+/* Page click close dropdown functionality /*/
+function closeUnprotected() {
+	$("._dropDownWrapper").each( function() {
+		if( !$(this).hasClass("_animating") && !$(this).hasClass("_protect") ) {
+			var $this = $(this);
+			var $content = $this.find(".drop-down");
+			$content.slideUp(300, function() {
+				$this.removeClass("_openDropdown _animating");
+				var $input = $this.find('input[type="text"]');
+			});
+		}
+		$(this).removeClass("_protect");
+	});
+}
+
+/* The actual actions on the dropdown lists */
+function dropDownFlow() {
+	$("div.drop-down ul.primary > li").off("click.populateDropdown").on("click.populateDropdown", function() {
+		$(this).parent().hide();
+		$(this).parent().siblings(".secondary").eq($(this).index()).show();
+		if( $(this).parent().siblings(".secondary").children(".listWrapper").hasClass("addScroll") ) {
+			enableScrollbar($(this).parent().siblings(".secondary").children(".listWrapper"));
+		}
+		$(this).parents(".drop-down").first().find("span.arrow").addClass("secondary");
+	});
+	$("div.drop-down ul.primary.taxis > li").off("click.populateDropdown").on("click.populateDropdown", function() {
+		var html = $(this).html().replace("<span>", " - ");
+		html = html.replace("<SPAN>", " - ");
+		html = html.replace(/\s+/g, " ");
+		var $html = $("<div>" + html + "</div>");
+		$(this).parents(".drop-down").first().siblings('input[type="text"]').val($.trim($html.text()));
+		closeUnprotected();
+	}).off("mouseenter.hoverFirst").on("mouseenter.hoverFirst", function() {
+		if( $(this).index() == 0 ) {
+			$(this).parents(".drop-down").first().addClass("hovFirst");
+		}
+	}).off("mouseleave.hoverFirst").on("mouseleave.hoverFirst", function() {
+		if( $(this).index() == 0 ) {
+			$(this).parents(".drop-down").first().removeClass("hovFirst");
+		}
+	});
+	$("div.drop-down div.secondary div.heading > span").off("click.populateDropdown").on("click.populateDropdown", function() {
+		$(this).parents(".secondary").hide();
+		$(this).parents(".secondary").siblings(".primary").show();
+		$(this).parents(".drop-down").first().find("span.arrow").removeClass("secondary");
+	});
+	$("div.drop-down div.secondary ul > li").off("click.populateDropdown").on("click.populateDropdown", function() {
+		var $html = $("<div>" + $(this).html() + "</div>");
+		$html.children().remove();
+		$(this).parents(".drop-down").first().siblings('input[type="text"]').val($.trim($html.text())).removeClass("_error");
+		$(this).parents(".drop-down").first().siblings('.overlay').addClass("_persistent");
+		$("._protect").removeClass("_protect");
+		closeUnprotected();
+	});
+}
+
+/* Vertical slider functionality */
+function enableScrollbar($elem) {
+	if( !$elem.hasClass("_processed") ) {
+		var scroller = {}
+		$elem.parents().addClass("_show");
+		scroller.slideHeight = $elem.height();
+		$elem.parent().addClass("_killHeightLim");
+		scroller.realHeight = $elem.height();
+		$elem.parent().removeClass("_killHeightLim");
+		$elem.parents().removeClass("_show");
+		if( scroller.slideHeight < scroller.realHeight ) {
+			createScrollbar($elem, scroller)
+		}
+	}
+}
+
+function createScrollbar($elem, scroller) {
+	if( !$elem.hasClass("_processed") ) {
+		$elem.parents().addClass("_show");
+		var contentWidth = $elem.width();
+		$elem.jScrollPane({
+			verticalDragMinHeight :	100,
+			showArrows :			true
+		});
+		$elem.parents().removeClass("_show");
+		$elem.addClass("_processed");
+	}
+}
+
+function secondStepFlow() {
+	goStepFunctionality();	
+}
+
+function secondStepFlow() {
+	goStepFunctionality();
+}
+
+function thirdStepFlow() {
+	goStepFunctionality();
+	$(".modal-wrapper").find("ul.dropdown-menu").each( function() {
+		var $ul = $(this);
+		scrollableul($ul);
+		$(this).find("li").off("click.selectValue").on("click.selectValue", function() {
+			$ul.siblings(".dropdown-toggle").text($.trim($(this).text()));
+			$(this).addClass("selected").siblings().removeClass("selected");
+		});
+	});
+	$(".modal-wrapper").find(".info").tooltip();
+	$(".modal-wrapper").find("a.facebook").off("click.facebookLogin").on("click.facebookLogin", function(e) {
+		FB.getLoginStatus(function(response) {
+			if (response.status === 'connected') {
+				facebookQuery(response.authResponse.userID);
+			} else if (response.status === 'not_authorized') {
+				facebookLogin();
+			} else {
+				facebookLogin();
+			}
+		});
+	});
+	$(".modal-wrapper").find(".terms-agree label a").off("click.labelPropagation").on("click.labelPropagation", function(e) {
+		e.stopPropagation();
+	});
+}
+
+
+function fourthStepFlow() {
+	$(".add-calendar").off("click.addToCal").on("click.addToCal", function(e) {
+		e.preventDefault();
+		alert("Add to calendar functionality");
+	});
+	$("#modal-alert").off("hidden.hideAlert").on("hidden.hideAlert", function() {
+		showFirstStep();
+	});
+}
+
+function goStepFunctionality() {
+	$(".go-step").off("click.goToStep").on("click.goToStep", function() {
+		if( $(this).hasClass("step1") ) {
+			showFirstStep();
+		} else if( $(this).hasClass("step2") ) {
+			showSecondStep();
+		} else if( $(this).hasClass("step3") ) {
+			showThirdStep();
+		}
+	});
+}
+
+/* Go to the appropriate step of the booking functionality */
+function showFirstStep() {
+	$("#step1").show();
+	$("#step2").hide();
+	$("#step3").hide();
+	$("#step4").hide();
+	$("#wrapper").removeClass("step3");
+	$("header .ride-details").addClass("first").removeClass("second third");
+	$("header .ride-details .first").addClass("active").siblings().removeClass("active");
+}
+
+function showSecondStep() {
+
+	$('#pickup-view').text(pickupAddress.selectedAddress);
+	$('#dropoff-view').text(dropoffAddress.selectedAddress);
+	$('#when-view').text(timePicker.getText());
+
+	$("#step1").hide();
+	$("#step2").show();
+	$("#step3").hide();
+	$("#step4").hide();
+	$("#wrapper").removeClass("step3");
+	$("header .ride-details").addClass("first").removeClass("second third");
+	$("header .ride-details .first").addClass("active").siblings().removeClass("active");
+	secondStepFlow();
+}
+
+function showThirdStep() {
+	$("#step1").hide();
+	$("#step2").hide();
+	$("#step3").show();
+	$("#step4").hide();
+	$("#wrapper").addClass("step3");
+	$("header .ride-details").addClass("second").removeClass("first third");
+	$("header .ride-details .second").addClass("active").siblings().removeClass("active");
+	thirdStepFlow();
+}
+
+function showFourthStep() {
+	$("#step1").hide();
+	$("#step2").hide();
+	$("#step3").hide();
+	$("#step4").show();
+	$("#wrapper").removeClass("step3");
+	$("header .ride-details").addClass("third").removeClass("first second");
+	$("header .ride-details .third").addClass("active").siblings().removeClass("active");
+	fourthStepFlow();
+}
+
+/* Scrollable ul functionality */
+function scrollableul($ul) {
+	$ul.css("min-width", getRealWidth($ul.siblings(".dropdown-toggle")) + "px" );
+	$ul.addClass("_show").parents().addClass("_show");
+	if( $ul.children().size() > 7 ) {
+		$ul.css("max-height", ((6 * getRealHeight($ul.children("li").first())) + 10) + "px");
+		$ul.jScrollPane({
+			verticalDragMinHeight :	50,
+			showArrows :			true
+		});
+		$ul.find(".jspVerticalBar").on("click", function(e) {
+			e.stopPropagation();
+		});
+	}
+	$ul.removeClass("_show").parents().removeClass("_show");
+
+}
+
+/* Miscelaneous functionalities */
+/* Reset input functionality */
+function resetInput($input) {
+	$input.off("focus.reset").on("focus.reset", function() {
+		if( $input.val() == $input.data("default-value") ) {
+			$input.val("").addClass("_notDefault");
+		}
+	});
+	$input.off("blur.reset").on("blur.reset", function() {
+		if( $input.val() == "" ) {
+			$input.val($input.data("default-value")).removeClass("_notDefault");
+		}
+	});
+}
+
+/* Get element box model width */
+function getRealWidth($e) {
+	return $e.width() + parseInt($e.css("padding-left"), 10) + parseInt($e.css("padding-right"), 10);
+}
+
+/* Get element box model height */
+function getRealHeight($e) {
+	return $e.height() + parseInt($e.css("padding-top"), 10) + parseInt($e.css("padding-bottom"), 10);
+}
+
+/* facebook login function */
+function facebookLogin() {
+    FB.login(function(response) {
+        if (response.authResponse) {
+            facebookQuery(response.authResponse.userID);
+        }
+    },
+	{scope:'email'});
+
+}
+
+/* facebook data query */
+function facebookQuery(id) {
+	FB.api({
+		method: 'fql.query',
+		query: 'SELECT first_name, last_name, email FROM user WHERE uid='+id
+	}, function(response) {
+		if( response[0].first_name ) {
+			$("#first-name").val(response[0].first_name);
+		}
+		if( response[0].last_name ) {
+			$("#last-name").val(response[0].last_name);
+		}
+		if( response[0].email ) {
+			$("#email").val(response[0].email);
+		}
+	});
+};
+function SignUpCtrl($scope, $log, $http, $cookieStore, $rootScope, $location, $timeout, authentication) {
+	var INTEGER_REGEXP = /^\d*$/;
+	var PHONE_REGEXP = /^\d{8,12}$/;
+	var PHONECODE_REGEXP = /^\+\d{1,4}$/;
+	$scope.cc = {
+		displayName: 'Personal',
+		cardNumber: '',
+		month: '',
+		year: '',
+		name: '',
+		cvv: ''
+	};
+
+	$scope.user = {
+		firstName: '',
+		lastName: '',
+		email: '',
+		phone: '',
+		password: '',
+		confirmPassword: '',
+		agree: false
+	};
+
+	$scope.error = null;
+	$scope.isLoading = false;
+	$scope.minYear = new Date().getFullYear();
+	$scope.maxYear = $scope.minYear + 6;
+
+	$scope.countryCode = null;
+	$scope.phone = null;
+
+	$scope.init = function() {
+		$timeout(function () {
+			$scope.$apply(function () {
+				$('input, select').on('change', function () { $(this).trigger('input'); });
+			});
+		}, 250);
+		$rootScope.$emit("signupFormInitiated");
+		$scope.getCountryCode(cityPhone);
+	};
+
+	$scope.signUp = function () {
+		
+		$('input[ng-model], select[ng-model]').each(function () {
+			angular.element(this).controller('ngModel').$setViewValue($(this).attr('type') == 'checkbox' ? $(this).is(':checked') : $(this).val());
+		});
+
+	    $scope.error = null;
+	    var u = $scope.user;
+
+		if (u.password != u.confirmPassword) {
+			$scope.error = { message: "Password do not match" };
+			return;
+		}
+
+		var cc = $scope.cc;
+		if (!INTEGER_REGEXP.test(cc.cardNumber)) {
+			$scope.error = { message: "Invalid card number. Only numbers are allowed" };
+			return;
+		}
+
+		if (!INTEGER_REGEXP.test(cc.month) || !INTEGER_REGEXP.test(cc.year) || cc.month.length == 0 || cc.year.length == 0) {
+			$scope.error = { message: "Please select card expiration date" };
+			return;
+		}
+		
+		if (!$scope.phone || !PHONE_REGEXP.test($scope.phone)) {
+			$scope.error = { message: "Please enter a valid mobile phone number." };
+			return;
+		}
+
+		if (!$scope.countryCode || !PHONECODE_REGEXP.test($scope.countryCode)) {
+			$scope.error = { message: 'Please enter valid phone country code starting with "+" sign.' };
+			return;
+		}
+
+		if (!u.agree) {
+			alert('You must accept the Terms and Conditions to proceed.');
+			return;
+		}
+
+		u.phone = $scope.countryCode + $scope.phone;
+
+		$scope.isLoading = true;
+
+		var client = {
+			firstName: u.firstName,
+			lastName: u.lastName,
+			name: u.firstName + ' ' + u.lastName,
+			email: u.email,
+			phone: u.phone,
+			password: u.password
+		};
+
+	    if (!clientId || clientId == null) {
+        $http.post('/api/clients?' + getAccessTokenParam(), client, { headers: { "Accept": "application/vnd.clickataxi.v2+json" } })
+					.success(function(data, status, headers, config) {
+				    clientId = data.id;
+				    authentication.authenticate(client.email, client.password, $scope.onNewClientIsAuthorized, $scope.handleErrorResponse);
+					})
+					.error(function (data, status, headers, config) {
+				    $scope.handleErrorResponse(data, status);
+				    $scope.isLoading = false;
+					});
+	    } else {
+        authentication.authenticate(client.email, client.password, $scope.onNewClientIsAuthorized, $scope.handleErrorResponse);
+	    }
+	};
+
+	$scope.getCountryCode = function (phoneNumber) {
+	    $http.post('/umbraco/surface/helper/ParseCountryCode', { "phone": phoneNumber })
+            .success(function (data, status, headers, config) {
+                var charToReplace = '"';
+                var re = new RegExp(charToReplace, 'g');
+                $scope.countryCode = data.replace(re, "");
+            })
+            .error(function (data, status, headers, config) {
+                $scope.countryCode = "";
+            });
+	};
+
+	$scope.getNumbers = function (start, end) {
+	    var nums = [];
+	    for (var a = start; a <= end; a++)
+	        nums.push(a);
+	    return nums;
+	}
+
+	$scope.handleErrorResponse = function(data, status) {
+		$scope.isLoading = false;
+		var msg = "";
+		if (data != null) {
+			$scope.error = data;
+		} else {
+			$scope.error = { message: "Failed by unknown reason: " + status };
+		}
+	};
+
+	$scope.authorize = function(email, password, onSuccess) {
+		$http.post('/api/authorizations', { "username": email, "password": password }, { headers: { "Accept": "application/vnd.clickataxi.v2+json" } })
+			.success(function (data, status, headers, config) {
+				accessToken = data.token;
+				$cookieStore.put("user", { id: clientId, token: accessToken });
+				if (onSuccess) onSuccess();
+			})
+			.error(function (data, status, headers, config) {
+				$scope.handleErrorResponse(data, status);
+				$scope.isLoading = false;
+			});
+	};
+
+	$scope.createCreditCard = function (card, onSuccess) {
+		$http.post('/api/clients/' + clientId + "/cards?" + getAccessTokenParam(), card, { headers: { "Accept": "application/vnd.clickataxi.v2+json" } })
+			.success(function (data, status, headers, config) {
+
+			    var isFromBooking = ($location.search()).booking;
+
+			    if (isFromBooking != "1") {
+			        $location.path("");
+				}
+			    if (onSuccess) onSuccess();
+			})
+			.error(function(data, status, headers, config) {
+				$scope.handleErrorResponse(data, status);
+				$scope.isLoading = false;
+			});
+	};
+
+	$scope.onNewClientIsAuthorized = function() {
+		var cc = $scope.cc;
+
+		var card = {
+			Name: cc.displayName,
+			EncryptedNumber: braintree.encrypt(cc.cardNumber),
+			EncryptedExpirationMonth: braintree.encrypt(cc.month),
+			EncryptedExpirationYear: braintree.encrypt(cc.year),
+			CardholderName: braintree.encrypt(cc.name),
+			EncryptedCvv: braintree.encrypt(cc.cvv)
+		};
+		$scope.createCreditCard(card, $scope.onCardIsCreated);
+	};
+
+	$scope.onCardIsCreated = function () {
+	    $rootScope.$emit('userAuthenticated');
+
+	    var isFromBooking = ($location.search()).booking;
+		if (isFromBooking != "1") {
+			$scope.isLoading = false;
+		}
+	};
+
+	$scope.closeForm = function() {
+		$rootScope.$emit("signupFormClosed");
+	};
+}
+
+function SignInCtrl($scope, $rootScope, $location, authentication) {
+	$scope.error = null;
+	$scope.isLoading = false;
+	$scope.user = {
+		email: '',
+		password: '',
+	};
+
+	$scope.signIn = function () {
+
+		$scope.isLoading = true;
+		$scope.error = null;
+		var u = $scope.user;
+		authentication.authenticate(u.email, u.password, $scope.authenticated, $scope.handleErrorResponse);
+	};
+
+	$scope.authenticated = function () {
+		$location.path("");
+		$rootScope.$emit('userAuthenticated');
+		$scope.isLoading = false;
+	};
+
+	$scope.handleErrorResponse = function (data, status) {
+		$scope.isLoading = false;
+		if (data != null) {
+			if (data.code) {
+				switch (data.code) {
+					case "FORBIDDEN":
+						data.message = "Invalid username or password";
+						break;
+				}
+			}
+			$scope.error = data;
+		} else {
+			$scope.error = { message: "Failed by unknown reason: " + status };
+		}
+	};
+}
+
+function UserHeaderCtrl($scope, $rootScope, $window, $location, $http, authentication) {
+	$scope.name = null;
+	$scope.isLookingForBookings = false;
+	$scope.activeBookings = [];
+	
+	$scope.init = function () {
+		$scope.updateUserInfo();
+		if (authentication.isAuthenticated())
+			$scope.checkForActiveBookings();
+	};
+
+	$scope.updateUserInfo = function() {
+		$scope.name = authentication.getClientName();
+	};
+
+	$scope.isUserAuthenticated = function () {
+		return authentication.isAuthenticated();
+	};
+
+	$scope.signout = function () {
+		authentication.signout();
+		$scope.updateUserInfo();
+		//var url = $location.absUrl().split('#')[0];
+		//$window.location.href = url;
+	};
+	
+	$rootScope.$on('userAuthenticated', function () {
+		$scope.updateUserInfo();
+		$scope.checkForActiveBookings();
+	});
+
+	$rootScope.$on('bookingCompleted', function () {
+		$scope.checkForActiveBookings();
+	});
+
+	$scope.checkForActiveBookings = function () {
+		$scope.isLookingForBookings = true;
+		$http.get("/api/clients/" + authentication.getClientId() + "/bookings?completed=false", { headers: { "Accept": "application/vnd.clickataxi.v2+json" } })
+			.success(function (data, status, headers, config) {
+				if (data && data.length) {
+					$scope.activeBookings = data;
+				}
+				$scope.isLookingForBookings = false;
+			})
+			.error(function (data, status, headers, config) {
+				$scope.handleErrorResponse(data, status);
+				$scope.isLookingForBookings = false;
+			});
+	};
+
+	$scope.getBookingUrl = function (booking) {
+		if (booking)
+			return "/taxi/london?id=" + booking.id;
+	};
+};
+function BookingCtrl($scope, $http, $cookieStore, externalParam, $timeout, $location, $rootScope, authentication, $window, $log) {
+    $scope.viewState = 'edit';
+    $scope.isBusy = false;
+    $scope.pickupAddress = '';
+    $scope.dropoffAddress = '';
+    $scope.arrivalTime = '';
+    $scope.error = null;
+    $scope.companyInfo = null;
+    $scope.nearVehicles = [];
+    $scope.vehicleTypes = null;
+    $scope.vehicleRates = null;
+    $scope.vehicleType = null;
+    $scope.eta = eta;
+    $scope.price = {
+    	startingPrice: startingPrice,
+    	minimumPrice: minimumPrice,
+    	perMinute: perMinute,
+    	cancellationFee: cancellationFee,
+        noShowFee: noShowFee,
+        currencySymbol: currencySymbol,
+        distanceUnit: null,
+        distancePrice: distancePrice
+    };
+    $scope.unitSystem = defaultUnitSystem;
+    $scope.currentDistanceUnit = null;
+    $scope.foreignDistanceUnits = null;
+    $scope.distance = null;
+    $scope.trip = null;
+    $scope.invalidPickup = false;
+    $scope.invalidDropoff = false;
+    $scope.directionsService = new google.maps.DirectionsService();
+    $scope.directionsDisplay = new google.maps.DirectionsRenderer();
+    $scope.isBookingConfirmed = false;
+    $scope.priceEstimate = null;
+    $scope.disableNextButton = false;
+
+    $scope.mapOptions = {
+        center: new google.maps.LatLng(coordinates[0], coordinates[1]),
+        zoom: zoom,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+    	disableDoubleClickZoom: true,
+		draggable: false,
+		keyboardShortcuts: false,
+		mapTypeControl: false,
+		panControl: false,
+		rotateControl: false,
+		scaleControl: false,
+		scrollwheel: false,
+		streetViewControl: false,
+		zoomControl: false,
+    };
+
+    $scope.pickupMarker = null;
+    $scope.dropoffMarker = null;
+    $scope.marker = null;
+
+    $scope.init = function () {
+        $scope.delayedInit();
+        $scope.setUnitSystem($scope.unitSystem);
+        $scope.getCompanyInfoLatLng(coordinates[0], coordinates[1]);
+    };
+
+    $scope.delayedInit = function () {
+        var pickup = $scope.getPickupAddress();
+        var dropoff = $scope.getDropoffAddress();
+
+        if (!pickup || !dropoff) {
+            $timeout($scope.delayedInit, 100);
+            return;
+        }
+
+        pickup.onSelected = function (success) {
+            $rootScope.$emit("pickupSelected", success);
+        };
+        dropoff.onSelected = function (success) {
+            $rootScope.$emit("dropoffSelected", success);
+        };
+    };
+
+    $scope.gotoEdit = function () {
+        $scope.viewState = 'edit';
+        $scope.isBookingConfirmed = false;
+        $rootScope.$emit("bookingEdit");
+    };
+
+    $scope.clickEdit = function () {
+        if (!$scope.isBusy)
+            $scope.gotoEdit();
+    };
+
+    $scope.getInfoClass = function () {
+    	return $scope.distance != null ? "active" : null;
+    };
+    
+    $scope.getEtaInfoClass = function () {
+        var pickup = $scope.getPickupAddress();
+        return ((pickup != null) && (!pickup.isEmpty())) ? "active" : null;
+    };
+
+    $scope.confirmBooking = function () {
+        $scope.isBookingConfirmed = true;
+    };
+
+    $scope.submitBook = function () {
+        $scope.error = null;
+        var pickup = $scope.getPickupAddress();
+        var dropoff = $scope.getDropoffAddress();
+
+        if (pickup.isEmpty()) {
+            pickup.el.focus();
+            return;
+        }
+
+        if (dropoff.isEmpty()) {
+            dropoff.el.focus();
+            return;
+        }
+
+        pickup.el.autocomplete('close');
+        dropoff.el.autocomplete('close');
+
+        if (!$scope.isBusy) {
+            $scope.isBusy = true;
+            if (pickup.selectedRef == null)
+                pickup.autoPickupAddress(function (success) {
+                    pickup.el.autocomplete('close');
+                    $rootScope.$emit('addressChosen', success);
+                });
+            if (dropoff.selectedRef == null)
+                dropoff.autoPickupAddress(function (success) {
+                    dropoff.el.autocomplete('close');
+                    $rootScope.$emit('addressChosen', success);
+                });
+        }
+
+        $scope.updateView();
+    };
+
+    $rootScope.$on('addressChosen', function (ev, success) {
+        $log.log('event addressChosen: ' + success);
+        if (!$scope.isBusy) return;
+
+        if (success) {
+            $scope.updateView();
+        } else {
+            $scope.isBusy = false;
+        }
+    });
+
+    $scope.updateView = function () {
+        var pickup = $scope.getPickupAddress();
+        var dropoff = $scope.getDropoffAddress();
+
+        if (pickup.selectedRef != null && dropoff.selectedRef != null && $scope.companyInfo != null) {
+            $scope.pickupAddress = pickup.selectedAddress;
+            $scope.dropoffAddress = dropoff.selectedAddress;
+            $scope.arrivalTime = $scope.getTimePicker().getText();
+            $scope.viewState = 'view';
+            $scope.isBusy = false;
+        }
+    };
+
+    $scope.drawMarker = function(p, type) {
+        var icon = null;
+        if(type === "pickup") {
+            icon = "/img/icons/icn_pinblueA.png";
+        } else if (type === "dropoff") {
+            icon = "/img/icons/icn_pingreenB.png";
+        }
+
+        var marker = new google.maps.Marker({
+            position: p,
+            map: $scope.myMap,
+            icon: {
+                url: icon,
+                size: new google.maps.Size(45, 45),
+                origin: new google.maps.Point(0,0),
+                anchor: new google.maps.Point(6, 43)
+            }
+        });
+
+        return marker;
+    };
+
+    $scope.updateDirections = function () {
+        var pickup = $scope.getPickupAddress();
+        var dropoff = $scope.getDropoffAddress();
+
+        if (pickup.selectedLocation == null || dropoff.selectedLocation == null) {
+            $scope.directionsDisplay.setMap(null);
+            $scope.distance = null;
+            $scope.trip = null;
+            var position = null;
+
+            if($scope.marker != null)
+                $scope.marker.setMap(null);
+
+            if (pickup.selectedLocation != null) {
+                position = new google.maps.LatLng(pickup.selectedLocation.lat, pickup.selectedLocation.lng);
+                $scope.marker = $scope.drawMarker(position, "pickup");
+            }
+
+            if (dropoff.selectedLocation != null) {
+                position = new google.maps.LatLng(dropoff.selectedLocation.lat, dropoff.selectedLocation.lng);
+                $scope.marker = $scope.drawMarker(position, "dropoff");
+            }
+
+            $scope.myMap.setCenter(position);
+            $scope.myMap.setZoom(16);
+
+            return;
+        }
+        else {
+            $scope.marker.setMap(null);
+        }
+
+        $scope.directionsDisplay.setMap($scope.myMap);
+        $scope.directionsDisplay.setOptions({
+            suppressMarkers: true
+        });
+
+        var start = new google.maps.LatLng(pickup.selectedLocation.lat, pickup.selectedLocation.lng);
+        var finish = new google.maps.LatLng(dropoff.selectedLocation.lat, dropoff.selectedLocation.lng);
+
+        var request = {
+            origin: start,
+            destination: finish,
+            travelMode: google.maps.TravelMode.DRIVING,
+        };
+	    
+        if ($scope.companyInfo != null) {
+			request.unitSystem = $scope.companyInfo.company.country.unitSystem == "metric" ? google.maps.UnitSystem.METRIC : google.maps.UnitSystem.IMPERIAL;
+
+            $scope.getPricingEstimate($scope.getPickupAddress(), $scope.getDropoffAddress(), $scope.vehicleType.id, $scope.getTimePicker());
+		}
+
+        $scope.directionsService.route(request, function (result, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                $scope.directionsDisplay.setDirections(result);
+                if (result.routes.length > 0 && result.routes[0].legs && result.routes[0].legs.length > 0) {
+                    var l = result.routes[0].legs[0];
+                    var duration = l.duration_in_traffic ? l.duration_in_traffic : l.duration;
+                    $scope.distance = l.distance.text;
+                    $scope.trip = duration.text;
+
+                    if($scope.pickupMarker != null)
+                        $scope.pickupMarker.setMap(null);
+
+                    if($scope.dropoffMarker != null)
+                        $scope.dropoffMarker.setMap(null);
+
+                    $scope.pickupMarker = $scope.drawMarker(result.routes[0].legs[0].start_location, "pickup");
+                    $scope.dropoffMarker = $scope.drawMarker(result.routes[0].legs[0].end_location, "dropoff");
+                }
+            }
+        });
+    };
+
+    $scope.getPricingEstimate = function(pickup, dropoff, vehicleType, arrivalAt) {
+        $scope.error = null;
+
+        if ((pickup.selectedLocation == null) || (dropoff.selectedLocation == null) || (vehicleType == null))
+            return;
+
+        var book = {
+            pickup: pickup.selectedLocation,
+            dropoff: dropoff.selectedLocation,
+            vehicleType: vehicleType,
+            language: "en-GB"
+        };
+
+        if (arrivalAt.date != null) {
+            var d = new Date(arrivalAt.date);
+            d.setHours(arrivalAt.hour);
+            d.setMinutes(arrivalAt.minute);
+            book.arrivalAt = d.toISOString();
+        }
+
+        $scope.isBusy = true;
+
+        $http.post("/api/quotes/", book, { headers: { "Accept": "application/vnd.clickataxi.v2+json" } })
+            .success(function(data, status, headers, config) {
+                $scope.isBusy = false;
+                if (data.price) {
+                    $scope.priceEstimate = data.price.value + " " + data.price.currency;
+                } else {
+                    $scope.error = { message: "Price estimates could not be calculated." };
+                    $scope.priceEstimate = null;
+                }
+            })
+            .error(function(data, status, headers, config) {
+                $scope.handleErrorResponse(data, status);
+                $scope.isBusy = false;
+            });
+    };
+
+    $scope.getCompanyInfo = function () {
+        $log.log('Getting company info by pickup address');
+        var loc = $scope.getPickupAddress().selectedLocation;
+        $scope.getCompanyInfoLatLng(loc.lat, loc.lng);
+    };
+
+    $scope.setUnitSystem = function(system) {
+        if(system === "metric") {
+            $scope.currentDistanceUnit = "Km";
+            $scope.foreignDistanceUnits = "miles";
+            $scope.unitSystem = "metric";
+        } else if (system === "imperial") {
+            $scope.currentDistanceUnit = "Mile";
+            $scope.foreignDistanceUnits = "kilometers";
+            $scope.unitSystem = "imperial";
+        }
+    };
+
+    $scope.recalculateDistancePrice = function() {
+        if($scope.unitSystem === "metric") {
+            $scope.setUnitSystem("imperial");
+
+            $scope.price.distancePrice = $scope.price.distancePrice * 1.6;
+        } else if ($scope.unitSystem === "imperial") {
+            $scope.setUnitSystem("metric");
+
+            $scope.price.distancePrice = $scope.price.distancePrice / 1.6;
+        }
+    };
+
+    $scope.distanceEta = function() {
+        var pickup = $scope.getPickupAddress();
+        if ((pickup == null) || (pickup.selectedLocation == null)) {
+            return null;
+        }
+        return $scope.eta + " minutes";
+    };
+
+	$scope.getCompanyInfoLatLng = function(lat, lng) {
+		$http.get("/api/companies/lookup?language=en-GB&latlng=" + lat + "," + lng, { headers: { "Accept": "application/vnd.clickataxi.v2+json" } })
+			.success(function(data, status, headers, config) {
+
+				if (data.company) {
+				    $scope.disableNextButton = false;
+				    $scope.companyInfo = data;
+					$scope.vehicleTypes = data.company.vehicleTypes;
+					$scope.setDefaultVehicleType();
+					$scope.eta = eta;
+                    $scope.getCompanyVehicleRates(data.company.id, $scope.setPricingByVehicleRates);
+
+                    $scope.removeOldNearVehicles();
+                    $scope.showNearVehicles();
+				} else {
+				    $scope.disableNextButton = true;
+				    $scope.error = { message: "Sorry, we are not operating in this area." };
+
+				    //TODO: grey out pricing
+				    $scope.eta = null;
+				    $scope.priceEstimate = "-";
+				}
+
+				$rootScope.$emit("addressChosen", true);
+			})
+			.error(function(data, status, headers, config) {
+				$scope.handleErrorResponse(data, status);
+				$rootScope.$emit("addressChosen", false);
+			});
+	};
+
+    $scope.getCompanyVehicleRates = function(id, callback) {
+        $http.get("/api/companies/" + id + "/rates" , { headers: { "Accept": "application/vnd.clickataxi.v2+json" } })
+            .success(function(data, status, headers, config) {
+                $scope.vehicleRates = data;
+
+                (callback || angular.noop)();
+            })
+            .error(function(data, status, headers, config) {
+                $scope.handleErrorResponse(data, status);
+            });
+    };
+
+    $scope.setPricingByVehicleRates = function() {
+        angular.forEach($scope.vehicleRates, function(value, key) {
+            if($scope.vehicleType.id === value.vehicleType.id) {
+                $scope.price = {
+                    startingPrice: value.startingPrice,
+                    minimumPrice: value.minimumPrice,
+                    perMinute: value.perMinute,
+                    cancellationFee: value.cancellationFee,
+                    noShowFee: value.noShowFee,
+                    currencySymbol: value.currencySymbol,
+                    distanceUnit: value.distanceUnit,
+                    distancePrice: value.distancePrice
+                };
+            }
+        });
+    };
+
+    $scope.showNearVehicles = function() {
+        for(var i = 0; i < $scope.vehicleTypes.length; i++) {
+            var value = $scope.vehicleTypes[i];
+
+            if($scope.vehicleType.id === value.id) {
+                for(var j = 0; j < value.vehicles.length; j++) {
+                    $scope.drawNearVehicleOnMap(value.vehicles[j], value.mapIconUrl);
+                }
+            }
+        }
+    };
+
+    $scope.removeOldNearVehicles = function() {
+        for(var i = 0; i < $scope.nearVehicles.length; i++) {
+            $scope.nearVehicles[i].onRemove();
+        }
+
+        $scope.nearVehicles = [];
+    };
+
+    $scope.drawNearVehicleOnMap = function (vehicle, mapIconUrl) {
+        var marker = null,
+            angle = -90,
+            angleStyle = "-webkit-transform: rotate(" + angle + "deg) scale(0.4, 0.4);"
+                + " -moz-transform: rotate(" + angle + "deg) scale(0.4, 0.4);"
+                + " transform: rotate(" + angle + "deg) scale(0.4, 0.4);",
+            position = new google.maps.LatLng(vehicle.position.lat, vehicle.position.lng); 
+
+        marker = new RichMarker({
+            position: position,
+            map: $scope.myMap,
+            anchor: RichMarkerPosition.MIDDLE,
+            flat: true,
+            content: '<div class="near-marker-container"><img class="near-vehicle-marker" src="' + mapIconUrl + '" style="' + angleStyle + '"/></div>'
+        });
+
+        marker.setPosition(position);
+
+        $scope.nearVehicles.push(marker);
+    };
+
+	$scope.setDefaultVehicleType = function() {
+		var found = false;
+		for (var v = 0; v < $scope.vehicleTypes.length; v++) {
+			if (($scope.vehicleType != null && $scope.vehicleTypes[v].id == $scope.vehicleType.id) || ($scope.vehicleType == null && $scope.vehicleTypes[v].id == "drivr")) {
+				$scope.vehicleType = $scope.vehicleTypes[v];
+				found = true;
+				break;
+			}
+		}
+
+		if (!found)
+			$scope.vehicleType = $scope.vehicleTypes[0];
+	};
+
+    $scope.showCarSelection = function () {
+    	return $scope.viewState == 'edit' && $scope.vehicleTypes != null && $scope.vehicleTypes.length > 1;
+    };
+
+    $scope.selectVehicleType = function (t) {
+        var vt = null;
+        var list = $scope.vehicleTypes;
+        for (var a = 0; a < list.length; a++) {
+            if (list[a].id == t) {
+                $scope.vehicleType = list[a];
+                $scope.setPricingByVehicleRates();
+
+                $scope.removeOldNearVehicles();
+                $scope.showNearVehicles();
+
+                closeUnprotected();
+                $scope.getPricingEstimate($scope.getPickupAddress(), $scope.getDropoffAddress(), $scope.vehicleType.id, $scope.getTimePicker());
+                
+                break;
+            }
+        }
+    };
+
+    $rootScope.$on('pickupSelected', function (ev, success) {
+        $log.log('event pickupSelected: ' + success);
+        $scope.error = null;
+        if (!success) {
+        	$scope.error = { message: "Please enter house number for pick up location" };
+            $scope.invalidPickup = true;
+        } else {
+            if ($scope.invalidPickup)
+                $scope.error = null;
+            $scope.invalidPickup = false;
+            $scope.getCompanyInfo();
+        }
+        $scope.updateDirections();
+        $scope.$digest();
+    });
+
+    $rootScope.$on('dropoffSelected', function (ev, success) {
+        $log.log('event dropoffSelected: ' + success);
+        if (!success) {
+        	$scope.error = { message: "Please enter house number for drop off location" };
+            $scope.invalidDropoff = true;
+        } else {
+            if ($scope.invalidDropoff)
+                $scope.error = null;
+            $scope.invalidDropoff = false;
+            $scope.updateDirections();
+        }
+        $scope.$digest();
+    });
+
+    $rootScope.$on('userAuthenticated', function () {
+        if (!$scope.isBookingConfirmed)
+            return;
+        $scope.createBooking();
+    });
+
+    $scope.createBooking = function () {
+        $scope.error = null;
+
+        $scope.isBusy = true;
+        var pickup = $scope.getPickupAddress();
+        var dropoff = $scope.getDropoffAddress();
+        var arrivalAt = $scope.getTimePicker();
+
+        var book = {
+            pickup: pickup.selectedLocation,
+            dropoff: dropoff.selectedLocation,
+            vehicleType: $scope.vehicleType.id,
+        };
+
+        if (arrivalAt.date != null) {
+            var d = new Date(arrivalAt.date);
+            d.setHours(arrivalAt.hour);
+            d.setMinutes(arrivalAt.minute);
+            book.arrivalAt = d.toISOString();
+        }
+
+        $http.post("/api/clients/" + authentication.getClientId() + "/bookings?" + getAccessTokenParam(), book, { headers: { "Accept": "application/vnd.clickataxi.v2+json" } })
+			.success(function (data, status, headers, config) {
+			    var url = $location.absUrl().split('#')[0];
+			    url = url.split('?')[0];
+			    $window.location.href = url + '?id=' + data.id;
+			})
+			.error(function (data, status, headers, config) {
+			    $scope.handleErrorResponse(data, status);
+			    $scope.isBusy = false;
+			    $location.path("");
+			});
+    };
+
+    $scope.handleErrorResponse = function (data, status) {
+        var msg = "";
+        if (data != null) {
+            $scope.error = data;
+        } else {
+            $scope.error = { message: "Failed by unknown reason: " + status };
+        }
+    };
+
+    $scope.isUserAuthenticated = function () {
+        return authentication.isAuthenticated();
+    };
+
+    $scope.confirm = function () {
+        $scope.createBooking();
+    };
+
+    $scope.getPickupAddress = function () {
+        return externalParam('pickupAddress');
+    };
+
+    $scope.getDropoffAddress = function () {
+        return externalParam('dropoffAddress');
+    };
+
+    $scope.getTimePicker = function () {
+        return externalParam('timePicker');
+    };
+}
+
+function BookingStepsCtrl($scope, $rootScope, $log) {
+	$scope.rideDetailsClass = rideDetailsStep;
+	$scope.firstStepClass = firstStepClass;
+	$scope.secondStepClass = secondStepClass;
+	$scope.thirdStepClass = thirdStepClass;
+
+	$rootScope.$on('signupFormInitiated', function (ev) {
+		$scope.moveToStep(2);
+	});
+
+	$rootScope.$on('signupFormClosed', function (ev) {
+		$scope.moveToStep(1);
+	});
+
+	$rootScope.$on('bookingEdit', function (ev) {
+		$scope.moveToStep(1);
+	});
+
+	$scope.moveToStep = function(step) {
+		$scope.rideDetailsClass = (step == 1 ? "first" : (step == 2 ? "second" : "third"));
+
+		$scope.firstStepClass = step == 1 ? "active" : "";
+		$scope.secondStepClass = step == 2 ? "active" : "";
+		$scope.thirdStepClass = step == 3 ? "active" : "";
+	};
+};
+function TrackAndTraceCtrl($scope, $http, $location, $window, $timeout, $rootScope, $log, authentication) {
+	$scope.isBusy = false;
+	$scope.error = null;
+	$scope.booking = null;
+	$scope.driver = null;
+	$scope.vehicle = null;
+	$scope.vehicleMarker = null;
+	$scope.isReady = false;
+	$scope.distance = null;
+	$scope.trip = null;
+	$scope.start = null;
+	$scope.finish = null;
+	$scope.eta = null;
+	$scope.priceEst = null;
+
+	$scope.pickupMarker = null;
+	$scope.dropoffMarker = null;
+
+	$scope.directionsService = new google.maps.DirectionsService();
+	$scope.directionsDisplay = null;
+
+	$scope.mapOptions = {
+		center: new google.maps.LatLng(coordinates[0], coordinates[1]),
+		zoom: 10,
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+		disableDoubleClickZoom: true,
+		draggable: false,
+		keyboardShortcuts: false,
+		mapTypeControl: false,
+		panControl: false,
+		rotateControl: false,
+		scaleControl: false,
+		scrollwheel: false,
+		streetViewControl: false,
+		zoomControl: false,
+	};
+
+	$scope.init = function () {
+		$scope.keepUpdating();
+	};
+
+	$scope.keepUpdating = function () {
+		$http.get("/api/clients/" + authentication.getClientId() + "/bookings/" + bookingId, { headers: { "Accept": "application/vnd.clickataxi.v2+json" } })
+			.success(function (data, status, headers, config) {
+				$scope.refresh(data);
+
+				if (!$scope.isReady) {
+					$timeout(function () {
+						google.maps.event.trigger($scope.myMap, "resize");
+						$scope.fixZoom();
+					}, 100);
+				}
+				$scope.isReady = true;
+				if (!$scope.isCompleted()) {
+			        $timeout($scope.keepUpdating, 15000);
+			    } else {
+			        $rootScope.$emit('bookingCompleted');
+			        $scope.removeVehicle();
+			        $window.location.href = "/receipt?clientId=" + authentication.getClientId() + "&bookingId=" + bookingId;
+			    }
+			})
+			.error(function (data, status, headers, config) {
+				$scope.handleErrorResponse(data, status);
+			});
+	};
+
+	$scope.refresh = function (data) {
+		$scope.booking = data;
+		$scope.driver = data.driver;
+		$scope.updateEstimations(data);
+
+		if (data.driver) $scope.vehicle = data.driver.vehicle;
+		if (!$scope.isReady) $scope.initDirections();
+		$scope.setVehiclePosition();
+		$scope.fixZoom();
+	};
+
+	$scope.updateEstimations = function (data) {
+		if (data.estimate) {
+			if (data.estimate.arrivalTime) {
+				$scope.eta = Math.round(data.estimate.arrivalTime / 60);
+			} else {
+				$scope.eta = null;
+			}
+
+			if (data.estimate.duration) {
+				var h = Math.floor(data.estimate.duration / 3600);
+				var m = Math.ceil(data.estimate.duration % 3600 / 60);
+				$scope.trip = (h > 0 ? h + " hours " : "") + m + " mins";
+			} else {
+				$scope.trip = null;
+			}
+
+			if (data.estimate.distance) {
+				var metric = data.company.country.unitSystem == "metric";
+				$scope.distance = Math.round(data.estimate.distance / (metric ? 1000 : 1600)) + " " + (metric ? "km" : "mi");
+			} else {
+				$scope.distance = null;
+			}
+
+			if (data.estimate.price) {
+				$scope.priceEst = data.estimate.price;
+			} else {
+				$scope.priceEst = null;
+			}
+
+		} else {
+			$scope.eta = null;
+			$scope.trip = null;
+			$scope.distance = null;
+			$scope.priceEst = null;
+		}
+	}
+
+	$scope.initDirections = function () {
+
+		if ($scope.booking.pickup)
+			$scope.start = new google.maps.LatLng($scope.booking.pickup.lat, $scope.booking.pickup.lng);
+		if ($scope.booking.dropoff)
+			$scope.finish = new google.maps.LatLng($scope.booking.dropoff.lat, $scope.booking.dropoff.lng);
+
+		if (!$scope.start || !$scope.finish)
+			return;
+
+		$scope.directionsDisplay = new google.maps.DirectionsRenderer();
+		$scope.directionsDisplay.setMap($scope.myMap);
+		$scope.directionsDisplay.setOptions({
+			preserveViewport: true,
+			suppressMarkers: true
+		});
+
+		var request = {
+			origin: $scope.start,
+			destination: $scope.finish,
+			travelMode: google.maps.TravelMode.DRIVING,
+			unitSystem: $scope.booking.company.country.unitSystem == "metric" ? google.maps.UnitSystem.METRIC : google.maps.UnitSystem.IMPERIAL
+		};
+
+		$scope.directionsService.route(request, function (result, status) {
+			if (status == google.maps.DirectionsStatus.OK) {
+				$scope.directionsDisplay.setDirections(result);
+
+				$scope.pickupMarker = $scope.drawMarker(result.routes[0].legs[0].start_location, "pickup");
+				$scope.dropoffMarker = $scope.drawMarker(result.routes[0].legs[0].end_location, "dropoff");
+			}
+		});
+	};
+
+	$scope.setVehiclePosition = function () {
+		if (!$scope.isCompleted() && $scope.vehicle && $scope.vehicle.position) {
+			var p = $scope.vehicle.position;
+			$scope.drawVehicle(p.lat, p.lng, p.course, $scope.booking.pickup.lat, $scope.booking.pickup.lng, $scope.getCarMapIcon());
+		} else {
+			$scope.removeVehicle();
+		}
+	};
+
+	$scope.drawMarker = function (p, type) {
+		var icon = null;
+		if (type === "pickup") {
+			icon = "/img/icons/icn_pinblueA.png";
+		} else if (type === "dropoff") {
+			icon = "/img/icons/icn_pingreenB.png";
+		}
+
+		var marker = new google.maps.Marker({
+			position: p,
+			map: $scope.myMap,
+			icon: {
+				url: icon,
+				size: new google.maps.Size(45, 45),
+				origin: new google.maps.Point(0, 0),
+				anchor: new google.maps.Point(6, 43)
+			}
+		});
+
+		return marker;
+	};
+
+	$scope.drawVehicle = function (srcLat, srcLng, course, dstLat, dstLng, ico) {
+		var m = $scope.vehicleMarker;
+		var src = new google.maps.LatLng(srcLat, srcLng);
+		var dst = new google.maps.LatLng(dstLat, dstLng);
+
+		var angle = null;
+		var angleStyle = "";
+		if (course) {
+			angle = course;
+			angleStyle = "-webkit-transform: rotate(" + angle + "deg) scale(0.4, 0.4);"
+                + " -moz-transform: rotate(" + angle + "deg) scale(0.4, 0.4);"
+                + " transform: rotate(" + angle + "deg) scale(0.4, 0.4);";
+		}
+
+		$scope.directionsService.route({
+			origin: src,
+			destination: dst,
+			travelMode: window.google.maps.DirectionsTravelMode.DRIVING
+		}, function (response, status) {
+			if (status == window.google.maps.DirectionsStatus.OK) {
+				if (m == null) {
+					m = new RichMarker({
+						position: response.routes[0].legs[0].start_location,
+						map: $scope.myMap,
+						anchor: RichMarkerPosition.MIDDLE,
+						flat: true,
+						content: '<div id="marker-container"><img id="vehicle-marker" src="' + ico + '" style="' + angleStyle + '"/></div>'
+					});
+				} else {
+					m.setPosition(response.routes[0].legs[0].start_location);
+				}
+			} else {
+				if (m == null) {
+					m = new RichMarker({
+						position: src,
+						map: $scope.myMap,
+						anchor: RichMarkerPosition.MIDDLE,
+						flat: true,
+						content: '<div id="marker-container"><img id="vehicle-marker" src="' + ico + '" style="' + angleStyle + '"/></div>'
+					});
+				} else {
+					m.setPosition(l);
+				}
+			}
+
+			if (angle != null) $("#vehicle-marker").rotate(angle);
+		});
+		$scope.vehicleMarker = m;
+	};
+
+	$scope.removeVehicle = function () {
+		if ($scope.vehicleMarker != null) {
+			$scope.vehicleMarker.setMap(null);
+			$scope.vehicleMarker = null;
+		}
+	};
+
+	$scope.getCarMapIcon = function () {
+		var c = $scope.booking.company;
+		if (c && c.vehicleTypes) {
+			var ls = c.vehicleTypes;
+			for (var a = 0; a < ls.length; a++) {
+				if (ls[a].id == $scope.vehicle.type) {
+					return ls[a].mapIconUrl;
+				}
+			}
+		}
+		return null;
+	};
+
+	$scope.fixZoom = function () {
+		var arr = [];
+		if ($scope.vehicleMarker != null) arr.push($scope.vehicleMarker.position);
+		if ($scope.start) arr.push($scope.start);
+		if ($scope.finish) arr.push($scope.finish);
+
+		if (arr.length > 1) {
+			var bounds = new google.maps.LatLngBounds();
+			for (var a = 0; a < arr.length; a++)
+				bounds.extend(arr[a]);
+			$scope.myMap.fitBounds(bounds);
+		}
+		else if (arr.length == 1) {
+			$scope.myMap.setZoom(1);
+			$scope.myMap.setCenter(arr[0]);
+		}
+	};
+
+	$scope.cancelBooking = function () {
+		$scope.isBusy = true;
+
+		$http.delete("/api/clients/" + authentication.getClientId() + "/bookings/" + bookingId + "?" + getAccessTokenParam(), { headers: { "Accept": "application/vnd.clickataxi.v2+json" } })
+			.success(function (data, status, headers, config) {
+				$window.location.href = $location.absUrl();
+			})
+			.error(function (data, status, headers, config) {
+				$scope.handleErrorResponse(data, status);
+				$scope.isBusy = false;
+			});
+
+	};
+
+	$scope.handleErrorResponse = function (data, status) {
+		var msg = "";
+		if (data != null) {
+			$scope.error = data;
+		} else {
+			$scope.error = { message: "Failed by unknown reason: " + status };
+		}
+	};
+
+	$scope.isCompleted = function () {
+		var b = $scope.booking;
+		return b && (typeof (b.completed) != "undefined" && b.completed);
+	};
+
+	$scope.isCancelled = function () {
+		if ($scope.booking == null || $scope.booking.statuses == null)
+			return false;
+		var s = $scope.booking.statuses;
+		for (var a = 0; a < s.length; a++) {
+			if (s[a].type == "cancelled")
+				return true;
+		}
+		return false;
+	};
+
+	$scope.isCancelable = function () {
+		var b = $scope.booking;
+		return (b && (typeof (b.cancelable) == "undefined" || b.cancelable) && (typeof (b.completed) == "undefined" || !b.completed));
+	};
+}
+;
+(function(){var b=true,f=false;function g(a){var c=a||{};this.d=this.c=f;if(a.visible==undefined)a.visible=b;if(a.shadow==undefined)a.shadow="7px -3px 5px rgba(88,88,88,0.7)";if(a.anchor==undefined)a.anchor=i.BOTTOM;this.setValues(c)}g.prototype=new google.maps.OverlayView;window.RichMarker=g;g.prototype.getVisible=function(){return this.get("visible")};g.prototype.getVisible=g.prototype.getVisible;g.prototype.setVisible=function(a){this.set("visible",a)};g.prototype.setVisible=g.prototype.setVisible;
+g.prototype.s=function(){if(this.c){this.a.style.display=this.getVisible()?"":"none";this.draw()}};g.prototype.visible_changed=g.prototype.s;g.prototype.setFlat=function(a){this.set("flat",!!a)};g.prototype.setFlat=g.prototype.setFlat;g.prototype.getFlat=function(){return this.get("flat")};g.prototype.getFlat=g.prototype.getFlat;g.prototype.p=function(){return this.get("width")};g.prototype.getWidth=g.prototype.p;g.prototype.o=function(){return this.get("height")};g.prototype.getHeight=g.prototype.o;
+g.prototype.setShadow=function(a){this.set("shadow",a);this.g()};g.prototype.setShadow=g.prototype.setShadow;g.prototype.getShadow=function(){return this.get("shadow")};g.prototype.getShadow=g.prototype.getShadow;g.prototype.g=function(){if(this.c)this.a.style.boxShadow=this.a.style.webkitBoxShadow=this.a.style.MozBoxShadow=this.getFlat()?"":this.getShadow()};g.prototype.flat_changed=g.prototype.g;g.prototype.setZIndex=function(a){this.set("zIndex",a)};g.prototype.setZIndex=g.prototype.setZIndex;
+g.prototype.getZIndex=function(){return this.get("zIndex")};g.prototype.getZIndex=g.prototype.getZIndex;g.prototype.t=function(){if(this.getZIndex()&&this.c)this.a.style.zIndex=this.getZIndex()};g.prototype.zIndex_changed=g.prototype.t;g.prototype.getDraggable=function(){return this.get("draggable")};g.prototype.getDraggable=g.prototype.getDraggable;g.prototype.setDraggable=function(a){this.set("draggable",!!a)};g.prototype.setDraggable=g.prototype.setDraggable;
+g.prototype.k=function(){if(this.c)this.getDraggable()?j(this,this.a):k(this)};g.prototype.draggable_changed=g.prototype.k;g.prototype.getPosition=function(){return this.get("position")};g.prototype.getPosition=g.prototype.getPosition;g.prototype.setPosition=function(a){this.set("position",a)};g.prototype.setPosition=g.prototype.setPosition;g.prototype.q=function(){this.draw()};g.prototype.position_changed=g.prototype.q;g.prototype.l=function(){return this.get("anchor")};g.prototype.getAnchor=g.prototype.l;
+g.prototype.r=function(a){this.set("anchor",a)};g.prototype.setAnchor=g.prototype.r;g.prototype.n=function(){this.draw()};g.prototype.anchor_changed=g.prototype.n;function l(a,c){var d=document.createElement("DIV");d.innerHTML=c;if(d.childNodes.length==1)return d.removeChild(d.firstChild);else{for(var e=document.createDocumentFragment();d.firstChild;)e.appendChild(d.firstChild);return e}}function m(a,c){if(c)for(var d;d=c.firstChild;)c.removeChild(d)}
+g.prototype.setContent=function(a){this.set("content",a)};g.prototype.setContent=g.prototype.setContent;g.prototype.getContent=function(){return this.get("content")};g.prototype.getContent=g.prototype.getContent;
+g.prototype.j=function(){if(this.b){m(this,this.b);var a=this.getContent();if(a){if(typeof a=="string"){a=a.replace(/^\s*([\S\s]*)\b\s*$/,"$1");a=l(this,a)}this.b.appendChild(a);var c=this;a=this.b.getElementsByTagName("IMG");for(var d=0,e;e=a[d];d++){google.maps.event.addDomListener(e,"mousedown",function(h){if(c.getDraggable()){h.preventDefault&&h.preventDefault();h.returnValue=f}});google.maps.event.addDomListener(e,"load",function(){c.draw()})}google.maps.event.trigger(this,"domready")}this.c&&
+this.draw()}};g.prototype.content_changed=g.prototype.j;function n(a,c){if(a.c){var d="";if(navigator.userAgent.indexOf("Gecko/")!==-1){if(c=="dragging")d="-moz-grabbing";if(c=="dragready")d="-moz-grab"}else if(c=="dragging"||c=="dragready")d="move";if(c=="draggable")d="pointer";if(a.a.style.cursor!=d)a.a.style.cursor=d}}
+function o(a,c){if(a.getDraggable())if(!a.d){a.d=b;var d=a.getMap();a.m=d.get("draggable");d.set("draggable",f);a.h=c.clientX;a.i=c.clientY;n(a,"dragready");a.a.style.MozUserSelect="none";a.a.style.KhtmlUserSelect="none";a.a.style.WebkitUserSelect="none";a.a.unselectable="on";a.a.onselectstart=function(){return f};p(a);google.maps.event.trigger(a,"dragstart")}}
+function q(a){if(a.getDraggable())if(a.d){a.d=f;a.getMap().set("draggable",a.m);a.h=a.i=a.m=null;a.a.style.MozUserSelect="";a.a.style.KhtmlUserSelect="";a.a.style.WebkitUserSelect="";a.a.unselectable="off";a.a.onselectstart=function(){};r(a);n(a,"draggable");google.maps.event.trigger(a,"dragend");a.draw()}}
+function s(a,c){if(!a.getDraggable()||!a.d)q(a);else{var d=a.h-c.clientX,e=a.i-c.clientY;a.h=c.clientX;a.i=c.clientY;d=parseInt(a.a.style.left,10)-d;e=parseInt(a.a.style.top,10)-e;a.a.style.left=d+"px";a.a.style.top=e+"px";var h=t(a);a.setPosition(a.getProjection().fromDivPixelToLatLng(new google.maps.Point(d-h.width,e-h.height)));n(a,"dragging");google.maps.event.trigger(a,"drag")}}function k(a){if(a.f){google.maps.event.removeListener(a.f);delete a.f}n(a,"")}
+function j(a,c){if(c){a.f=google.maps.event.addDomListener(c,"mousedown",function(d){o(a,d)});n(a,"draggable")}}function p(a){if(a.a.setCapture){a.a.setCapture(b);a.e=[google.maps.event.addDomListener(a.a,"mousemove",function(c){s(a,c)},b),google.maps.event.addDomListener(a.a,"mouseup",function(){q(a);a.a.releaseCapture()},b)]}else a.e=[google.maps.event.addDomListener(window,"mousemove",function(c){s(a,c)},b),google.maps.event.addDomListener(window,"mouseup",function(){q(a)},b)]}
+function r(a){if(a.e){for(var c=0,d;d=a.e[c];c++)google.maps.event.removeListener(d);a.e.length=0}}
+function t(a){var c=a.l();if(typeof c=="object")return c;var d=new google.maps.Size(0,0);if(!a.b)return d;var e=a.b.offsetWidth;a=a.b.offsetHeight;switch(c){case i.TOP:d.width=-e/2;break;case i.TOP_RIGHT:d.width=-e;break;case i.LEFT:d.height=-a/2;break;case i.MIDDLE:d.width=-e/2;d.height=-a/2;break;case i.RIGHT:d.width=-e;d.height=-a/2;break;case i.BOTTOM_LEFT:d.height=-a;break;case i.BOTTOM:d.width=-e/2;d.height=-a;break;case i.BOTTOM_RIGHT:d.width=-e;d.height=-a}return d}
+g.prototype.onAdd=function(){if(!this.a){this.a=document.createElement("DIV");this.a.style.position="absolute"}if(this.getZIndex())this.a.style.zIndex=this.getZIndex();this.a.style.display=this.getVisible()?"":"none";if(!this.b){this.b=document.createElement("DIV");this.a.appendChild(this.b);var a=this;google.maps.event.addDomListener(this.b,"click",function(){google.maps.event.trigger(a,"click")});google.maps.event.addDomListener(this.b,"mouseover",function(){google.maps.event.trigger(a,"mouseover")});
+google.maps.event.addDomListener(this.b,"mouseout",function(){google.maps.event.trigger(a,"mouseout")})}this.c=b;this.j();this.g();this.k();var c=this.getPanes();c&&c.overlayImage.appendChild(this.a);google.maps.event.trigger(this,"ready")};g.prototype.onAdd=g.prototype.onAdd;
+g.prototype.draw=function(){if(!(!this.c||this.d)){var a=this.getProjection();if(a){var c=this.get("position");a=a.fromLatLngToDivPixel(c);c=t(this);this.a.style.top=a.y+c.height+"px";this.a.style.left=a.x+c.width+"px";a=this.b.offsetHeight;c=this.b.offsetWidth;c!=this.get("width")&&this.set("width",c);a!=this.get("height")&&this.set("height",a)}}};g.prototype.draw=g.prototype.draw;g.prototype.onRemove=function(){this.a&&this.a.parentNode&&this.a.parentNode.removeChild(this.a);k(this)};
+g.prototype.onRemove=g.prototype.onRemove;var i={TOP_LEFT:1,TOP:2,TOP_RIGHT:3,LEFT:4,MIDDLE:5,RIGHT:6,BOTTOM_LEFT:7,BOTTOM:8,BOTTOM_RIGHT:9};window.RichMarkerPosition=i;
+})();
+;
+// VERSION: 2.2 LAST UPDATE: 13.03.2012
+/* 
+ * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+ * 
+ * Made by Wilq32, wilq32@gmail.com, Wroclaw, Poland, 01.2009
+ * Website: http://code.google.com/p/jqueryrotate/ 
+ */
+(function(j){for(var d,k=document.getElementsByTagName("head")[0].style,h=["transformProperty","WebkitTransform","OTransform","msTransform","MozTransform"],g=0;g<h.length;g++)void 0!==k[h[g]]&&(d=h[g]);var i="v"=="\v";jQuery.fn.extend({rotate:function(a){if(!(0===this.length||"undefined"==typeof a)){"number"==typeof a&&(a={angle:a});for(var b=[],c=0,f=this.length;c<f;c++){var e=this.get(c);if(!e.Wilq32||!e.Wilq32.PhotoEffect){var d=j.extend(!0,{},a),e=(new Wilq32.PhotoEffect(e,d))._rootObj;
+b.push(j(e))}else e.Wilq32.PhotoEffect._handleRotation(a)}return b}},getRotateAngle:function(){for(var a=[],b=0,c=this.length;b<c;b++){var f=this.get(b);f.Wilq32&&f.Wilq32.PhotoEffect&&(a[b]=f.Wilq32.PhotoEffect._angle)}return a},stopRotate:function(){for(var a=0,b=this.length;a<b;a++){var c=this.get(a);c.Wilq32&&c.Wilq32.PhotoEffect&&clearTimeout(c.Wilq32.PhotoEffect._timer)}}});Wilq32=window.Wilq32||{};Wilq32.PhotoEffect=function(){return d?function(a,b){a.Wilq32={PhotoEffect:this};this._img=this._rootObj=
+this._eventObj=a;this._handleRotation(b)}:function(a,b){this._img=a;this._rootObj=document.createElement("span");this._rootObj.style.display="inline-block";this._rootObj.Wilq32={PhotoEffect:this};a.parentNode.insertBefore(this._rootObj,a);if(a.complete)this._Loader(b);else{var c=this;jQuery(this._img).bind("load",function(){c._Loader(b)})}}}();Wilq32.PhotoEffect.prototype={_setupParameters:function(a){this._parameters=this._parameters||{};"number"!==typeof this._angle&&(this._angle=0);"number"===
+typeof a.angle&&(this._angle=a.angle);this._parameters.animateTo="number"===typeof a.animateTo?a.animateTo:this._angle;this._parameters.step=a.step||this._parameters.step||null;this._parameters.easing=a.easing||this._parameters.easing||function(a,c,f,e,d){return-e*((c=c/d-1)*c*c*c-1)+f};this._parameters.duration=a.duration||this._parameters.duration||1E3;this._parameters.callback=a.callback||this._parameters.callback||function(){};a.bind&&a.bind!=this._parameters.bind&&this._BindEvents(a.bind)},_handleRotation:function(a){this._setupParameters(a);
+this._angle==this._parameters.animateTo?this._rotate(this._angle):this._animateStart()},_BindEvents:function(a){if(a&&this._eventObj){if(this._parameters.bind){var b=this._parameters.bind,c;for(c in b)b.hasOwnProperty(c)&&jQuery(this._eventObj).unbind(c,b[c])}this._parameters.bind=a;for(c in a)a.hasOwnProperty(c)&&jQuery(this._eventObj).bind(c,a[c])}},_Loader:function(){return i?function(a){var b=this._img.width,c=this._img.height;this._img.parentNode.removeChild(this._img);this._vimage=this.createVMLNode("image");
+this._vimage.src=this._img.src;this._vimage.style.height=c+"px";this._vimage.style.width=b+"px";this._vimage.style.position="absolute";this._vimage.style.top="0px";this._vimage.style.left="0px";this._container=this.createVMLNode("group");this._container.style.width=b;this._container.style.height=c;this._container.style.position="absolute";this._container.setAttribute("coordsize",b-1+","+(c-1));this._container.appendChild(this._vimage);this._rootObj.appendChild(this._container);this._rootObj.style.position=
+"relative";this._rootObj.style.width=b+"px";this._rootObj.style.height=c+"px";this._rootObj.setAttribute("id",this._img.getAttribute("id"));this._rootObj.className=this._img.className;this._eventObj=this._rootObj;this._handleRotation(a)}:function(a){this._rootObj.setAttribute("id",this._img.getAttribute("id"));this._rootObj.className=this._img.className;this._width=this._img.width;this._height=this._img.height;this._widthHalf=this._width/2;this._heightHalf=this._height/2;var b=Math.sqrt(this._height*
+this._height+this._width*this._width);this._widthAdd=b-this._width;this._heightAdd=b-this._height;this._widthAddHalf=this._widthAdd/2;this._heightAddHalf=this._heightAdd/2;this._img.parentNode.removeChild(this._img);this._aspectW=(parseInt(this._img.style.width,10)||this._width)/this._img.width;this._aspectH=(parseInt(this._img.style.height,10)||this._height)/this._img.height;this._canvas=document.createElement("canvas");this._canvas.setAttribute("width",this._width);this._canvas.style.position="relative";
+this._canvas.style.left=-this._widthAddHalf+"px";this._canvas.style.top=-this._heightAddHalf+"px";this._canvas.Wilq32=this._rootObj.Wilq32;this._rootObj.appendChild(this._canvas);this._rootObj.style.width=this._width+"px";this._rootObj.style.height=this._height+"px";this._eventObj=this._canvas;this._cnv=this._canvas.getContext("2d");this._handleRotation(a)}}(),_animateStart:function(){this._timer&&clearTimeout(this._timer);this._animateStartTime=+new Date;this._animateStartAngle=this._angle;this._animate()},
+_animate:function(){var a=+new Date,b=a-this._animateStartTime>this._parameters.duration;if(b&&!this._parameters.animatedGif)clearTimeout(this._timer);else{(this._canvas||this._vimage||this._img)&&this._rotate(~~(10*this._parameters.easing(0,a-this._animateStartTime,this._animateStartAngle,this._parameters.animateTo-this._animateStartAngle,this._parameters.duration))/10);this._parameters.step&&this._parameters.step(this._angle);var c=this;this._timer=setTimeout(function(){c._animate.call(c)},10)}this._parameters.callback&&
+b&&(this._angle=this._parameters.animateTo,this._rotate(this._angle),this._parameters.callback.call(this._rootObj))},_rotate:function(){var a=Math.PI/180;return i?function(a){this._angle=a;this._container.style.rotation=a%360+"deg"}:d?function(a){this._angle=a;this._img.style[d]="rotate("+a%360+"deg)"}:function(b){this._angle=b;b=b%360*a;this._canvas.width=this._width+this._widthAdd;this._canvas.height=this._height+this._heightAdd;this._cnv.translate(this._widthAddHalf,this._heightAddHalf);this._cnv.translate(this._widthHalf,
+this._heightHalf);this._cnv.rotate(b);this._cnv.translate(-this._widthHalf,-this._heightHalf);this._cnv.scale(this._aspectW,this._aspectH);this._cnv.drawImage(this._img,0,0)}}()};i&&(Wilq32.PhotoEffect.prototype.createVMLNode=function(){document.createStyleSheet().addRule(".rvml","behavior:url(#default#VML)");try{return!document.namespaces.rvml&&document.namespaces.add("rvml","urn:schemas-microsoft-com:vml"),function(a){return document.createElement("<rvml:"+a+' class="rvml">')}}catch(a){return function(a){return document.createElement("<"+
+a+' xmlns="urn:schemas-microsoft.com:vml" class="rvml">')}}}())})(jQuery);
+;

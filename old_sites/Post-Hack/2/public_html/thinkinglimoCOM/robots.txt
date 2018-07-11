@@ -1,0 +1,16 @@
+# robots.txt for ThinkingLimo.com
+
+User-agent: BadBot
+Disallow: /
+
+
+
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /about-us/terms-conditions/cancellation-policy/
+Disallow: /about-us/terms-conditions/wait-time-policy/
+Disallow: /about-us/terms-conditions/copyright-notice/
+Disallow: /about-us/terms-conditions/privacy-policy/
+
+# end robots.txt  for ThinkingLimo.com

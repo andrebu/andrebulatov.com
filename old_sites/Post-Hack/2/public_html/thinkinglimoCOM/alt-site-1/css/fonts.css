@@ -1,0 +1,138 @@
+@charset "utf-8";
+/* DRiVER CSS Fonts Document */
+
+/* PT SANS */
+@font-face {
+    font-family:'pt_sans_regular';
+    src:url('https://drivr.com/css/fonts/pt_sans/pt_sans_regular-webfont.eot');
+    src:url('fonts/pt_sans/pt_sans_regular-webfont.eot') format('embedded-opentype'),
+        url('fonts/pt_sans/pt_sans_regular-webfont.woff') format('woff'),
+        url('fonts/pt_sans/pt_sans_regular-webfont.ttf') format('truetype'),
+        url('fonts/pt_sans/pt_sans_regular-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'pt_sans_bold';
+    src:url('https://drivr.com/css/fonts/pt_sans/pt_sans_bold-webfont.eot');
+    src:url('fonts/pt_sans/pt_sans_bold-webfont.eot') format('embedded-opentype'),
+        url('fonts/pt_sans/pt_sans_bold-webfont.woff') format('woff'),
+        url('fonts/pt_sans/pt_sans_bold-webfont.ttf') format('truetype'),
+        url('fonts/pt_sans/pt_sans_bold-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+/* AVENIR NEXT */
+@font-face {
+    font-family:'avenirnext_condensed_demibold';
+    src:url('https://drivr.com/css/fonts/avenir_next/avenirnext_condensed_demibold-webfont.eot');
+    src:url('fonts/avenir_next/avenirnext_condensed_demibold-webfont.eot') format('embedded-opentype'),
+        url('fonts/avenir_next/avenirnext_condensed_demibold-webfont.woff') format('woff'),
+        url('fonts/avenir_next/avenirnext_condensed_demibold-webfont.ttf') format('truetype'),
+        url('fonts/avenir_next/avenirnext_condensed_demibold-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'avenirnext_condensed_medium';
+    src:url('https://drivr.com/css/fonts/avenir_next/avenirnext_condensed_medium-webfont.eot');
+    src:url('fonts/avenir_next/avenirnext_condensed_medium-webfont.eot') format('embedded-opentype'),
+        url('fonts/avenir_next/avenirnext_condensed_medium-webfont.woff') format('woff'),
+        url('fonts/avenir_next/avenirnext_condensed_medium-webfont.ttf') format('truetype'),
+        url('fonts/avenir_next/avenirnext_condensed_medium-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'avenirnext_medium';
+    src:url('https://drivr.com/css/fonts/avenir_next/avenirnext_medium-webfont.eot');
+    src:url('fonts/avenir_next/avenirnext_medium-webfont.eot') format('embedded-opentype'),
+        url('fonts/avenir_next/avenirnext_medium-webfont.woff') format('woff'),
+        url('fonts/avenir_next/avenirnext_medium-webfont.ttf') format('truetype'),
+        url('fonts/avenir_next/avenirnext_medium-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'avenirnext_regular';
+    src:url('https://drivr.com/css/fonts/avenir_next/avenirnext_regular-webfont.eot');
+    src:url('fonts/avenir_next/avenirnext_regular-webfont.eot') format('embedded-opentype'),
+        url('fonts/avenir_next/avenirnext_regular-webfont.woff') format('woff'),
+        url('fonts/avenir_next/avenirnext_regular-webfont.ttf') format('truetype'),
+        url('fonts/avenir_next/avenirnext_regular-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'avenirnext_ultralight';
+    src:url('https://drivr.com/css/fonts/avenir_next/avenirnext_ultralight-webfont.eot');
+    src:url('fonts/avenir_next/avenirnext_ultralight-webfont.eot') format('embedded-opentype'),
+        url('fonts/avenir_next/avenirnext_ultralight-webfont.woff') format('woff'),
+        url('fonts/avenir_next/avenirnext_ultralight-webfont.ttf') format('truetype'),
+        url('fonts/avenir_next/avenirnext_ultralight-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'avenirnext_demibold';
+    src:url('https://drivr.com/css/fonts/avenir_next/avenirnext_demibold-webfont.eot');
+    src:url('fonts/avenir_next/avenirnext_demibold-webfont.eot') format('embedded-opentype'),
+        url('fonts/avenir_next/avenirnext_demibold-webfont.woff') format('woff'),
+        url('fonts/avenir_next/avenirnext_demibold-webfont.ttf') format('truetype'),
+        url('fonts/avenir_next/avenirnext_demibold-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'avenirnext_bold';
+    src:url('https://drivr.com/css/fonts/avenir_next/avenirnext_bold-webfont.eot');
+    src:url('fonts/avenir_next/avenirnext_bold-webfont.eot') format('embedded-opentype'),
+        url('fonts/avenir_next/avenirnext_bold-webfont.woff') format('woff'),
+        url('fonts/avenir_next/avenirnext_bold-webfont.ttf') format('truetype'),
+        url('fonts/avenir_next/avenirnext_bold-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+/* TRADE GOTHIC */
+@font-face {
+    font-family:'trade_gothic_light';
+    src:url('https://drivr.com/css/fonts/trade_gothic/trade_gothic_light-webfont.eot');
+    src:url('fonts/trade_gothic/trade_gothic_light-webfont.eot') format('embedded-opentype'),
+        url('fonts/trade_gothic/trade_gothic_light-webfont.woff') format('woff'),
+        url('fonts/trade_gothic/trade_gothic_light-webfont.ttf') format('truetype'),
+        url('fonts/trade_gothic/trade_gothic_light-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'trade_gothic_oblique';
+    src:url('https://drivr.com/css/fonts/trade_gothic/trade_gothic_oblique-webfont.eot');
+    src:url('fonts/trade_gothic/trade_gothic_oblique-webfont.eot') format('embedded-opentype'),
+        url('fonts/trade_gothic/trade_gothic_oblique-webfont.woff') format('woff'),
+        url('fonts/trade_gothic/trade_gothic_oblique-webfont.ttf') format('truetype'),
+        url('fonts/trade_gothic/trade_gothic_oblique-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+/* AVANT GARDE */
+@font-face {
+    font-family:'avant_garde_extra_light';
+    src:url('https://drivr.com/css/fonts/avant_garde/avant_garde_extra_light-webfont.eot');
+    src:url('fonts/avant_garde/avant_garde_extra_light-webfont.eot') format('embedded-opentype'),
+        url('fonts/avant_garde/avant_garde_extra_light-webfont.woff') format('woff'),
+        url('fonts/avant_garde/avant_garde_extra_light-webfont.ttf') format('truetype'),
+        url('fonts/avant_garde/avant_garde_extra_light-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}

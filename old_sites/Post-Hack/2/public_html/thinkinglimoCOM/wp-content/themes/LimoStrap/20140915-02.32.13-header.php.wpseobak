@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+
+		<meta charset="UTF-8">
+		
+<!-- 		SEO Stuff -->
+		<title><?php wp_title(' | ', true, 'right'); ?></title>
+<!-- 	    <meta name="title" content="" /> -->
+<!-- 	    <meta name="description" content="" /> -->
+<!-- 	    <meta name="keywords" content="" /> -->
+		
+	    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	
+	    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css">
+	    
+<!-- 	    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css"> -->
+	
+	    <link rel="shortcut icon" href="http://thinkinglimo.com" />
+	    <link rel="icon" href="http://thinkinglimo.com" />
+	
+	    <?php wp_head(); ?>
+	
+	</head>
+
+
+
+	<body>
+		<header id="header">
+			<nav class="navbar navbar-montere animated navbar-fixed-top navbar-fissa navbar-inverse" role="navigation" style="opacity: 1; top: 0px;">
+				<div class="navbar-header">
+					<a class="navbar-brand animated" href="http://thinkinglimo.com"></a>
+					
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+	
+				<div class="navbar-collapse collapse">
+					<ul id="main-nav" class="nav navbar-nav">
+						<li><a href="http://thinkinglimo.com/about-limo-service/"><span class="line">ABOUT US</span><span class="top_phone">888.961.6638</span></a></li>
+						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  href="http://thinkinglimo.com/fleet.php"><span class="line">FLEET</span></a>
+							<ul class="dropdown-menu">
+								<li><a href="http://thinkinglimo.com/limo-fleet/"><span class="line">limousines</span></a></li>
+								<li><a href="http://thinkinglimo.com/car-sedan-fleet/"><span class="line">sedans</span></a></li>
+								<li><a href="http://thinkinglimo.com/suv-fleet/"><span class="line">suvs</span></a></li>
+								<li><a href="http://thinkinglimo.com/van-fleet/"><span class="line">vans</span></a></li>
+								<li><a href="http://thinkinglimo.com/bus-fleet/"><span class="line">buses</span></a></li>
+							</ul>
+						</li>
+						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  href="index.html#"><span class="line">SERVICES</span></a>
+							<ul class="dropdown-menu">
+								<li><a href="http://thinkinglimo.com/airport-limo-services/"><span class="line">AIRPORT</span></a></li>
+								<li><a href="http://thinkinglimo.com/corporate-limo-services/"><span class="line">CORPORATE</span></a></li>
+								<li><a href="http://thinkinglimo.com/wedding-limo-services/"><span class="line">WEDDINGS</span></a></li>
+								<li><a href="http://thinkinglimo.com/personal-limo-services/"><span class="line">PERSONAL</span></a></li>
+							</ul>
+						</li>
+						<li class="divider"></li>
+						<li><a href="http://thinkinglimo.com/limo-service-rates/"><span class="line">RATES</span></a></li>
+						<li><a href="http://thinkinglimo.com/limo-service-questions/"><span class="line">FAQ</span></a></li>
+						<li>
+							<span class="no_link"><a href="http://thinkinglimo.com/contact-limo-service/"><span class="line">CONTACT US</span></a><a href="http://thinkinglimo.com/limo-service-reservation/"><span class="top_reserve">RESERVE NOW</span></a></span>
+						</li>
+					</ul>
+				</div>
+			</nav><!-- #site-navigation -->
+		</header>
+		
+	<!-- 	<div class = "container" > -->

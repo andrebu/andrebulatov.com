@@ -1,0 +1,289 @@
+@charset "utf-8";
+/* Thinking Limo CSS Fonts Document */
+
+
+
+@font-face {
+    font-family: 'segoe_uilight';
+    src: url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/segoui/segoeuil-webfont.eot');
+    src: url('../fonts/segoui/segoeuil-webfont.eot') format('embedded-opentype'),
+         url('../fonts/segoui/segoeuil-webfont.woff') format('woff'),
+         url('../fonts/segoui/segoeuil-webfont.ttf') format('truetype'),
+         url('../fonts/segoui/segoeuil-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'segoe_uiregular';
+    src: url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/segoui/segoeui-webfont.eot');
+    src: url('../fonts/segoui/segoeui-webfont.eot') format('embedded-opentype'),
+         url('../fonts/segoui/segoeui-webfont.woff') format('woff'),
+         url('../fonts/segoui/segoeui-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'segoe_uibold';
+    src: url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/segoui/segoeuib-webfont.eot');
+    src: url('../fonts/segoui/segoeuib-webfont.eot') format('embedded-opentype'),
+         url('../fonts/segoui/segoeuib-webfont.woff') format('woff'),
+         url('../fonts/segoui/segoeuib-webfont.ttf') format('truetype'),
+         url('../fonts/segoui/segoeuib-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'segoe_uisemibold';
+    src: url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/segoui/seguisb-webfont.eot');
+    src: url('../fonts/segoui/seguisb-webfont.eot') format('embedded-opentype'),
+         url('../fonts/segoui/seguisb-webfont.woff') format('woff'),
+         url('../fonts/segoui/seguisb-webfont.ttf') format('truetype'),
+         url('../fonts/segoui/seguisb-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face{
+	font-family:'brandon_grotesquebold_italic';
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_bld_it-webfont.eot');
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_bld_it-webfont.eot?') format('embedded-opentype'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_bld_it-webfont.woff') format('woff'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_bld_it-webfont.ttf') format('truetype'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_bld_it-webfont.svg') format('svg');
+	font-weight:normal;
+	font-style:normal
+}
+
+@font-face{
+	font-family:'brandon_grotesquebold';
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_bld-webfont.eot');
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_bld-webfont.eot?') format('embedded-opentype'),url('../fonts/brandon-grotesque/brandon_bld-webfont.woff') format('woff'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_bld-webfont.ttf') format('truetype'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_bld-webfont.svg') format('svg');
+	font-weight:normal;
+	font-style:normal
+}
+
+@font-face{
+	font-family:'brandon_grotesqueblack_italic';
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_blk_it-webfont.eot');
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_blk_it-webfont.eot?') format('embedded-opentype'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_blk_it-webfont.woff') format('woff'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_blk_it-webfont.ttf') format('truetype'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_blk_it-webfont.svg') format('svg');
+	font-weight:normal;
+	font-style:normal
+}
+
+@font-face{
+	font-family:'brandon_grotesqueblack';
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_blk-webfont.eot');
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_blk-webfont.eot?') format('embedded-opentype'),url('../fonts/brandon-grotesque/brandon_blk-webfont.woff') format('woff'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_blk-webfont.ttf') format('truetype'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_blk-webfont.svg') format('svg');
+	font-weight:normal;
+	font-style:normal
+}
+
+@font-face{
+	font-family:'brandon_grotesquelight_italic';
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_light_it-webfont.eot');
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_light_it-webfont.eot?') format('embedded-opentype'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_light_it-webfont.woff') format('woff'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_light_it-webfont.ttf') format('truetype'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_light_it-webfont.svg') format('svg');
+	font-weight:normal;
+	font-style:normal
+}
+
+@font-face{
+	font-family:'brandon_grotesquelight';
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_light-webfont.eot');
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_light-webfont.eot?') format('embedded-opentype'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_light-webfont.woff') format('woff'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_light-webfont.ttf') format('truetype'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_light-webfont.svg') format('svg');
+	font-weight:normal;
+	font-style:normal
+}
+
+@font-face{
+	font-family:'brandon_grotesqueMdIt';
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_med_it-webfont.eot');
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_med_it-webfont.eot?') format('embedded-opentype'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_med_it-webfont.woff') format('woff'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_med_it-webfont.ttf') format('truetype'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_med_it-webfont.svg') format('svg');
+	font-weight:normal;
+	font-style:normal
+}
+
+@font-face{
+	font-family:'brandon_grotesquemedium';
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_med-webfont.eot');
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_med-webfont.eot?') format('embedded-opentype'),url('../fonts/brandon-grotesque/brandon_med-webfont.woff') format('woff'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_med-webfont.ttf') format('truetype'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_med-webfont.svg') format('svg');
+	font-weight:normal;
+	font-style:normal
+}
+
+@font-face{
+	font-family:'brandon_grotesqueRgIt';
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_reg_it-webfont.eot');
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_reg_it-webfont.eot?') format('embedded-opentype'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_reg_it-webfont.woff') format('woff'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_reg_it-webfont.ttf') format('truetype'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_reg_it-webfont.svg') format('svg');
+	font-weight:normal;
+	font-style:normal
+}
+
+@font-face{
+	font-family:'brandon_grotesque_regularRg';
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_reg-webfont.eot');
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_reg-webfont.eot?') format('embedded-opentype'),url('../fonts/brandon-grotesque/brandon_reg-webfont.woff') format('woff'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_reg-webfont.ttf') format('truetype'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_reg-webfont.svg') format('svg');
+	font-weight:normal;
+	font-style:normal
+}
+
+@font-face{
+	font-family:'brandon_grotesquethin_italic';
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_thin_it-webfont.eot');
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_thin_it-webfont.eot?') format('embedded-opentype'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_thin_it-webfont.woff') format('woff'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_thin_it-webfont.ttf') format('truetype'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_thin_it-webfont.svg') format('svg');
+	font-weight:normal;
+	font-style:normal
+}
+
+@font-face{
+	font-family:'brandon_grotesquethin';
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_thin-webfont.eot');
+	src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_thin-webfont.eot?') format('embedded-opentype'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_thin-webfont.woff') format('woff'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_thin-webfont.ttf') format('truetype'),url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/brandon-grotesque/brandon_thin-webfont.svg') format('svg');
+	font-weight:normal;
+	font-style:normal
+}
+
+
+
+
+/* Fonts for footer */
+
+/* PT SANS */
+@font-face {
+    font-family:'pt_sans_regular';
+    src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/pt_sans/pt_sans_regular-webfont.eot');
+    src:url('../fonts/pt_sans/pt_sans_regular-webfont.eot') format('embedded-opentype'),
+        url('../fonts/pt_sans/pt_sans_regular-webfont.woff') format('woff'),
+        url('../fonts/pt_sans/pt_sans_regular-webfont.ttf') format('truetype'),
+        url('../fonts/pt_sans/pt_sans_regular-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'pt_sans_bold';
+    src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/pt_sans/pt_sans_bold-webfont.eot');
+    src:url('../fonts/pt_sans/pt_sans_bold-webfont.eot') format('embedded-opentype'),
+        url('../fonts/pt_sans/pt_sans_bold-webfont.woff') format('woff'),
+        url('../fonts/pt_sans/pt_sans_bold-webfont.ttf') format('truetype'),
+        url('../fonts/pt_sans/pt_sans_bold-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+/* AVENIR NEXT */
+@font-face {
+    font-family:'avenirnext_condensed_demibold';
+    src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/avenir_next/avenirnext_condensed_demibold-webfont.eot');
+    src:url('../fonts/avenir_next/avenirnext_condensed_demibold-webfont.eot') format('embedded-opentype'),
+        url('../fonts/avenir_next/avenirnext_condensed_demibold-webfont.woff') format('woff'),
+        url('../fonts/avenir_next/avenirnext_condensed_demibold-webfont.ttf') format('truetype'),
+        url('../fonts/avenir_next/avenirnext_condensed_demibold-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'avenirnext_condensed_medium';
+    src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/avenir_next/avenirnext_condensed_medium-webfont.eot');
+    src:url('../fonts/avenir_next/avenirnext_condensed_medium-webfont.eot') format('embedded-opentype'),
+        url('../fonts/avenir_next/avenirnext_condensed_medium-webfont.woff') format('woff'),
+        url('../fonts/avenir_next/avenirnext_condensed_medium-webfont.ttf') format('truetype'),
+        url('../fonts/avenir_next/avenirnext_condensed_medium-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'avenirnext_medium';
+    src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/avenir_next/avenirnext_medium-webfont.eot');
+    src:url('../fonts/avenir_next/avenirnext_medium-webfont.eot') format('embedded-opentype'),
+        url('../fonts/avenir_next/avenirnext_medium-webfont.woff') format('woff'),
+        url('../fonts/avenir_next/avenirnext_medium-webfont.ttf') format('truetype'),
+        url('../fonts/avenir_next/avenirnext_medium-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'avenirnext_regular';
+    src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/avenir_next/avenirnext_regular-webfont.eot');
+    src:url('../fonts/avenir_next/avenirnext_regular-webfont.eot') format('embedded-opentype'),
+        url('../fonts/avenir_next/avenirnext_regular-webfont.woff') format('woff'),
+        url('../fonts/avenir_next/avenirnext_regular-webfont.ttf') format('truetype'),
+        url('../fonts/avenir_next/avenirnext_regular-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'avenirnext_ultralight';
+    src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/avenir_next/avenirnext_ultralight-webfont.eot');
+    src:url('../fonts/avenir_next/avenirnext_ultralight-webfont.eot') format('embedded-opentype'),
+        url('../fonts/avenir_next/avenirnext_ultralight-webfont.woff') format('woff'),
+        url('../fonts/avenir_next/avenirnext_ultralight-webfont.ttf') format('truetype'),
+        url('../fonts/avenir_next/avenirnext_ultralight-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'avenirnext_demibold';
+    src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/avenir_next/avenirnext_demibold-webfont.eot');
+    src:url('../fonts/avenir_next/avenirnext_demibold-webfont.eot') format('embedded-opentype'),
+        url('../fonts/avenir_next/avenirnext_demibold-webfont.woff') format('woff'),
+        url('../fonts/avenir_next/avenirnext_demibold-webfont.ttf') format('truetype'),
+        url('../fonts/avenir_next/avenirnext_demibold-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'avenirnext_bold';
+    src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/avenir_next/avenirnext_bold-webfont.eot');
+    src:url('../fonts/avenir_next/avenirnext_bold-webfont.eot') format('embedded-opentype'),
+        url('../fonts/avenir_next/avenirnext_bold-webfont.woff') format('woff'),
+        url('../fonts/avenir_next/avenirnext_bold-webfont.ttf') format('truetype'),
+        url('../fonts/avenir_next/avenirnext_bold-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+/* TRADE GOTHIC */
+@font-face {
+    font-family:'trade_gothic_light';
+    src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/trade_gothic/trade_gothic_light-webfont.eot');
+    src:url('../fonts/trade_gothic/trade_gothic_light-webfont.eot') format('embedded-opentype'),
+        url('../fonts/trade_gothic/trade_gothic_light-webfont.woff') format('woff'),
+        url('../fonts/trade_gothic/trade_gothic_light-webfont.ttf') format('truetype'),
+        url('../fonts/trade_gothic/trade_gothic_light-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'trade_gothic_oblique';
+    src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/trade_gothic/trade_gothic_oblique-webfont.eot');
+    src:url('../fonts/trade_gothic/trade_gothic_oblique-webfont.eot') format('embedded-opentype'),
+        url('../fonts/trade_gothic/trade_gothic_oblique-webfont.woff') format('woff'),
+        url('../fonts/trade_gothic/trade_gothic_oblique-webfont.ttf') format('truetype'),
+        url('../fonts/trade_gothic/trade_gothic_oblique-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+/* AVANT GARDE */
+@font-face {
+    font-family:'avant_garde_extra_light';
+    src:url('http://thinkinglimo.com/public_html/wp-content/themes/LimoStrap/assets/fonts/avant_garde/avant_garde_extra_light-webfont.eot');
+    src:url('../fonts/avant_garde/avant_garde_extra_light-webfont.eot') format('embedded-opentype'),
+        url('../fonts/avant_garde/avant_garde_extra_light-webfont.woff') format('woff'),
+        url('../fonts/avant_garde/avant_garde_extra_light-webfont.ttf') format('truetype'),
+        url('../fonts/avant_garde/avant_garde_extra_light-webfont.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
