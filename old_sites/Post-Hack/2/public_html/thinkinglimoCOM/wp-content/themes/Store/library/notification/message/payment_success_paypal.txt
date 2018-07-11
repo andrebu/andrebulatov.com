@@ -1,2 +1,0 @@
-<h4>your payment received successfully and we will ship you order.</h4>
-<p>Thank you for shopping at [#$store_name#].</p>
