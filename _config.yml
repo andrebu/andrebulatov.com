@@ -8,7 +8,9 @@
 # Andre Settings
 source:      "/var/www/pre-html/"
 destination: "/var/www/html/"
-
+# "JEKYLL_ENV=production jekyll build" set in .bashrc, 
+# added via "echo 'export JEKYLL_ENV=production' >> ~/.bashrc"
+# env: production
 
 # Theme Settings
 #
@@ -34,7 +36,7 @@ words_per_minute         : 200
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2" "custom"
   disqus:
-    shortname            : "andrebulatov" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : "andrebu" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -202,7 +204,7 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
+paginate: 10 # amount of posts to show
 paginate_path: /page:num/
 timezone: "America/New_York" # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
@@ -216,6 +218,7 @@ plugins:
   - jemoji
 # Andre plugins
   - jekyll-target-blank
+#  - amp-jekyll
 
 # mimic GitHub Pages with --safe
 whitelist:
