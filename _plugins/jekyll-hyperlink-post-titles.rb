@@ -64,7 +64,10 @@ module Jekyll
 			# html - the html which includes all the content.
 			def process_words(html)
 				page_content = html
-# 				page_content = Nokogiri::HTML::DocumentFragment.parse(html)
+# 				nokogiri_html = Nokogiri::HTML::DocumentFragment.parse(html)
+# 				page_content = nokogiri_html.text
+# 				page_content = Nokogiri::HTML(html).xpath('//text()').inner_text
+				puts page_content
 # 				page_content = page_content.css("page__content")
 				@posts.docs.each do |post|
 					post_title = post.data['title'] || post.name
@@ -74,6 +77,21 @@ module Jekyll
 # 					puts "lc re " + lowercase_title_regex.to_s
 # 					puts "UUPc re " + uppercase_title_regex.to_s
 # 					if post_title != @title
+
+
+# doc.xpath('p/text()').grep(/plane/) do |node|
+#   node_content, *remaining_texts = node.content.split(/(plane)/)
+# 
+#   node.content = node_content
+#   remaining_texts.each do |text|
+#     if text == 'plane' 
+#       node = node.add_next_sibling('<a href="/some/url">plane</a>').last
+#     else
+#       node = node.add_next_sibling(text).last
+#     end
+#   end
+#   break # Since first instance of Post Title has been replaced 
+# end
 
 
 						if lowercase_title_regex =~ page_content
@@ -99,7 +117,7 @@ module Jekyll
 						end
 # 					end
 				end
-# 				page_content.to_html
+# 				nokogiri_html.to_html
 				page_content
 			end
 		end
