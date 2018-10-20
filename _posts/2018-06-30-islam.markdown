@@ -4,7 +4,7 @@ title:  "Islam"
 excerpt: "My definitive thoughts on Islam"
 date:   2018-06-30 03:33:57 +0000
 categories: 
-- My Thoughts On
+- blog
 tags: 
 - islam 
 - religion 
