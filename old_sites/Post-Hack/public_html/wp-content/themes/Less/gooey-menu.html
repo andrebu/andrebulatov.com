@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<head>
+	<style>
+		/* SVG Nav Navigation */
+		.site-nav { 
+			display: block;
+			float: left;
+			position: fixed;
+			left: -91px;
+			top: 2px; 
+			z-index: 10; 
+		} 
+		.site-nav i {
+			cursor: pointer; 
+		} 
+		.menu {
+			-webkit-filter: url("#goo");
+			-moz-filter: url("#goo");
+			-o-filter: url("#goo");
+			filter: url("#goo");
+		}
+		.menu {
+			position: absolute;
+			left: 50%;
+			margin-left: -190px;
+			padding-top: 20px;
+			padding-left: 190px;
+			width: 380px;
+			height: 250px;
+			box-sizing: border-box;
+		/* 	font-size: 20px; */
+			text-align: left;
+		}
+		.menu-open {
+			display: none;
+		}
+		.menu-item, 
+		.menu-open-button {
+			background: #e91e63;
+			border-radius: 100%;
+			width: 50px;
+			height: 50px;
+			margin-left: -40px;
+			position: absolute;
+			top: 20px;
+			color: white;
+			text-align: center;
+			line-height: 50px;
+			-webkit-transform: translate3d(0, 0, 0);
+			-moz-transform: translate3d(0, 0, 0);
+			-o-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+			-webkit-transition: -webkit-transform ease-out 200ms;
+			-moz-transition: -webkit-transform ease-out 200ms;
+			-o-transition: -webkit-transform ease-out 200ms;
+			transition: transform ease-out 200ms; 
+			-webkit-box-shadow: 0px 0px 13px 7px rgba(0,0,0,0.37);
+			-moz-box-shadow: 0px 0px 13px 7px rgba(0,0,0,0.37); 
+			-o-box-shadow: 0px 0px 13px 7px rgba(0,0,0,0.37); 
+			box-shadow: 0px 0px 13px 7px rgba(0,0,0,0.37); 
+		}
+		a.menu-item {
+			border: none; 
+		}
+		.menu-item:hover, 
+		.menu-item:focus {
+			background: #fff;
+			color: #e91e63;
+		}
+		.menu-open-button {
+			z-index: 2;
+			-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+			-moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+			-o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+			transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+			-webkit-transition-duration: 400ms;
+			-moz-transition-duration: 400ms;
+			-o-transition-duration: 400ms;
+			transition-duration: 400ms;
+			-webkit-transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+			-moz-transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+			-o-transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+			transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+			cursor: pointer;
+		}
+		.menu-open-button:hover {
+			-webkit-transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+			-moz-transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+			-o-transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+			transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+		}
+		.hamburger {
+			width: 25px;
+			height: 3px;
+			background: white;
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -12.5px;
+			margin-top: -1.5px;
+			-webkit-transition: -webkit-transform 200ms;
+			-moz-transition: -webkit-transform 200ms;
+			-o-transition: -webkit-transform 200ms;
+			transition: transform 200ms;
+			cursor: pointer; 
+		}
+		.hamburger-1 {
+			-webkit-transform: translate3d(0, -8px, 0);
+			-moz-transform: translate3d(0, -8px, 0);
+			-o-transform: translate3d(0, -8px, 0);
+			transform: translate3d(0, -8px, 0);
+		}
+		.hamburger-2 {
+			-webkit-transform: translate3d(0, 0, 0);
+			-moz-transform: translate3d(0, 0, 0);
+			-o-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+		}
+		.hamburger-3 {
+			-webkit-transform: translate3d(0, 8px, 0);
+			-moz-transform: translate3d(0, 8px, 0);
+			-o-transform: translate3d(0, 8px, 0);
+			transform: translate3d(0, 8px, 0);
+		}
+		.menu-item:nth-child(3) {
+			-webkit-transition-duration: 180ms;
+			-moz-transition-duration: 180ms;
+			-o-transition-duration: 180ms;
+			transition-duration: 180ms;
+		}
+		.menu-item:nth-child(4) {
+			-webkit-transition-duration: 180ms;
+			transition-duration: 180ms;
+		}
+		.menu-item:nth-child(5) {
+			-webkit-transition-duration: 180ms;
+			transition-duration: 180ms;
+		}
+		.menu-item:nth-child(6) {
+			-webkit-transition-duration: 180ms;
+			transition-duration: 180ms;
+		}
+		.menu-item:nth-child(7) {
+			-webkit-transition-duration: 180ms;
+			transition-duration: 180ms;
+		}
+		.menu-item:nth-child(8) {
+			-webkit-transition-duration: 180ms;
+			transition-duration: 180ms;
+		}
+		svg:not(:root) {
+			overflow: hidden;
+		}
+		/* SVG Nav navigation button when clicked */
+		.menu-open:checked + .menu-open-button {
+			-webkit-transition-timing-function: linear;
+			-moz-transition-timing-function: linear;
+			-o-transition-timing-function: linear;
+			transition-timing-function: linear;
+			-webkit-transition-duration: 200ms;
+			-moz-transition-duration: 200ms;
+			-o-transition-duration: 200ms;
+			transition-duration: 200ms;
+			-webkit-transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+			-moz-transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+			-o-transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+			transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+		}
+		.menu-open:checked + .menu-open-button .hamburger-1 {
+			-webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+			-moz-transform: translate3d(0, 0, 0) rotate(45deg);
+			-o-transform: translate3d(0, 0, 0) rotate(45deg);
+			transform: translate3d(0, 0, 0) rotate(45deg);
+		}
+		.menu-open:checked + .menu-open-button .hamburger-2 {
+			-webkit-transform: translate3d(0, 0, 0) scale(0.1, 1);
+			-moz-transform: translate3d(0, 0, 0) scale(0.1, 1);
+			-o-transform: translate3d(0, 0, 0) scale(0.1, 1);
+			transform: translate3d(0, 0, 0) scale(0.1, 1);
+		}
+		.menu-open:checked + .menu-open-button .hamburger-3 {
+			-webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
+			-moz-transform: translate3d(0, 0, 0) rotate(-45deg);
+			-o-transform: translate3d(0, 0, 0) rotate(-45deg);
+			transform: translate3d(0, 0, 0) rotate(-45deg);
+		}
+		.menu-open:checked ~ .menu-item:nth-child(3) {
+			-webkit-transition-duration: 280ms;
+			-moz-transition-duration: 280ms;
+			-o-transition-duration: 280ms;
+			transition-duration: 280ms;
+			-webkit-transform: translate3d(62.9466px, -13.47586px, 0);
+			-moz-transform: translate3d(62.9466px, -13.47586px, 0);
+			-o-transform: translate3d(62.9466px, -13.47586px, 0);
+			transform: translate3d(62.9466px, -13.47586px, 0);
+		}
+		.menu-open:checked ~ .menu-item:nth-child(4) {
+			-webkit-transition-duration: 380ms;
+			transition-duration: 380ms;
+			-webkit-transform: translate3d(67.9466px, 54.47586px, 0);
+			transform: translate3d(67.9466px, 54.47586px, 0);
+		}
+		.menu-open:checked ~ .menu-item:nth-child(5) {
+			-webkit-transition-duration: 480ms;
+			transition-duration: 480ms;
+			-webkit-transform: translate3d(0.08361px, 64.99997px, 0);
+			transform: translate3d(0.08361px, 64.99997px, 0);
+		}
+		.menu-open:checked ~ .menu-item:nth-child(6) {
+			-webkit-transition-duration: 580ms;
+			transition-duration: 580ms;
+			-webkit-transform: translate3d(-90.86291px, 52.62064px, 0);
+			transform: translate3d(-90.86291px, 52.62064px, 0);
+		}
+		.menu-open:checked ~ .menu-item:nth-child(7) {
+			-webkit-transition-duration: 680ms;
+			transition-duration: 680ms;
+			-webkit-transform: translate3d(-91.03006px, -52.33095px, 0);
+			transform: translate3d(-91.03006px, -52.33095px, 0);
+		}
+		.menu-open:checked ~ .menu-item:nth-child(8) {
+			-webkit-transition-duration: 180ms;
+			-moz-transition-duration: 180ms;
+			-o-transition-duration: 180ms;
+			transition-duration: 180ms;
+			-webkit-transform: translate3d(0.08361px, -104.99997px, 0);
+			-moz-transform: translate3d(0.08361px, -104.99997px, 0);
+			-o-transform: translate3d(0.08361px, -104.99997px, 0);
+			transform: translate3d(0.08361px, -104.99997px, 0);
+		}
+	</style>
+</head>
+
+
+<body>
+	
+	<div class="site-nav">
+	<nav class="menu">
+	  <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+	  <label class="menu-open-button" for="menu-open">
+	    <span class="hamburger hamburger-1"></span>
+	    <span class="hamburger hamburger-2"></span>
+	    <span class="hamburger hamburger-3"></span>
+	  </label>
+	  
+	  <a href="/work/" class="menu-item"> <i class="fa fa-code"></i>/<i class="fa fa-puzzle-piece"></i> </a>
+	  <a href="/blog/" class="menu-item"> <i class="fa fa-newspaper-o"></i> </a>
+	  <a href="/about/" class="menu-item"> <i class="fa fa-user"></i> </a>
+<!--
+	  <a href="#" class="menu-item"> <i class="fa fa-home"></i> </a>
+	  <a href="#" class="menu-item"> <i class="fa fa-cog"></i> </a>
+	  <a href="#" class="menu-item"> <i class="fa fa-ellipsis-h"></i> </a>
+-->	  
+	</nav>
+	
+	<!-- filters -->
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	    <defs>
+	      <filter id="shadowed-goo">
+	          
+	          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+	          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+	          <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+	          <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
+	          <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+	          <feComposite in2="shadow" in="goo" result="goo" />
+	          <feComposite in2="goo" in="SourceGraphic" result="mix" />
+	      </filter>
+	      <filter id="goo">
+	          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+	          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+	          <feComposite in2="goo" in="SourceGraphic" result="mix" />
+	      </filter>
+	    </defs>
+	</svg>
+
+</body>
+
+
+</html>

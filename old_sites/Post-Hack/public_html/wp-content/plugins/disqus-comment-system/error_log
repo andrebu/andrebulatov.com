@@ -1,0 +1,6 @@
+[06-Jul-2015 07:20:31 America/Chicago] PHP Fatal error:  Call to undefined function get_post_meta() in /home2/iamandre/public_html/wp-content/plugins/disqus-comment-system/comments.php on line 3
+[04-Aug-2015 07:20:27 America/Chicago] PHP Fatal error:  Call to undefined function get_post_meta() in /home2/iamandre/public_html/wp-content/plugins/disqus-comment-system/comments.php on line 3
+[11-Aug-2015 10:14:42 America/Chicago] PHP Fatal error:  Call to undefined function get_post_meta() in /home2/iamandre/public_html/wp-content/plugins/disqus-comment-system/comments.php on line 3
+[28-Aug-2015 17:26:07 America/Chicago] PHP Fatal error:  Call to undefined function get_post_meta() in /home2/iamandre/public_html/wp-content/plugins/disqus-comment-system/comments.php on line 3
+[22-Sep-2015 04:36:33 America/Chicago] PHP Fatal error:  Call to undefined function get_post_meta() in /home2/iamandre/public_html/wp-content/plugins/disqus-comment-system/comments.php on line 3
+[12-Oct-2015 04:47:22 America/Chicago] PHP Fatal error:  Call to undefined function get_post_meta() in /home2/iamandre/public_html/wp-content/plugins/disqus-comment-system/comments.php on line 3

@@ -1,0 +1,1164 @@
+html,body,#mpc {
+	width:100%;
+/* 	height:100%; */
+	margin:0;
+	padding:0;
+	background:#000;
+	overflow:hidden;
+	color:#eee;
+/* font:normal 1em serif; */
+}
+
+#mpc {
+	background-image:-moz-linear-gradient(100% 100% 90deg,#111,#000);
+	background-image:-webkit-gradient(linear,0% 0%,0% 100%,from(#000),to(#050505));
+}
+
+@font-face {
+	font-family:'Goudy Bookletter 1911';
+	font-style:normal;
+	font-weight:400;
+	src:local('Goudy Bookletter 1911'),local(GoudyBookletter1911),url(fonts/GoudyBookletter1911.ttf) format("woff");
+}
+
+@font-face {
+	font-family:'Droid Sans';
+	font-style:normal;
+	font-weight:400;
+	src:local('Droid Sans'),local(DroidSans),url(fonts/DroidSans.ttf) format("woff");
+}
+
+@font-face {
+	font-family:'Droid Serif';
+	font-style:normal;
+	font-weight:400;
+	src:local('Droid Serif'),local(DroidSerif),url(fonts/DroidSerif.ttf) format("woff");
+}
+
+#intro-wrapper {
+	position:absolute;
+	background:#000;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:999999;
+	text-align:center;
+	padding:0;
+	margin:0;
+}
+
+#intro {
+	margin:50px 0 0;
+	font:25em sans-serif;
+	color:#fff;
+	width:300px;
+	height:300px;
+	display:none;
+}
+
+#bg,#wallpaper {
+	z-index:1;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+#wallpaper {
+	z-index:0;
+}
+
+#mpc .container {
+	margin: auto;
+	max-width: inherit;
+	padding: 0;
+}
+.container {
+/*
+	visibility:hidden;
+	position:absolute;
+*/
+	z-index:2;
+	width:100%;
+	height:100%;
+	margin:auto;
+	overflow:hidden;
+	position: relative;
+}
+
+.boardwrapper {
+	width:0;
+	height:0;
+}
+
+.board {
+	width:100%;
+	height:100%;
+}
+
+.board .squares {
+	width:100%;
+	height:100%;
+}
+
+.board .rank {
+	height:12.5%;
+}
+
+.board .rank .square {
+	float:left;
+	width:12.5%;
+	height:100%;
+}
+
+.board .rank .square.hl {
+	background:#fff0bc;
+}
+
+.board .rank .square .piece {
+	display:block;
+	width:100%;
+	height:100%;
+	-moz-user-select:none;
+	-webkit-user-select:none;
+	-webkit-user-drag:none;
+}
+
+.board .rank .square .piece.selected {
+	background:#ff3232;
+}
+
+.board .rank .square .piece.dragging {
+	position:absolute;
+	cursor:pointer;
+}
+
+.board .rank .square.lastmove-from {
+	background:#148c8c;
+}
+
+.board .rank .square.lastmove-to {
+	background:#14aa3c;
+}
+
+.sidebar {
+	margin:auto;
+	color:#fff;
+	font:.8em 'Droid Sans',sans-serif;
+}
+
+.sidebar .green {
+	color:#0b2;
+}
+
+.sidebar .red {
+	color:#f01;
+}
+
+.sidebar .blue {
+	color:#02b;
+}
+
+.sidebar .widget {
+}
+
+.sidebar .widget label {
+	color:#c80;
+}
+
+.sidebar .widget .content {
+	overflow:hidden;
+}
+
+.sidebar .footer {
+	font:.8em sans-serif;
+	color:#666;
+	text-align:center;
+}
+
+.sidebar .footer a {
+	color:#888;
+	text-decoration:none;
+}
+
+.sidebar .footer a:hover {
+	color:#aaa;
+}
+
+.sidebar .replay-buttons,.sidebar .replay-title {
+	display:none;
+}
+
+.replay .sidebar .replay-buttons,.replay .sidebar .replay-title {
+	display:block;
+}
+
+.replay .sidebar .gameplay-buttons {
+	display:none;
+}
+
+.sidebar .replay-buttons {
+	margin-top:10px;
+}
+
+.replay .replay-buttons .replay {
+	display:none;
+}
+
+.replay-paused .replay-buttons .replay {
+	display:inline;
+}
+
+.replay-paused .replay-buttons .pause {
+	display:none;
+}
+
+.replay-title span {
+	display:inline;
+	padding:5px;
+	margin-bottom:5px;
+	font:.8em Arial,sans-serif;
+	background:rgba(200,0,0,0.3);
+	text-transform:uppercase;
+	color:#fff;
+}
+
+.sidebar .buttons {
+	display:none;
+	text-align:center;
+}
+
+.sidebar .buttons .button {
+	padding:3px 5px;
+	background:#111;
+	border:1px outset #222;
+	color:#eee;
+	text-decoration:none;
+	outline:none;
+	color:#eee;
+}
+
+.sidebar .buttons .button.red {
+	background:#140a00;
+	border-color:#1e0a00;
+}
+
+.sidebar .buttons .button.green {
+	background:#001400;
+	border-color:#001e00;
+}
+
+.sidebar .buttons .button.blue {
+	background:#001114;
+	border-color:#00141e;
+}
+
+.sidebar .buttons .button:hover {
+	background:#c86400;
+	border-color:#e68c00;
+	color:#fff;
+}
+
+.playing .sidebar .buttons {
+	display:block;
+}
+
+.sidebar .photographer label {
+	display:inline;
+	color:#666;
+}
+
+.sidebar .photographer .content {
+	display:inline;
+	color:#666;
+}
+
+.session-info {
+	overflow:hidden;
+	display:none;
+}
+
+.playing .session-info {
+	display:block;
+}
+
+.logs {
+}
+
+.logs ul,.moves ul {
+	list-style:none;
+	margin:5px 0;
+	padding:0;
+}
+
+.logs ul li,.moves ul li {
+	font:.85em sans-serif;
+	color:#ccc;
+	margin:0;
+	padding:0;
+}
+
+.logs .date,.moves .date {
+	color:#666;
+	margin-left:2px;
+}
+
+.capturetable {
+}
+
+.capturetable . {
+}
+
+.capturetable .content {
+	color:#eee;
+	font:2em sans-serif;
+}
+
+.directive {
+	display:none;
+}
+
+.playing .directive {
+	display:block;
+}
+
+.player.widget {
+	font-weight:700;
+}
+
+.player.widget.next {
+	background:rgba(255,255,255,0.07);
+}
+
+.player.widget label {
+	color:#fff;
+}
+
+.player.widget .clock {
+	padding-left:2px;
+	color:#ff0;
+}
+
+.moves ul {
+	list-style:upper-roman inside;
+}
+
+.moves ul li {
+	color:#666;
+}
+
+.moves .it {
+	display:none;
+}
+
+.moves .san {
+	color:#ccc;
+}
+
+.container.horizontal .boardwrapper {
+	float:left;
+}
+
+.container.horizontal .sidebar {
+	float:left;
+}
+
+.container.horizontal .sidebar .inner {
+	float:left;
+}
+
+.container.horizontal .sidebar .widget {
+	padding:5px;
+}
+
+.container.horizontal .sidebar .status,.container.horizontal .sidebar .session-info,.container.horizontal .sidebar .buttons {
+	margin:0 10px 10px;
+}
+
+.container.horizontal .sidebar .buttons {
+	padding:0 0 10px;
+	text-align:left;
+}
+
+.container.horizontal .sidebar .footer {
+	text-align:left;
+	padding-left:10px;
+}
+
+.container.vertical .sidebar {
+	margin:0 auto;
+}
+
+.container.vertical .sidebar .widget {
+	padding:5px 0;
+}
+
+.container.vertical .sidebar .status {
+	float:left;
+	padding-right:3px;
+}
+
+.container.vertical .sidebar .session-info {
+	float:left;
+	border:0;
+}
+
+.container.vertical .sidebar .session-info .capturetable {
+	padding-bottom:0;
+}
+
+.container.vertical .sidebar .session-info .moves {
+	padding:0;
+	padding-right:2px;
+}
+
+.container.vertical .sidebar .session-info .moves ul {
+	list-style:none;
+}
+
+.container.vertical .sidebar .session-info .moves .it {
+	display:inline;
+}
+
+.container.vertical .sidebar .session-info .moves ul li {
+	float:left;
+	margin-left:5px;
+}
+
+.container.vertical .sidebar .session-info .logs {
+	display:none;
+	float:right;
+	overflow:hidden;
+	padding:0;
+}
+
+.container.vertical .sidebar .buttons {
+	float:right;
+	padding:5px 0 5px 3px;
+}
+
+.container.vertical .sidebar .buttons .button {
+	display:block;
+	margin:0 3px 3px 0;
+	background:#0c0c0c;
+	border-color:#111;
+}
+
+.container.vertical .sidebar .buttons .button:hover {
+	background:#111;
+	border-color:#222;
+}
+
+.container.vertical .sidebar .buttons .button:active {
+	background:#222;
+}
+
+.container.micro .sidebar {
+	margin:0 auto;
+}
+
+.container.micro .sidebar .status {
+	float:left;
+	padding:5px;
+}
+
+.container.micro .sidebar .session-info {
+	display:none;
+}
+
+.container.micro .sidebar .status .widget {
+	display:inline;
+}
+
+.container.micro .sidebar .footer {
+	display:none;
+}
+
+.container.micro .sidebar .buttons {
+	float:right;
+	border:0;
+	padding:5px;
+}
+
+.container.micro .sidebar .button {
+	background:transparent;
+	color:#fc0;
+}
+
+.container.micro .sidebar .button:hover {
+	color:#f30;
+	border-color:#111;
+}
+
+.sidebar.wide .date {
+	display:inline;
+}
+
+.sidebar.short .date {
+	display:none;
+}
+
+.sidebar.short .moves ul li {
+	display:inline;
+	margin-left:2px;
+}
+
+.sidebar.short .moves ul {
+	list-style:none;
+}
+
+.sidebar.short .moves .it {
+	display:inline;
+}
+
+.sidebar.short .logs {
+	display:none;
+}
+
+#dialogbox {
+	position:absolute;
+	max-width:75%;
+	z-index:5;
+	background:#000102;
+	padding:10px;
+	font:.95em 'Droid Sans',sans-serif;
+	color:#fff;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	opacity:.97;
+	filter:alpha(opacity=97);
+}
+
+#dialogbox .symbol {
+	display:table-cell;
+	width:30px;
+	pointer-events:none;
+	text-align:center;
+	padding-right:10px;
+	color:#fff;
+	font:4em serif;
+}
+
+#dialogbox .content {
+	display:table-cell;
+	vertical-align:top;
+}
+
+#dialogbox .content .msg {
+	font-size:.9em;
+}
+
+#dialogbox .content .buttons {
+	padding-top:10px;
+	text-align:right;
+}
+
+#dialogbox .content .buttons .button {
+	border:1px outset #141e1e;
+	outline:none;
+	font:bold .85em arial,sans-serif;
+	padding:3px 7px;
+	background:#050f0f;
+	color:#fff;
+	text-decoration:none;
+}
+
+#dialogbox .content .buttons .victory {
+	background:#e10500;
+	border-color:#ff1e00;
+}
+
+#dialogbox .content .buttons .button:active {
+	background:#c20;
+	border-color:#f41;
+}
+
+#dialogbox .content .buttons .button:hover {
+	background:#e17800;
+	border-color:#ff9632;
+	color:#fff;
+}
+
+#dialogbox .content .buttons .social {
+	background:#050a19;
+}
+
+#dialogbox .content .buttons .social:hover {
+	background:#e10500;
+	border-color:#ff1e00;
+}
+
+#dialogbox .content .buttons .donate {
+	background:#c80a0f!important;
+}
+
+#dialogbox .content .buttons .donate:hover {
+	background:#e10500;
+	border-color:#ff1e00;
+}
+
+#dialogbox .content .msg h2 {
+	font:1.9em 'Goudy Bookletter 1911',serif;
+	margin:0 0 5px;
+}
+
+#dialogbox.intro {
+	pointer-events:none;
+	font-size:1em;
+}
+
+#dialogbox.intro .msg p {
+	padding:0;
+	margin:0 0 10px;
+	font-size:.95em;
+	color:#eee;
+}
+
+#dialogbox.intro .symbol {
+	font:6.5em sans-serif;
+	color:#fff;
+}
+
+#dialogbox.intro .option {
+	display:block;
+	background:#000709;
+	border:1px solid #020911;
+	margin:5px 0;
+	color:#ccc;
+	text-decoration:none;
+	outline:none;
+	pointer-events:auto;
+}
+
+#dialogbox.intro .option span {
+	display:block;
+	padding:10px;
+	border:1px solid #000305;
+}
+
+#dialogbox.intro .option h3 {
+	margin:0 0 5px;
+	padding:0;
+	color:#eee;
+	font:1.5em 'Droid Serif',serif;
+}
+
+#dialogbox.intro .option h3 label {
+	color:#001719;
+	margin-left:5px;
+	font-style:italic;
+}
+
+#dialogbox,.mobile #dialogbox.intro {
+	opacity:.88;
+}
+
+#dialogbox.intro .option,.mobile #dialogbox.intro .option {
+	background-color:#000709;
+	border-color:#021113;
+}
+
+.kindle #dialogbox {
+	opacity:1;
+}
+
+.kindle #dialogbox.intro .option {
+	background-color:#111;
+	border:0;
+}
+
+#dialogbox.intro .option .description {
+	font-size:.8em;
+}
+
+#dialogbox.intro .option:hover span {
+	border-color:#080200;
+}
+
+#dialogbox.intro .option:hover {
+	background:#150400;
+	border-color:#220500;
+}
+
+#dialogbox.intro .option:active span {
+	border-color:#000201;
+}
+
+#dialogbox.intro .option:active {
+	background:#000804;
+	border-color:#001105;
+}
+
+#dialogbox.intro .option:hover h3 label {
+	color:#251400;
+}
+
+#dialogbox.intro .option .timer-placeholder {
+	color:#fa0;
+	padding-left:3px;
+	display:none;
+}
+
+#dialogbox.intro .option:hover .timer-placeholder {
+	display:inline;
+}
+
+#dialogbox.intro .buttons {
+	margin-top:10px;
+	border-top:1px solid #111;
+	pointer-events:auto;
+}
+
+#dialogbox.intro .buttons .button {
+	font:bold .8em Arial,sans-serif;
+	background:transparent;
+	border:none;
+	color:#fff;
+	letter-spacing:0;
+}
+
+#dialogbox.intro .buttons .button:hover {
+	background:#0f050a;
+	border:none;
+}
+
+#dialogbox.intro .buttons .social {
+	font-weight:400;
+	padding:3px 5px;
+	background:transparent;
+	border:none;
+	letter-spacing:0;
+	color:#aaa;
+}
+
+#dialogbox.intro .buttons .social:hover {
+	background:transparent;
+	color:#fe6;
+}
+
+#dialogbox.intro .buttons .chrome,#dialogbox.intro .buttons .chrome:hover {
+	border-right:1px solid #111;
+	padding-right:10px;
+}
+
+#dialogbox.intro .options {
+	color:#888;
+	text-align:center;
+	margin:10px 0 0;
+}
+
+#dialogbox.intro .timer-container {
+	float:right;
+	padding-top:4px;
+}
+
+#dialogbox.intro .nickname-container {
+	float:left;
+}
+
+#dialogbox.intro .options input,#dialogbox.intro .options select {
+	font:1em 'Droid Serif',serif;
+	pointer-events:auto;
+}
+
+#dialogbox.intro .options .nickname {
+	background:#131313;
+	color:#fff;
+	border:0;
+	outline:none;
+	width:100px;
+	padding:5px 10px;
+	border-radius:2px;
+	-moz-border-radius:2px;
+}
+
+#dialogbox.nickname.prompt .nicknamebox {
+	display:block;
+	width:250px;
+	background:#080808;
+	color:#fff;
+	border:#111 inset 1px;
+	letter-spacing:1px;
+	font-size:.7em;
+	padding:5px;
+	margin:5px 0 0;
+	font-size:1.1em;
+}
+
+#dialogbox.nickname.prompt .footnote {
+	font-size:.8em;
+	color:#666;
+}
+
+#dialogbox.intro .option,#dialogbox.intro .option span {
+	border-radius:2px;
+	-moz-border-radius:2px;
+}
+
+#dialogbox.intro .news {
+	font-size:.8em;
+	padding:5px;
+}
+
+#dialogbox.intro .news h2 {
+	margin:10px 0 0;
+}
+
+#dialogbox.intro .news ul {
+	list-style:lower-greek;
+	padding:2px 20px;
+	margin:0;
+}
+
+#dialogbox.intro .news li {
+	margin-bottom:2px;
+}
+
+#dialogbox.intro .news a {
+	pointer-events:auto;
+	color:#fadc96;
+	text-decoration:none;
+}
+
+#dialogbox.intro .news a:hover {
+	color:#fac896;
+	text-decoration:underline;
+}
+
+#dialogbox.intro .news .date {
+	color:#aaa;
+	padding:2px 0;
+}
+
+#dialogbox.about .msg {
+	pointer-events:auto;
+}
+
+#dialogbox.about .faq {
+	font-size:1em;
+	color:#ccc;
+}
+
+#dialogbox.about .faq h4 {
+	font:1.2em 'Droid Sans',sans;
+	margin:15px 0 5px;
+	color:#fff;
+}
+
+#dialogbox.about a {
+	color:#c53;
+}
+
+#dialogbox.about a:hover {
+	text-decoration:none;
+}
+
+#dialogbox-curtain {
+	z-index:4;
+	position:absolute;
+	width:0;
+	height:0;
+	opacity:.2;
+	filter:alpha(opacity=20);
+	background:#fff;
+}
+
+#dialogbox.prompt .content .description {
+	margin-bottom:5px;
+}
+
+#dialogbox.prompt .content .textbox {
+	border:1px inset #111;
+	background:#333;
+	padding:3px;
+	font:.8em sans-serif;
+	color:#fff;
+}
+
+#dialogbox input.urlbox {
+	display:block;
+	width:100%;
+	padding:2px 0;
+	background:transparent;
+	border:0;
+	color:#fa0;
+	font:.95em 'Droid Sans',sans-serif;
+}
+
+#dialogbox input.urlbox:hover {
+	color:#f30;
+}
+
+.promotionPicker {
+	margin:10px auto;
+}
+
+.promotionPicker .piece {
+	float:left;
+	cursor:pointer;
+	background:#d18b47;
+	margin:10px 2px;
+}
+
+.promotionPicker .piece:hover {
+	background:#ffce9e;
+}
+
+.promotionPicker .piece img {
+	width:100%;
+	height:100%;
+}
+
+.pgn {
+	margin-top:5px;
+	background:#050505;
+	padding:5px;
+	font:.7em sans-serif;
+}
+
+.session-overview {
+}
+
+.session-overview .date {
+	font-size:.7em;
+	color:#666;
+}
+
+.session-overview h1 {
+	font:1.5em 'Droid Serif';
+	margin-bottom:0;
+}
+
+.session-overview h3 {
+	margin:5px 0;
+	font:1em 'Droid Sans',sans-serif;
+	color:#f30;
+}
+
+.session-overview .captures-content,.session-overview .moves-content,.session-overview .pgn-content {
+	padding:5px;
+	font-size:.8em;
+	background:#050505;
+}
+
+.session-overview .captures,.session-overview .moves,.session-overview .pgn-output {
+	margin:1px;
+}
+
+.session-overview .captures-content {
+	font:2em sans-serif;
+}
+
+.session-overview .left {
+	float:left;
+	width:35%;
+}
+
+.session-overview .right {
+	float:right;
+	width:65%;
+}
+
+.session-overview .end-message {
+	font-size:1.2em;
+	margin:10px 0;
+	padding:5px;
+	background:#1e0500;
+	text-align:center;
+}
+
+.dialogbox.photographers .msg {
+	height:400px;
+	overflow-y:scroll;
+}
+
+.photographer {
+	pointer-events:auto;
+}
+
+.photographer h4 {
+	font:normal 1.3em "Droid Serif",serif;
+	color:#ffff9b;
+	margin-bottom:3px;
+	padding-bottom:3px;
+}
+
+.photographer h4 span {
+	background:#0f050a;
+	padding:5px 3px;
+}
+
+.photographer .info {
+	padding-bottom:5px;
+	font-size:.8em;
+	color:#ccc;
+}
+
+.photographer .info a {
+	color:#ffeb9b;
+	text-decoration:none;
+}
+
+.photographer .info a:hover {
+	color:#ffe1c8;
+	text-decoration:underline;
+}
+
+.hor-flip {
+	-moz-transform:scale(-1,1);
+	-webkit-transform:scale(-1,1);
+	-o-transform:scale(-1,1);
+	transform:scale(-1,1);
+	filter:FlipH;
+}
+
+.testbox {
+	position:absolute;
+	top:-99999px;
+	left:-999999px;
+}
+
+.clean,.clear {
+	clear:both;
+}
+
+/* mobile */
+.mobile-only {
+	display:none;
+}
+
+.mobile .mobile-only {
+	display:block;
+}
+
+.mobile .mobile-only-inline {
+	display:inline;
+}
+
+.mobile {
+	font:normal 1.3em serif;
+}
+
+.mobile #dialogbox {
+	opacity:.9;
+	font-size:1.1em;
+}
+
+.mobile #dialogbox.intro .option {
+	background-color:#001214;
+	border-color:#021113;
+}
+
+.mobile #dialogbox.intro .option h3 {
+	margin:0 0 5px;
+	padding:0;
+	color:#eee;
+	font:1.1em 'Droid Serif',serif;
+}
+
+.mobile #dialogbox.intro .option span {
+	border-color:#000507;
+}
+
+.mobile #dialogbox.intro .option:hover span {
+	border-color:#100400;
+}
+
+.mobile #dialogbox.intro .option:hover {
+	background:#170600;
+	border-color:#240700;
+}
+
+.mobile #dialogbox.intro .option:active span {
+	border-color:#000403;
+}
+
+.mobile #dialogbox.intro .option:active {
+	background:#001006;
+	border-color:#001307;
+}
+
+.mobile #dialogbox.intro .option:hover h3 label {
+	color:#271600;
+}
+
+.mobile #dialogbox .content .buttons .button {
+	padding:6px 10px;
+}
+
+.mobile #dialogbox.intro h2 {
+	display:none;
+}
+
+.mobile #dialogbox.intro p {
+	display:none;
+}
+
+.mobile #dialogbox.intro .news {
+	display:none;
+}
+
+.mobile #dialogbox.intro #nickname {
+	display:none;
+}
+
+.mobile #dialogbox.intro .buttons .social {
+	display:none;
+}
+
+.mobile #dialogbox-symbol {
+	display:none;
+}
+
+.mobile #dialogbox.intro .welcome {
+	padding:3px;
+	font-size:.8em;
+}
+
+.mobile .sidebar {
+	font-size:1.1em;
+}
+
+.mobile .sidebar .buttons .button {
+	padding:6px 8px;
+	background:#1c1c1c;
+}
+
+.mobile .sidebar .buttons .button.red {
+	background:#461400;
+	border-color:#501400;
+}
+
+.mobile .sidebar .buttons .button.green {
+	background:#003200;
+	border-color:#003c00;
+}
+
+.mobile .sidebar .buttons .button.blue {
+	background:#002532;
+	border-color:#00283c;
+}
+
+.mobile .sidebar .buttons .button:hover {
+	background:#c86400;
+	border-color:#e68c00;
+	color:#fff;
+}
+
+.kindle .board .rank .square .piece.selected {
+	background:#960000;
+}
+
+/*
+debug colors
+.boardwrapper { background:blue; opacity:0.8; }
+.board { opacity:0.8; background:green; }
+.squares { background:gray; }
+.square { background:yellow; }
+
+.sidebar { background:red; }
+.sidebar { background:yellow; }
+.session-info { background:blue; }
+.sidebar .widget { background:green; }
+
+*/

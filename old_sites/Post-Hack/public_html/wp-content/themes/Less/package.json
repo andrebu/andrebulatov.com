@@ -1,0 +1,38 @@
+{
+  "author": "Andre Bulatov (http://andrebulatov.com)",
+  "name": "Profile",
+  "description": "The goal is to make a great personal website.",
+  "version": "1.0.0",
+  "homepage": "http://andrebulatov.com/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/profile/profile.git"
+  },
+  "scripts": {
+    "build": "./build/build.js",
+    "test": "vows"
+  },
+  "dependencies": {
+    "async": "~0.9",
+    "clean-css": "~3.0",
+    "execSync": "~1.0",
+    "fs-extra": "~0.14",
+    "glob": "~4",
+    "lodash": "~2.4",
+    "rss": "~1.1",
+    "superagent": "~0.21",
+    "tarball-extract": "~0.0",
+    "uglify-js": "~2.4",
+    "underscore": "~1",
+    "colors": "~1.0"
+  },
+  "devDependencies": {
+    "jslint": "~0.7",
+    "JSV": "~4.0.2",
+    "vows-si": "~0.7.1"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "^0.10"
+  }
+}

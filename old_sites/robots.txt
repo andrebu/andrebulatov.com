@@ -1,0 +1,33 @@
+Sitemap: https://andrebulatov.com/sitemap_index.xml
+Sitemap: https://andrebulatov.com/post-sitemap.xml
+Sitemap: https://andrebulatov.com/page-sitemap.xml
+Sitemap: https://andrebulatov.com/category-sitemap.xml
+Sitemap: https://andrebulatov.com/post_tag-sitemap.xml
+Sitemap: https://andrebulatov.com/author-sitemap.xml
+
+User-agent:  *
+Disallow: /cgi-bin/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /comments/feed/
+Disallow: /feed/
+Disallow: /trackback/
+Disallow: /index.php
+Disallow: /xmlrpc.php
+Disallow: ?comments=*
+Disallow: /search?
+Disallow: /?p=*
+Disallow: /go/
+
+
+User-agent: Mediapartners-Google*
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /wp-content/uploads/
+
+User-agent: Adsbot-Google
+Allow: / 
+ 
+User-agent: Googlebot-Mobile
+Allow: /
