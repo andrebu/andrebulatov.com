@@ -5,6 +5,22 @@ last_modified_at: 2018-06-30T04:44:38-05:00
 toc: true
 ---
 
+## Disclosure Policy
+
+I make money.
+
+What this means for you:
+
+* I do not do things just for the sake of making money.
+
+Just like this website, my Disclosure Policy is a work in progress. As the revenue streams evolve, so will this page.
+
+
+## Commenting Policy
+
+Free speech is paramount here, so speak freely and don't say anything that would get either of us into legal trouble.
+
+
 ## Privacy Policy
 
 The privacy of my visitors is extremely important. This Privacy Policy outlines the types of personal information that is received and collected and how it is used.
@@ -30,16 +46,6 @@ When you visit this site "convenience" cookies are stored on your computer when 
 
 If you wish to disable cookies, you may do so through your web browser options. Instructions for doing so can be found on the specific web browsers' websites.
 
-#### Google Analytics
+### Analytics
 
-Google Analytics is a web analytics tool I use to help understand how visitors engage with this website. It reports website trends using cookies and web beacons without identifying individual visitors. You can read [Google Analytics Privacy Policy](http://www.google.com/analytics/learn/privacy.html).
-
-## Disclosure Policy
-
-I make money.
-
-What this means for you:
-
-* I do not do things just for the sake of making money.
-
-Just like this website, my Disclosure Policy is a work in progress. As the revenue streams evolve, so will this page.
+For analytics, this site uses Google Analytics, a web analytics tool that helps understand how visitors engage with this website. It reports website trends using cookies and web beacons without identifying individual visitors. You can read [Google Analytics Privacy Policy](http://www.google.com/analytics/learn/privacy.html).
