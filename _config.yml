@@ -89,14 +89,23 @@ facebook:
   username               : "heyandrebu"
   app_id                 :
   publisher              :
-og_image                 : # Open Graph/Twitter default site image
+og_image                 : "/assets/images/Andre_peace_sign_square.jpg" # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
-
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:contact@andrebulatov.com"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://andrebulatov.com"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/heyandrebu"
+      
 # Analytics
 analytics:
   provider               : false # false (default), "google", "google-universal", "custom"
@@ -109,7 +118,7 @@ analytics:
 author:
   name             : "Andre Bulatov"
   avatar           : "/assets/images/Andre_peace_sign_square.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
+  bio              : "I am a person."
   location         : "Edison, NJ"
   email            : "contact@andrebulatov.com"
   uri              : 
