@@ -22,7 +22,7 @@
     "rss": "~1.1",
     "superagent": "~0.21",
     "tarball-extract": "~0.0",
-    "uglify-js": "~2.4",
+    "uglify-js": "~3.7",
     "underscore": "~1",
     "colors": "~1.0"
   },
