@@ -1,0 +1,29 @@
+---
+layout: single
+title:  "Language"
+excerpt: "Language may be the most fundamental technology of civilization."
+date:   2018-11-11 05:37:57 +0000
+categories: 
+- Blog
+tags: 
+- technology
+- language
+last_modified_at: 2018-11-11 05:37:57 +0000
+toc: true
+published: true
+---
+
+## 1. Language is a technology
+
+Language is a technology.
+
+
+
+## 2. 
+
+
+
+## 3. 
+
+
+
